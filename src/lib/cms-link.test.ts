@@ -13,7 +13,7 @@ import {
 
 describe("CMS link destinations", () => {
   it("derives the editor type from the persisted href", () => {
-    expect(getCmsLinkDestinationType("/info/about")).toBe("internal");
+    expect(getCmsLinkDestinationType("/about")).toBe("internal");
     expect(getCmsLinkDestinationType("https://example.com")).toBe("url");
     expect(getCmsLinkDestinationType("http://example.com")).toBe("url");
     expect(getCmsLinkDestinationType("mailto:hello@example.com")).toBe("email");
@@ -49,6 +49,7 @@ describe("CMS link destinations", () => {
 
   it("builds locale-neutral public paths for selectable CMS pages", () => {
     expect(getCmsPagePath({ category: "info", slug: "home", template: "home" })).toBe("/");
+    expect(getCmsPagePath({ category: "info", slug: "about", template: "about" })).toBe("/about");
     expect(getCmsPagePath({ category: "legal", slug: "privacy", template: "default" })).toBe(
       "/legal/privacy"
     );
@@ -87,7 +88,7 @@ describe("CMS link destinations", () => {
     ];
 
     expect(
-      areCmsInternalHrefsAvailable(["/info/about", "mailto:hello@example.com"], pages, "home")
+      areCmsInternalHrefsAvailable(["/about", "mailto:hello@example.com"], pages, "home")
     ).toBe(true);
     expect(areCmsInternalHrefsAvailable(["/"], pages, "home")).toBe(false);
     expect(areCmsInternalHrefsAvailable(["/info/missing"], pages, "home")).toBe(false);

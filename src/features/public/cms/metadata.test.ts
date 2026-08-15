@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { PublicCmsPage } from "@/features/public/cms/types";
-import { getCmsDescription } from "@/features/public/cms/metadata";
+import { createCmsMetadata, getCmsDescription } from "@/features/public/cms/metadata";
 
 function page(overrides: Partial<PublicCmsPage> = {}): PublicCmsPage {
   return {
@@ -54,5 +54,31 @@ describe("CMS metadata fallbacks", () => {
   it("falls back to localized structured paragraph content", () => {
     expect(getCmsDescription(page(), "ar")).toBe("نبذة تعريفية عن المنصة");
     expect(getCmsDescription(page(), "en")).toBe("An introduction to the platform");
+  });
+
+  it("publishes clean localized canonicals with Arabic x-default and no social image", () => {
+    process.env.NEXT_PUBLIC_SITE_URL = "https://othaimglobal.com";
+    const metadata = createCmsMetadata(
+      page({
+        seoTitleEn: "Othaim Global — About",
+        seoImageAssetId: "seo-image",
+        assetsById: {
+          "seo-image": { id: "seo-image", type: "image", url: "/uploads/seo.png" },
+        },
+      }),
+      "en"
+    );
+
+    expect(metadata.alternates).toMatchObject({
+      canonical: "https://othaimglobal.com/en/about",
+      languages: {
+        ar: "https://othaimglobal.com/ar/about",
+        en: "https://othaimglobal.com/en/about",
+        "x-default": "https://othaimglobal.com/ar/about",
+      },
+    });
+    expect(metadata.title).toEqual({ absolute: "Othaim Global — About" });
+    expect(metadata.openGraph).not.toHaveProperty("images");
+    expect(metadata.twitter).not.toHaveProperty("images");
   });
 });

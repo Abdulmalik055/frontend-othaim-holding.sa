@@ -1,23 +1,27 @@
 "use client";
 
-import Link from "next/link";
-import { useParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { useLocale, useTranslations } from "next-intl";
+import type { AppLocale } from "@/i18n/config";
+import { Link } from "@/i18n/navigation";
 
 export default function LocalizedNotFound() {
-  const { locale } = useParams<{ locale?: string }>();
-  const isArabic = locale === "ar";
+  const locale = useLocale() as AppLocale;
   const t = useTranslations("publicCms");
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#111820] px-5 text-center text-white">
+    <main className="ogc-public ogc-state">
       <div>
-        <p className="text-sm font-bold tracking-[0.3em] text-[#cfb271]">404</p>
-        <h1 className="mt-5 text-4xl font-black">{t("notFoundTitle")}</h1>
-        <p className="mt-4 text-white/60">{t("notFoundDescription")}</p>
-        <Link
-          className="mt-8 inline-flex bg-[#cfb271] px-6 py-3 font-bold text-[#111820]"
-          href={`/${isArabic ? "ar" : "en"}`}
-        >
+        <Image
+          src="/branding/logo-dark.svg"
+          alt="Othaim Global"
+          width={218}
+          height={100}
+          priority
+        />
+        <p className="ogc-state-code">404</p>
+        <h1>{t("notFoundTitle")}</h1>
+        <p>{t("notFoundDescription")}</p>
+        <Link className="ogc-button" href="/" locale={locale}>
           {t("backHome")}
         </Link>
       </div>

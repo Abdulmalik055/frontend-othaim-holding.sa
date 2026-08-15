@@ -7,6 +7,8 @@ import { CmsPageRenderer } from "@/features/public/cms/CmsPageRenderer";
 import { PublicShell } from "@/features/public/cms/PublicShell";
 import { getPublicCmsPage, PublicCmsRequestError } from "@/features/public/cms/api";
 import { createCmsMetadata } from "@/features/public/cms/metadata";
+import { createCmsPageRendererLabels } from "@/features/public/cms/labels";
+import { PublicUnavailable } from "@/features/public/cms/PublicUnavailable";
 
 type Props = {
   params: Promise<{ locale: string; category: string; slug: string }>;
@@ -16,12 +18,12 @@ async function resolveParams(params: Props["params"]) {
   const value = await params;
   if (
     !routing.locales.includes(value.locale as AppLocale) ||
-    (value.category !== "info" && value.category !== "legal") ||
+    value.category !== "legal" ||
     value.slug === "home"
   ) {
     notFound();
   }
-  return value as { locale: AppLocale; category: "info" | "legal"; slug: string };
+  return value as { locale: AppLocale; category: "legal"; slug: string };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -44,25 +46,13 @@ export default async function PublicCmsPageRoute({ params }: Props) {
     if (error instanceof PublicCmsRequestError && error.status === 404) notFound();
     return (
       <PublicShell locale={locale}>
-        <main className="mx-auto min-h-[60vh] max-w-3xl px-5 py-24 text-center">
-          <h1 className="text-3xl font-black">{t("pageUnavailableTitle")}</h1>
-          <p className="mt-4 text-[#5d6268]">{t("retryLater")}</p>
-        </main>
+        <PublicUnavailable title={t("pageUnavailableTitle")} message={t("retryLater")} />
       </PublicShell>
     );
   }
   return (
     <PublicShell locale={locale}>
-      <CmsPageRenderer
-        page={page}
-        locale={locale}
-        labels={{
-          legalCentre: t("legalCentre"),
-          insidePlatform: t("insidePlatform"),
-          information: t("information"),
-          empty: t("empty"),
-        }}
-      />
+      <CmsPageRenderer page={page} locale={locale} labels={createCmsPageRendererLabels(t)} />
     </PublicShell>
   );
 }

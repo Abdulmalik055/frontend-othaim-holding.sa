@@ -70,6 +70,8 @@ export function normalizeCmsLinkHref(type: CmsLinkDestinationType, inputValue: s
 
 export function getCmsPagePath(page: CmsPagePathInput) {
   if (page.template === "home" || page.slug === "home") return "/";
+  if (page.category === "info") return `/${page.slug}`;
+  if (page.category === "legal") return `/legal/${page.slug}`;
   return `/${page.category}/${page.slug}`;
 }
 

@@ -1,6 +1,6 @@
 export type AppLanguage = "ar" | "en";
 
-export const LANGUAGE_PREFERENCE_COOKIE = "cms-core.lang";
+export const LANGUAGE_PREFERENCE_COOKIE = "othaim-global.locale";
 
 export function normalizeLanguage(value: unknown): AppLanguage | null {
   if (typeof value !== "string") return null;
@@ -12,6 +12,32 @@ export function normalizeLanguage(value: unknown): AppLanguage | null {
   if (normalized === "en" || normalized.startsWith("en-") || normalized === "english") return "en";
 
   return null;
+}
+
+export function resolveRequestLanguage(
+  cookieValue: unknown,
+  acceptLanguage: string | null
+): AppLanguage {
+  const cookieLanguage = normalizeLanguage(cookieValue);
+  if (cookieLanguage) return cookieLanguage;
+
+  const acceptedLanguages = (acceptLanguage ?? "")
+    .split(",")
+    .map((entry, order) => {
+      const [language, ...parameters] = entry.trim().split(";");
+      const qualityParameter = parameters.find((parameter) => parameter.trim().startsWith("q="));
+      const quality = qualityParameter ? Number.parseFloat(qualityParameter.trim().slice(2)) : 1;
+
+      return {
+        language: normalizeLanguage(language),
+        order,
+        quality: Number.isFinite(quality) ? quality : 0,
+      };
+    })
+    .filter((entry) => entry.language && entry.quality > 0)
+    .sort((left, right) => right.quality - left.quality || left.order - right.order);
+
+  return acceptedLanguages[0]?.language ?? "ar";
 }
 
 export function resolvePreferredLanguageFromUser(

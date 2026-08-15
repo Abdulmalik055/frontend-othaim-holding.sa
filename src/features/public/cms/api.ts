@@ -5,7 +5,7 @@ import type {
   PublicCmsSection,
   PublicPlatformSettings,
 } from "@/features/public/cms/types";
-import { normalizeCmsSectionContent } from "@/features/admin/cms/schemas/cms-section.schema";
+import { normalizeCmsSectionContent } from "@/features/cms/content-contract";
 
 export type PublicCmsPageResponse = Omit<PublicCmsPage, "sections"> & {
   sections: Array<

@@ -9,6 +9,7 @@ import {
 
 export interface CmsSection {
   id: string;
+  slug?: string;
   pageId?: string;
   titleAr?: string | null;
   titleEn?: string | null;

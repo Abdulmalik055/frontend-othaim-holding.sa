@@ -1,22 +1,30 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { setLanguagePreferenceCookie } from "@/lib/language-preference";
 
 export function LocaleSwitch({ locale }: { locale: AppLocale }) {
   const pathname = usePathname();
+  const router = useRouter();
   const t = useTranslations("publicCms");
   const nextLocale = locale === "ar" ? "en" : "ar";
-  const href = pathname.replace(/^\/(ar|en)(?=\/|$)/, `/${nextLocale}`);
+
+  function switchLocale() {
+    setLanguagePreferenceCookie(nextLocale);
+    router.replace(pathname, { locale: nextLocale, scroll: false });
+  }
+
   return (
-    <Link
-      href={href}
-      hrefLang={nextLocale}
+    <button
+      type="button"
+      onClick={switchLocale}
+      lang={nextLocale}
       className="text-xs font-bold uppercase tracking-[0.18em] transition-opacity hover:opacity-60"
+      aria-label={nextLocale === "ar" ? t("languageArabic") : t("languageEnglish")}
     >
       {nextLocale === "ar" ? t("languageArabic") : t("languageEnglish")}
-    </Link>
+    </button>
   );
 }

@@ -1,15 +1,40 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import type { AppLocale } from "@/i18n/config";
 import { isSafeCmsHref } from "@/lib/cms-link";
-import type { CmsSectionItem } from "@/features/admin/cms/schemas/cms-section.schema";
+import type { CmsSectionItem } from "@/features/cms/content-contract";
 import type { PublicCmsPage, PublicCmsSection } from "@/features/public/cms/types";
+import { OthaimSectionRenderer } from "@/features/public/cms/OthaimSectionRenderer";
+import { isOthaimSectionSlug } from "@/features/public/cms/othaim-section-registry";
+import { isOthaimPublicPageSlug } from "@/features/public/cms/public-routes";
 
 export type CmsPageRendererLabels = {
   legalCentre: string;
   insidePlatform: string;
   information: string;
   empty: string;
+  formFullName: string;
+  formOrganization: string;
+  formEmail: string;
+  formTopic: string;
+  formMessage: string;
+  formSubmit: string;
+  formSubmitting: string;
+  formSuccess: string;
+  formError: string;
+  formRateLimited: string;
+  formConfidentiality: string;
+  topicPartnership: string;
+  topicCoInvestment: string;
+  topicFamilyOffice: string;
+  topicMedia: string;
+  topicOther: string;
+  validationFullName: string;
+  validationOrganization: string;
+  validationEmail: string;
+  validationTopic: string;
+  validationMessage: string;
 };
 
 type Props = {
@@ -22,16 +47,36 @@ export type CmsPageTemplateKey = "home" | "about" | "legal" | "default";
 
 export function CmsPageRenderer({ page, locale, labels }: Props) {
   const visibleSections = page.sections.filter((section) => section.isActive !== false);
+  const isOthaimPage =
+    page.slug === "home" ||
+    isOthaimPublicPageSlug(page.slug) ||
+    visibleSections.some((section) => isOthaimSectionSlug(section.slug));
   const Template = pageTemplateRegistry[getCmsPageTemplateKey(page)];
   const sections = visibleSections.length ? (
-    visibleSections.map((section) => (
-      <CmsSectionRenderer key={section.id} section={section} page={page} locale={locale} />
-    ))
+    visibleSections.map((section) =>
+      isOthaimSectionSlug(section.slug) ? (
+        <OthaimSectionRenderer
+          key={section.id}
+          section={section}
+          page={page}
+          locale={locale}
+          labels={labels}
+        />
+      ) : (
+        <CmsSectionRenderer key={section.id} section={section} page={page} locale={locale} />
+      )
+    )
   ) : (
-    <div className="mx-auto max-w-4xl px-5 py-24 text-center text-[#5d6268] sm:px-8">
-      {labels.empty}
-    </div>
+    <div className="ogc-public-error">{labels.empty}</div>
   );
+
+  if (isOthaimPage) {
+    return (
+      <main id="main-content" className={`ogc-page ogc-page-${page.slug}`}>
+        {sections}
+      </main>
+    );
+  }
 
   return (
     <Template page={page} locale={locale} labels={labels}>
@@ -65,12 +110,10 @@ function PageHeader({
   locale,
 }: Pick<PageTemplateProps, "page" | "locale"> & { eyebrow: string }) {
   return (
-    <header className="border-b border-black/10 bg-[#f4f1ea] px-5 py-20 sm:px-8 lg:py-28">
-      <div className="mx-auto max-w-6xl">
-        <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-[#8b713e]">
-          {eyebrow}
-        </p>
-        <h1 className="max-w-4xl text-4xl font-black leading-[1.15] text-[#111820] sm:text-6xl">
+    <header className="ogc-generic-header">
+      <div className="ogc-container">
+        <p className="ogc-eyebrow">{eyebrow}</p>
+        <h1>
           <PageTitle page={page} locale={locale} />
         </h1>
       </div>
@@ -79,21 +122,25 @@ function PageHeader({
 }
 
 const pageTemplateRegistry: Record<CmsPageTemplateKey, (props: PageTemplateProps) => ReactNode> = {
-  home: ({ children }) => <main className="cms-public-page cms-page-home">{children}</main>,
+  home: ({ children }) => (
+    <main id="main-content" className="ogc-page ogc-page-generic">
+      {children}
+    </main>
+  ),
   about: ({ page, locale, labels, children }) => (
-    <main className="cms-public-page cms-page-about">
+    <main id="main-content" className="ogc-page ogc-page-generic">
       <PageHeader page={page} locale={locale} eyebrow={labels.insidePlatform} />
-      <div className="border-b-8 border-[#b9985a]">{children}</div>
+      {children}
     </main>
   ),
   legal: ({ page, locale, labels, children }) => (
-    <main className="cms-public-page cms-page-legal bg-[#fbfaf7]">
+    <main id="main-content" className="ogc-page ogc-page-generic">
       <PageHeader page={page} locale={locale} eyebrow={labels.legalCentre} />
-      <div className="mx-auto max-w-5xl [&_section>div]:max-w-4xl">{children}</div>
+      {children}
     </main>
   ),
   default: ({ page, locale, labels, children }) => (
-    <main className="cms-public-page cms-page-default">
+    <main id="main-content" className="ogc-page ogc-page-generic">
       <PageHeader page={page} locale={locale} eyebrow={labels.information} />
       {children}
     </main>
@@ -110,8 +157,8 @@ function CmsSectionRenderer({
   locale: AppLocale;
 }) {
   return (
-    <section id={section.slug} className="cms-section relative overflow-hidden">
-      <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+    <section id={section.slug} className="cms-section ogc-section ogc-section-light">
+      <div className="ogc-container ogc-generic-content">
         <div className="grid gap-8">
           {section.content.blocks.map((block, blockIndex) => (
             <div key={`${section.id}-${blockIndex}`} className="grid gap-5">
@@ -147,9 +194,7 @@ function CmsItemRenderer({
       return <h3 className="text-xl font-bold leading-tight sm:text-2xl">{value}</h3>;
     }
     if (item.text.format === "p") {
-      return (
-        <p className="max-w-3xl whitespace-pre-line text-lg leading-8 text-[#4e555b]">{value}</p>
-      );
+      return <p className="ogc-generic-copy">{value}</p>;
     }
     return null;
   }
@@ -164,18 +209,26 @@ function CmsItemRenderer({
         ? (item.image.altAr ?? "")
         : (item.image.altEn ?? "");
     return (
-      <picture>
-        {mobile?.url && <source media="(max-width: 639px)" srcSet={mobile.url} />}
-        {/* CMS assets are served through the same-origin uploads proxy. */}
-        <img
+      <div>
+        {mobile?.url && (
+          <Image
+            src={mobile.url}
+            alt={alt}
+            width={mobile.width ?? desktop.width ?? 900}
+            height={mobile.height ?? desktop.height ?? 1200}
+            className="h-auto w-full rounded-sm object-cover sm:hidden"
+            sizes="100vw"
+          />
+        )}
+        <Image
           src={desktop.url}
           alt={alt}
-          loading="lazy"
-          className="h-auto w-full rounded-sm object-cover"
-          width={desktop.width ?? undefined}
-          height={desktop.height ?? undefined}
+          width={desktop.width ?? 1200}
+          height={desktop.height ?? 900}
+          className={`h-auto w-full rounded-sm object-cover${mobile?.url ? " hidden sm:block" : ""}`}
+          sizes="(max-width: 860px) 100vw, 1180px"
         />
-      </picture>
+      </div>
     );
   }
 
@@ -247,10 +300,10 @@ function CmsItemRenderer({
   const label = locale === "ar" ? item.link.labelAr : item.link.labelEn;
   const className =
     item.link.style === "text"
-      ? "inline-flex w-fit border-b border-current py-1 font-bold"
+      ? "ogc-generic-link ogc-generic-link-text"
       : item.link.style === "secondary"
-        ? "inline-flex w-fit border border-current px-6 py-3 font-bold"
-        : "inline-flex w-fit bg-[#b9985a] px-6 py-3 font-bold text-[#111820]";
+        ? "ogc-generic-link ogc-generic-link-secondary"
+        : "ogc-button";
   const external = /^(https?:|mailto:|tel:)/.test(href);
   if (external) {
     return (
@@ -274,7 +327,8 @@ function CmsItemRenderer({
 export function localizeCmsHref(href: string, locale: AppLocale) {
   if (!href.startsWith("/") || href.startsWith("/uploads/")) return href;
   if (/^\/(ar|en)(\/|$)/.test(href)) return href;
-  return `/${locale}${href}`;
+  const cleanHref = href.replace(/^\/info(?=\/)/, "");
+  return cleanHref === "/home" || cleanHref === "/" ? `/${locale}` : `/${locale}${cleanHref}`;
 }
 
 export { isSafeCmsHref };

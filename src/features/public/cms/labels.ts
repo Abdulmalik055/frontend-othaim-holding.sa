@@ -1,0 +1,31 @@
+import type { CmsPageRendererLabels } from "@/features/public/cms/CmsPageRenderer";
+
+export function createCmsPageRendererLabels(t: (key: string) => string): CmsPageRendererLabels {
+  return {
+    legalCentre: t("legalCentre"),
+    insidePlatform: t("insidePlatform"),
+    information: t("information"),
+    empty: t("empty"),
+    formFullName: t("form.fullName"),
+    formOrganization: t("form.organization"),
+    formEmail: t("form.email"),
+    formTopic: t("form.topic"),
+    formMessage: t("form.message"),
+    formSubmit: t("form.submit"),
+    formSubmitting: t("form.submitting"),
+    formSuccess: t("form.success"),
+    formError: t("form.error"),
+    formRateLimited: t("form.rateLimited"),
+    formConfidentiality: t("form.confidentiality"),
+    topicPartnership: t("form.topics.partnership"),
+    topicCoInvestment: t("form.topics.coInvestment"),
+    topicFamilyOffice: t("form.topics.familyOffice"),
+    topicMedia: t("form.topics.media"),
+    topicOther: t("form.topics.other"),
+    validationFullName: t("form.validation.fullName"),
+    validationOrganization: t("form.validation.organization"),
+    validationEmail: t("form.validation.email"),
+    validationTopic: t("form.validation.topic"),
+    validationMessage: t("form.validation.message"),
+  };
+}

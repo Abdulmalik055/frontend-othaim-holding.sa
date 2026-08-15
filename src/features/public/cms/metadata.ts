@@ -1,21 +1,20 @@
 import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/config";
 import type { PublicCmsPage } from "@/features/public/cms/types";
+import { getPublicPageRoute } from "@/features/public/cms/public-routes";
 
 export function createCmsMetadata(page: PublicCmsPage, locale: AppLocale): Metadata {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
   const isHome = page.template === "home" || page.slug === "home";
-  const route = isHome ? `/${locale}` : `/${locale}/${page.category}/${page.slug}`;
+  const route = isHome ? `/${locale}` : getPublicPageRoute(locale, page.slug, page.category);
   const alternateRoute = isHome
     ? (nextLocale: AppLocale) => `/${nextLocale}`
-    : (nextLocale: AppLocale) => `/${nextLocale}/${page.category}/${page.slug}`;
+    : (nextLocale: AppLocale) => getPublicPageRoute(nextLocale, page.slug, page.category);
   const title = locale === "ar" ? page.seoTitleAr || page.titleAr : page.seoTitleEn || page.titleEn;
   const description = getCmsDescription(page, locale);
-  const seoImage = page.seoImageAssetId ? page.assetsById[page.seoImageAssetId] : undefined;
-  const imageUrl = seoImage?.url ? new URL(seoImage.url, siteUrl).toString() : undefined;
 
   return {
-    title,
+    title: { absolute: title },
     description,
     robots: page.isIndexable ? { index: true, follow: true } : { index: false, follow: false },
     alternates: {
@@ -33,13 +32,11 @@ export function createCmsMetadata(page: PublicCmsPage, locale: AppLocale): Metad
       locale: locale === "ar" ? "ar_SA" : "en_US",
       alternateLocale: locale === "ar" ? ["en_US"] : ["ar_SA"],
       type: "website",
-      images: imageUrl ? [{ url: imageUrl }] : undefined,
     },
     twitter: {
-      card: imageUrl ? "summary_large_image" : "summary",
+      card: "summary",
       title,
       description,
-      images: imageUrl ? [imageUrl] : undefined,
     },
   };
 }

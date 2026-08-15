@@ -19,7 +19,9 @@
   "publicCms": {
     "brandHomeAria": "الصفحة الرئيسية",
     "mainNavigation": "التنقل الرئيسي",
+    "skipToContent": "الانتقال إلى المحتوى",
     "menu": "القائمة",
+    "closeMenu": "إغلاق القائمة",
     "footerNavigation": "روابط التذييل",
     "rights": "جميع الحقوق محفوظة.",
     "languageArabic": "العربية",
@@ -36,6 +38,39 @@
     "notFoundTitle": "الصفحة غير موجودة",
     "notFoundDescription": "قد تكون الصفحة غير متاحة أو تم نقلها.",
     "backHome": "العودة للرئيسية",
-    "loadingContent": "جارٍ تحميل المحتوى"
+    "loadingContent": "جارٍ تحميل المحتوى",
+    "navigation": {
+      "whoWeAre": "من نحن",
+      "management": "الإدارة",
+      "business": "الأعمال",
+      "holding": "أسواق عبدالله العثيم"
+    },
+    "form": {
+      "fullName": "الاسم الكامل",
+      "organization": "الجهة",
+      "email": "البريد الإلكتروني",
+      "topic": "موضوع التواصل",
+      "message": "الرسالة",
+      "submit": "إرسال الرسالة",
+      "submitting": "جارٍ الإرسال…",
+      "success": "شكراً لك. تم استلام رسالتك.",
+      "error": "تعذر إرسال رسالتك. يرجى المحاولة مرة أخرى.",
+      "rateLimited": "يرجى الانتظار قبل المحاولة مرة أخرى.",
+      "confidentiality": "تُعامل معلوماتك بسرية.",
+      "topics": {
+        "partnership": "شراكة",
+        "coInvestment": "استثمار مشترك",
+        "familyOffice": "خدمات المكتب العائلي",
+        "media": "استفسار إعلامي",
+        "other": "أخرى"
+      },
+      "validation": {
+        "fullName": "أدخل اسماً كاملاً من حرفين إلى 120 حرفاً.",
+        "organization": "يجب ألا يزيد اسم الجهة على 160 حرفاً.",
+        "email": "أدخل بريداً إلكترونياً صحيحاً.",
+        "topic": "اختر موضوع التواصل.",
+        "message": "أدخل رسالة من 10 إلى 4000 حرف."
+      }
+    }
   }
 }

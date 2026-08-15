@@ -313,4 +313,67 @@ describe("CmsSectionContentEditor text formats", () => {
     expect(onAssetUploaded).not.toHaveBeenCalled();
     expect(onChange).not.toHaveBeenCalled();
   });
+
+  it("locks client structural keys and types while allowing repeat blocks", async () => {
+    const user = userEvent.setup();
+    const onChange = vi.fn();
+    const content: CmsSectionContent = {
+      blocks: [
+        {
+          items: [
+            {
+              key: "eyebrow",
+              type: "text",
+              text: { format: "p", textAr: "فلسفتنا", textEn: "Philosophies" },
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              key: "number",
+              type: "text",
+              text: { format: "p", textAr: "01", textEn: "01" },
+            },
+            {
+              key: "name",
+              type: "text",
+              text: { format: "h3", textAr: "الاسم", textEn: "Name" },
+            },
+            {
+              key: "body",
+              type: "text",
+              text: { format: "p", textAr: "النص", textEn: "Body" },
+            },
+          ],
+        },
+      ],
+    };
+    const { container } = render(
+      <CmsSectionContentEditor
+        pageId="page-1"
+        sectionSlug="home-philosophies"
+        uploadToken="section-editor-token"
+        content={content}
+        assetsById={{}}
+        onAssetUploaded={vi.fn()}
+        onChange={onChange}
+        autoConvertMessages={{}}
+        canDeleteAssets={false}
+      />
+    );
+
+    expect(container.querySelector<HTMLInputElement>('input[value="eyebrow"]')?.disabled).toBe(
+      true
+    );
+    expect(screen.getByText("protectedStructureNotice")).toBeTruthy();
+    await user.click(screen.getByRole("button", { name: /addBlockShort/ }));
+
+    const nextContent = onChange.mock.calls.at(-1)?.[0] as CmsSectionContent;
+    expect(nextContent.blocks.at(-1)?.items.map(({ key, type }) => [key, type])).toEqual([
+      ["number", "text"],
+      ["name", "text"],
+      ["body", "text"],
+    ]);
+  });
 });

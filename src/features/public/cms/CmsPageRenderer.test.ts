@@ -12,10 +12,37 @@ import {
 import type { PublicCmsPage } from "@/features/public/cms/types";
 
 const rendererSource = readFileSync(new URL("./CmsPageRenderer.tsx", import.meta.url), "utf8");
+const rendererLabels = {
+  legalCentre: "Legal",
+  insidePlatform: "Inside",
+  information: "Information",
+  empty: "Empty",
+  formFullName: "Full name",
+  formOrganization: "Organization",
+  formEmail: "Email",
+  formTopic: "Topic",
+  formMessage: "Message",
+  formSubmit: "Submit",
+  formSubmitting: "Submitting",
+  formSuccess: "Success",
+  formError: "Error",
+  formRateLimited: "Rate limited",
+  formConfidentiality: "Confidential",
+  topicPartnership: "Partnership",
+  topicCoInvestment: "Co-investment",
+  topicFamilyOffice: "Family office",
+  topicMedia: "Media",
+  topicOther: "Other",
+  validationFullName: "Invalid name",
+  validationOrganization: "Invalid organization",
+  validationEmail: "Invalid email",
+  validationTopic: "Invalid topic",
+  validationMessage: "Invalid message",
+};
 
 describe("public CMS link handling", () => {
   it("localizes internal CMS routes without rewriting uploads or external links", () => {
-    expect(localizeCmsHref("/info/about", "ar")).toBe("/ar/info/about");
+    expect(localizeCmsHref("/info/about", "ar")).toBe("/ar/about");
     expect(localizeCmsHref("/en/legal/privacy", "ar")).toBe("/en/legal/privacy");
     expect(localizeCmsHref("/uploads/media/file.pdf", "ar")).toBe("/uploads/media/file.pdf");
     expect(localizeCmsHref("https://example.com", "ar")).toBe("https://example.com");
@@ -126,17 +153,13 @@ describe("public CMS rendering registry", () => {
       createElement(CmsPageRenderer, {
         page,
         locale: "en",
-        labels: {
-          legalCentre: "Legal",
-          insidePlatform: "Inside",
-          information: "Information",
-          empty: "Empty",
-        },
+        labels: rendererLabels,
       })
     );
 
     expect(html).toContain("Canonical copy");
-    expect(html).toContain('src="/uploads/image.png"');
+    expect(html).toContain("Canonical image");
+    expect(html).toContain(encodeURIComponent("/uploads/image.png"));
     expect(html).toContain('src="/uploads/video.mp4"');
     expect(html).toContain("Canonical file");
     expect(html).toContain('href="mailto:hello@example.com"');
@@ -187,12 +210,7 @@ describe("public CMS rendering registry", () => {
       createElement(CmsPageRenderer, {
         page,
         locale: "en",
-        labels: {
-          legalCentre: "Legal",
-          insidePlatform: "Inside",
-          information: "Information",
-          empty: "Empty",
-        },
+        labels: rendererLabels,
       })
     );
 
@@ -215,5 +233,30 @@ describe("public CMS rendering registry", () => {
     expect(getCmsPageTemplateKey({ template: "about", category: "info" })).toBe("about");
     expect(getCmsPageTemplateKey({ template: "default", category: "legal" })).toBe("legal");
     expect(getCmsPageTemplateKey({ template: "default", category: "info" })).toBe("default");
+  });
+
+  it("renders an empty Othaim page with the branded state treatment", () => {
+    const page = {
+      id: "empty-page",
+      slug: "about",
+      titleAr: "من نحن",
+      titleEn: "About",
+      category: "info",
+      template: "about",
+      navigationPlacement: "header",
+      navigationOrder: 1,
+      isIndexable: true,
+      updatedAt: "2026-08-15T00:00:00.000Z",
+      assetsById: {},
+      sections: [],
+    } as PublicCmsPage;
+
+    const html = renderToStaticMarkup(
+      createElement(CmsPageRenderer, { page, locale: "en", labels: rendererLabels })
+    );
+
+    expect(html).toContain("ogc-public-error");
+    expect(html).toContain("Empty");
+    expect(html).not.toContain("#5d6268");
   });
 });

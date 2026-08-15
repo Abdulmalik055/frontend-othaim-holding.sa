@@ -371,6 +371,7 @@ function CmsSectionDialogForm({
         <CmsSectionContentEditor
           pageId={pageId}
           sectionId={section?.id}
+          sectionSlug={section?.slug}
           uploadToken={uploadToken}
           content={content}
           assetsById={assetsById}

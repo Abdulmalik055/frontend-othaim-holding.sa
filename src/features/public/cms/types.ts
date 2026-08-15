@@ -1,12 +1,9 @@
-import type {
-  CmsAssetsById,
-  CmsSectionContent,
-} from "@/features/admin/cms/schemas/cms-section.schema";
+import type { CmsAssetsById, CmsSectionContent } from "@/features/cms/content-contract";
 import type {
   CmsNavigationPlacement,
   CmsPageCategory,
   CmsPageTemplate,
-} from "@/features/admin/cms/types";
+} from "@/features/cms/page-contract";
 import type { PlatformBrand } from "@/features/platform/types";
 
 export type PublicCmsSection = {

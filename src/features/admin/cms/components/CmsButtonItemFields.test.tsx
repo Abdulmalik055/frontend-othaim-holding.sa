@@ -134,19 +134,19 @@ describe("CmsButtonItemFields", () => {
     await user.click(comboboxes[1]);
 
     expect(screen.queryByRole("option", { name: /Home.*الرئيسية.*\/$/ })).toBeNull();
-    expect(screen.getByRole("option", { name: /About Us.*من نحن.*\/info\/about/ })).toBeDefined();
+    expect(screen.getByRole("option", { name: /About Us.*من نحن.*\/about/ })).toBeDefined();
     expect(
       screen.getByRole("option", { name: /Privacy.*الخصوصية.*\/legal\/privacy/ })
     ).toBeDefined();
 
     await user.type(comboboxes[1], "من نحن");
-    expect(screen.getByRole("option", { name: /About Us.*من نحن.*\/info\/about/ })).toBeDefined();
+    expect(screen.getByRole("option", { name: /About Us.*من نحن.*\/about/ })).toBeDefined();
     expect(
       screen.queryByRole("option", { name: /Privacy.*الخصوصية.*\/legal\/privacy/ })
     ).toBeNull();
 
-    await user.click(screen.getByRole("option", { name: /About Us.*\/info\/about/ }));
-    expect(screen.getByLabelText("stored href").textContent).toBe("/info/about");
+    await user.click(screen.getByRole("option", { name: /About Us.*\/about/ }));
+    expect(screen.getByLabelText("stored href").textContent).toBe("/about");
   });
 
   it("groups internal pages by localized category with a count for each group", async () => {
@@ -164,7 +164,7 @@ describe("CmsButtonItemFields", () => {
     expect(screen.getByText("الخصوصية")).toBeDefined();
     expect(screen.getByText("About Us")).toBeDefined();
     expect(screen.getByText("من نحن")).toBeDefined();
-    expect(screen.getByText("/info/about")).toBeDefined();
+    expect(screen.getByText("/about")).toBeDefined();
     expect(screen.getByText("/legal/privacy").getAttribute("dir")).toBe("ltr");
   });
 

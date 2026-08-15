@@ -15,15 +15,24 @@ import { proxy } from "../proxy";
 
 // ─── Helpers ─────────────────────────────────────────────────
 
-function makeRequest(pathname: string, cookies: Record<string, string> = {}) {
+function makeRequest(
+  pathname: string,
+  cookies: Record<string, string> = {},
+  headers: Record<string, string> = {}
+) {
   const url = `http://localhost:3000${pathname}`;
   const cookieHeader = Object.entries(cookies)
     .map(([k, v]) => `${k}=${v}`)
     .join("; ");
   return new NextRequest(url, {
-    headers: cookieHeader ? { cookie: cookieHeader } : {},
+    headers: {
+      ...headers,
+      ...(cookieHeader ? { cookie: cookieHeader } : {}),
+    },
   });
 }
+
+const DOCUMENT_HEADERS = { accept: "text/html" };
 
 const SESSION_COOKIE = { "othaim-global.session_token": "test-token-123" };
 
@@ -114,6 +123,59 @@ describe("middleware — locale detection", () => {
     expect(res?.status).toBe(307);
     const location = res?.headers.get("location") ?? "";
     expect(location).toContain("/ar/auth/login");
+  });
+
+  it("uses the shared locale cookie before Accept-Language", async () => {
+    const req = makeRequest(
+      "/",
+      { "othaim-global.locale": "ar" },
+      { ...DOCUMENT_HEADERS, "accept-language": "en-US,en;q=0.9" }
+    );
+    const res = await proxy(req);
+
+    expect(res?.status).toBe(307);
+    expect(res?.headers.get("location")).toBe("http://localhost:3000/ar");
+  });
+
+  it("uses Accept-Language when the locale cookie is absent", async () => {
+    const req = makeRequest(
+      "/",
+      {},
+      { ...DOCUMENT_HEADERS, "accept-language": "fr;q=0.9,en-US;q=0.8" }
+    );
+    const res = await proxy(req);
+
+    expect(res?.status).toBe(307);
+    expect(res?.headers.get("location")).toBe("http://localhost:3000/en");
+  });
+
+  it("falls back to Arabic when no supported request language exists", async () => {
+    const req = makeRequest("/", {}, { ...DOCUMENT_HEADERS, "accept-language": "fr-FR" });
+    const res = await proxy(req);
+
+    expect(res?.status).toBe(307);
+    expect(res?.headers.get("location")).toBe("http://localhost:3000/ar");
+  });
+
+  it("resolves an unlocalized legacy info URL in one temporary redirect", async () => {
+    const req = makeRequest("/info/about", {}, { ...DOCUMENT_HEADERS, "accept-language": "en-US" });
+    const res = await proxy(req);
+
+    expect(res?.status).toBe(307);
+    expect(res?.headers.get("location")).toBe("http://localhost:3000/en/about");
+  });
+});
+
+describe("middleware — legacy public URLs", () => {
+  it.each([
+    ["/ar/index.html", "/ar"],
+    ["/en/about.html", "/en/about"],
+    ["/ar/info/family", "/ar/family"],
+  ])("permanently redirects %s to %s", async (from, to) => {
+    const res = await proxy(makeRequest(from, {}, DOCUMENT_HEADERS));
+
+    expect(res?.status).toBe(308);
+    expect(res?.headers.get("location")).toBe(`http://localhost:3000${to}`);
   });
 });
 

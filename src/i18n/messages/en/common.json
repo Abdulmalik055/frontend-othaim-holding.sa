@@ -19,7 +19,9 @@
   "publicCms": {
     "brandHomeAria": "Home",
     "mainNavigation": "Main navigation",
+    "skipToContent": "Skip to content",
     "menu": "Menu",
+    "closeMenu": "Close menu",
     "footerNavigation": "Footer navigation",
     "rights": "All rights reserved.",
     "languageArabic": "Arabic",
@@ -36,6 +38,39 @@
     "notFoundTitle": "Page not found",
     "notFoundDescription": "The page may be unavailable or moved.",
     "backHome": "Back to home",
-    "loadingContent": "Loading content"
+    "loadingContent": "Loading content",
+    "navigation": {
+      "whoWeAre": "Who we are",
+      "management": "Management",
+      "business": "Business",
+      "holding": "Al Othaim Holding"
+    },
+    "form": {
+      "fullName": "Full name",
+      "organization": "Organization",
+      "email": "Email",
+      "topic": "Topic",
+      "message": "Message",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "success": "Thank you. Your inquiry was received.",
+      "error": "We could not send your inquiry. Please try again.",
+      "rateLimited": "Please wait before trying again.",
+      "confidentiality": "Your information stays confidential.",
+      "topics": {
+        "partnership": "Partnership",
+        "coInvestment": "Co-investment",
+        "familyOffice": "Family-office mandate",
+        "media": "Media inquiry",
+        "other": "Other"
+      },
+      "validation": {
+        "fullName": "Enter a full name between 2 and 120 characters.",
+        "organization": "Organization must be 160 characters or fewer.",
+        "email": "Enter a valid email address.",
+        "topic": "Select an inquiry topic.",
+        "message": "Enter a message between 10 and 4,000 characters."
+      }
+    }
   }
 }

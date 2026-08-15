@@ -7,6 +7,9 @@ import { getPublicCmsPage, PublicCmsRequestError } from "@/features/public/cms/a
 import { createCmsMetadata } from "@/features/public/cms/metadata";
 import { routing } from "@/i18n/routing";
 import type { AppLocale } from "@/i18n/config";
+import { createCmsPageRendererLabels } from "@/features/public/cms/labels";
+import { getHomeFooterStatement } from "@/features/public/cms/othaim-content";
+import { PublicUnavailable } from "@/features/public/cms/PublicUnavailable";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -35,27 +38,13 @@ export default async function LocaleRootPage({ params }: Props) {
     if (error instanceof PublicCmsRequestError && error.status === 404) notFound();
     return (
       <PublicShell locale={locale}>
-        <main className="mx-auto flex min-h-[60vh] max-w-3xl items-center px-5 py-24 text-center">
-          <div className="w-full">
-            <h1 className="mt-5 text-3xl font-black">{t("contentUnavailableTitle")}</h1>
-            <p className="mt-4 text-[#5d6268]">{t("retry")}</p>
-          </div>
-        </main>
+        <PublicUnavailable title={t("contentUnavailableTitle")} message={t("retry")} />
       </PublicShell>
     );
   }
   return (
-    <PublicShell locale={locale}>
-      <CmsPageRenderer
-        page={page}
-        locale={locale}
-        labels={{
-          legalCentre: t("legalCentre"),
-          insidePlatform: t("insidePlatform"),
-          information: t("information"),
-          empty: t("empty"),
-        }}
-      />
+    <PublicShell locale={locale} footerStatement={getHomeFooterStatement(page, locale)}>
+      <CmsPageRenderer page={page} locale={locale} labels={createCmsPageRendererLabels(t)} />
     </PublicShell>
   );
 }

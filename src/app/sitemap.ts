@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getPublicCmsNavigation } from "@/features/public/cms/api";
+import { getPublicPageRoute } from "@/features/public/cms/public-routes";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
@@ -8,10 +9,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .filter((page) => page.isIndexable)
     .flatMap((page) =>
       (["ar", "en"] as const).map((locale) => {
-        const path =
-          page.template === "home" || page.slug === "home"
-            ? `/${locale}`
-            : `/${locale}/${page.category}/${page.slug}`;
+        const path = getPublicPageRoute(locale, page.slug, page.category);
+        const arabicPath = getPublicPageRoute("ar", page.slug, page.category);
+        const englishPath = getPublicPageRoute("en", page.slug, page.category);
         return {
           url: new URL(path, siteUrl).toString(),
           lastModified: new Date(page.updatedAt),
@@ -19,8 +19,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           priority: page.template === "home" ? 1 : page.category === "legal" ? 0.4 : 0.7,
           alternates: {
             languages: {
-              ar: new URL(path.replace(`/${locale}`, "/ar"), siteUrl).toString(),
-              en: new URL(path.replace(`/${locale}`, "/en"), siteUrl).toString(),
+              ar: new URL(arabicPath, siteUrl).toString(),
+              en: new URL(englishPath, siteUrl).toString(),
+              "x-default": new URL(arabicPath, siteUrl).toString(),
             },
           },
         };

@@ -42,12 +42,20 @@ import {
   resolveCmsMediaAsset,
 } from "@/features/admin/cms/media-asset-deletion";
 import { areCmsInternalHrefsAvailable } from "@/lib/cms-link";
+import {
+  canAddOthaimRepeaterBlock,
+  canMoveOthaimBlock,
+  canRemoveOthaimBlock,
+  createOthaimRepeaterBlock,
+  isProtectedOthaimSection,
+} from "@/features/admin/cms/othaim-editor-contract";
 
 type AutoConvertMessages = Partial<Record<AutoConvertInvalidReason, string>>;
 
 type Props = {
   pageId: string;
   sectionId?: string;
+  sectionSlug?: string;
   uploadToken: string;
   content: CmsSectionContent;
   assetsById: CmsAssetsById;
@@ -257,6 +265,7 @@ function ItemTypeIcon({ type, className }: { type: CmsSectionItemType; className
 export function CmsSectionContentEditor({
   pageId,
   sectionId,
+  sectionSlug,
   uploadToken,
   content,
   assetsById,
@@ -268,6 +277,8 @@ export function CmsSectionContentEditor({
   onUploadingChange,
 }: Props) {
   const sectionDialogTranslations = useTranslations("admin.cmsPage.sectionDialog");
+  const structureProtected = isProtectedOthaimSection(sectionSlug);
+  const hasRepeater = canAddOthaimRepeaterBlock(sectionSlug);
   const [selectedBlockIndex, setSelectedBlockIndex] = useState(0);
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
   const [isAddItemMenuOpen, setIsAddItemMenuOpen] = useState(false);
@@ -329,14 +340,23 @@ export function CmsSectionContentEditor({
   }
 
   function addBlock() {
-    updateContent({ ...content, blocks: [...content.blocks, createDefaultBlock()] });
+    const nextBlock = structureProtected
+      ? createOthaimRepeaterBlock(sectionSlug)
+      : createDefaultBlock();
+    if (!nextBlock) return;
+    updateContent({ ...content, blocks: [...content.blocks, nextBlock] });
     setSelectedBlockIndex(content.blocks.length);
     setSelectedItemIndex(0);
     setIsAddItemMenuOpen(false);
   }
 
   function removeBlock(blockIndex: number) {
-    if (content.blocks.length <= 1) return;
+    if (
+      structureProtected
+        ? !canRemoveOthaimBlock(sectionSlug, blockIndex, content.blocks.length)
+        : content.blocks.length <= 1
+    )
+      return;
     const nextBlocks = content.blocks.filter((_, index) => index !== blockIndex);
 
     updateContent({
@@ -346,6 +366,18 @@ export function CmsSectionContentEditor({
     setSelectedBlockIndex(Math.max(0, Math.min(blockIndex, nextBlocks.length - 1)));
     setSelectedItemIndex(0);
     setIsAddItemMenuOpen(false);
+  }
+
+  function moveBlock(blockIndex: number, direction: -1 | 1) {
+    if (!canMoveOthaimBlock(sectionSlug, blockIndex, content.blocks.length, direction)) return;
+    const destination = blockIndex + direction;
+    const nextBlocks = [...content.blocks];
+    [nextBlocks[blockIndex], nextBlocks[destination]] = [
+      nextBlocks[destination],
+      nextBlocks[blockIndex],
+    ];
+    updateContent({ ...content, blocks: nextBlocks });
+    setSelectedBlockIndex(destination);
   }
 
   function updateItem(blockIndex: number, itemIndex: number, nextItem: CmsSectionItem) {
@@ -503,11 +535,13 @@ export function CmsSectionContentEditor({
             <h4 className="text-[13px] font-semibold text-gray-800">
               {sectionDialogTranslations("contentStructure")}
             </h4>
-            <button type="button" onClick={addBlock} className={addBlockButtonClass}>
-              <PlusIcon />
-              <LayersIcon />
-              {sectionDialogTranslations("addBlockShort")}
-            </button>
+            {(!structureProtected || hasRepeater) && (
+              <button type="button" onClick={addBlock} className={addBlockButtonClass}>
+                <PlusIcon />
+                <LayersIcon />
+                {sectionDialogTranslations("addBlockShort")}
+              </button>
+            )}
           </div>
           <div className="p-3 flex flex-col gap-2">
             {content.blocks.map((block, blockIndex) => {
@@ -537,15 +571,47 @@ export function CmsSectionContentEditor({
                         {sectionDialogTranslations("block")} {blockIndex + 1}
                       </span>
                     </button>
-                    <button
-                      type="button"
-                      onClick={() => removeBlock(blockIndex)}
-                      disabled={content.blocks.length <= 1}
-                      className={dangerIconButtonClass}
-                      aria-label={sectionDialogTranslations("removeBlock")}
-                    >
-                      <TrashIcon />
-                    </button>
+                    {structureProtected && hasRepeater && (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => moveBlock(blockIndex, -1)}
+                          disabled={
+                            !canMoveOthaimBlock(sectionSlug, blockIndex, content.blocks.length, -1)
+                          }
+                          className={dangerIconButtonClass}
+                          aria-label={sectionDialogTranslations("moveBlockUp")}
+                        >
+                          <span aria-hidden>↑</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => moveBlock(blockIndex, 1)}
+                          disabled={
+                            !canMoveOthaimBlock(sectionSlug, blockIndex, content.blocks.length, 1)
+                          }
+                          className={dangerIconButtonClass}
+                          aria-label={sectionDialogTranslations("moveBlockDown")}
+                        >
+                          <span aria-hidden>↓</span>
+                        </button>
+                      </>
+                    )}
+                    {(!structureProtected || hasRepeater) && (
+                      <button
+                        type="button"
+                        onClick={() => removeBlock(blockIndex)}
+                        disabled={
+                          structureProtected
+                            ? !canRemoveOthaimBlock(sectionSlug, blockIndex, content.blocks.length)
+                            : content.blocks.length <= 1
+                        }
+                        className={dangerIconButtonClass}
+                        aria-label={sectionDialogTranslations("removeBlock")}
+                      >
+                        <TrashIcon />
+                      </button>
+                    )}
                   </div>
                   {selected ? (
                     <div className="px-2 pb-2 flex max-h-[260px] flex-col gap-1.5 overflow-y-auto">
@@ -605,15 +671,21 @@ export function CmsSectionContentEditor({
                 {sectionDialogTranslations("editBlock")} {activeBlockIndex + 1}
               </p>
             </div>
-            <button
-              type="button"
-              onClick={() => removeBlock(activeBlockIndex)}
-              disabled={content.blocks.length <= 1}
-              className={dangerIconButtonClass}
-              aria-label={sectionDialogTranslations("removeBlock")}
-            >
-              <TrashIcon />
-            </button>
+            {(!structureProtected || hasRepeater) && (
+              <button
+                type="button"
+                onClick={() => removeBlock(activeBlockIndex)}
+                disabled={
+                  structureProtected
+                    ? !canRemoveOthaimBlock(sectionSlug, activeBlockIndex, content.blocks.length)
+                    : content.blocks.length <= 1
+                }
+                className={dangerIconButtonClass}
+                aria-label={sectionDialogTranslations("removeBlock")}
+              >
+                <TrashIcon />
+              </button>
+            )}
           </div>
 
           <div className={blockBodyClass}>
@@ -628,7 +700,11 @@ export function CmsSectionContentEditor({
                   </p>
                 </div>
                 <div className="flex flex-col items-start gap-2 lg:items-end">
-                  {!isAddItemMenuOpen ? (
+                  {structureProtected ? (
+                    <p className="text-[11px] font-semibold text-gray-500">
+                      {sectionDialogTranslations("protectedStructureNotice")}
+                    </p>
+                  ) : !isAddItemMenuOpen ? (
                     <button
                       type="button"
                       onClick={() => setIsAddItemMenuOpen(true)}
@@ -712,15 +788,17 @@ export function CmsSectionContentEditor({
                       </div>
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => removeItem(activeBlockIndex, activeItemIndex)}
-                    disabled={activeBlock.items.length <= 1}
-                    className={dangerIconButtonClass}
-                    aria-label={sectionDialogTranslations("removeItem")}
-                  >
-                    <TrashIcon />
-                  </button>
+                  {!structureProtected && (
+                    <button
+                      type="button"
+                      onClick={() => removeItem(activeBlockIndex, activeItemIndex)}
+                      disabled={activeBlock.items.length <= 1}
+                      className={dangerIconButtonClass}
+                      aria-label={sectionDialogTranslations("removeItem")}
+                    >
+                      <TrashIcon />
+                    </button>
+                  )}
                 </div>
 
                 <div>
@@ -734,6 +812,7 @@ export function CmsSectionContentEditor({
                         <button
                           key={type}
                           type="button"
+                          disabled={structureProtected}
                           onClick={() => updateItemType(activeBlockIndex, activeItemIndex, type)}
                           className={[
                             "h-[36px] rounded-[8px] border px-3 text-[12px] font-semibold transition-colors cursor-pointer inline-flex items-center justify-center gap-2",
@@ -756,6 +835,7 @@ export function CmsSectionContentEditor({
                     autoConvertMode="none"
                     className={inputClass}
                     value={activeItem.key}
+                    disabled={structureProtected}
                     onChange={(event) => updateActiveItemKey(event.target.value)}
                     placeholder={sectionDialogTranslations("itemKeyPlaceholder")}
                   />
