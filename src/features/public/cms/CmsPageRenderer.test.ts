@@ -259,4 +259,49 @@ describe("public CMS rendering registry", () => {
     expect(html).toContain("Empty");
     expect(html).not.toContain("#5d6268");
   });
+
+  it("does not dispatch branded sections when the page and section contract do not match", () => {
+    const page = {
+      id: "future-page",
+      slug: "future-page",
+      titleAr: "صفحة مستقبلية",
+      titleEn: "Future page",
+      category: "info",
+      template: "default",
+      navigationPlacement: "none",
+      navigationOrder: 0,
+      isIndexable: true,
+      updatedAt: "2026-08-15T00:00:00.000Z",
+      assetsById: {},
+      sections: [
+        {
+          id: "spoofed-home-hero",
+          slug: "home-hero",
+          order: 1,
+          updatedAt: "2026-08-15T00:00:00.000Z",
+          content: {
+            blocks: [
+              {
+                items: [
+                  {
+                    key: "headline",
+                    type: "text",
+                    text: { format: "h1", textAr: "عنوان", textEn: "Generic headline" },
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
+    } as PublicCmsPage;
+
+    const html = renderToStaticMarkup(
+      createElement(CmsPageRenderer, { page, locale: "en", labels: rendererLabels })
+    );
+
+    expect(html).toContain("cms-section");
+    expect(html).toContain("Generic headline");
+    expect(html).not.toContain("ogc-video-hero");
+  });
 });

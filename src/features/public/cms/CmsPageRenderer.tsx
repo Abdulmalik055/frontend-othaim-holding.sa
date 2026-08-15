@@ -6,7 +6,7 @@ import { isSafeCmsHref } from "@/lib/cms-link";
 import type { CmsSectionItem } from "@/features/cms/content-contract";
 import type { PublicCmsPage, PublicCmsSection } from "@/features/public/cms/types";
 import { OthaimSectionRenderer } from "@/features/public/cms/OthaimSectionRenderer";
-import { isOthaimSectionSlug } from "@/features/public/cms/othaim-section-registry";
+import { isOthaimSectionForPage } from "@/features/public/cms/othaim-section-registry";
 import { isOthaimPublicPageSlug } from "@/features/public/cms/public-routes";
 
 export type CmsPageRendererLabels = {
@@ -47,14 +47,11 @@ export type CmsPageTemplateKey = "home" | "about" | "legal" | "default";
 
 export function CmsPageRenderer({ page, locale, labels }: Props) {
   const visibleSections = page.sections.filter((section) => section.isActive !== false);
-  const isOthaimPage =
-    page.slug === "home" ||
-    isOthaimPublicPageSlug(page.slug) ||
-    visibleSections.some((section) => isOthaimSectionSlug(section.slug));
+  const isOthaimPage = page.slug === "home" || isOthaimPublicPageSlug(page.slug);
   const Template = pageTemplateRegistry[getCmsPageTemplateKey(page)];
   const sections = visibleSections.length ? (
     visibleSections.map((section) =>
-      isOthaimSectionSlug(section.slug) ? (
+      isOthaimSectionForPage(page.slug, section.slug) ? (
         <OthaimSectionRenderer
           key={section.id}
           section={section}

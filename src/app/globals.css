@@ -463,6 +463,10 @@
     linear-gradient(160deg, var(--ogc-dark-3), var(--ogc-dark) 55%, #0f2226);
 }
 
+.ogc-page-hero h1 {
+  white-space: pre-line;
+}
+
 .ogc-page-hero::before,
 .ogc-page-hero::after {
   position: absolute;
@@ -607,7 +611,7 @@
 }
 
 .ogc-section-light .ogc-lead {
-  color: rgb(32 99 108 / 0.78);
+  color: var(--ogc-brand);
 }
 
 .ogc-split,
@@ -694,6 +698,29 @@
   translate: 0 -1px;
 }
 
+.ogc-button-ghost {
+  border-color: rgb(255 255 255 / 0.24);
+  background: transparent;
+  color: #fff;
+}
+
+.ogc-button-ghost:hover {
+  border-color: var(--ogc-accent);
+  background: rgb(255 255 255 / 0.08);
+}
+
+.ogc-section-light .ogc-button-ghost {
+  border-color: rgb(32 99 108 / 0.38);
+  background: rgb(255 255 255 / 0.62);
+  color: var(--ogc-brand);
+}
+
+.ogc-section-light .ogc-button-ghost:hover {
+  border-color: var(--ogc-brand);
+  background: var(--ogc-brand);
+  color: #fff;
+}
+
 .ogc-text-link {
   border-block-end: 1px solid currentColor;
   border-radius: 0;
@@ -713,6 +740,132 @@
   margin-block-start: 20px;
 }
 
+.ogc-home-committee .ogc-section-heading,
+.ogc-home-inspiration .ogc-container,
+.ogc-about-mission .ogc-container,
+.ogc-home-philosophies .ogc-section-heading,
+.ogc-home-partners .ogc-section-heading {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.ogc-home-committee .ogc-eyebrow,
+.ogc-home-inspiration .ogc-eyebrow,
+.ogc-about-mission .ogc-eyebrow,
+.ogc-home-philosophies .ogc-eyebrow,
+.ogc-home-partners .ogc-eyebrow,
+.ogc-home-team .ogc-eyebrow {
+  justify-content: center;
+}
+
+.ogc-home-committee .ogc-people-grid {
+  max-width: 1000px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-inline: auto;
+}
+
+.ogc-home-committee .ogc-person-card {
+  text-align: center;
+}
+
+.ogc-home-committee > .ogc-container > .ogc-button,
+.ogc-home-philosophies > .ogc-container > .ogc-button,
+.ogc-home-partners > .ogc-container > .ogc-button {
+  display: flex;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.ogc-home-team-inner {
+  max-width: 760px;
+  text-align: center;
+}
+
+.ogc-home-team .ogc-portrait {
+  width: min(100%, 240px);
+  margin: 42px auto 0;
+  aspect-ratio: 4 / 5;
+}
+
+.ogc-home-team .ogc-person-name {
+  margin-block-start: 24px;
+}
+
+.ogc-home-team .ogc-lead,
+.ogc-home-team .ogc-button {
+  margin-inline: auto;
+}
+
+.ogc-home-inspiration .ogc-container {
+  max-width: 960px;
+}
+
+.ogc-about-mission .ogc-container {
+  max-width: 980px;
+  text-align: center;
+}
+
+.ogc-about-mission blockquote {
+  margin-inline: auto;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 300;
+}
+
+.ogc-home-inspiration blockquote {
+  margin-inline: auto;
+  font-size: clamp(1.7rem, 3.2vw, 3rem);
+  font-weight: 300;
+}
+
+.ogc-home-philosophies::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: url("/branding/abdbg.png") center / cover no-repeat;
+  content: "";
+  filter: invert(1);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.ogc-home-philosophies::after {
+  position: absolute;
+  inset: auto -120px -160px auto;
+  z-index: 0;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(59 187 199 / 0.1), transparent 65%);
+  content: "";
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.ogc-home-philosophies > .ogc-container {
+  position: relative;
+  z-index: 1;
+}
+
+.ogc-home-philosophies .ogc-card-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ogc-home-philosophies .ogc-number-card {
+  min-height: 310px;
+  padding: 30px 26px;
+}
+
+.ogc-home-partners .ogc-logo-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ogc-home-partners .ogc-logo-cell {
+  aspect-ratio: 1.6;
+  padding: 16px 20px;
+}
+
 .ogc-number-card {
   position: relative;
   min-height: 260px;
@@ -730,6 +883,10 @@
   border-color: rgb(32 99 108 / 0.12);
   background: #fff;
   box-shadow: 0 10px 30px -14px rgb(32 99 108 / 0.2);
+}
+
+.ogc-section-light .ogc-number-card > span {
+  color: var(--ogc-brand);
 }
 
 .ogc-number-card:hover {
@@ -767,6 +924,36 @@
   color: var(--ogc-accent);
   font-family: var(--font-dm-sans), monospace;
   font-size: 0.72rem;
+}
+
+.ogc-section-about-dna .ogc-pill-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.ogc-section-about-vision .ogc-card-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ogc-section-about-vision .ogc-number-card:last-child {
+  grid-column: 1 / -1;
+}
+
+.ogc-section-about-values .ogc-card-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.ogc-section-strategy-pillars .ogc-card-grid {
+  grid-template-columns: 1fr;
+}
+
+.ogc-section-strategy-pillars .ogc-number-card {
+  min-height: 0;
+  padding: 42px 48px;
+}
+
+.ogc-section-strategy-pillars .ogc-number-card h3 {
+  max-width: 760px;
+  font-size: clamp(1.5rem, 2.5vw, 2.4rem);
 }
 
 .ogc-logo-grid {
@@ -809,7 +996,7 @@
 
 .ogc-logo-cell p {
   margin-block-start: 12px;
-  color: #647d7d;
+  color: var(--ogc-brand);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -892,10 +1079,19 @@
   grid-template-columns: minmax(240px, 0.72fr) 1.28fr;
   align-items: center;
   gap: clamp(40px, 8vw, 90px);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 0.025);
+  padding: clamp(24px, 5vw, 52px);
 }
 
-.ogc-member-profile:nth-child(even) .ogc-member-visual {
-  order: 2;
+.ogc-member-identity h2 {
+  margin-block-start: 8px;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+}
+
+.ogc-member-copy > .ogc-lead:first-child {
+  margin-block-start: 0;
 }
 
 .ogc-initials {
@@ -906,6 +1102,22 @@
   color: rgb(255 255 255 / 0.3);
   font-size: 3rem;
   font-weight: 700;
+}
+
+.ogc-team-profile {
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 0.025);
+  padding: clamp(24px, 5vw, 52px);
+}
+
+.ogc-team-profile h2 {
+  margin-block-start: 8px;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+}
+
+.ogc-profile-hero .ogc-portrait {
+  order: 2;
 }
 
 .ogc-education,
@@ -946,11 +1158,16 @@
 }
 
 .ogc-closing-cta .ogc-container {
-  max-width: 850px;
-  text-align: center;
+  max-width: 1180px;
 }
-.ogc-closing-cta .ogc-lead {
-  margin-inline: auto;
+
+.ogc-closing-cta .ogc-button {
+  background: #fff;
+  color: var(--ogc-dark-3);
+}
+
+.ogc-closing-cta .ogc-button:hover {
+  background: var(--ogc-accent);
 }
 
 .ogc-contact-list {
@@ -960,11 +1177,31 @@
   font-style: normal;
 }
 
-.ogc-contact-list > div {
+.ogc-contact-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.ogc-contact-entry > div {
   display: grid;
   gap: 5px;
 }
-.ogc-contact-list span {
+
+.ogc-contact-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  place-items: center;
+  border: 1px solid rgb(59 187 199 / 0.24);
+  border-radius: 50%;
+  background: rgb(59 187 199 / 0.1);
+  color: var(--ogc-accent);
+  font-size: 0.9rem;
+}
+
+.ogc-contact-entry > div > span {
   color: var(--ogc-accent);
   font-size: 0.7rem;
   font-weight: 700;
@@ -989,9 +1226,24 @@
   backdrop-filter: blur(20px);
 }
 
+.ogc-contact-details .ogc-contact-grid h2 {
+  font-size: clamp(1.7rem, 2.5vw, 2.35rem);
+}
+
 .ogc-inquiry-form {
   position: relative;
 }
+
+.ogc-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ogc-field-group {
+  position: relative;
+}
+
 .ogc-form-label {
   color: rgb(255 255 255 / 0.62);
   font-size: 0.72rem;
@@ -1000,12 +1252,52 @@
   text-transform: uppercase;
 }
 
+.ogc-form-field {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 0.045);
+  padding: 13px 15px;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.ogc-form-field::placeholder {
+  color: rgb(255 255 255 / 0.4);
+}
+
+textarea.ogc-form-field {
+  min-height: 120px;
+}
+
 .ogc-form-field option {
   background: var(--ogc-dark-2);
   color: #fff;
 }
 .ogc-form-field:focus {
-  box-shadow: 0 2px 0 var(--ogc-accent);
+  border-color: var(--ogc-accent);
+  background: rgb(255 255 255 / 0.07);
+  box-shadow: 0 0 0 3px rgb(59 187 199 / 0.12);
+  outline: 0;
+}
+
+.ogc-form-submit-wide {
+  width: 100%;
+  margin-block-start: 8px;
+  background: var(--ogc-accent);
+  color: var(--ogc-dark-3);
+  text-transform: uppercase;
+}
+
+.ogc-inquiry-form > .ogc-button:not(.ogc-form-submit-wide) {
+  width: fit-content;
+  justify-self: start;
 }
 
 .ogc-generic-content {
@@ -1104,7 +1396,7 @@
 
 .ogc-footer-bottom {
   padding-block-start: 28px;
-  color: rgb(255 255 255 / 0.4);
+  color: rgb(255 255 255 / 0.52);
   font-size: 0.75rem;
 }
 
@@ -1168,6 +1460,42 @@
   border-block-start-color: var(--ogc-accent);
   border-radius: 50%;
   animation: ogc-spin 900ms linear infinite;
+}
+
+.ogc-navigation-progress {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 100;
+  height: 3px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+
+.ogc-navigation-progress > [aria-hidden] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--ogc-accent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--ogc-accent) 70%, transparent);
+  transform: scaleX(0.08);
+  transform-origin: inline-start;
+}
+
+.ogc-navigation-progress.is-active {
+  opacity: 1;
+}
+
+.ogc-navigation-progress.is-active > [aria-hidden] {
+  animation: ogc-navigation-progress 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes ogc-navigation-progress {
+  to {
+    transform: scaleX(0.92);
+  }
 }
 
 @keyframes ogc-spin {
@@ -1269,18 +1597,45 @@
     background: rgb(59 187 199 / 0.1);
     color: #fff;
   }
-  .ogc-split,
-  .ogc-prose-grid,
-  .ogc-team-profile,
-  .ogc-contact-grid,
-  .ogc-timeline-layout {
-    grid-template-columns: 1fr;
-  }
   .ogc-member-profile {
     grid-template-columns: minmax(190px, 0.7fr) 1.3fr;
   }
   .ogc-logo-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .ogc-home-committee .ogc-people-grid,
+  .ogc-home-philosophies .ogc-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ogc-home-partners .ogc-logo-grid,
+  .ogc-section-about-dna .ogc-pill-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .ogc-section-about-values .ogc-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .ogc-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 860px) {
+  .ogc-section {
+    padding-block: 80px;
+  }
+  .ogc-split,
+  .ogc-prose-grid,
+  .ogc-team-profile,
+  .ogc-timeline-layout {
+    grid-template-columns: 1fr;
+  }
+  .ogc-page-hero {
+    min-height: 600px;
+    padding-block: 160px 90px;
   }
   .ogc-footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1313,6 +1668,19 @@
   .ogc-pill-grid {
     grid-template-columns: 1fr;
   }
+  .ogc-home-committee .ogc-people-grid,
+  .ogc-home-philosophies .ogc-card-grid,
+  .ogc-section-about-vision .ogc-card-grid,
+  .ogc-section-about-values .ogc-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .ogc-section-about-vision .ogc-number-card:last-child {
+    grid-column: auto;
+  }
+  .ogc-section-about-dna .ogc-pill-grid,
+  .ogc-home-partners .ogc-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .ogc-logo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
@@ -1320,14 +1688,20 @@
   .ogc-member-profile {
     grid-template-columns: 1fr;
   }
-  .ogc-member-profile:nth-child(even) .ogc-member-visual {
-    order: 0;
-  }
-  .ogc-footer-grid {
-    grid-template-columns: 1fr;
-  }
   .ogc-scroll-cue {
     display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .ogc-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .ogc-footer-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -70,6 +70,7 @@ export function ContactInquiryForm({
   });
 
   async function submit(values: ContactFormValues) {
+    setSubmissionState("idle");
     try {
       const response = await fetch("/api/contact-inquiries", {
         method: "POST",
@@ -93,90 +94,111 @@ export function ContactInquiryForm({
     }
   }
 
-  const fieldClassName =
-    "ogc-form-field w-full border-b border-current/30 bg-transparent px-0 py-3 text-base transition-[border-color] focus:border-current";
+  const fieldClassName = "ogc-form-field";
+
+  const fullNameField = (
+    <FormFieldError id="full-name-error" message={errors.fullName?.message}>
+      <label htmlFor={`${source}-full-name`} className="ogc-form-label">
+        {labels.fullName}
+      </label>
+      <input
+        {...register("fullName")}
+        id={`${source}-full-name`}
+        autoComplete="name"
+        placeholder={labels.placeholders?.fullName}
+        maxLength={120}
+        required
+        aria-invalid={Boolean(errors.fullName)}
+        aria-describedby={errors.fullName ? "full-name-error" : undefined}
+        className={fieldClassName}
+      />
+    </FormFieldError>
+  );
+
+  const organizationField = (
+    <FormFieldError id="organization-error" message={errors.organization?.message}>
+      <label htmlFor="home-organization" className="ogc-form-label">
+        {labels.organization}
+      </label>
+      <input
+        {...register("organization")}
+        id="home-organization"
+        autoComplete="organization"
+        placeholder={labels.placeholders?.organization}
+        maxLength={160}
+        aria-invalid={Boolean(errors.organization)}
+        aria-describedby={errors.organization ? "organization-error" : undefined}
+        className={fieldClassName}
+      />
+    </FormFieldError>
+  );
+
+  const emailField = (
+    <FormFieldError id="email-error" message={errors.email?.message}>
+      <label htmlFor={`${source}-email`} className="ogc-form-label">
+        {labels.email}
+      </label>
+      <input
+        {...register("email")}
+        id={`${source}-email`}
+        type="email"
+        inputMode="email"
+        autoComplete="email"
+        spellCheck={false}
+        placeholder={labels.placeholders?.email}
+        maxLength={254}
+        required
+        aria-invalid={Boolean(errors.email)}
+        aria-describedby={errors.email ? "email-error" : undefined}
+        className={fieldClassName}
+      />
+    </FormFieldError>
+  );
+
+  const topicField = (
+    <FormFieldError id="topic-error" message={errors.topic?.message}>
+      <label htmlFor="home-topic" className="ogc-form-label">
+        {labels.topic}
+      </label>
+      <select
+        {...register("topic")}
+        id="home-topic"
+        required
+        aria-invalid={Boolean(errors.topic)}
+        aria-describedby={errors.topic ? "topic-error" : undefined}
+        className={fieldClassName}
+        defaultValue=""
+      >
+        <option value="" disabled>
+          {labels.topic}
+        </option>
+        {CONTACT_TOPICS.map((topic) => (
+          <option key={topic} value={topic}>
+            {labels.topics[topic]}
+          </option>
+        ))}
+      </select>
+    </FormFieldError>
+  );
 
   return (
     <form className="ogc-inquiry-form grid gap-6" onSubmit={handleSubmit(submit)} noValidate>
-      <FormFieldError id="full-name-error" message={errors.fullName?.message}>
-        <label htmlFor={`${source}-full-name`} className="ogc-form-label">
-          {labels.fullName}
-        </label>
-        <input
-          {...register("fullName")}
-          id={`${source}-full-name`}
-          autoComplete="name"
-          placeholder={labels.placeholders?.fullName}
-          maxLength={120}
-          required
-          aria-invalid={Boolean(errors.fullName)}
-          aria-describedby={errors.fullName ? "full-name-error" : undefined}
-          className={fieldClassName}
-        />
-      </FormFieldError>
-
-      {source === "home" && (
-        <FormFieldError id="organization-error" message={errors.organization?.message}>
-          <label htmlFor="home-organization" className="ogc-form-label">
-            {labels.organization}
-          </label>
-          <input
-            {...register("organization")}
-            id="home-organization"
-            autoComplete="organization"
-            placeholder={labels.placeholders?.organization}
-            maxLength={160}
-            aria-invalid={Boolean(errors.organization)}
-            aria-describedby={errors.organization ? "organization-error" : undefined}
-            className={fieldClassName}
-          />
-        </FormFieldError>
-      )}
-
-      <FormFieldError id="email-error" message={errors.email?.message}>
-        <label htmlFor={`${source}-email`} className="ogc-form-label">
-          {labels.email}
-        </label>
-        <input
-          {...register("email")}
-          id={`${source}-email`}
-          type="email"
-          inputMode="email"
-          autoComplete="email"
-          spellCheck={false}
-          placeholder={labels.placeholders?.email}
-          maxLength={254}
-          required
-          aria-invalid={Boolean(errors.email)}
-          aria-describedby={errors.email ? "email-error" : undefined}
-          className={fieldClassName}
-        />
-      </FormFieldError>
-
-      {source === "home" && (
-        <FormFieldError id="topic-error" message={errors.topic?.message}>
-          <label htmlFor="home-topic" className="ogc-form-label">
-            {labels.topic}
-          </label>
-          <select
-            {...register("topic")}
-            id="home-topic"
-            required
-            aria-invalid={Boolean(errors.topic)}
-            aria-describedby={errors.topic ? "topic-error" : undefined}
-            className={fieldClassName}
-            defaultValue=""
-          >
-            <option value="" disabled>
-              {labels.topic}
-            </option>
-            {CONTACT_TOPICS.map((topic) => (
-              <option key={topic} value={topic}>
-                {labels.topics[topic]}
-              </option>
-            ))}
-          </select>
-        </FormFieldError>
+      {source === "home" ? (
+        <>
+          <div className="ogc-form-row">
+            {fullNameField}
+            {organizationField}
+          </div>
+          <div className="ogc-form-row">
+            {emailField}
+            {topicField}
+          </div>
+        </>
+      ) : (
+        <>
+          {fullNameField}
+          {emailField}
+        </>
       )}
 
       <FormFieldError id="message-error" message={errors.message?.message}>
@@ -210,7 +232,9 @@ export function ContactInquiryForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="ogc-button ogc-button-primary min-h-12 justify-center disabled:cursor-wait disabled:opacity-60"
+        className={`ogc-button ogc-button-primary min-h-12 justify-center disabled:cursor-wait disabled:opacity-60${
+          source === "home" ? " ogc-form-submit-wide" : ""
+        }`}
       >
         {isSubmitting ? labels.submitting : labels.submit}
       </button>
@@ -238,7 +262,7 @@ function FormFieldError({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid gap-1">
+    <div className="ogc-field-group grid gap-1">
       {children}
       {message && (
         <p id={id} className="text-sm text-red-300">

@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { getPublicCmsNavigation, getPublicPlatformSettings } from "@/features/public/cms/api";
 import { PublicHeader } from "@/features/public/cms/PublicHeader";
 import { OthaimMotionEnhancer } from "@/features/public/cms/OthaimMotionEnhancer";
+import { PublicNavigationProgress } from "@/features/public/cms/PublicNavigationProgress";
 import { buildOthaimNavigation } from "@/features/public/cms/public-navigation";
 import type { PublicCmsPageSummary, PublicPlatformSettings } from "@/features/public/cms/types";
 import { getLocalizedCmsPagePath } from "@/lib/cms-link";
@@ -24,13 +25,16 @@ export async function PublicShell({
     getPublicPlatformSettings().catch(() => ({}) as PublicPlatformSettings),
   ]);
   const t = await getTranslations({ locale, namespace: "publicCms" });
-  const navigation = buildOthaimNavigation(pages, locale);
+  const headerNavigation = buildOthaimNavigation(pages, locale, { placement: "header" });
+  const footerNavigation = buildOthaimNavigation(pages, locale, { placement: "footer" });
   const displayName = localizedSetting(settings.nameAr, settings.nameEn, locale) || "Othaim Global";
   const displayBio = resolvePublicFooterBio(
     localizedSetting(settings.bioAr, settings.bioEn, locale),
     footerStatement
   );
   const address = localizedSetting(settings.addressAr, settings.addressEn, locale);
+  const logoUrl = settings.logoUrl?.trim() || "/branding/logo-dark.svg";
+  const holdingUrl = resolveHoldingUrl(settings.socialLinks?.holding);
 
   return (
     <div className="ogc-public min-h-screen">
@@ -39,7 +43,9 @@ export async function PublicShell({
       </a>
       <PublicHeader
         locale={locale}
-        navigation={navigation}
+        navigation={headerNavigation}
+        logoUrl={logoUrl}
+        logoAlt={displayName}
         labels={{
           home: t("brandHomeAria"),
           mainNavigation: t("mainNavigation"),
@@ -49,6 +55,7 @@ export async function PublicShell({
           management: t("navigation.management"),
         }}
       />
+      <PublicNavigationProgress label={t("loadingContent")} />
       <OthaimMotionEnhancer />
 
       {children}
@@ -58,7 +65,7 @@ export async function PublicShell({
           <div className="ogc-footer-grid">
             <div>
               <Image
-                src="/branding/logo-dark.svg"
+                src={logoUrl}
                 alt={displayName}
                 width={218}
                 height={100}
@@ -68,22 +75,22 @@ export async function PublicShell({
             </div>
             <FooterGroup
               label={t("navigation.whoWeAre")}
-              items={navigation.whoWeAre}
+              items={footerNavigation.whoWeAre}
               locale={locale}
             />
             <FooterGroup
               label={t("navigation.management")}
-              items={navigation.management}
+              items={footerNavigation.management}
               locale={locale}
             />
             <div>
               <h2>{t("navigation.business")}</h2>
-              {navigation.business.map((item) => (
+              {footerNavigation.business.map((item) => (
                 <Link key={item.id} href={item.href} locale={locale}>
                   {item.label}
                 </Link>
               ))}
-              <a href="https://othaim.com.sa/" target="_blank" rel="noopener noreferrer">
+              <a href={holdingUrl} target="_blank" rel="noopener noreferrer">
                 {t("navigation.holding")} <span aria-hidden>↗</span>
               </a>
             </div>
@@ -95,7 +102,13 @@ export async function PublicShell({
           </div>
         </div>
       </footer>
-      <OrganizationJsonLd settings={settings} displayName={displayName} address={address} />
+      <OrganizationJsonLd
+        settings={settings}
+        displayName={displayName}
+        address={address}
+        logoUrl={logoUrl}
+        holdingUrl={holdingUrl}
+      />
     </div>
   );
 }
@@ -125,26 +138,39 @@ function OrganizationJsonLd({
   settings,
   displayName,
   address,
+  logoUrl,
+  holdingUrl,
 }: {
   settings: PublicPlatformSettings;
   displayName: string;
   address: string;
+  logoUrl: string;
+  holdingUrl: string;
 }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
   if (!siteUrl) return null;
-  const sameAs = Object.values(settings.socialLinks ?? {}).filter((url) =>
-    /^https?:\/\//.test(url)
+  const sameAs = Object.entries(settings.socialLinks ?? {}).flatMap(([key, url]) =>
+    key !== "holding" && /^https?:\/\//.test(url) ? [url] : []
+  );
+  const alternateNames = [settings.nameAr?.trim(), settings.nameEn?.trim()].filter(
+    (name): name is string => Boolean(name && name !== displayName)
   );
   const data = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: displayName,
+    alternateName: alternateNames.length ? alternateNames : undefined,
     url: siteUrl,
-    logo: new URL("/branding/logo-dark.svg", siteUrl).toString(),
+    logo: new URL(logoUrl, siteUrl).toString(),
     email: settings.email || undefined,
     telephone: settings.phone || undefined,
     address: address || undefined,
-    sameAs: sameAs.length ? sameAs : ["https://othaim.com.sa/"],
+    sameAs: sameAs.length ? sameAs : undefined,
+    parentOrganization: {
+      "@type": "Organization",
+      name: "Al Othaim Holding",
+      url: holdingUrl,
+    },
   };
   return (
     <script
@@ -152,6 +178,11 @@ function OrganizationJsonLd({
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }}
     />
   );
+}
+
+function resolveHoldingUrl(value: string | null | undefined) {
+  const candidate = value?.trim();
+  return candidate && /^https?:\/\//.test(candidate) ? candidate : "https://othaim.com.sa/";
 }
 
 function localizedSetting(

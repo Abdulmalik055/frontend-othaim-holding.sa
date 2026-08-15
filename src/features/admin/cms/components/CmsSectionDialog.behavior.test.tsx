@@ -10,6 +10,7 @@ const testState = vi.hoisted(() => ({
   update: vi.fn(),
   editorProps: null as null | {
     uploadToken?: string;
+    pageSlug?: string;
     onUploadingChange?: (isUploading: boolean) => void;
   },
 }));
@@ -213,5 +214,28 @@ describe("CmsSectionDialog editor session", () => {
     });
 
     expect((await screen.findByRole("alert")).textContent).toBe("mediaConcurrencyConflict");
+  });
+
+  it("hides section deletion for an exact seeded page-section pair", () => {
+    render(
+      <CmsSectionDialog
+        mode="edit"
+        pageId="about-id"
+        pageSlug="about"
+        section={{
+          id: "about-hero-id",
+          slug: "about-hero",
+          titleAr: "من نحن",
+          titleEn: "About hero",
+          order: 1,
+          isActive: true,
+        }}
+        canDelete
+        onClose={vi.fn()}
+      />
+    );
+
+    expect(screen.queryByRole("button", { name: "delete" })).toBeNull();
+    expect(testState.editorProps?.pageSlug).toBe("about");
   });
 });

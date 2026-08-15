@@ -75,6 +75,12 @@ const regularPage = {
   template: "default",
 } as CmsPage;
 
+const protectedAboutPage = {
+  ...regularPage,
+  slug: "about",
+  template: "about",
+} as CmsPage;
+
 describe("CmsPageDialog homepage behavior", () => {
   beforeEach(() => {
     testState.create.mockReset();
@@ -325,6 +331,23 @@ describe("CmsPageDialog homepage behavior", () => {
     expect(category.getAttribute("aria-disabled")).toBe("true");
     expect(template.getAttribute("aria-disabled")).toBe("true");
     expect(screen.getByRole("checkbox", { name: "isActive" })).toHaveProperty("disabled", true);
+  });
+
+  it("locks every seeded client page classification and hides destructive deletion", () => {
+    const editDialog = render(
+      <CmsPageDialog mode="edit" page={protectedAboutPage} onClose={vi.fn()} />
+    );
+    const [category, template] = screen.getAllByRole("combobox");
+
+    expect(screen.getByLabelText("slug")).toHaveProperty("readOnly", true);
+    expect(category.getAttribute("aria-disabled")).toBe("true");
+    expect(template.getAttribute("aria-disabled")).toBe("true");
+    expect(screen.getByRole("checkbox", { name: "isActive" })).toHaveProperty("disabled", false);
+
+    editDialog.unmount();
+    render(<CmsPageDialog mode="view" page={protectedAboutPage} onClose={vi.fn()} />);
+    expect(screen.queryByRole("button", { name: "delete" })).toBeNull();
+    expect(screen.getByText("/about")).toBeDefined();
   });
 
   it("clears and unlocks the protected slug when changing back to a regular template", async () => {

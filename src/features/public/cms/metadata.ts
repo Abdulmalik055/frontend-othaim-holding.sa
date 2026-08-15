@@ -12,6 +12,11 @@ export function createCmsMetadata(page: PublicCmsPage, locale: AppLocale): Metad
     : (nextLocale: AppLocale) => getPublicPageRoute(nextLocale, page.slug, page.category);
   const title = locale === "ar" ? page.seoTitleAr || page.titleAr : page.seoTitleEn || page.titleEn;
   const description = getCmsDescription(page, locale);
+  const seoImage = page.seoImageAssetId ? page.assetsById[page.seoImageAssetId] : undefined;
+  const seoImageUrl =
+    seoImage?.type === "image" && typeof seoImage.url === "string" && seoImage.url
+      ? new URL(seoImage.url, siteUrl).toString()
+      : undefined;
 
   return {
     title: { absolute: title },
@@ -32,11 +37,13 @@ export function createCmsMetadata(page: PublicCmsPage, locale: AppLocale): Metad
       locale: locale === "ar" ? "ar_SA" : "en_US",
       alternateLocale: locale === "ar" ? ["en_US"] : ["ar_SA"],
       type: "website",
+      ...(seoImageUrl ? { images: [seoImageUrl] } : {}),
     },
     twitter: {
-      card: "summary",
+      card: seoImageUrl ? "summary_large_image" : "summary",
       title,
       description,
+      ...(seoImageUrl ? { images: [seoImageUrl] } : {}),
     },
   };
 }

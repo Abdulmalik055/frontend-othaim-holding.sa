@@ -60,4 +60,23 @@ describe("Othaim public navigation", () => {
     expect(navigation.management).toEqual([]);
     expect(navigation.business).toEqual([]);
   });
+
+  it("uses CMS-owned placement labels for Contact while preserving title fallbacks", () => {
+    const contactPage = {
+      ...page("contact", "تواصل", "Contact"),
+      headerNavigationLabelAr: "تواصل",
+      headerNavigationLabelEn: "Contacts",
+      footerNavigationLabelAr: "تواصل",
+      footerNavigationLabelEn: "Contact",
+    };
+
+    const header = buildOthaimNavigation([contactPage], "en", { placement: "header" });
+    const footer = buildOthaimNavigation([contactPage], "en", { placement: "footer" });
+
+    expect(header.business[0]?.label).toBe("Contacts");
+    expect(footer.business[0]?.label).toBe("Contact");
+    expect(
+      buildOthaimNavigation([page("contact", "تواصل", "Title fallback")], "en").business[0]?.label
+    ).toBe("Title fallback");
+  });
 });

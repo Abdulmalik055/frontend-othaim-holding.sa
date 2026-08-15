@@ -49,7 +49,12 @@ export type PublicCmsPageSummary = Pick<
   | "navigationOrder"
   | "isIndexable"
   | "updatedAt"
->;
+> & {
+  headerNavigationLabelAr?: string | null;
+  headerNavigationLabelEn?: string | null;
+  footerNavigationLabelAr?: string | null;
+  footerNavigationLabelEn?: string | null;
+};
 
 export type PublicPlatformSettings = PlatformBrand & {
   email?: string | null;

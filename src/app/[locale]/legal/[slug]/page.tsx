@@ -11,37 +11,33 @@ import { createCmsPageRendererLabels } from "@/features/public/cms/labels";
 import { PublicUnavailable } from "@/features/public/cms/PublicUnavailable";
 
 type Props = {
-  params: Promise<{ locale: string; category: string; slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 };
 
 async function resolveParams(params: Props["params"]) {
   const value = await params;
-  if (
-    !routing.locales.includes(value.locale as AppLocale) ||
-    value.category !== "legal" ||
-    value.slug === "home"
-  ) {
+  if (!routing.locales.includes(value.locale as AppLocale) || value.slug === "home") {
     notFound();
   }
-  return value as { locale: AppLocale; category: "legal"; slug: string };
+  return value as { locale: AppLocale; slug: string };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, category, slug } = await resolveParams(params);
+  const { locale, slug } = await resolveParams(params);
   try {
-    return createCmsMetadata(await getPublicCmsPage(category, slug), locale);
+    return createCmsMetadata(await getPublicCmsPage("legal", slug), locale);
   } catch {
     const t = await getTranslations({ locale, namespace: "publicCms" });
     return { title: t("notFoundMetadata") };
   }
 }
 
-export default async function PublicCmsPageRoute({ params }: Props) {
-  const { locale, category, slug } = await resolveParams(params);
+export default async function PublicLegalPage({ params }: Props) {
+  const { locale, slug } = await resolveParams(params);
   const t = await getTranslations({ locale, namespace: "publicCms" });
   let page;
   try {
-    page = await getPublicCmsPage(category, slug);
+    page = await getPublicCmsPage("legal", slug);
   } catch (error) {
     if (error instanceof PublicCmsRequestError && error.status === 404) notFound();
     return (

@@ -4,7 +4,11 @@ import type {
   CmsSectionItemType,
   CmsTextFormat,
 } from "@/features/cms/content-contract";
-import { isOthaimSectionSlug } from "@/features/public/cms/othaim-section-registry";
+import {
+  isOthaimSectionForPage,
+  isOthaimSectionSlug,
+  OTHAIM_PAGE_SECTION_SLUGS,
+} from "@/features/public/cms/othaim-section-registry";
 
 type RepeaterItemSpec = {
   key: string;
@@ -57,10 +61,7 @@ const repeaters: Record<string, RepeaterContract> = {
       text("name", "h2"),
       text("bodyPrimary"),
       text("bodySecondary"),
-      text("educationLabel"),
-      text("education"),
       text("initials"),
-      image("portrait"),
     ],
   },
   "portfolio-infrastructure": {
@@ -85,8 +86,13 @@ function image(key: string): RepeaterItemSpec {
   return { key, type: "image" };
 }
 
-export function isProtectedOthaimSection(slug: string | undefined): boolean {
-  return Boolean(slug && isOthaimSectionSlug(slug));
+export function isProtectedOthaimPageSlug(slug: string | undefined): boolean {
+  return Boolean(slug && Object.hasOwn(OTHAIM_PAGE_SECTION_SLUGS, slug));
+}
+
+export function isProtectedOthaimSection(slug: string | undefined, pageSlug?: string): boolean {
+  if (!slug) return false;
+  return pageSlug ? isOthaimSectionForPage(pageSlug, slug) : isOthaimSectionSlug(slug);
 }
 
 export function canAddOthaimRepeaterBlock(slug: string | undefined): boolean {

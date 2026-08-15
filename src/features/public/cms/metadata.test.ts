@@ -56,15 +56,11 @@ describe("CMS metadata fallbacks", () => {
     expect(getCmsDescription(page(), "en")).toBe("An introduction to the platform");
   });
 
-  it("publishes clean localized canonicals with Arabic x-default and no social image", () => {
+  it("publishes clean localized canonicals with Arabic x-default", () => {
     process.env.NEXT_PUBLIC_SITE_URL = "https://othaimglobal.com";
     const metadata = createCmsMetadata(
       page({
         seoTitleEn: "Othaim Global — About",
-        seoImageAssetId: "seo-image",
-        assetsById: {
-          "seo-image": { id: "seo-image", type: "image", url: "/uploads/seo.png" },
-        },
       }),
       "en"
     );
@@ -80,5 +76,26 @@ describe("CMS metadata fallbacks", () => {
     expect(metadata.title).toEqual({ absolute: "Othaim Global — About" });
     expect(metadata.openGraph).not.toHaveProperty("images");
     expect(metadata.twitter).not.toHaveProperty("images");
+  });
+
+  it("emits a social image only when the configured asset resolves", () => {
+    process.env.NEXT_PUBLIC_SITE_URL = "https://othaimglobal.com";
+    const metadata = createCmsMetadata(
+      page({
+        seoImageAssetId: "seo-image",
+        assetsById: {
+          "seo-image": { id: "seo-image", type: "image", url: "/uploads/seo.png" },
+        },
+      }),
+      "en"
+    );
+
+    expect(metadata.openGraph).toMatchObject({
+      images: ["https://othaimglobal.com/uploads/seo.png"],
+    });
+    expect(metadata.twitter).toMatchObject({
+      card: "summary_large_image",
+      images: ["https://othaimglobal.com/uploads/seo.png"],
+    });
   });
 });

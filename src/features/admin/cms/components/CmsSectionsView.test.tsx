@@ -120,4 +120,14 @@ describe("CmsSectionsView permissions and ordering", () => {
       expect((handle as HTMLButtonElement).disabled).toBe(true);
     }
   });
+
+  it("does not offer backend-rejected reordering for seeded client pages", () => {
+    testState.permissions = ["cms:edit"];
+
+    render(
+      <CmsSectionsView page={{ ...page, slug: "about" } as CmsPage} locale="en" onBack={vi.fn()} />
+    );
+
+    expect(screen.queryByRole("button", { name: /^reorderHandle/ })).toBeNull();
+  });
 });

@@ -27,6 +27,8 @@ import {
 } from "@/features/admin/cms/hooks/useCmsSectionMutate";
 import { canDeleteCmsMediaAsset } from "@/features/admin/cms/media-asset-deletion";
 import type { CmsMediaAsset } from "@/features/admin/cms/schemas/cms-section.schema";
+import { isProtectedOthaimPageSlug } from "@/features/admin/cms/othaim-editor-contract";
+import { getCmsPagePath } from "@/lib/cms-link";
 
 type DialogMode = "create" | "view" | "edit";
 type Props = {
@@ -72,6 +74,7 @@ export function CmsPageDialog({
   const [error, setError] = useState("");
   const [confirmDelete, setConfirmDelete] = useState(false);
   const isHomepage = Boolean(page?.template === "home" || page?.slug === "home");
+  const isProtectedOthaimPage = isProtectedOthaimPageSlug(page?.slug);
   const createMutation = useCmsPageCreate();
   const updateMutation = useCmsPageUpdate();
   const deleteMutation = useCmsPageDelete();
@@ -85,7 +88,7 @@ export function CmsPageDialog({
   const template = useWatch({ control: form.control, name: "template" });
   const isActive = useWatch({ control: form.control, name: "isActive" });
   const isCreatingHomepage = mode === "create" && template === "home";
-  const homepageClassificationLocked = isHomepage || isCreatingHomepage;
+  const pageClassificationLocked = isProtectedOthaimPage || isCreatingHomepage;
   useUnsavedChanges(mode !== "view" && form.formState.isDirty, t("unsavedWarning"));
 
   function guardedClose() {
@@ -128,7 +131,7 @@ export function CmsPageDialog({
     mode === "view" ? (
       <>
         <div>
-          {canDelete && !isHomepage && !confirmDelete && (
+          {canDelete && !isProtectedOthaimPage && !confirmDelete && (
             <button
               className="inline-flex h-10 items-center gap-2 rounded-lg border border-red-200 px-4 text-sm font-bold text-red-700"
               onClick={() => setConfirmDelete(true)}
@@ -196,7 +199,7 @@ export function CmsPageDialog({
             {page.titleEn}
           </p>
           <code dir="ltr" className="w-fit rounded bg-white px-2 py-1">
-            /{page.category}/{page.slug}
+            {getCmsPagePath(page)}
           </code>
           <p>
             {t("sections")}: {page.sectionsCount ?? page._count?.sections ?? 0}
@@ -246,7 +249,7 @@ export function CmsPageDialog({
                   label={t("slug")}
                   dir="ltr"
                   autoConvertMode="none"
-                  readOnly={homepageClassificationLocked}
+                  readOnly={pageClassificationLocked}
                   error={fieldState.error?.message}
                 />
               )}
@@ -254,12 +257,12 @@ export function CmsPageDialog({
             <div>
               <label className={labelClass}>{t("category")}</label>
               <select
-                className={`${selectClass} ${homepageClassificationLocked ? "pointer-events-none opacity-60" : ""}`}
-                aria-disabled={homepageClassificationLocked}
-                tabIndex={homepageClassificationLocked ? -1 : undefined}
+                className={`${selectClass} ${pageClassificationLocked ? "pointer-events-none opacity-60" : ""}`}
+                aria-disabled={pageClassificationLocked}
+                tabIndex={pageClassificationLocked ? -1 : undefined}
                 {...categoryField}
                 onChange={(event) => {
-                  if (homepageClassificationLocked) {
+                  if (pageClassificationLocked) {
                     event.currentTarget.value = "info";
                     return;
                   }
@@ -276,12 +279,12 @@ export function CmsPageDialog({
             <div>
               <label className={labelClass}>{t("template")}</label>
               <select
-                className={`${selectClass} ${isHomepage ? "pointer-events-none opacity-60" : ""}`}
-                aria-disabled={isHomepage}
-                tabIndex={isHomepage ? -1 : undefined}
+                className={`${selectClass} ${isProtectedOthaimPage ? "pointer-events-none opacity-60" : ""}`}
+                aria-disabled={isProtectedOthaimPage}
+                tabIndex={isProtectedOthaimPage ? -1 : undefined}
                 {...templateField}
                 onChange={(event) => {
-                  if (isHomepage) {
+                  if (isProtectedOthaimPage) {
                     event.currentTarget.value = page?.template ?? "home";
                     return;
                   }
@@ -317,7 +320,7 @@ export function CmsPageDialog({
               control={form.control}
               name="isActive"
               label={t("isActive")}
-              disabled={homepageClassificationLocked}
+              disabled={isHomepage || isCreatingHomepage}
             />
           </fieldset>
 

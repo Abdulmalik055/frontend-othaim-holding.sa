@@ -54,6 +54,7 @@ type AutoConvertMessages = Partial<Record<AutoConvertInvalidReason, string>>;
 
 type Props = {
   pageId: string;
+  pageSlug?: string;
   sectionId?: string;
   sectionSlug?: string;
   uploadToken: string;
@@ -264,6 +265,7 @@ function ItemTypeIcon({ type, className }: { type: CmsSectionItemType; className
 
 export function CmsSectionContentEditor({
   pageId,
+  pageSlug,
   sectionId,
   sectionSlug,
   uploadToken,
@@ -277,8 +279,8 @@ export function CmsSectionContentEditor({
   onUploadingChange,
 }: Props) {
   const sectionDialogTranslations = useTranslations("admin.cmsPage.sectionDialog");
-  const structureProtected = isProtectedOthaimSection(sectionSlug);
-  const hasRepeater = canAddOthaimRepeaterBlock(sectionSlug);
+  const structureProtected = isProtectedOthaimSection(sectionSlug, pageSlug);
+  const hasRepeater = structureProtected && canAddOthaimRepeaterBlock(sectionSlug);
   const [selectedBlockIndex, setSelectedBlockIndex] = useState(0);
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
   const [isAddItemMenuOpen, setIsAddItemMenuOpen] = useState(false);

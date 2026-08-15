@@ -67,36 +67,65 @@ const sectionRegistry = {
   "home-story": { kind: "story", tone: "light" },
   "home-founder": { kind: "profile-promo", tone: "dark" },
   "home-committee": { kind: "people-preview", tone: "teal" },
-  "home-team": { kind: "profile-promo", tone: "light" },
+  "home-team": { kind: "profile-promo", tone: "dark" },
   "home-inspiration": { kind: "quote", tone: "dark" },
   "home-philosophies": { kind: "numbered-cards", tone: "light" },
-  "home-partners": { kind: "logos", tone: "light" },
+  "home-partners": { kind: "logos", tone: "dark" },
   "home-contact": { kind: "home-contact", tone: "dark" },
   "about-hero": { kind: "page-hero", tone: "dark" },
   "about-mission": { kind: "quote", tone: "teal" },
   "about-dna": { kind: "numbered-names", tone: "dark" },
-  "about-vision": { kind: "numbered-cards", tone: "light" },
+  "about-vision": { kind: "numbered-cards", tone: "dark" },
   "about-values": { kind: "numbered-cards", tone: "dark" },
-  "about-csr": { kind: "prose", tone: "light" },
+  "about-csr": { kind: "prose", tone: "dark" },
   "family-hero": { kind: "page-hero", tone: "dark" },
-  "family-timeline": { kind: "timeline", tone: "light" },
+  "family-timeline": { kind: "timeline", tone: "dark" },
   "founder-hero": { kind: "founder-hero", tone: "dark" },
-  "founder-profile": { kind: "profile-body", tone: "light" },
+  "founder-profile": { kind: "profile-body", tone: "dark" },
   "founder-companies": { kind: "numbered-cards", tone: "dark" },
   "committee-hero": { kind: "page-hero", tone: "dark" },
-  "committee-members": { kind: "member-profiles", tone: "light" },
+  "committee-members": { kind: "member-profiles", tone: "dark" },
   "team-hero": { kind: "page-hero", tone: "dark" },
-  "team-profile": { kind: "team-profile", tone: "light" },
+  "team-profile": { kind: "team-profile", tone: "dark" },
   "portfolio-hero": { kind: "page-hero", tone: "dark" },
-  "portfolio-philosophy": { kind: "prose", tone: "light" },
+  "portfolio-philosophy": { kind: "prose", tone: "dark" },
   "portfolio-infrastructure": { kind: "logos", tone: "dark" },
-  "portfolio-partners": { kind: "logos", tone: "light" },
+  "portfolio-partners": { kind: "logos", tone: "dark" },
   "strategy-hero": { kind: "page-hero", tone: "dark" },
-  "strategy-pillars": { kind: "numbered-cards", tone: "light" },
+  "strategy-pillars": { kind: "numbered-cards", tone: "dark" },
   "strategy-closing": { kind: "cta", tone: "teal" },
   "contact-hero": { kind: "page-hero", tone: "dark" },
-  "contact-details": { kind: "contact", tone: "light" },
+  "contact-details": { kind: "contact", tone: "dark" },
 } satisfies Record<OthaimSectionSlug, OthaimSectionDefinition>;
+
+export const OTHAIM_PAGE_SECTION_SLUGS = {
+  home: [
+    "home-hero",
+    "home-story",
+    "home-founder",
+    "home-committee",
+    "home-team",
+    "home-inspiration",
+    "home-philosophies",
+    "home-partners",
+    "home-contact",
+  ],
+  about: ["about-hero", "about-mission", "about-dna", "about-vision", "about-values", "about-csr"],
+  family: ["family-hero", "family-timeline"],
+  founder: ["founder-hero", "founder-profile", "founder-companies"],
+  committee: ["committee-hero", "committee-members"],
+  team: ["team-hero", "team-profile"],
+  portfolio: [
+    "portfolio-hero",
+    "portfolio-philosophy",
+    "portfolio-infrastructure",
+    "portfolio-partners",
+  ],
+  strategy: ["strategy-hero", "strategy-pillars", "strategy-closing"],
+  contact: ["contact-hero", "contact-details"],
+} as const satisfies Record<string, readonly OthaimSectionSlug[]>;
+
+export type OthaimPageSlug = keyof typeof OTHAIM_PAGE_SECTION_SLUGS;
 
 const fallbackDefinition: OthaimSectionDefinition = {
   kind: "fallback",
@@ -109,4 +138,9 @@ export function getOthaimSectionDefinition(slug: string): OthaimSectionDefinitio
 
 export function isOthaimSectionSlug(slug: string): slug is OthaimSectionSlug {
   return Object.hasOwn(sectionRegistry, slug);
+}
+
+export function isOthaimSectionForPage(pageSlug: string, sectionSlug: string) {
+  const sectionSlugs = OTHAIM_PAGE_SECTION_SLUGS[pageSlug as OthaimPageSlug];
+  return Boolean(sectionSlugs?.some((slug) => slug === sectionSlug));
 }

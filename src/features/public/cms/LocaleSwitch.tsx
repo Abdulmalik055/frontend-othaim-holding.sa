@@ -24,7 +24,7 @@ export function LocaleSwitch({ locale }: { locale: AppLocale }) {
       className="text-xs font-bold uppercase tracking-[0.18em] transition-opacity hover:opacity-60"
       aria-label={nextLocale === "ar" ? t("languageArabic") : t("languageEnglish")}
     >
-      {nextLocale === "ar" ? t("languageArabic") : t("languageEnglish")}
+      {nextLocale === "ar" ? "عربي" : "EN"}
     </button>
   );
 }

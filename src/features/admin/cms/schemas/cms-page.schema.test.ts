@@ -104,6 +104,16 @@ describe("cmsPageSchema", () => {
       }).success
     ).toBe(false);
   });
+
+  it.each(["admin", "api", "auth", "legal"])("rejects the reserved info-page slug %s", (slug) => {
+    expect(
+      cmsPageSchema.safeParse({
+        ...validPage,
+        slug,
+        category: "info",
+      }).success
+    ).toBe(false);
+  });
 });
 
 const validPage = {

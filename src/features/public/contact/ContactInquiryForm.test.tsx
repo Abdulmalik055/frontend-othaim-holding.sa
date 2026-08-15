@@ -36,6 +36,22 @@ const labels = {
   },
 };
 
+function fillContactForm() {
+  fireEvent.change(screen.getByLabelText("Full name"), { target: { value: "Sara Othaim" } });
+  fireEvent.change(screen.getByLabelText("Email"), { target: { value: "sara@example.com" } });
+  fireEvent.change(screen.getByLabelText("Message"), {
+    target: { value: "I would like to discuss an opportunity with your team." },
+  });
+}
+
+function deferredResponse() {
+  let resolve!: (response: Response) => void;
+  const promise = new Promise<Response>((resolver) => {
+    resolve = resolver;
+  });
+  return { promise, resolve };
+}
+
 describe("ContactInquiryForm", () => {
   afterEach(() => vi.restoreAllMocks());
 
@@ -100,5 +116,108 @@ describe("ContactInquiryForm", () => {
     await waitFor(() => expect(document.activeElement).toBe(fullName));
     expect(screen.getByText("Enter your full name.").textContent).toBe("Enter your full name.");
     expect(fullName.getAttribute("aria-invalid")).toBe("true");
+  });
+
+  it("announces a generic server failure and retains fields for retry", async () => {
+    vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response(null, { status: 500 }));
+    render(<ContactInquiryForm source="contact" locale="en" labels={labels} />);
+    fillContactForm();
+
+    fireEvent.click(screen.getByRole("button", { name: "Send inquiry" }));
+
+    expect((await screen.findByRole("alert")).textContent).toContain(
+      "We could not send your inquiry."
+    );
+    expect((screen.getByLabelText("Full name") as HTMLInputElement).value).toBe("Sara Othaim");
+    expect((screen.getByLabelText("Message") as HTMLTextAreaElement).value).toContain(
+      "discuss an opportunity"
+    );
+  });
+
+  it("prevents a second submission while the first request is pending", async () => {
+    const deferred = deferredResponse();
+    const fetchMock = vi.spyOn(globalThis, "fetch").mockReturnValue(deferred.promise);
+    render(<ContactInquiryForm source="contact" locale="en" labels={labels} />);
+    fillContactForm();
+
+    fireEvent.click(screen.getByRole("button", { name: "Send inquiry" }));
+    const pendingButton = await screen.findByRole("button", { name: "Sending…" });
+    expect((pendingButton as HTMLButtonElement).disabled).toBe(true);
+    fireEvent.click(pendingButton);
+    expect(fetchMock).toHaveBeenCalledOnce();
+
+    deferred.resolve(new Response(JSON.stringify({ accepted: true }), { status: 201 }));
+    expect(await screen.findByRole("status")).toBeTruthy();
+  });
+
+  it("resets fields only after a successful retry", async () => {
+    vi.spyOn(globalThis, "fetch")
+      .mockResolvedValueOnce(new Response(null, { status: 500 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ accepted: true }), { status: 201 }));
+    render(<ContactInquiryForm source="contact" locale="en" labels={labels} />);
+    fillContactForm();
+
+    fireEvent.click(screen.getByRole("button", { name: "Send inquiry" }));
+    await screen.findByRole("alert");
+    expect((screen.getByLabelText("Full name") as HTMLInputElement).value).toBe("Sara Othaim");
+
+    fireEvent.click(screen.getByRole("button", { name: "Send inquiry" }));
+    await screen.findByRole("status");
+    expect((screen.getByLabelText("Full name") as HTMLInputElement).value).toBe("");
+    expect((screen.getByLabelText("Email") as HTMLInputElement).value).toBe("");
+    expect((screen.getByLabelText("Message") as HTMLTextAreaElement).value).toBe("");
+  });
+
+  it("clears and re-announces repeated identical success outcomes", async () => {
+    const deferred = deferredResponse();
+    vi.spyOn(globalThis, "fetch")
+      .mockResolvedValueOnce(new Response(JSON.stringify({ accepted: true }), { status: 201 }))
+      .mockReturnValueOnce(deferred.promise);
+    render(<ContactInquiryForm source="contact" locale="en" labels={labels} />);
+    fillContactForm();
+
+    fireEvent.click(screen.getByRole("button", { name: "Send inquiry" }));
+    await screen.findByRole("status");
+    fillContactForm();
+    fireEvent.click(screen.getByRole("button", { name: "Send inquiry" }));
+    await waitFor(() => expect(screen.queryByRole("status")).toBeNull());
+
+    deferred.resolve(new Response(JSON.stringify({ accepted: true }), { status: 201 }));
+    expect((await screen.findByRole("status")).textContent).toContain("Thank you");
+  });
+
+  it("clears and re-announces repeated identical error outcomes", async () => {
+    const deferred = deferredResponse();
+    vi.spyOn(globalThis, "fetch")
+      .mockResolvedValueOnce(new Response(null, { status: 500 }))
+      .mockReturnValueOnce(deferred.promise);
+    render(<ContactInquiryForm source="contact" locale="en" labels={labels} />);
+    fillContactForm();
+
+    fireEvent.click(screen.getByRole("button", { name: "Send inquiry" }));
+    await screen.findByRole("alert");
+    fireEvent.click(screen.getByRole("button", { name: "Send inquiry" }));
+    await waitFor(() => expect(screen.queryByRole("alert")).toBeNull());
+
+    deferred.resolve(new Response(null, { status: 500 }));
+    expect((await screen.findByRole("alert")).textContent).toContain("could not send");
+  });
+
+  it("uses the source two-row boxed layout at Home and an auto-width submit on Contact", () => {
+    const { container, rerender } = render(
+      <ContactInquiryForm source="home" locale="en" labels={labels} />
+    );
+
+    expect(container.querySelectorAll(".ogc-form-row")).toHaveLength(2);
+    expect(container.querySelectorAll(".ogc-form-field")).toHaveLength(5);
+    expect(screen.getByRole("button", { name: "Send inquiry" }).className).toContain(
+      "ogc-form-submit-wide"
+    );
+
+    rerender(<ContactInquiryForm source="contact" locale="en" labels={labels} />);
+    expect(container.querySelectorAll(".ogc-form-row")).toHaveLength(0);
+    expect(screen.getByRole("button", { name: "Send inquiry" }).className).not.toContain(
+      "ogc-form-submit-wide"
+    );
   });
 });

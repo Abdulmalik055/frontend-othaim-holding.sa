@@ -164,6 +164,14 @@ describe("middleware — locale detection", () => {
     expect(res?.status).toBe(307);
     expect(res?.headers.get("location")).toBe("http://localhost:3000/en/about");
   });
+
+  it("resolves the source root index directly to the negotiated locale", async () => {
+    const req = makeRequest("/index.html", {}, { ...DOCUMENT_HEADERS, "accept-language": "en-US" });
+    const res = await proxy(req);
+
+    expect(res?.status).toBe(307);
+    expect(res?.headers.get("location")).toBe("http://localhost:3000/en");
+  });
 });
 
 describe("middleware — legacy public URLs", () => {
@@ -177,9 +185,30 @@ describe("middleware — legacy public URLs", () => {
     expect(res?.status).toBe(308);
     expect(res?.headers.get("location")).toBe(`http://localhost:3000${to}`);
   });
+
+  it("permanently redirects arbitrary localized info pages to clean routes", async () => {
+    const res = await proxy(makeRequest("/en/info/investment-profile", {}, DOCUMENT_HEADERS));
+
+    expect(res?.status).toBe(308);
+    expect(res?.headers.get("location")).toBe("http://localhost:3000/en/investment-profile");
+  });
+
+  it("does not rewrite a reserved application route through the info namespace", async () => {
+    const res = await proxy(makeRequest("/en/info/admin", {}, DOCUMENT_HEADERS));
+
+    expect(res?.status).toBe(200);
+    expect(res?.headers.get("location")).toBeNull();
+  });
 });
 
 describe("middleware — public routes", () => {
+  it.each(["/robots.txt", "/sitemap.xml"])("does not localize %s", async (pathname) => {
+    const res = await proxy(makeRequest(pathname));
+
+    expect(res?.status).toBe(200);
+    expect(res?.headers.get("location")).toBeNull();
+  });
+
   it("allows unauthenticated user to access public route", async () => {
     const req = makeRequest("/ar");
     const res = await proxy(req);

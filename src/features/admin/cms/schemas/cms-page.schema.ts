@@ -1,6 +1,8 @@
 import { z } from "zod";
 import { CMS_PAGE_CATEGORIES, CMS_PAGE_TEMPLATES } from "@/features/admin/cms/types";
 
+const RESERVED_PUBLIC_INFO_SLUGS = new Set(["admin", "api", "auth", "legal"]);
+
 export const cmsPageSchema = z
   .object({
     slug: z
@@ -21,6 +23,14 @@ export const cmsPageSchema = z
   })
   .superRefine((page, context) => {
     const isHomepage = page.slug === "home" || page.template === "home";
+
+    if (page.category === "info" && RESERVED_PUBLIC_INFO_SLUGS.has(page.slug)) {
+      context.addIssue({
+        code: "custom",
+        path: ["slug"],
+        message: "This slug is reserved by the application router",
+      });
+    }
 
     if (isHomepage) {
       if (page.slug !== "home") {

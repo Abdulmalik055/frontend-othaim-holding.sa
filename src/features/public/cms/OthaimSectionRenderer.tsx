@@ -132,7 +132,7 @@ function StorySection(props: SectionProps) {
   const { section, locale } = props;
   const { intro } = getBlocks(section.content);
   return (
-    <section id={section.slug} className="ogc-section ogc-section-dark">
+    <section id={section.slug} className="ogc-section ogc-section-dark ogc-home-story">
       <div className="ogc-container">
         <SectionHeading block={intro} locale={locale} />
         <div className="ogc-split ogc-reveal">
@@ -151,10 +151,27 @@ function StorySection(props: SectionProps) {
 function ProfilePromo(props: SectionProps) {
   const { section, locale } = props;
   const { intro } = getBlocks(section.content);
+
+  if (section.slug === "home-team") {
+    return (
+      <section id={section.slug} className="ogc-section ogc-section-dark ogc-pattern ogc-home-team">
+        <div className="ogc-container ogc-home-team-inner ogc-reveal">
+          <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
+          <h2>{getText(intro, "headline", locale)}</h2>
+          <CmsImage {...props} block={intro} itemKey="portrait" className="ogc-portrait" />
+          <p className="ogc-person-name">{getText(intro, "name", locale)}</p>
+          <p className="ogc-person-role">{getText(intro, "role", locale)}</p>
+          <Lead>{getText(intro, "summary", locale)}</Lead>
+          <CmsLink {...props} block={intro} itemKey="link" />
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       id={section.slug}
-      className={`ogc-section ogc-profile-promo ${section.slug === "home-team" ? "ogc-section-light" : "ogc-section-dark ogc-pattern"}`}
+      className="ogc-section ogc-section-dark ogc-pattern ogc-profile-promo ogc-home-founder"
     >
       <div className="ogc-container ogc-split ogc-reveal">
         <CmsImage {...props} block={intro} itemKey="portrait" className="ogc-portrait" />
@@ -179,7 +196,7 @@ function PeoplePreview(props: SectionProps) {
   const { section, locale } = props;
   const { intro, repeated } = getBlocks(section.content);
   return (
-    <section id={section.slug} className="ogc-section ogc-section-teal">
+    <section id={section.slug} className="ogc-section ogc-section-teal ogc-home-committee">
       <div className="ogc-container">
         <SectionHeading block={intro} locale={locale} />
         <div className="ogc-people-grid">
@@ -200,7 +217,16 @@ function PeoplePreview(props: SectionProps) {
 function QuoteSection({ section, locale }: SectionProps) {
   const { intro } = getBlocks(section.content);
   return (
-    <section id={section.slug} className="ogc-section ogc-section-teal ogc-quote-section">
+    <section
+      id={section.slug}
+      className={`ogc-section ogc-section-teal ogc-quote-section${
+        section.slug === "home-inspiration"
+          ? " ogc-home-inspiration"
+          : section.slug === "about-mission"
+            ? " ogc-about-mission"
+            : ""
+      }`}
+    >
       <div className="ogc-container ogc-reveal">
         <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
         {getText(intro, "headline", locale) && <h2>{getText(intro, "headline", locale)}</h2>}
@@ -213,7 +239,10 @@ function QuoteSection({ section, locale }: SectionProps) {
 function NumberedNames({ section, locale }: SectionProps) {
   const { intro, repeated } = getBlocks(section.content);
   return (
-    <section id={section.slug} className="ogc-section ogc-section-dark">
+    <section
+      id={section.slug}
+      className={`ogc-section ogc-section-dark ogc-section-${section.slug}`}
+    >
       <div className="ogc-container">
         <SectionHeading block={intro} locale={locale} />
         <div className="ogc-pill-grid">
@@ -234,7 +263,12 @@ function NumberedCards(props: SectionProps) {
   const { intro, repeated } = getBlocks(section.content);
   const tone = getOthaimSectionDefinition(section.slug).tone;
   return (
-    <section id={section.slug} className={`ogc-section ogc-section-${tone ?? "light"}`}>
+    <section
+      id={section.slug}
+      className={`ogc-section ogc-section-${tone ?? "light"} ogc-section-${section.slug}${
+        section.slug === "home-philosophies" ? " ogc-home-philosophies" : ""
+      }`}
+    >
       <div className="ogc-container">
         <SectionHeading block={intro} locale={locale} />
         <div className="ogc-card-grid">
@@ -257,7 +291,12 @@ function LogoGrid(props: SectionProps) {
   const { intro, repeated } = getBlocks(section.content);
   const tone = getOthaimSectionDefinition(section.slug).tone;
   return (
-    <section id={section.slug} className={`ogc-section ogc-section-${tone ?? "light"}`}>
+    <section
+      id={section.slug}
+      className={`ogc-section ogc-section-${tone ?? "light"} ogc-section-${section.slug}${
+        section.slug === "home-partners" ? " ogc-home-partners" : ""
+      }`}
+    >
       <div className="ogc-container">
         <SectionHeading block={intro} locale={locale} />
         <div className="ogc-logo-grid">
@@ -280,8 +319,12 @@ function LogoGrid(props: SectionProps) {
 
 function ProseSection({ section, locale }: SectionProps) {
   const { intro } = getBlocks(section.content);
+  const tone = getOthaimSectionDefinition(section.slug).tone;
   return (
-    <section id={section.slug} className="ogc-section ogc-section-light">
+    <section
+      id={section.slug}
+      className={`ogc-section ogc-section-${tone ?? "dark"} ogc-section-${section.slug}`}
+    >
       <div className="ogc-container ogc-prose-grid ogc-reveal">
         <div>
           <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
@@ -299,7 +342,10 @@ function ProseSection({ section, locale }: SectionProps) {
 function TimelineSection({ section, locale }: SectionProps) {
   const { intro, repeated } = getBlocks(section.content);
   return (
-    <section id={section.slug} className="ogc-section ogc-section-dark">
+    <section
+      id={section.slug}
+      className={`ogc-section ogc-section-dark ogc-section-${section.slug}`}
+    >
       <div className="ogc-container ogc-timeline-layout">
         <div className="ogc-reveal">
           <SectionHeading block={intro} locale={locale} />
@@ -323,7 +369,10 @@ function ProfileBody({ section, locale }: SectionProps) {
   const { intro } = getBlocks(section.content);
   const positions = getText(intro, "positions", locale)?.split("\n").filter(Boolean) ?? [];
   return (
-    <section id={section.slug} className="ogc-section ogc-section-light">
+    <section
+      id={section.slug}
+      className={`ogc-section ogc-section-dark ogc-section-${section.slug}`}
+    >
       <div className="ogc-container ogc-prose-grid ogc-reveal">
         <div>
           <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
@@ -334,8 +383,8 @@ function ProfileBody({ section, locale }: SectionProps) {
           <Lead>{getText(intro, "bodySecondary", locale)}</Lead>
           {positions.length > 0 && (
             <ul className="ogc-position-list">
-              {positions.map((position) => (
-                <li key={position}>{position}</li>
+              {positions.map((position, index) => (
+                <li key={`${index}-${position}`}>{position}</li>
               ))}
             </ul>
           )}
@@ -349,29 +398,34 @@ function MemberProfiles(props: SectionProps) {
   const { section, locale } = props;
   const repeated = section.content.blocks;
   return (
-    <section id={section.slug} className="ogc-section ogc-section-dark">
+    <section
+      id={section.slug}
+      className={`ogc-section ogc-section-dark ogc-section-${section.slug}`}
+    >
       <div className="ogc-container ogc-member-list">
         {repeated.map((block, index) => {
           const initials = getText(block, "initials", locale);
           const education = getText(block, "education", locale);
           return (
             <article key={blockKey(block, index)} className="ogc-member-profile ogc-reveal">
-              <div className="ogc-member-visual">
-                <CmsImage
-                  {...props}
-                  block={block}
-                  itemKey="portrait"
-                  className="ogc-member-photo"
-                />
-                {!getImage(block, "portrait") && initials && (
-                  <span className="ogc-initials" aria-hidden>
-                    {initials}
-                  </span>
-                )}
-              </div>
-              <div>
+              <div className="ogc-member-identity">
+                <div className="ogc-member-visual">
+                  <CmsImage
+                    {...props}
+                    block={block}
+                    itemKey="portrait"
+                    className="ogc-member-photo"
+                  />
+                  {!getImage(block, "portrait") && initials && (
+                    <span className="ogc-initials" aria-hidden>
+                      {initials}
+                    </span>
+                  )}
+                </div>
                 <p className="ogc-person-role">{getText(block, "role", locale)}</p>
                 <h2>{getText(block, "name", locale)}</h2>
+              </div>
+              <div className="ogc-member-copy">
                 <Lead>{getText(block, "bodyPrimary", locale)}</Lead>
                 <Lead>{getText(block, "bodySecondary", locale)}</Lead>
                 <Lead>{getText(block, "bodyTertiary", locale)}</Lead>
@@ -395,7 +449,10 @@ function TeamProfile(props: SectionProps) {
   const { intro } = getBlocks(section.content);
   const bodyKeys = ["bodyPrimary", "bodySecondary", "bodyTertiary", "bodyQuaternary"];
   return (
-    <section id={section.slug} className="ogc-section ogc-section-dark">
+    <section
+      id={section.slug}
+      className={`ogc-section ogc-section-dark ogc-section-${section.slug}`}
+    >
       <div className="ogc-container ogc-team-profile ogc-reveal">
         <div>
           <CmsImage {...props} block={intro} itemKey="portrait" className="ogc-portrait" />
@@ -446,7 +503,7 @@ function HomeContact(props: SectionProps) {
       <div className="ogc-container ogc-contact-grid">
         <div className="ogc-reveal">
           <SectionHeading block={intro} locale={locale} />
-          <ContactInformation block={intro} locale={locale} />
+          <ContactInformation block={intro} locale={locale} variant="home" />
         </div>
         <div className="ogc-form-card ogc-reveal">
           <ContactInquiryForm
@@ -464,14 +521,14 @@ function ContactDetails(props: SectionProps) {
   const { section, locale, labels } = props;
   const { intro } = getBlocks(section.content);
   return (
-    <section id={section.slug} className="ogc-section ogc-section-dark">
+    <section id={section.slug} className="ogc-section ogc-section-dark ogc-contact-details">
       <div className="ogc-container ogc-contact-grid">
         <div className="ogc-reveal">
           <Eyebrow>
             {getText(intro, "detailsEyebrow", locale) ?? getText(intro, "eyebrow", locale)}
           </Eyebrow>
           <h2>{getText(intro, "detailsHeadline", locale) ?? getText(intro, "headline", locale)}</h2>
-          <ContactInformation block={intro} locale={locale} />
+          <ContactInformation block={intro} locale={locale} variant="contact" />
         </div>
         <div className="ogc-form-card ogc-reveal">
           <Eyebrow>{getText(intro, "formEyebrow", locale)}</Eyebrow>
@@ -487,7 +544,15 @@ function ContactDetails(props: SectionProps) {
   );
 }
 
-function ContactInformation({ block, locale }: { block?: CmsSectionBlock; locale: AppLocale }) {
+function ContactInformation({
+  block,
+  locale,
+  variant,
+}: {
+  block?: CmsSectionBlock;
+  locale: AppLocale;
+  variant: "home" | "contact";
+}) {
   const email = getText(block, "email", locale);
   const emailLink = getLink(block, "emailLink")?.link.href;
   const emailLabel = getText(block, "emailLabel", locale);
@@ -506,33 +571,67 @@ function ContactInformation({ block, locale }: { block?: CmsSectionBlock; locale
       : []
   );
   const address = getText(block, "address", locale);
-  return (
-    <address className="ogc-contact-list">
-      {email && (
-        <div>
-          {emailLabel && <span>{emailLabel}</span>}
-          <a href={emailLink && isSafeCmsHref(emailLink) ? emailLink : `mailto:${email}`}>
-            {email}
-          </a>
-        </div>
-      )}
-      {phones.length > 0 && (
-        <div>
-          {phoneLabel && <span>{phoneLabel}</span>}
+  const entries = {
+    email: email ? (
+      <ContactEntry key="email" icon={variant === "home" ? "email" : undefined} label={emailLabel}>
+        <a href={emailLink && isSafeCmsHref(emailLink) ? emailLink : `mailto:${email}`}>{email}</a>
+      </ContactEntry>
+    ) : null,
+    phone:
+      phones.length > 0 ? (
+        <ContactEntry
+          key="phone"
+          icon={variant === "home" ? "phone" : undefined}
+          label={phoneLabel}
+        >
           {phones.map(({ number, href }) => (
             <a key={number} href={href} dir="ltr">
               {number}
             </a>
           ))}
-        </div>
-      )}
-      {address && (
-        <div>
-          {addressLabel && <span>{addressLabel}</span>}
-          <p>{address}</p>
-        </div>
-      )}
+        </ContactEntry>
+      ) : null,
+    address: address ? (
+      <ContactEntry
+        key="address"
+        icon={variant === "home" ? "address" : undefined}
+        label={addressLabel}
+      >
+        <p>{address}</p>
+      </ContactEntry>
+    ) : null,
+  };
+  const order =
+    variant === "contact" ? ["address", "phone", "email"] : ["email", "phone", "address"];
+
+  return (
+    <address className="ogc-contact-list">
+      {order.map((key) => entries[key as keyof typeof entries])}
     </address>
+  );
+}
+
+function ContactEntry({
+  icon,
+  label,
+  children,
+}: {
+  icon?: "email" | "phone" | "address";
+  label?: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="ogc-contact-entry">
+      {icon && (
+        <span className="ogc-contact-icon" aria-hidden>
+          {icon === "email" ? "✉" : icon === "phone" ? "☎" : "⌖"}
+        </span>
+      )}
+      <div>
+        {label && <span>{label}</span>}
+        {children}
+      </div>
+    </div>
   );
 }
 
@@ -603,8 +702,8 @@ function TextList({ value }: { value?: string }) {
   if (lines.length <= 1) return <p>{lines[0]}</p>;
   return (
     <ul>
-      {lines.map((line) => (
-        <li key={line}>{line}</li>
+      {lines.map((line, index) => (
+        <li key={`${index}-${line}`}>{line}</li>
       ))}
     </ul>
   );
@@ -627,6 +726,9 @@ function CmsImage({
   if (!item) return null;
   const asset = page.assetsById[item.image.desktopAssetId];
   if (!asset?.url) return null;
+  const mobileAsset = item.image.mobileAssetId
+    ? page.assetsById[item.image.mobileAssetId]
+    : undefined;
   const alt = item.image.decorative
     ? ""
     : locale === "ar"
@@ -634,14 +736,17 @@ function CmsImage({
       : (item.image.altEn ?? "");
   return (
     <div className={className}>
-      <Image
-        src={asset.url}
-        alt={alt}
-        width={asset.width ?? 1200}
-        height={asset.height ?? 900}
-        priority={priority}
-        sizes="(max-width: 860px) 100vw, 50vw"
-      />
+      <picture>
+        {mobileAsset?.url && <source media="(max-width: 680px)" srcSet={mobileAsset.url} />}
+        <Image
+          src={asset.url}
+          alt={alt}
+          width={asset.width ?? 1200}
+          height={asset.height ?? 900}
+          priority={priority}
+          sizes="(max-width: 860px) 100vw, 50vw"
+        />
+      </picture>
     </div>
   );
 }
@@ -655,7 +760,12 @@ function CmsLink({
   if (!item || !isSafeCmsHref(item.link.href)) return null;
   const label = locale === "ar" ? item.link.labelAr : item.link.labelEn;
   const href = localizePublicHref(item.link.href, locale);
-  const className = item.link.style === "text" ? "ogc-text-link" : "ogc-button";
+  const className =
+    item.link.style === "text"
+      ? "ogc-text-link"
+      : item.link.style === "secondary"
+        ? "ogc-button ogc-button-ghost"
+        : "ogc-button";
   const external = /^(https?:|mailto:|tel:)/.test(href);
   if (external) {
     return (
@@ -709,5 +819,5 @@ function GenericItem({ item, locale }: { item: CmsSectionItem; locale: AppLocale
 }
 
 function blockKey(block: CmsSectionBlock, index: number) {
-  return block.items[0]?.key ?? `block-${index}`;
+  return `block-${index}-${block.items[0]?.key ?? "empty"}`;
 }

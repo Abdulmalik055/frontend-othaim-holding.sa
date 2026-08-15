@@ -23,10 +23,14 @@ export function PublicHeader({
   locale,
   navigation,
   labels,
+  logoUrl = "/branding/logo-dark.svg",
+  logoAlt = "Othaim Global",
 }: {
   locale: AppLocale;
   navigation: OthaimNavigation;
   labels: PublicHeaderLabels;
+  logoUrl?: string;
+  logoAlt?: string;
 }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -84,13 +88,7 @@ export function PublicHeader({
     <header ref={headerRef} className={`ogc-header${scrolled ? " is-scrolled" : ""}`}>
       <div className="ogc-header-inner">
         <Link href="/" locale={locale} className="ogc-header-logo" aria-label={labels.home}>
-          <Image
-            src="/branding/logo-dark.svg"
-            alt="Othaim Global"
-            width={218}
-            height={100}
-            priority
-          />
+          <Image src={logoUrl} alt={logoAlt} width={218} height={100} priority />
         </Link>
 
         <nav className="ogc-desktop-nav" aria-label={labels.mainNavigation}>

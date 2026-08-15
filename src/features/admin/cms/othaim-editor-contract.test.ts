@@ -3,12 +3,19 @@ import {
   canAddOthaimRepeaterBlock,
   canRemoveOthaimBlock,
   createOthaimRepeaterBlock,
+  isProtectedOthaimPageSlug,
   isProtectedOthaimSection,
 } from "@/features/admin/cms/othaim-editor-contract";
 
 describe("Othaim admin structural contract", () => {
   it("locks all seeded sections while leaving unknown sections generic", () => {
+    expect(isProtectedOthaimPageSlug("home")).toBe(true);
+    expect(isProtectedOthaimPageSlug("contact")).toBe(true);
+    expect(isProtectedOthaimPageSlug("future-page")).toBe(false);
     expect(isProtectedOthaimSection("home-hero")).toBe(true);
+    expect(isProtectedOthaimSection("home-hero", "home")).toBe(true);
+    expect(isProtectedOthaimSection("home-hero", "about")).toBe(false);
+    expect(isProtectedOthaimSection("home-hero", "future-page")).toBe(false);
     expect(isProtectedOthaimSection("contact-details")).toBe(true);
     expect(isProtectedOthaimSection("future-generic-section")).toBe(false);
   });
@@ -38,6 +45,15 @@ describe("Othaim admin structural contract", () => {
       ["name", "text"],
       ["sector", "text"],
       ["logo", "image"],
+    ]);
+    expect(
+      createOthaimRepeaterBlock("committee-members")?.items.map(({ key, type }) => [key, type])
+    ).toEqual([
+      ["role", "text"],
+      ["name", "text"],
+      ["bodyPrimary", "text"],
+      ["bodySecondary", "text"],
+      ["initials", "text"],
     ]);
   });
 });

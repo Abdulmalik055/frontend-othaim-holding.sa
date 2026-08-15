@@ -13,6 +13,8 @@ const intlMiddleware = createMiddleware(routing);
 
 const protectedRoutes = ["/admin"];
 const PUBLIC_PAGE_SLUGS = "about|family|founder|committee|team|portfolio|strategy|contact";
+const CMS_SLUG_PATTERN = "[a-z0-9]+(?:-[a-z0-9]+)*";
+const RESERVED_INFO_ROUTE_SLUGS = new Set(["admin", "api", "auth", "legal"]);
 
 function parseLocaleAndPath(pathname: string): { locale: string; path: string } {
   const first = pathname.split("/").filter(Boolean)[0];
@@ -27,6 +29,11 @@ export async function proxy(request: NextRequest) {
 
   // Ignore browser/devtools probing paths to avoid unnecessary middleware work.
   if (path.startsWith("/.well-known/")) {
+    return NextResponse.next();
+  }
+
+  // Next metadata files are global routes and must never enter locale routing.
+  if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
     return NextResponse.next();
   }
 
@@ -46,9 +53,13 @@ export async function proxy(request: NextRequest) {
     const legacyHtmlMatch = pathname.match(
       new RegExp(`^/(ar|en)/(index|${PUBLIC_PAGE_SLUGS})\\.html/?$`)
     );
-    const legacyInfoMatch = pathname.match(
-      new RegExp(`^/(ar|en)/info/(home|${PUBLIC_PAGE_SLUGS})/?$`)
+    const legacyInfoCandidate = pathname.match(
+      new RegExp(`^/(ar|en)/info/(home|${CMS_SLUG_PATTERN})/?$`)
     );
+    const legacyInfoMatch =
+      legacyInfoCandidate && !RESERVED_INFO_ROUTE_SLUGS.has(legacyInfoCandidate[2])
+        ? legacyInfoCandidate
+        : null;
 
     if (legacyHtmlMatch || legacyInfoMatch) {
       const [, legacyLocale, legacySlug] = legacyHtmlMatch ?? legacyInfoMatch ?? [];
@@ -66,14 +77,20 @@ export async function proxy(request: NextRequest) {
         request.headers.get("accept-language")
       );
       const redirectUrl = request.nextUrl.clone();
-      const unlocalizedInfoMatch = pathname.match(
-        new RegExp(`^/info/(home|${PUBLIC_PAGE_SLUGS})/?$`)
+      const unlocalizedInfoCandidate = pathname.match(
+        new RegExp(`^/info/(home|${CMS_SLUG_PATTERN})/?$`)
       );
+      const unlocalizedInfoMatch =
+        unlocalizedInfoCandidate && !RESERVED_INFO_ROUTE_SLUGS.has(unlocalizedInfoCandidate[1])
+          ? unlocalizedInfoCandidate
+          : null;
       const requestedPath = unlocalizedInfoMatch
         ? unlocalizedInfoMatch[1] === "home"
           ? "/"
           : `/${unlocalizedInfoMatch[1]}`
-        : pathname;
+        : pathname === "/index.html"
+          ? "/"
+          : pathname;
       redirectUrl.pathname = buildLocalizedPath(requestedPath, requestLocale);
       return NextResponse.redirect(redirectUrl);
     }
@@ -98,6 +115,6 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next|api|uploads|[^?]*\\.(?:css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|pdf|webmanifest)).*)",
+    "/((?!_next|api|uploads|[^?]*\\.(?:css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|pdf|txt|xml|webmanifest)).*)",
   ],
 };

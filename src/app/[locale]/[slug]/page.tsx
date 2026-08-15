@@ -8,10 +8,7 @@ import { PublicShell } from "@/features/public/cms/PublicShell";
 import { getPublicCmsPage, PublicCmsRequestError } from "@/features/public/cms/api";
 import { createCmsPageRendererLabels } from "@/features/public/cms/labels";
 import { createCmsMetadata } from "@/features/public/cms/metadata";
-import {
-  isOthaimPublicPageSlug,
-  OTHAIM_PUBLIC_PAGE_SLUGS,
-} from "@/features/public/cms/public-routes";
+import { isPublicInfoSlug } from "@/features/public/cms/public-routes";
 import { PublicUnavailable } from "@/features/public/cms/PublicUnavailable";
 
 type Props = {
@@ -20,14 +17,10 @@ type Props = {
 
 async function resolveParams(params: Props["params"]) {
   const value = await params;
-  if (!routing.locales.includes(value.locale as AppLocale) || !isOthaimPublicPageSlug(value.slug)) {
+  if (!routing.locales.includes(value.locale as AppLocale) || !isPublicInfoSlug(value.slug)) {
     notFound();
   }
-  return value as { locale: AppLocale; slug: (typeof OTHAIM_PUBLIC_PAGE_SLUGS)[number] };
-}
-
-export function generateStaticParams() {
-  return OTHAIM_PUBLIC_PAGE_SLUGS.map((slug) => ({ slug }));
+  return value as { locale: AppLocale; slug: string };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

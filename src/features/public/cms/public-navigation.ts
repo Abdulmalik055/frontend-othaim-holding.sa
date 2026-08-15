@@ -14,6 +14,13 @@ export type OthaimNavigation = {
   business: OthaimNavigationItem[];
 };
 
+export type OthaimNavigationLabelOverrides = Partial<Record<string, string | undefined>>;
+
+type NavigationOptions = {
+  placement?: "header" | "footer";
+  labelOverrides?: OthaimNavigationLabelOverrides;
+};
+
 const navigationHierarchy = {
   whoWeAre: ["about", "family"],
   management: ["founder", "committee", "team"],
@@ -22,7 +29,8 @@ const navigationHierarchy = {
 
 export function buildOthaimNavigation(
   pages: PublicCmsPageSummary[],
-  locale: AppLocale
+  locale: AppLocale,
+  options: NavigationOptions = {}
 ): OthaimNavigation {
   const pagesBySlug = new Map(
     pages
@@ -44,7 +52,7 @@ export function buildOthaimNavigation(
         {
           id: page.id,
           slug: page.slug,
-          label: locale === "ar" ? page.titleAr : page.titleEn,
+          label: resolveNavigationLabel(page, locale, options),
           href: `/${page.slug}`,
         },
       ];
@@ -56,4 +64,27 @@ export function buildOthaimNavigation(
     management: select(navigationHierarchy.management),
     business: select(navigationHierarchy.business),
   };
+}
+
+function resolveNavigationLabel(
+  page: PublicCmsPageSummary,
+  locale: AppLocale,
+  options: NavigationOptions
+) {
+  const placementLabel =
+    options.placement === "header"
+      ? locale === "ar"
+        ? page.headerNavigationLabelAr
+        : page.headerNavigationLabelEn
+      : options.placement === "footer"
+        ? locale === "ar"
+          ? page.footerNavigationLabelAr
+          : page.footerNavigationLabelEn
+        : undefined;
+
+  return (
+    options.labelOverrides?.[page.slug]?.trim() ||
+    placementLabel?.trim() ||
+    (locale === "ar" ? page.titleAr : page.titleEn)
+  );
 }

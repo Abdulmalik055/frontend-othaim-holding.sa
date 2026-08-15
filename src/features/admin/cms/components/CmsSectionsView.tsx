@@ -14,6 +14,7 @@ import type { CmsPage } from "@/features/admin/cms/hooks/useCmsPages";
 import { PlusIcon, EditIcon } from "@/components/ui/shared/Icons";
 import { useAuthStore } from "@/stores/useAuthStore";
 import { hasAdminPermission } from "@/components/layout/admin-navigation";
+import { isProtectedOthaimPageSlug } from "@/features/admin/cms/othaim-editor-contract";
 
 type SectionRow = CmsSection & Record<string, unknown>;
 
@@ -48,6 +49,7 @@ export function CmsSectionsView({ page, locale, onBack, initialSectionId }: Prop
   const canCreate = hasAdminPermission(permissions, "cms:create");
   const canEdit = hasAdminPermission(permissions, "cms:edit");
   const canDelete = hasAdminPermission(permissions, "cms:delete");
+  const isProtectedOthaimPage = isProtectedOthaimPageSlug(page.slug);
 
   const [sectionDialog, setSectionDialog] = useState<
     { mode: "create" } | { mode: "edit"; section: CmsSection } | null
@@ -214,7 +216,7 @@ export function CmsSectionsView({ page, locale, onBack, initialSectionId }: Prop
           flat
           actionsLabel={sectionsTranslations("colActions")}
           rowReorder={
-            canEdit
+            canEdit && !isProtectedOthaimPage
               ? {
                   handleColumn: "titleAr",
                   disabled: reorderMutation.isPending,
@@ -257,6 +259,7 @@ export function CmsSectionsView({ page, locale, onBack, initialSectionId }: Prop
         <CmsSectionDialog
           mode={activeSectionDialog.mode}
           pageId={page.id}
+          pageSlug={page.slug}
           section={activeSectionDialog.mode === "edit" ? activeSectionDialog.section : undefined}
           initialOrder={
             activeSectionDialog.mode === "create" ? getNextCmsSectionOrder(sections) : undefined

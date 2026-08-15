@@ -58,10 +58,6 @@ export async function generateMetadata({
         }
       : {}),
     description: localizedBio || undefined,
-    icons: {
-      icon: "/branding/favicon.svg",
-      shortcut: "/branding/favicon.svg",
-    },
   };
 }
 

@@ -56,20 +56,21 @@ export function OthaimHeroMedia({
     () => false
   );
   const videoAllowed = Boolean(videoUrl) && videoPreferenceAllowsPlayback;
+  const hasDistinctMobilePoster = Boolean(mobilePosterUrl && mobilePosterUrl !== posterUrl);
 
   return (
     <div className="ogc-hero-media" aria-hidden>
-      {posterUrl && (
+      {!videoAllowed && posterUrl && (
         <Image
           src={posterUrl}
           alt=""
           fill
           priority
           sizes="100vw"
-          className={`ogc-hero-poster${mobilePosterUrl ? " ogc-hero-poster-desktop" : ""}`}
+          className={`ogc-hero-poster${hasDistinctMobilePoster ? " ogc-hero-poster-desktop" : ""}`}
         />
       )}
-      {mobilePosterUrl && (
+      {!videoAllowed && hasDistinctMobilePoster && mobilePosterUrl && (
         <Image
           src={mobilePosterUrl}
           alt=""

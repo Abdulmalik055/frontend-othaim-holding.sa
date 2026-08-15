@@ -3,6 +3,8 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import {
   getOthaimSectionDefinition,
+  isOthaimSectionForPage,
+  OTHAIM_PAGE_SECTION_SLUGS,
   OTHAIM_SECTION_SLUGS,
 } from "@/features/public/cms/othaim-section-registry";
 import { CmsPageRenderer } from "@/features/public/cms/CmsPageRenderer";
@@ -58,6 +60,20 @@ describe("Othaim section registry", () => {
     expect(getOthaimSectionDefinition("future-client-section")).toMatchObject({
       kind: "fallback",
     });
+  });
+
+  it("binds all 33 structural sections to exactly one seeded page", () => {
+    const registeredPairs = Object.entries(OTHAIM_PAGE_SECTION_SLUGS).flatMap(
+      ([pageSlug, sectionSlugs]) => sectionSlugs.map((sectionSlug) => [pageSlug, sectionSlug])
+    );
+
+    expect(registeredPairs).toHaveLength(33);
+    expect(new Set(registeredPairs.map(([, sectionSlug]) => sectionSlug)).size).toBe(33);
+    for (const [pageSlug, sectionSlug] of registeredPairs) {
+      expect(isOthaimSectionForPage(pageSlug, sectionSlug)).toBe(true);
+    }
+    expect(isOthaimSectionForPage("about", "home-hero")).toBe(false);
+    expect(isOthaimSectionForPage("future-page", "home-hero")).toBe(false);
   });
 
   it("routes every seeded slug through a concrete server-renderable section", () => {

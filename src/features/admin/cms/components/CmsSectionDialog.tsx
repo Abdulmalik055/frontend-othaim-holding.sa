@@ -24,12 +24,14 @@ import { useUnsavedChanges } from "@/features/admin/cms/hooks/useUnsavedChanges"
 import { TrashIcon } from "@/components/ui/shared/Icons";
 import { Spinner } from "@/components/ui/shared/Spinner";
 import { getApiErrorCode } from "@/lib/api-error-code";
+import { isProtectedOthaimSection } from "@/features/admin/cms/othaim-editor-contract";
 
 type DialogMode = "create" | "edit";
 
 type Props = {
   mode: DialogMode;
   pageId: string;
+  pageSlug?: string;
   section?: CmsSection;
   initialOrder?: number;
   onClose: () => void;
@@ -56,6 +58,7 @@ function getErrorCode(error: unknown) {
 export function CmsSectionDialog({
   mode,
   pageId,
+  pageSlug,
   section,
   initialOrder = 1,
   onClose,
@@ -102,6 +105,7 @@ export function CmsSectionDialog({
       }
       mode={mode}
       pageId={pageId}
+      pageSlug={pageSlug}
       section={initialSection}
       initialOrder={initialOrder}
       initialContent={
@@ -124,6 +128,7 @@ type FormProps = Props & {
 function CmsSectionDialogForm({
   mode,
   pageId,
+  pageSlug,
   section,
   initialOrder = 1,
   initialContent,
@@ -158,6 +163,7 @@ function CmsSectionDialogForm({
   const [error, setError] = useState("");
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [areInternalLinksValid, setAreInternalLinksValid] = useState(true);
+  const canDeleteSection = canDelete && !isProtectedOthaimSection(section?.slug, pageSlug);
 
   const createMutation = useCmsSectionCreate(pageId);
   const updateMutation = useCmsSectionUpdate(pageId);
@@ -247,7 +253,7 @@ function CmsSectionDialogForm({
   const footer = (
     <>
       <div>
-        {mode === "edit" && canDelete && !confirmDelete && (
+        {mode === "edit" && canDeleteSection && !confirmDelete && (
           <button
             onClick={() => setConfirmDelete(true)}
             className="flex items-center gap-1.5 h-[38px] px-4 rounded-[8px] text-[13px] text-danger-red border border-danger-bg-alt hover:bg-danger-bg transition-colors cursor-pointer bg-white"
@@ -370,6 +376,7 @@ function CmsSectionDialogForm({
 
         <CmsSectionContentEditor
           pageId={pageId}
+          pageSlug={pageSlug}
           sectionId={section?.id}
           sectionSlug={section?.slug}
           uploadToken={uploadToken}
