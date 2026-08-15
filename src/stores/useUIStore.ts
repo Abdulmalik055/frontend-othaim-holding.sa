@@ -26,7 +26,7 @@ export const useUIStore = create<UIState>()(
       setMobileSidebarOpen: (open) => set({ isMobileSidebarOpen: open }),
     }),
     {
-      name: "cms-core-ui",
+      name: "othaim-global-ui-v1",
       storage: createJSONStorage(() => localStorage),
       // isMobileSidebarOpen must never persist — always start closed
       partialize: (state) => ({

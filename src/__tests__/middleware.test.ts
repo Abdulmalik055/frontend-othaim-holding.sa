@@ -25,7 +25,7 @@ function makeRequest(pathname: string, cookies: Record<string, string> = {}) {
   });
 }
 
-const SESSION_COOKIE = { "better-auth.session_token": "test-token-123" };
+const SESSION_COOKIE = { "othaim-global.session_token": "test-token-123" };
 
 // ─── Tests ───────────────────────────────────────────────────
 
@@ -60,7 +60,7 @@ describe("middleware — protected routes", () => {
 
   it("uses __Secure- prefixed cookie for protected admin routes", async () => {
     const req = makeRequest("/ar/admin", {
-      "__Secure-better-auth.session_token": "secure-token",
+      "__Secure-othaim-global.session_token": "secure-token",
     });
     const res = await proxy(req);
 

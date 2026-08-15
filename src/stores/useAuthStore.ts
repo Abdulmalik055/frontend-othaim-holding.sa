@@ -24,7 +24,7 @@ export const useAuthStore = create<AuthState>()(
       clearAuth: () => set({ user: null, isAuthenticated: false, permissions: null }),
     }),
     {
-      name: "cms-core-auth",
+      name: "othaim-global-auth-v1",
       storage: createJSONStorage(() => sessionStorage),
       partialize: (state) => ({
         user: state.user,
