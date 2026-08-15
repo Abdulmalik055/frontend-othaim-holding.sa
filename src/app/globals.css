@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* ── DINNextLTArabic (Admin font) ── */
+@font-face { font-family: "din-regular";    src: url("/fonts/DINNextLTArabic-Regular.ttf");    font-weight: 400; font-display: swap; }
+@font-face { font-family: "din-medium";     src: url("/fonts/DINNextLTArabic-Medium.ttf");     font-weight: 500; font-display: swap; }
+@font-face { font-family: "din-bold";       src: url("/fonts/DINNextLTArabic-Bold.ttf");       font-weight: 700; font-display: swap; }
+@font-face { font-family: "din-black";      src: url("/fonts/DINNextLTArabic-Black.ttf");      font-weight: 900; font-display: swap; }
+@font-face { font-family: "din-light";      src: url("/fonts/DINNEXTLTARABIC-LIGHT.ttf");      font-weight: 300; font-display: swap; }
+@font-face { font-family: "din-ultralight"; src: url("/fonts/DINNextLTArabic-UltraLight.ttf"); font-weight: 200; font-display: swap; }
+
+@theme {
+  /* ── Core text tokens ──────────────────────────────── */
+  --color-primary:       #555555;
+  --color-primary-dark:  #2D2D2D;
+  --color-primary-light: #777777;
+  --color-accent:        #888888;
+  --color-accent-dark:   #666666;
+  --color-ink:           #1A1A1A;
+  --color-muted:         #B5B5B5;
+  --color-faint:         #AAAAAA;
+  --color-faint-dark:    #999999;
+
+  /* ── Admin brand ───────────────────────────────────── */
+  --color-admin-primary:        #3459a5;
+  --color-admin-primary-dark:   #2a4480;
+  --color-admin-primary-darker: #2748a0;
+  --color-admin-primary-deep:   #2a4a8a;
+  --color-admin-primary-bg:     #eff6ff;
+  --color-admin-primary-tint:   #ebf0fb;
+
+  /* ── Danger ────────────────────────────────────────── */
+  --color-danger:           #dc3545;
+  --color-danger-dark:      #b02a37;
+  --color-danger-red:       #dc2626;
+  --color-danger-bright:    #ef4444;
+  --color-danger-deep:      #b91c1c;
+  --color-danger-icon:      #c0392b;
+  --color-danger-text-dark: #991b1b;
+  --color-danger-bg:        #fee2e2;
+  --color-danger-bg-alt:    #fecaca;
+  --color-danger-bg-soft:   #fff5f5;
+  --color-danger-bg-faint:  #fef2f2;
+
+  /* ── Success ───────────────────────────────────────── */
+  --color-success:              #28a745;
+  --color-success-dark:         #218838;
+  --color-success-alt:          #16a34a;
+  --color-success-green:        #22c55e;
+  --color-success-emerald:      #10b981;
+  --color-success-emerald-mid:  #059669;
+  --color-success-icon:         #1a7a45;
+  --color-success-deeper:       #15803d;
+  --color-success-forest:       #2E7D32;
+  --color-success-bg:           #f0fdf4;
+  --color-success-bg-alt:       #dcfce7;
+  --color-success-badge-bg:     #ecfdf5;
+  --color-success-badge-text:   #065f46;
+
+  /* ── Warning ───────────────────────────────────────── */
+  --color-warning:      #ffc107;
+  --color-warning-alt:  #f59e0b;
+  --color-warning-dark: #d97706;
+  --color-warning-deep: #c97d00;
+  --color-warning-bg:   #fef9c3;
+
+  /* ── Accent colors ─────────────────────────────────── */
+  --color-secondary:      #6c757d;
+  --color-secondary-dark: #545b62;
+  --color-purple:         #9333ea;
+  --color-purple-mid:     #a855f7;
+  --color-purple-dark:    #6d28d9;
+  --color-purple-bg:      #fdf4ff;
+  --color-cyan:           #0891b2;
+  --color-cyan-light:     #06b6d4;
+  --color-amber:          #ffc107;
+  --color-orange:         #f97316;
+  --color-orange-dark:    #c2410c;
+  --color-orange-bg:      #fff7ed;
+  --color-info:           #007bff;
+  --color-info-dark:      #004085;
+  --color-info-bg:        #cce5ff;
+
+  /* ── Surfaces & borders ────────────────────────────── */
+  --color-surface:      #F5F5F5;
+  --color-surface-soft: #f1f5f9;
+  --color-line:         #EEEEEE;
+  --color-line-soft:    #E8E8E8;
+  --color-line-mid:     #E2E2E2;
+  --color-line-faint:   #DDDDDD;
+  --color-line-dim:     #D5D5D5;
+  --color-line-subtler: #E5E5E5;
+
+  /* ── Additional text & gray tones ─────────────────── */
+  --color-dim:          #444444;
+  --color-dim-dark:     #333333;
+  --color-dim-mid:      #4A4A4A;
+  --color-dim-deep:     #3A3A3A;
+  --color-mid:          #656565;
+  --color-separator:    #e9ecef;
+  --color-surface-alt:  #f1f1f1;
+  --color-admin-bg:     #f0f4ff;
+
+  /* ── Fonts ─────────────────────────────────────────── */
+  --font-din:   "din-regular", sans-serif;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :focus-visible {
+    outline: 2px solid #3459A5;
+    outline-offset: 3px;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+    font-family: var(--font-din), "Segoe UI", Tahoma, Arial, sans-serif;
+  }
+
+  .admin-surface {
+    font-family: var(--font-din), "Segoe UI", Tahoma, Arial, sans-serif;
+  }
+
+  .admin-surface button,
+  .admin-surface input,
+  .admin-surface select,
+  .admin-surface textarea {
+    font-family: inherit;
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "validation": {
+    "checkFieldsBeforeSave": "Please review the following before saving:",
+    "numbersOnlyDual": "This field accepts numbers only",
+    "textArabicOnlyDual": "Please write this field in Arabic only",
+    "textEnglishOnlyDual": "Please write this field in English only",
+    "emailEnglishOnlyDual": "Please write email in English only",
+    "emailInvalidFormatDual": "Please enter a valid email address.",
+    "urlEnglishOnlyDual": "Please write link in English only",
+    "urlInvalidFormatDual": "Please enter a valid link."
+  },
+  "userMenu": {
+    "ariaLabel": "User menu",
+    "myAccount": "My Account",
+    "changePassword": "Change password",
+    "settings": "Settings",
+    "signOut": "Sign out"
+  },
+  "publicCms": {
+    "brandHomeAria": "Home",
+    "mainNavigation": "Main navigation",
+    "menu": "Menu",
+    "footerNavigation": "Footer navigation",
+    "rights": "All rights reserved.",
+    "languageArabic": "Arabic",
+    "languageEnglish": "English",
+    "legalCentre": "Legal centre",
+    "insidePlatform": "About the platform",
+    "information": "Information",
+    "empty": "No content is available yet.",
+    "contentUnavailableTitle": "Content is temporarily unavailable",
+    "pageUnavailableTitle": "This page could not be loaded",
+    "retry": "Please try again in a moment.",
+    "retryLater": "Please try again later.",
+    "notFoundMetadata": "Page not found",
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The page may be unavailable or moved.",
+    "backHome": "Back to home",
+    "loadingContent": "Loading content"
+  }
+}

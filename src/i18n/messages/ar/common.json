@@ -1,0 +1,41 @@
+{
+  "validation": {
+    "checkFieldsBeforeSave": "يرجى مراجعة التالي قبل الحفظ:",
+    "numbersOnlyDual": "هذا الحقل لا يقبل إلا أرقام فقط",
+    "textArabicOnlyDual": "يرجى كتابة هذا الحقل باللغة العربية فقط",
+    "textEnglishOnlyDual": "يرجى كتابة هذا الحقل باللغة الإنجليزية فقط",
+    "emailEnglishOnlyDual": "يرجى كتابة البريد الإلكتروني باللغة الإنجليزية فقط",
+    "emailInvalidFormatDual": "يرجى إدخال بريد إلكتروني صحيح.",
+    "urlEnglishOnlyDual": "يرجى كتابة الرابط باللغة الإنجليزية فقط",
+    "urlInvalidFormatDual": "يرجى إدخال رابط صحيح."
+  },
+  "userMenu": {
+    "ariaLabel": "قائمة المستخدم",
+    "myAccount": "حسابي",
+    "changePassword": "تغيير كلمة المرور",
+    "settings": "الإعدادات",
+    "signOut": "تسجيل الخروج"
+  },
+  "publicCms": {
+    "brandHomeAria": "الصفحة الرئيسية",
+    "mainNavigation": "التنقل الرئيسي",
+    "menu": "القائمة",
+    "footerNavigation": "روابط التذييل",
+    "rights": "جميع الحقوق محفوظة.",
+    "languageArabic": "العربية",
+    "languageEnglish": "الإنجليزية",
+    "legalCentre": "المركز القانوني",
+    "insidePlatform": "عن المنصة",
+    "information": "معلومات",
+    "empty": "لا يوجد محتوى متاح بعد.",
+    "contentUnavailableTitle": "تعذر تحميل المحتوى",
+    "pageUnavailableTitle": "تعذر تحميل الصفحة",
+    "retry": "يرجى المحاولة مرة أخرى بعد قليل.",
+    "retryLater": "يرجى المحاولة مرة أخرى لاحقاً.",
+    "notFoundMetadata": "الصفحة غير موجودة",
+    "notFoundTitle": "الصفحة غير موجودة",
+    "notFoundDescription": "قد تكون الصفحة غير متاحة أو تم نقلها.",
+    "backHome": "العودة للرئيسية",
+    "loadingContent": "جارٍ تحميل المحتوى"
+  }
+}
