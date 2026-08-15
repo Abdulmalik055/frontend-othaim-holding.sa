@@ -25,6 +25,7 @@ comes from the Othaim Global backend CMS.
 ```bash
 cp .env.example .env
 pnpm install --frozen-lockfile
+pnpm exec playwright install chromium
 pnpm dev
 ```
 
@@ -37,8 +38,13 @@ public origin and `NEXT_PUBLIC_BACKEND_URL` to the backend origin. Both values a
 pnpm lint
 pnpm test
 pnpm exec tsc --noEmit
+pnpm test:e2e
 pnpm build
 ```
+
+`pnpm test:e2e` first creates an isolated production build wired only to the bundled local CMS
+mock. It never targets the configured production API. Run the final `pnpm build` afterward with
+the approved deployment origins in the environment.
 
 CI performs verification only. Deployment is intentionally unconfigured until Othaim Global
 domains, runner ownership, server paths, and secret management are approved.

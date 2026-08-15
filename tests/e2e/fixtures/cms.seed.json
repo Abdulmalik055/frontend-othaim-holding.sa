@@ -1,0 +1,5086 @@
+{
+  "platformSettings": {
+    "singletonKey": "default",
+    "nameAr": "العثيم جلوبال",
+    "nameEn": "Othaim Global",
+    "bioAr": "منصة الاستثمار الدولية لعائلة العثيم.",
+    "bioEn": "The international investment hub of the Al Othaim Family.",
+    "email": "info@othaimglobal.com",
+    "phone": "+966114755733",
+    "addressAr": "La Tonnelle House, Les Banques, St Sampson, Guernsey GY1 3HS",
+    "addressEn": "La Tonnelle House, Les Banques, St Sampson, Guernsey GY1 3HS",
+    "socialLinks": {
+      "holding": "https://othaim.com.sa/"
+    },
+    "logoAssetId": "39415980-151b-50f4-ac4d-ddb3b8fb020f"
+  },
+  "pages": [
+    {
+      "id": "d24ed8b0-6449-53d0-acab-52b1f98c8614",
+      "slug": "home",
+      "category": "info",
+      "template": "home",
+      "titleAr": "الرئيسية",
+      "titleEn": "Home",
+      "isActive": true,
+      "isIndexable": true,
+      "navigationPlacement": "none",
+      "navigationOrder": 0,
+      "seoTitleAr": "العثيم جلوبال — رؤية ملهمة للاستثمار",
+      "seoTitleEn": "Othaim Global — Inspired Investment Insight",
+      "seoDescriptionAr": "العثيم جلوبال هي منصة الاستثمار الدولية لعائلة العثيم — بناء ثروة مستدامة عبر محفظة استثمارية متنوعة عالمياً ومعايير عائلية من الطراز الأول.",
+      "seoDescriptionEn": "Othaim Global is the international investment hub of the Al Othaim Family — building sustainable wealth through diversified global investments and best-in-class",
+      "seoImageAssetId": null,
+      "sections": [
+        {
+          "id": "052020cb-8dd1-592c-8e24-c213efaa4d14",
+          "slug": "home-hero",
+          "titleAr": "واجهة الصفحة الرئيسية",
+          "titleEn": "Homepage hero",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "العثيم جلوبال",
+                      "textEn": "Othaim Global"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h1",
+                      "textAr": "رؤيةٌ ملهمةٌ للاستثمار",
+                      "textEn": "Inspired Investment Insight"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "tagline",
+                    "text": {
+                      "format": "p",
+                      "textAr": "نهجٌ شامل للاستثمار · ابتكر، استثمر، ألهم · استثمارات ذكية، عوائد دائمة · منصة استثمار دولية رائدة",
+                      "textEn": "Holistic Approach to Investments · Innovate, Invest, Inspire · Smart Investments, Lasting Returns · Leading International Investment Hub"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "scrollLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تصفح",
+                      "textEn": "Scroll"
+                    }
+                  },
+                  {
+                    "type": "video",
+                    "key": "hero",
+                    "video": {
+                      "desktopAssetId": "a2ce5348-5d75-581f-8cfb-914b440c6c56",
+                      "mobileAssetId": "5da17b69-1d49-5830-b630-bc57134d163b",
+                      "posterDesktopAssetId": "67a8c818-3f9b-5488-8bf5-a05630f998ed",
+                      "posterMobileAssetId": "67a8c818-3f9b-5488-8bf5-a05630f998ed"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 1,
+          "isActive": true
+        },
+        {
+          "id": "687d1604-4145-505a-8cc2-29c246609954",
+          "slug": "home-story",
+          "titleAr": "قصتنا",
+          "titleEn": "Our story",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "قصتنا",
+                      "textEn": "Our Story"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "نُركّز على إيجاد\nثروة مستدامة.",
+                      "textEn": "We are focused on\nreasonable wealth creation."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyPrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "العثيم جلوبال هي منصة تنويع استثمارات عائلة العثيم — تتبنّى أعلى معايير المكاتب العائلية لتطوير\n كفاءة الاستثمار واستدامة العوائد.",
+                      "textEn": "Othaim Global is the diversifier of the Al Othaim Family as the international investment hub —\n adhering to best-in-class family-office standards to improve the efficiency of investments and the\n sustainability of returns."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodySecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "نُطوّر آليات الاستثمار، ونُنوّع المحفظة، ونُعزّز الاستراتيجية الاستثمارية من خلال توجيه استثمارات\n العائلة عبر القطاعات المالية والعقارية والتأمين والصحة والتعليم والإضاءة والتقنية وقطاعات نشطة\n أخرى في دول متعددة — مستهدفين شراكات طويلة الأمد مع كبرى الشركات في الأسواق العالمية.",
+                      "textEn": "We develop investment mechanisms, diversify the portfolio, and enhance investment strategy by\n directing family investments across financial, real-estate, insurance, health, education, lighting,\n technology, and other active industries across multiple countries — targeting long-term partnerships\n with significant companies in global markets."
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "image",
+                    "image": {
+                      "desktopAssetId": "29726be2-2984-5784-8112-b0a92d14b605",
+                      "altAr": "العثيم جلوبال",
+                      "altEn": "Othaim Global"
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "link",
+                    "link": {
+                      "labelAr": "اقرأ المزيد",
+                      "labelEn": "Read more",
+                      "href": "/about",
+                      "style": "secondary"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 2,
+          "isActive": true
+        },
+        {
+          "id": "dd367624-d151-5e44-ac00-88d060d8e255",
+          "slug": "home-founder",
+          "titleAr": "المؤسس",
+          "titleEn": "The founder",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الإدارة · المؤسس",
+                      "textEn": "Management · The Founder"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "إرث من الرؤية،\nمنذ 1956.",
+                      "textEn": "A legacy of vision,\nsince 1956."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "رجل أعمال سعودي صنّفته فوربس (2015) ضمن أثرى رجال العالم العربي، واختارته إسلاميكا ضمن أبرز 500\n شخصية مسلمة في العالم. تُقدّر إمبراطورية العثيم بمليارات الدولارات عبر استثمارات متنوّعة.",
+                      "textEn": "A Saudi businessman ranked by Forbes (2015) among the wealthiest in the Arab world and named by\n Islamica among the world's top 500 Muslims. The Othaim Empire is estimated to be worth multi-billion\n dollars across diversified holdings."
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "fe0a204f-6725-5372-82c8-e7d75b078e53",
+                      "altAr": "عبدالله صالح العثيم",
+                      "altEn": "Abdullah Saleh Al Othaim"
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "link",
+                    "link": {
+                      "labelAr": "اقرأ المزيد",
+                      "labelEn": "Read more",
+                      "href": "/founder",
+                      "style": "secondary"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 3,
+          "isActive": true
+        },
+        {
+          "id": "52a311a0-e1e6-56e0-8b91-54a009778690",
+          "slug": "home-committee",
+          "titleAr": "لجنة الاستثمار",
+          "titleEn": "Investment committee",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الإدارة",
+                      "textEn": "Management"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "لجنة الاستثمار.",
+                      "textEn": "Our Investment Committee."
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "link",
+                    "link": {
+                      "labelAr": "عرض اللجنة الكاملة",
+                      "labelEn": "View full committee",
+                      "href": "/committee",
+                      "style": "secondary"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "عبداللطيف السيف",
+                      "textEn": "Abdullatif Al Seif"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "رئيس اللجنة",
+                      "textEn": "Chairman"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "950cb0e9-0984-5233-b84e-d98df638eff1",
+                      "altAr": "عبداللطيف السيف",
+                      "altEn": "Abdullatif Al Seif"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "ياسر أبو شعبان",
+                      "textEn": "Yaser Abu Shaban"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عضو",
+                      "textEn": "Member"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "ab3086d5-9598-5684-9e0f-bae07010f410",
+                      "altAr": "ياسر أبو شعبان",
+                      "altEn": "Yaser Abu Shaban"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "تركي الدايل",
+                      "textEn": "Turki Al Dayel"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عضو",
+                      "textEn": "Member"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "4f9a8d0a-f2b0-53dd-913c-8e45acd384b4",
+                      "altAr": "تركي الدايل",
+                      "altEn": "Turki Al Dayel"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "عبدالملك العثيم",
+                      "textEn": "Abdulmalik Al Othaim"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عضو",
+                      "textEn": "Member"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "fe0dda3c-7760-56ae-8f9d-c4ed8b539c93",
+                      "altAr": "عبدالملك العثيم",
+                      "altEn": "Abdulmalik Al Othaim"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 4,
+          "isActive": true
+        },
+        {
+          "id": "1be3c4e7-924c-55ba-82f1-83e8c5d769b8",
+          "slug": "home-team",
+          "titleAr": "فريق الاستثمار",
+          "titleEn": "Investment team",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الإدارة",
+                      "textEn": "Management"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "فريق الاستثمار.",
+                      "textEn": "Investment Team."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "جميل حلاق",
+                      "textEn": "Jamil Hallak"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الرئيس التنفيذي للاستثمار",
+                      "textEn": "Chief Investment Officer"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "خبير في أسواق المال العالمية بخبرة تتجاوز 20 عاماً في كبرى المؤسسات في باريس ولندن — يقود\n عمليات العثيم جلوبال الدولية في الأسواق العامة والخاصة منذ 2020.",
+                      "textEn": "A global capital-markets expert with over 20 years across top-tier institutions in Paris and London —\n leading Othaim Global's international operations across public and private markets since 2020."
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "2665d7be-47a8-51af-8a5a-793f5f3f42af",
+                      "altAr": "جميل حلاق",
+                      "altEn": "Jamil Hallak"
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "link",
+                    "link": {
+                      "labelAr": "اقرأ المزيد",
+                      "labelEn": "Read more",
+                      "href": "/team",
+                      "style": "secondary"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 5,
+          "isActive": true
+        },
+        {
+          "id": "1b43eb5a-ced8-5074-9115-96c8e8e81c56",
+          "slug": "home-inspiration",
+          "titleAr": "ما يُلهمنا",
+          "titleEn": "What inspires us",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "ما يُلهمنا",
+                      "textEn": "What Inspires Us"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "إرث من الازدهار\nالمستدام.",
+                      "textEn": "A legacy of\nsustainable prosperity."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "quote",
+                    "text": {
+                      "format": "p",
+                      "textAr": "«نَستمد الإلهام من رؤية مؤسسنا عبدالله صالح العثيم — صناعة إرثٍ من الثروة المستدامة والازدهار\n للأجيال القادمة.»",
+                      "textEn": "“We are inspired by the vision of our founder, Abdullah Saleh Al Othaim — to create a legacy of\n sustainable wealth and prosperity for future generations.”"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 6,
+          "isActive": true
+        },
+        {
+          "id": "68dfc53d-8361-560c-96e5-e7dce47836c1",
+          "slug": "home-philosophies",
+          "titleAr": "فلسفتنا",
+          "titleEn": "Our philosophies",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "فلسفتنا",
+                      "textEn": "Our Philosophies"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "خمسة محاور\nتوجّه كل قرار.",
+                      "textEn": "Five pillars that\nguide every decision."
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "link",
+                    "link": {
+                      "labelAr": "استكشف الاستراتيجية الكاملة",
+                      "labelEn": "Explore the full strategy",
+                      "href": "/strategy",
+                      "style": "secondary"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "01",
+                      "textEn": "01"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الحفاظ على الثروة وتعزيزها",
+                      "textEn": "Wealth Preservation & Growth"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الوصول إلى إمكانات الأسواق العالمية عبر تنويع منضبط وعوائد متوازنة مع المخاطر.",
+                      "textEn": "Accessing the vast potential of global markets through diversified exposure and disciplined risk-adjusted returns."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "02",
+                      "textEn": "02"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "إدارة المخاطر الرشيدة",
+                      "textEn": "Prudent Risk Management"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "إدارة المخاطر ضرورة استراتيجية لا إجراء دفاعي — وفق أفضل المعايير الدولية.",
+                      "textEn": "Risk management as a strategic imperative — identifying and mitigating risk per international best practices."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "03",
+                      "textEn": "03"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "خلق القيمة استراتيجياً",
+                      "textEn": "Strategic Value Creation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عقلية مغايرة ترى الفرصة حيث يرى الآخرون العائق — بعمليات استثمار محكمة.",
+                      "textEn": "A contrarian mindset that identifies opportunities where others see obstacles, backed by rigorous process."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "04",
+                      "textEn": "04"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "بناء منظومة عالمية المستوى",
+                      "textEn": "A World-Class Organization"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تحسين مستمر، استقطاب للكفاءات، وحوكمة متينة — للتميّز التراكمي.",
+                      "textEn": "Continuous improvement, top-tier talent, and robust governance — built for compounding excellence."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "05",
+                      "textEn": "05"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "شراكات طويلة الأمد",
+                      "textEn": "Long-term Partnerships"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "علاقات راسخة بُنيت على الثقة والتعاون — تتجاوز حدود الصفقة.",
+                      "textEn": "Enduring relationships built on trust and collaboration — partnerships that extend beyond the transaction."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 7,
+          "isActive": true
+        },
+        {
+          "id": "ee438b70-f4c6-59be-b445-8eb7327abd65",
+          "slug": "home-partners",
+          "titleAr": "شبكة الشراكات",
+          "titleEn": "Partner network",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "شبكة التميّز والشراكات",
+                      "textEn": "Network of Excellence & Partnerships"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "علاقات تمتدّ\nحول العالم.",
+                      "textEn": "Relationships that\nspan the world."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "نتشارك مع شركات رائدة في الملكية الخاصة، الائتمان، الأصول الحقيقية، صناديق التحوّط، ورأس المال الجريء.",
+                      "textEn": "We partner with leading firms across private equity, credit, real assets, hedge funds, and venture."
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "link",
+                    "link": {
+                      "labelAr": "استكشف الشبكة الكاملة",
+                      "labelEn": "Explore the full network",
+                      "href": "/portfolio",
+                      "style": "secondary"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Blackstone",
+                      "textEn": "Blackstone"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "fb87bf63-abfd-516b-b89b-8d44e4a757bc",
+                      "altAr": "Blackstone",
+                      "altEn": "Blackstone"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "KKR",
+                      "textEn": "KKR"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "659bb8f2-3f96-551b-9e4e-63f09db409ab",
+                      "altAr": "KKR",
+                      "altEn": "KKR"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Carlyle",
+                      "textEn": "Carlyle"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "821322a0-aa71-5bd3-9578-b127a42b5bdd",
+                      "altAr": "Carlyle",
+                      "altEn": "Carlyle"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "CVC",
+                      "textEn": "CVC"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "cd297ec3-c183-5560-b70a-a3a9ca699ef6",
+                      "altAr": "CVC",
+                      "altEn": "CVC"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Ardian",
+                      "textEn": "Ardian"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "77547b22-5b78-5982-a83c-0ac5c7c1d95e",
+                      "altAr": "Ardian",
+                      "altEn": "Ardian"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "PIMCO",
+                      "textEn": "PIMCO"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "9a388f54-f4c5-538f-a691-a33b763305e0",
+                      "altAr": "PIMCO",
+                      "altEn": "PIMCO"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "HarbourVest",
+                      "textEn": "HarbourVest"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "11d2662a-4610-5c03-9b2a-15be4c9f48f8",
+                      "altAr": "HarbourVest",
+                      "altEn": "HarbourVest"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "StepStone",
+                      "textEn": "StepStone"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "6281bad7-2f07-5c2a-a6e9-5d541596710a",
+                      "altAr": "StepStone",
+                      "altEn": "StepStone"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Thoma Bravo",
+                      "textEn": "Thoma Bravo"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "a2426e3d-55d1-5ba9-956d-a7c437e15aed",
+                      "altAr": "Thoma Bravo",
+                      "altEn": "Thoma Bravo"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Accel-KKR",
+                      "textEn": "Accel-KKR"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "85fe0b25-d7f5-5c22-b9fc-5808db7e5ab4",
+                      "altAr": "Accel-KKR",
+                      "altEn": "Accel-KKR"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Audax",
+                      "textEn": "Audax"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "d5f9fcd5-4c43-5d77-95a3-33a8a7dfeaa1",
+                      "altAr": "Audax",
+                      "altEn": "Audax"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Vitruvian",
+                      "textEn": "Vitruvian"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "71d8c58d-5a2b-5db1-add0-a5a672d29939",
+                      "altAr": "Vitruvian",
+                      "altEn": "Vitruvian"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 8,
+          "isActive": true
+        },
+        {
+          "id": "8349c066-fa72-5ddf-90a0-b85ed82885cb",
+          "slug": "home-contact",
+          "titleAr": "تواصل معنا",
+          "titleEn": "Contact us",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تواصل معنا",
+                      "textEn": "Get in touch"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "لنبني شيئاً يدوم.",
+                      "textEn": "Let's build something that lasts."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تحدّث إلينا حول الشراكات طويلة الأمد، الاستثمارات المشتركة، وعهدات المكاتب العائلية — قائمة على الثقة والحوكمة ورأس المال الصبور.",
+                      "textEn": "Talk to us about long-term partnerships, co-investments, and family-office mandates — built on trust, governance, and patient capital."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "emailLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "البريد الإلكتروني",
+                      "textEn": "Email"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "email",
+                    "text": {
+                      "format": "p",
+                      "textAr": "info@othaimglobal.com",
+                      "textEn": "info@othaimglobal.com"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "phoneLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الهاتف",
+                      "textEn": "Phone"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "phone",
+                    "text": {
+                      "format": "p",
+                      "textAr": "+966 11 4755 733",
+                      "textEn": "+966 11 4755 733"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "addressLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "العنوان البريدي",
+                      "textEn": "Postal Address"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "address",
+                    "text": {
+                      "format": "p",
+                      "textAr": "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS",
+                      "textEn": "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "fullNameLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الاسم الكامل",
+                      "textEn": "Full name"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "fullNamePlaceholder",
+                    "text": {
+                      "format": "p",
+                      "textAr": "اسمك",
+                      "textEn": "Your name"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "organizationLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الجهة",
+                      "textEn": "Organization"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "organizationPlaceholder",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الشركة / المكتب العائلي",
+                      "textEn": "Company / Family Office"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "emailFieldLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "البريد الإلكتروني",
+                      "textEn": "Email"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "emailPlaceholder",
+                    "text": {
+                      "format": "p",
+                      "textAr": "you@example.com",
+                      "textEn": "you@example.com"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الموضوع",
+                      "textEn": "Topic"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicPartnershipLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "شراكة",
+                      "textEn": "Partnership"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicCoInvestmentLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "استثمار مشترك",
+                      "textEn": "Co-investment"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicFamilyOfficeLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عهدة مكتب عائلي",
+                      "textEn": "Family-office mandate"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicMediaLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "استفسار إعلامي",
+                      "textEn": "Media inquiry"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicOtherLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "أخرى",
+                      "textEn": "Other"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "messageLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الرسالة",
+                      "textEn": "Message"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "messagePlaceholder",
+                    "text": {
+                      "format": "p",
+                      "textAr": "اشرح باختصار عن اهتمامك…",
+                      "textEn": "Tell us briefly about your interest…"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "submitLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "إرسال الرسالة",
+                      "textEn": "Send message"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "confidentiality",
+                    "text": {
+                      "format": "p",
+                      "textAr": "معلوماتك تبقى سرّية. بإرسالك للنموذج تقبل بأن تتواصل معك العثيم جلوبال بخصوص طلبك.",
+                      "textEn": "Your information stays confidential. By submitting you agree to be contacted by Othaim Global regarding your request."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "footerStatement",
+                    "text": {
+                      "format": "p",
+                      "textAr": "منصة الاستثمار الدولية لعائلة العثيم — ثروة مستدامة، محافظ متنوّعة، حوكمة عالمية المستوى.",
+                      "textEn": "The international investment hub of the Al Othaim Family — sustainable wealth, diversified portfolios,\n world-class governance."
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "emailLink",
+                    "link": {
+                      "labelAr": "info@othaimglobal.com",
+                      "labelEn": "info@othaimglobal.com",
+                      "href": "mailto:info@othaimglobal.com",
+                      "style": "text"
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "phoneLink",
+                    "link": {
+                      "labelAr": "+966 11 4755 733",
+                      "labelEn": "+966 11 4755 733",
+                      "href": "tel:+966114755733",
+                      "style": "text"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 9,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "e091aac3-2688-51d8-920a-44650122fb56",
+      "slug": "about",
+      "category": "info",
+      "template": "about",
+      "titleAr": "لمحة عن العثيم جلوبال",
+      "titleEn": "About Othaim Global",
+      "isActive": true,
+      "isIndexable": true,
+      "navigationPlacement": "both",
+      "navigationOrder": 1,
+      "seoTitleAr": "لمحة عن العثيم جلوبال",
+      "seoTitleEn": "About — Othaim Global at a Glance",
+      "seoDescriptionAr": "لمحة عن العثيم جلوبال — رسالتنا، DNA، محاور رؤيتنا، قيمنا، والتزامنا تجاه الاقتصاد الوطني.",
+      "seoDescriptionEn": "Othaim Global at a glance — our mission, DNA, vision pillars, values, and CSR commitment to the national economy.",
+      "seoImageAssetId": null,
+      "sections": [
+        {
+          "id": "dbd23ad4-11fa-5961-b83e-f0ef65f7aa05",
+          "slug": "about-hero",
+          "titleAr": "لمحة عنا",
+          "titleEn": "About hero",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "لمحة عنا · العثيم جلوبال",
+                      "textEn": "About · Othaim Global"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h1",
+                      "textAr": "في سطور.",
+                      "textEn": "At a glance."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "العثيم جلوبال هي منصة تنويع استثمارات عائلة العثيم — منصة الاستثمار الدولية التي تتبنّى أعلى معايير\n المكاتب العائلية لتطوير كفاءة الاستثمار واستدامة العوائد.",
+                      "textEn": "Othaim Global is the diversifier of the Al Othaim Family — the international investment hub\n adhering to best-in-class family-office standards to improve the efficiency of investments and the\n sustainability of returns."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 1,
+          "isActive": true
+        },
+        {
+          "id": "895ceb78-ad74-5482-b382-4e0dc1b9c7a6",
+          "slug": "about-mission",
+          "titleAr": "رسالتنا",
+          "titleEn": "Our mission",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "رسالتنا",
+                      "textEn": "Mission"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "quote",
+                    "text": {
+                      "format": "p",
+                      "textAr": "«في العثيم جلوبال نُطوّر آليات الاستثمار، ونُنوّع المحفظة، ونُعزّز استراتيجيتنا من خلال توجيه استثمارات\n العائلة عبر القطاعات المالية والعقارية والتأمين والصحة والتعليم والإضاءة والتقنية وقطاعات نشطة أخرى\n في دول متعددة — مستهدفين شراكات طويلة الأمد مع كبرى الشركات في الأسواق العالمية.»",
+                      "textEn": "“At Othaim Global, we develop investment mechanisms, diversify the investment portfolio, and enhance\n investment strategy by directing family investments across financial, real-estate, insurance, health,\n education, lighting, technology, and other active industries across multiple countries — targeting\n long-term partnerships with significant companies in global markets.”"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 2,
+          "isActive": true
+        },
+        {
+          "id": "ec2aacda-efe6-559b-ac2f-f78b2adc2990",
+          "slug": "about-dna",
+          "titleAr": "سمات العثيم جلوبال",
+          "titleEn": "Othaim Global DNA",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "DNA العثيم جلوبال",
+                      "textEn": "Othaim Global DNA"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "ستّ سماتٍ تُعرّفنا.",
+                      "textEn": "Six traits that define us."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "01",
+                      "textEn": "01"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "دخل سنوي",
+                      "textEn": "Annuity"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "02",
+                      "textEn": "02"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "شبكة عالمية",
+                      "textEn": "Global Network"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "03",
+                      "textEn": "03"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الاستدامة",
+                      "textEn": "Sustainable"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "04",
+                      "textEn": "04"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "المرونة",
+                      "textEn": "Resilient"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "05",
+                      "textEn": "05"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "التنويع",
+                      "textEn": "Diversified"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "06",
+                      "textEn": "06"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "نمو رأس المال",
+                      "textEn": "Capital Growth"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 3,
+          "isActive": true
+        },
+        {
+          "id": "c993af13-cf65-5361-8ccc-f076e43cb966",
+          "slug": "about-vision",
+          "titleAr": "محاور الرؤية",
+          "titleEn": "Vision pillars",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "محاور الرؤية",
+                      "textEn": "Vision Pillars"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "خمسة التزامات\nللقيمة طويلة الأمد.",
+                      "textEn": "Five commitments\nto long-term value."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "01",
+                      "textEn": "01"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الشبكة العالمية",
+                      "textEn": "Global Network"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تبنّي الشراكات والتعاون والمنظورات المتنوعة لدفع الابتكار، توسيع نطاق السوق، وخلق القيمة عبر الحدود.",
+                      "textEn": "Embracing strategic partnerships, collaborations, and diverse perspectives to drive innovation, expand market reach, and create value across borders."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "02",
+                      "textEn": "02"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الالتزام السنوي المستدام",
+                      "textEn": "Sustainable Annuity"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "نموّ مستدام وربحية ثابتة مع اعتبار العوامل البيئية والاجتماعية والحوكمة (ESG).",
+                      "textEn": "Long-term, steady growth and profitability that integrates environmental, social, and governance factors for responsible business practice."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "03",
+                      "textEn": "03"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "نمو رأس المال المرن",
+                      "textEn": "Resilient Capital Growth"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "قاعدة مالية صلبة، إدارة فعّالة للمخاطر، واستثمارات استراتيجية توفّر عوائد متّسقة ومستدامة.",
+                      "textEn": "A solid financial foundation, effective risk management, and strategic investment delivering consistent, sustainable returns."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "04",
+                      "textEn": "04"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "التنوّع",
+                      "textEn": "Diversified"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "التوسّع في أسواق وفئات أصول متعددة — نموذج مرن يصمد أمام تقلّبات السوق وعدم اليقين.",
+                      "textEn": "Expanding into multiple markets and asset classes — a resilient model that withstands market fluctuations and economic uncertainty."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "05",
+                      "textEn": "05"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الحوكمة",
+                      "textEn": "Governance"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الشفافية والمساءلة والسلوك الأخلاقي على كل المستويات — لحماية مصالح أصحاب المصلحة بأعلى معايير الحوكمة المؤسسية.",
+                      "textEn": "Transparency, accountability, and ethical behavior across every level — protecting stakeholder interests and maintaining the highest standards of corporate governance."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 4,
+          "isActive": true
+        },
+        {
+          "id": "9a0cf048-52da-54da-8d41-f465e103e83b",
+          "slug": "about-values",
+          "titleAr": "قيمنا",
+          "titleEn": "Our values",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "قِيَمنا",
+                      "textEn": "Our Values"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "كيف نعمل، كل يوم.",
+                      "textEn": "How we work, every day."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "01",
+                      "textEn": "01"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "المشاركة والتمكين",
+                      "textEn": "Engagement & Empowerment"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "نُهيّئ بيئة تُشرك وتُمكّن الأفراد — تُقدّر إسهاماتهم وتوفّر الموارد والدعم اللازم للنجاح.",
+                      "textEn": "Engaging and empowering individuals — recognizing contributions, providing resources and the support needed to succeed."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "02",
+                      "textEn": "02"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "التميّز والاحترافية",
+                      "textEn": "Excellence & Professionalism"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "أعلى معايير الاحترافية والنزاهة والسلوك الأخلاقي في كل جوانب عملنا.",
+                      "textEn": "High standards of professionalism, integrity, and ethical conduct in every aspect of our work."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "03",
+                      "textEn": "03"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الروح الريادية",
+                      "textEn": "Entrepreneurial Spirit"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عقلية ريادية تدفع الابتكار وحلّ المشكلات بإبداع، مع جاهزية لتحمّل مخاطر محسوبة.",
+                      "textEn": "An entrepreneurial mindset that drives innovation, creative problem-solving, and willingness to take calculated risks."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "04",
+                      "textEn": "04"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الإبداع والابتكار",
+                      "textEn": "Creativity & Innovation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تبنّي أفكار وحلول جديدة لدفع التحسين المستمر والتميّز.",
+                      "textEn": "Embracing new ideas, approaches, and solutions to drive continuous improvement and differentiation."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "05",
+                      "textEn": "05"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "إدارة الموارد المسؤولة",
+                      "textEn": "Responsible Resources"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "إدارة مسؤولة لمواردنا المالية والبشرية والبيئية — تعظيم الاستخدام وتقليل الهدر.",
+                      "textEn": "Responsibly managing financial, human, and environmental resources — optimizing use and minimizing waste."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 5,
+          "isActive": true
+        },
+        {
+          "id": "8c022143-7050-5a51-bfba-7a8a6c5aba22",
+          "slug": "about-csr",
+          "titleAr": "المسؤولية الاجتماعية",
+          "titleEn": "Corporate social responsibility",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "المسؤولية الاجتماعية",
+                      "textEn": "CSR"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "دعم الاقتصاد\nالوطني.",
+                      "textEn": "Supporting the\nnational economy."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyPrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "نتشرّف بتقديم نموذج مكتب عائلي من الطراز الأول — إضافة مميّزة لمنظومة الشركات السعودية.",
+                      "textEn": "We are honored to provide a top-tier Single Family Office as an investment model — a distinctive\n addition to the Saudi corporate landscape."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodySecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "كشركة عائلية رائدة في الاستثمار العالمي، نُركّز على تقليل المخاطر عبر تنويع المحفظة، وتعزيز إرث\n شركات العثيم، ودعم الاقتصاد الوطني والتنمية المستدامة.",
+                      "textEn": "As a leading family company in global investment, we focus on reducing investment risks through\n portfolio diversification, strengthening the legacy of Al Othaim companies, and supporting the\n national economy and sustainable development."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 6,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "d3f1f7e5-a9a0-542a-bd0e-eb7b40873fe8",
+      "slug": "family",
+      "category": "info",
+      "template": "default",
+      "titleAr": "عائلة العثيم",
+      "titleEn": "Al Othaim Family",
+      "isActive": true,
+      "isIndexable": true,
+      "navigationPlacement": "both",
+      "navigationOrder": 2,
+      "seoTitleAr": "عائلة العثيم — منذ 1956",
+      "seoTitleEn": "Al Othaim Family — Since 1956",
+      "seoDescriptionAr": "من بيت تجارة عام 1956 إلى مجموعة عالمية بمليارات الدولارات — قصة عائلة العثيم في سطور التاريخ.",
+      "seoDescriptionEn": "From a 1956 trading house to a multi-billion-dollar global family enterprise — the Al Othaim Family timeline.",
+      "seoImageAssetId": null,
+      "sections": [
+        {
+          "id": "c38ca13f-3646-54ff-bd2d-9a045c6dee8e",
+          "slug": "family-hero",
+          "titleAr": "عائلة العثيم",
+          "titleEn": "Al Othaim Family",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عائلة العثيم · منذ 1956",
+                      "textEn": "Al Othaim Family · Since 1956"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h1",
+                      "textAr": "سبعة عقودٍ\nمن العطاء.",
+                      "textEn": "Seven decades\nof enterprise."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "من بيت تجارة متواضع عام 1956 إلى مجموعة متعددة المليارات تعمل في التجزئة والعقار والترفيه والأزياء\n والغذاء والتقنية وغيرها — قصة العثيم قصة التفكير طويل الأمد والتنفيذ المنضبط.",
+                      "textEn": "From a modest trading house in 1956 to a multi-billion-dollar group operating across retail, real\n estate, entertainment, fashion, food, technology and beyond — the Al Othaim story is one of\n long-term thinking and disciplined execution."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 1,
+          "isActive": true
+        },
+        {
+          "id": "8051cc02-c8c1-5ba1-a9af-0e0fe67d5b2b",
+          "slug": "family-timeline",
+          "titleAr": "محطات العائلة",
+          "titleEn": "Family timeline",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الخط الزمني",
+                      "textEn": "Timeline"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "محطّاتٌ على الطريق.",
+                      "textEn": "Milestones along the way."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "range",
+                    "text": {
+                      "format": "p",
+                      "textAr": "1956 → اليوم",
+                      "textEn": "1956 → today"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "سبع محطات صنعت الأساس الذي تقف عليه العثيم جلوبال اليوم.",
+                      "textEn": "Seven defining moments that built the foundation Othaim Global stands on today."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "year",
+                    "text": {
+                      "format": "p",
+                      "textAr": "1956",
+                      "textEn": "1956"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "تأسيس مجموعة العثيم",
+                      "textEn": "Founding of the Al Othaim Conglomerate"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "بدأت الرحلة حين أسّس الشيخ الراحل صالح بن علي العثيم رحمه الله مؤسسة العثيم — كياناً متواضعاً نما ليصبح حضوراً بارزاً في السوق السعودية وما حولها.",
+                      "textEn": "The journey began when the late Sheikh Saleh Al Ali Al Othaim founded Al Othaim Establishment — a modest enterprise that would grow into a major presence in the Saudi market and beyond."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "year",
+                    "text": {
+                      "format": "p",
+                      "textAr": "1980",
+                      "textEn": "1980"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "تأسيس أسواق العثيم",
+                      "textEn": "Formation of Al Othaim Markets"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تأسست كشركة مساهمة عامة في تجارة المواد الغذائية بالجملة والتجزئة. اليوم تُصنّف ضمن أكبر 100 شركة في الشرق الأوسط — أكثر من 400 فرع عبر السعودية ومصر، وأكثر من 16,500 موظف.",
+                      "textEn": "Established as a public joint-stock company in wholesale and retail foodstuff trade. Today it ranks among the top 100 companies in the Middle East — over 400 branches across Saudi Arabia and Egypt and more than 16,500 employees."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "year",
+                    "text": {
+                      "format": "p",
+                      "textAr": "1990",
+                      "textEn": "1990"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "التوسّع والتحوّل",
+                      "textEn": "Expansion and Transformation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "توسّعت الفروع إلى 14 فرعاً وأُدخل نظام البيع بالجملة الاستهلاكي — تحوّل استراتيجي في النموذج التشغيلي مهّد الطريق للمرحلة التالية من النمو.",
+                      "textEn": "Branches expanded to 14 and a wholesale consumer system was introduced — a strategic shift in operating model that paved the way for the next phase of growth."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "year",
+                    "text": {
+                      "format": "p",
+                      "textAr": "1992",
+                      "textEn": "1992"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "إنشاء مستودعات الشركة",
+                      "textEn": "Introduction of Company Warehouses"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "بناء استراتيجي للقدرة اللوجستية — لخدمة العملاء بصورة أفضل وتلبية متطلبات سوق متسارع التطور.",
+                      "textEn": "Strategic build-out of logistics capability — supporting better service to customers and the demands of a rapidly evolving market landscape."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "year",
+                    "text": {
+                      "format": "p",
+                      "textAr": "2005",
+                      "textEn": "2005"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "تأسيس شركة العثيم القابضة",
+                      "textEn": "Formation of Al Othaim Holding Company"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "فصل جديد — أصبحت العثيم القابضة الكيان الأمّ المُشرف على محفظة متنوّعة من الشركات التابعة في القطاعات الاقتصادية والاستثمارية، ومنها أسواق عبدالله العثيم وشركة عبدالله العثيم للاستثمار.",
+                      "textEn": "A new chapter — Al Othaim Holding became the parent entity overseeing a diverse portfolio of subsidiaries across economic and investment sectors, including Abdullah Al Othaim Markets and Abdullah Al Othaim Investment Company."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "year",
+                    "text": {
+                      "format": "p",
+                      "textAr": "2005",
+                      "textEn": "2005"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "شركة عبدالله العثيم للاستثمار",
+                      "textEn": "Abdullah Al Othaim Investment Company"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تعمل في العقار والترفيه والضيافة والأزياء والمواد الغذائية والمشروبات — أكثر من 12 مجمعاً تجارياً، 70+ مركزاً ترفيهياً في الخليج ومصر، 14 علامة أزياء عبر 70+ متجراً، حقوق حصرية لـ 9 علامات F&B عبر 40+ متجراً، علامتي سينما في خمسة مواقع، و23+ مشروعاً متكامل الاستخدامات قيد التطوير.",
+                      "textEn": "Operates across real estate, entertainment, hospitality, fashion, and food & beverages — 12+ shopping complexes, 70+ entertainment centers across the GCC and Egypt, 14 fashion brands across 70+ stores, exclusive rights to 9 F&B brands across 40+ stores, two cinema brands across five locations in Saudi Arabia, and 23+ integrated mixed-use projects currently in development."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "year",
+                    "text": {
+                      "format": "p",
+                      "textAr": "2008",
+                      "textEn": "2008"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "مؤسسة عبدالله العثيم الخيرية",
+                      "textEn": "Abdullah Al Othaim Charity Foundation"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تأسست مؤسسة عبدالله صالح العثيم وأولاده الخيرية لتعزيز العمل الخيري المستدام — تتويجاً لالتزام شركات العثيم بالمسؤولية الاجتماعية وخدمة المجتمع.",
+                      "textEn": "The Abdullah Saleh Al Othaim & Sons Charity Foundation was established to enhance sustainable charitable work — a culmination of the family's long-standing commitment to corporate social responsibility and community service."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "year",
+                    "text": {
+                      "format": "p",
+                      "textAr": "2021",
+                      "textEn": "2021"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "العثيم جلوبال",
+                      "textEn": "Othaim Global"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "العثيم جلوبال هي منصة تنويع استثمارات عائلة العثيم بصفتها منصة الاستثمار الدولية — تتبنّى أعلى معايير المكاتب العائلية لتطوير كفاءة الاستثمار واستدامة العوائد.",
+                      "textEn": "Othaim Global is the diversifier of the Al Othaim Family as the international investment hub — adhering to best-in-class family-office standards to improve the efficiency of investments and the sustainability of returns."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "c39eadc2-196f-571e-b5c2-2a7586cba892",
+      "slug": "founder",
+      "category": "info",
+      "template": "default",
+      "titleAr": "المؤسس",
+      "titleEn": "Founder",
+      "isActive": true,
+      "isIndexable": true,
+      "navigationPlacement": "both",
+      "navigationOrder": 3,
+      "seoTitleAr": "المؤسس — عبدالله صالح العثيم",
+      "seoTitleEn": "Founder — Abdullah Saleh Al Othaim",
+      "seoDescriptionAr": "عبدالله صالح العثيم — مؤسس مجموعة العثيم، صنّفته فوربس ضمن أثرى رجال العالم العربي وإسلاميكا ضمن أبرز 500 شخصية مسلمة.",
+      "seoDescriptionEn": "Abdullah Saleh Al Othaim — founder of the Al Othaim Group, ranked by Forbes among the wealthiest in the Arab world and by Islamica among the world's top 500 Mus",
+      "seoImageAssetId": null,
+      "sections": [
+        {
+          "id": "d47f82cd-f834-5d60-94ee-f4f0b5640060",
+          "slug": "founder-hero",
+          "titleAr": "المؤسس",
+          "titleEn": "Founder hero",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الإدارة · المؤسس",
+                      "textEn": "Management · The Founder"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h1",
+                      "textAr": "عبدالله صالح\nالعثيم.",
+                      "textEn": "Abdullah Saleh\nAl Othaim."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "رجل أعمال سعودي صنّفته فوربس عام 2015 ضمن أثرى رجال العالم العربي، واختارته إسلاميكا ضمن أبرز 500\n شخصية مسلمة في العالم. تُقدّر إمبراطورية العثيم بمليارات الدولارات عبر استثمارات متنوّعة.",
+                      "textEn": "A Saudi businessman ranked among the wealthiest in the Arab world by Forbes (2015) and listed by\n Islamica among the world's top 500 Muslims. The Othaim Empire is estimated to be worth multi-billion\n dollars across diversified holdings."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "المؤسس",
+                      "textEn": "Founder"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "عبدالله صالح العثيم",
+                      "textEn": "Abdullah Saleh Al Othaim"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "fe0a204f-6725-5372-82c8-e7d75b078e53",
+                      "altAr": "عبدالله صالح العثيم",
+                      "altEn": "Abdullah Saleh Al Othaim"
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "link",
+                    "link": {
+                      "labelAr": "قصة العائلة",
+                      "labelEn": "The family story",
+                      "href": "/family",
+                      "style": "secondary"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 1,
+          "isActive": true
+        },
+        {
+          "id": "791c6ee7-cc58-57d5-b03b-e60f1db8b96d",
+          "slug": "founder-profile",
+          "titleAr": "سيرة المؤسس",
+          "titleEn": "Founder profile",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "السيرة",
+                      "textEn": "Profile"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "قيادة عبر\nثلاثة عقود.",
+                      "textEn": "Leadership across\nthree decades."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyPrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "بخبرة تتجاوز 37 عاماً في القيادة التشغيلية والإدارية، يُعدّ من كبار المستثمرين في المملكة العربية\n السعودية اليوم — مؤسساً واحداً من أبرز المشاريع العائلية في المملكة.",
+                      "textEn": "With over 37 years of operational and administrative leadership, he is among the largest investors\n in Saudi Arabia today — building one of the Kingdom's most influential family enterprises."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodySecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "يشغل عضويات رئاسية ومجالس إدارة في عدد من المؤسسات الوطنية، منها:",
+                      "textEn": "He serves as Chairman and Board Member across multiple national institutions, including:"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "positions",
+                    "text": {
+                      "format": "p",
+                      "textAr": "غرفة التجارة والصناعة بالقصيم\nالهيئة السعودية للمدن الصناعية ومناطق التقنية\nجمعية إنسان لرعاية الأيتام بالرياض\nمركز الأمير سلمان لأبحاث الإعاقة\nمؤسسة الملك عبدالعزيز ورجاله",
+                      "textEn": "Chamber of Commerce and Industry in Qassim\nSaudi Authority for Industrial Cities and Technical Areas\nCharity Association for Orphan Care in Riyadh (Ansan)\nPrince Salman Center for Disability Research\nKing Abdulaziz Foundation"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 2,
+          "isActive": true
+        },
+        {
+          "id": "27516e07-ee60-5a6f-bb77-91446427f53a",
+          "slug": "founder-companies",
+          "titleAr": "الشركات المؤسسة",
+          "titleEn": "Co-founded companies",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "شاركَ في تأسيس",
+                      "textEn": "Co-Founded"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "بناء الأساس.",
+                      "textEn": "Building the foundation."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "01",
+                      "textEn": "01"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "شركة العثيم العائلية",
+                      "textEn": "Othaim Family Company"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الكيان العائلي الأصلي — حجر الأساس للإرث.",
+                      "textEn": "The original family enterprise — anchoring the legacy."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "02",
+                      "textEn": "02"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "شركة أسواق عبدالله العثيم",
+                      "textEn": "Abdullah Al Othaim Markets"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "إحدى أكبر 100 شركة في الشرق الأوسط — 400+ فرعاً عبر السعودية ومصر.",
+                      "textEn": "One of the largest 100 companies in the Middle East — 400+ branches across Saudi Arabia and Egypt."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "03",
+                      "textEn": "03"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "شركة عبدالله العثيم للاستثمار العقاري والتطوير",
+                      "textEn": "Abdullah Al Othaim Real Estate Investment & Development"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تطوير عقاري على نطاق واسع — مجمعات تجارية ومشاريع متكاملة الاستخدامات في المنطقة.",
+                      "textEn": "Real-estate development at scale — shopping complexes and integrated mixed-use projects across the region."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 3,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "bfef6b65-34ff-5b68-96c7-991285ccbaa1",
+      "slug": "committee",
+      "category": "info",
+      "template": "default",
+      "titleAr": "لجنة الاستثمار",
+      "titleEn": "Investment Committee",
+      "isActive": true,
+      "isIndexable": true,
+      "navigationPlacement": "both",
+      "navigationOrder": 4,
+      "seoTitleAr": "لجنة الاستثمار — العثيم جلوبال",
+      "seoTitleEn": "Investment Committee — Othaim Global",
+      "seoDescriptionAr": "لجنة الاستثمار في العثيم جلوبال — خمسة قادة في التمويل العالمي يوجّهون رأس المال طويل الأمد بصرامة مؤسسية.",
+      "seoDescriptionEn": "The Othaim Global Investment Committee — five global finance leaders steering long-term capital with institutional rigor.",
+      "seoImageAssetId": null,
+      "sections": [
+        {
+          "id": "1866b220-022b-5446-9e8b-45ce85394bb6",
+          "slug": "committee-hero",
+          "titleAr": "لجنة الاستثمار",
+          "titleEn": "Committee hero",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الإدارة · لجنة الاستثمار",
+                      "textEn": "Management · Investment Committee"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h1",
+                      "textAr": "حُرّاس\nرأس المال.",
+                      "textEn": "Stewards\nof capital."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عقودٌ من الخبرة في التمويل والاستثمار العالمي — صرامة مؤسسية وانضباط مكاتب عائلية يقودان كل قرار.",
+                      "textEn": "Decades of global finance and investment expertise — a blend of institutional rigor and family-office\n discipline guiding every decision."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 1,
+          "isActive": true
+        },
+        {
+          "id": "a1b30280-5466-56ce-96de-ae205c4366d9",
+          "slug": "committee-members",
+          "titleAr": "أعضاء لجنة الاستثمار",
+          "titleEn": "Committee members",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "رئيس اللجنة",
+                      "textEn": "Chairman"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "عبداللطيف السيف",
+                      "textEn": "Abdullatif Al Seif"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyPrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "يمتلك عبداللطيف السيف خبرة تتجاوز 20 عاماً في الاستثمار والتمويل. أسّس ويقود شركة سبين للاستثمار. شغل سابقاً منصب الرئيس التنفيذي في شركة رائدة للاستثمار والرئيس التنفيذي للاستثمار في مؤسسة الملك عبدالله للأعمال الإنسانية.",
+                      "textEn": "Abdullatif Al Seif has more than 20 years of investment and finance experience. He founded and\n leads Sabeen Investment Co. and previously served as CEO at Raidah Investment Company and Chief\n Investment Officer at the King Abdullah Humanitarian Foundation."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodySecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "يشغل عضوية مجالس إدارة في شركة الإسمنت العربية، الوصاية العالمية للاستثمار، شركة النهدي الطبية، STC Solutions، وSALIC.",
+                      "textEn": "He holds board positions at Arabian Cement Company, Wisayah Global Investment Company, Al Nahdi\n Medical Company, STC Solutions, and SALIC."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "educationLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "التعليم",
+                      "textEn": "Education"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "education",
+                    "text": {
+                      "format": "p",
+                      "textAr": "ماجستير إدارة أعمال وبكالوريوس من جامعة بوسطن، وحاصل على شهادتي CFA وCPA.",
+                      "textEn": "MBA and undergraduate degree from Boston University. CFA and CPA designations."
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "950cb0e9-0984-5233-b84e-d98df638eff1",
+                      "altAr": "عبداللطيف السيف",
+                      "altEn": "Abdullatif Al Seif"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عضو",
+                      "textEn": "Member"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "عبدالملك العثيم",
+                      "textEn": "Abdulmalik Al Othaim"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyPrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "نائب رئيس الاستثمار في شركة العثيم القابضة، يُشرف على الأنشطة الاستثمارية المحلية والعالمية. بدأ مسيرته عام 2017 في شركة أسواق عبدالله العثيم، وعمل سابقاً محللاً استثمارياً ومحلل أبحاث أسهم في Alpha Capital.",
+                      "textEn": "Vice President of Investments at Al Othaim Holding Company, overseeing global and local\n investment activities. Career began in 2017 at Abdullah Al Othaim Markets Company; previously\n an investment analyst and equity research analyst at Alpha Capital."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodySecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "شريك مؤسس والرئيس التنفيذي للاستثمار في شركة عُروبة للاستثمار، وشريك مؤسس والرئيس التنفيذي لشركة Hello لتقنية أنظمة المعلومات.",
+                      "textEn": "Co-founder and Chief Investment Officer of Urubah Investment Company; Co-founder and CEO of Hello\n for Information Systems Technology Company."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "educationLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "التعليم",
+                      "textEn": "Education"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "education",
+                    "text": {
+                      "format": "p",
+                      "textAr": "بكالوريوس علوم في التمويل، جامعة سوفولك، بوسطن.",
+                      "textEn": "Bachelor of Science in Finance, Suffolk University, Boston."
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "fe0dda3c-7760-56ae-8f9d-c4ed8b539c93",
+                      "altAr": "عبدالملك العثيم",
+                      "altEn": "Abdulmalik Al Othaim"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عضو",
+                      "textEn": "Member"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "ياسر أبو شعبان",
+                      "textEn": "Yaser Abu Shaban"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyPrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "مستشار مستقل ومستشار أول بخبرة تتجاوز 24 عاماً في إدارة الاستثمارات وتطوير الاستراتيجيات الاستثمارية في الشرق الأوسط والولايات المتحدة. شغل آخر مناصبه مديراً لشركة Mercer للخدمات المالية في الشرق الأوسط (2016–2022).",
+                      "textEn": "Independent consultant and senior advisor with 24 years of experience managing investments and\n developing investment strategies in the Middle East and the United States. Most recently\n Director of Mercer Financial Services Middle East Limited (2016–2022)."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodySecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "يشغل عضويات في لجان استثمار في عدد من المجموعات السعودية؛ وعُيّن عضو مجلس إدارة غير تنفيذي في شركة بداية للتمويل عام 2022. شغل سابقاً مناصب في YA Financial وبنك الإمارات للاستثمار وبنك أبوظبي التجاري وشعاع كابيتال وMission Square.",
+                      "textEn": "Serves on investment committees of several Saudi groups; appointed non-executive Board member of\n Bidaya Finance in 2022. Previously held positions at YA Financial, Emirates Investment Bank, Abu\n Dhabi Commercial Bank, SHUAA Capital, and Mission Square."
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "ab3086d5-9598-5684-9e0f-bae07010f410",
+                      "altAr": "ياسر أبو شعبان",
+                      "altEn": "Yaser Abu Shaban"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عضو",
+                      "textEn": "Member"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "لوران هوبمان",
+                      "textEn": "Laurent Hopman"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyPrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الشريك المؤسس لشركة 21North Advisors — مكتب عائلي مستقل متعدد العائلات في البحرين يُقدّم إدارة المحافظ لعائلات ذات صافي ثروات فائق. شغل سابقاً عضوية لجنة الاستثمار في Investcorp مشرفاً على 8 مليار دولار من صناديق التحوّط.",
+                      "textEn": "Founding partner of 21North Advisors — an independent multi-family office in Bahrain providing\n portfolio management for ultra-high-net-worth families. Previously part of Investcorp's\n Investment Committee overseeing USD 8 billion in hedge funds."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodySecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "خبرات سابقة في Sivest وMorgan Stanley وUBS وPoseidon. بدأ مسيرته كمحلل اندماج واستحواذ في Calyon بميلانو. 21 عاماً من الخبرة في البحرين.",
+                      "textEn": "Earlier experience at Sivest, Morgan Stanley, UBS, and Poseidon. Began his career as an M&A\n analyst with Calyon in Milan. 21 years' experience based in Bahrain."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "educationLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "التعليم",
+                      "textEn": "Education"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "education",
+                    "text": {
+                      "format": "p",
+                      "textAr": "ماجستير إدارة أعمال من كلية وارتون – جامعة بنسلفانيا (تمويل وريادة أعمال). خرّيج المدرسة المركزية في باريس École Centrale Paris.",
+                      "textEn": "MBA, The Wharton School, University of Pennsylvania (Finance and Entrepreneurship). Graduate of École Centrale Paris."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "initials",
+                    "text": {
+                      "format": "p",
+                      "textAr": "LH",
+                      "textEn": "LH"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عضو",
+                      "textEn": "Member"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "تركي الدايل",
+                      "textEn": "Turki Al Dayel"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyPrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "خبرة تتجاوز 16 عاماً في الخدمات المصرفية الاستثمارية والملكية الخاصة في المملكة العربية السعودية، تشمل قطاعات الرعاية الصحية والمواد الغذائية والمشروبات والنفط والغاز والتصنيع وغيرها. الرئيس التنفيذي لشركة Ninety-One Capital في السعودية والرئيس المشارك للشرق الأوسط.",
+                      "textEn": "Over 16 years of expertise in Investment Banking and Private Equity within Saudi Arabia, across\n healthcare, food & beverages, oil & gas, manufacturing, and other sectors. CEO of\n Ninety-One Capital Saudi Arabia and Co-Head of the Middle East."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodySecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "شغل سابقاً منصب رئيس الملكية الخاصة في شركة رائدة للاستثمار. خبرات سابقة في الفرنسي كابيتال، مجموعة أبراج، الرياض المالية، وJP Morgan.",
+                      "textEn": "Previously Head of Private Equity at Raidah Investments Company. Earlier experience at Saudi\n Fransi Capital, The Abraaj Group, Riyad Capital, and JP Morgan."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyTertiary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عضو مجلس إدارة شركة سينومي سنترز (منذ 2022) وعضو مؤسس لمجلس إدارة Saudi Bio (منذ 2016). يشغل حالياً منصب رئيس لجنة الاستثمار في SVC.",
+                      "textEn": "Board member of Cenomi Centers (since 2022) and founding board member of Saudi Bio (since 2016).\n Currently serves as Chairman of the Investment Committee at SVC."
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "4f9a8d0a-f2b0-53dd-913c-8e45acd384b4",
+                      "altAr": "تركي الدايل",
+                      "altEn": "Turki Al Dayel"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "c528f046-69ac-5495-bc7c-da2f91050a0a",
+      "slug": "team",
+      "category": "info",
+      "template": "default",
+      "titleAr": "فريق الاستثمار",
+      "titleEn": "Investment Team",
+      "isActive": true,
+      "isIndexable": true,
+      "navigationPlacement": "both",
+      "navigationOrder": 5,
+      "seoTitleAr": "فريق الاستثمار — العثيم جلوبال",
+      "seoTitleEn": "Investment Team — Othaim Global",
+      "seoDescriptionAr": "فريق الاستثمار في العثيم جلوبال بقيادة جميل حلاق، الرئيس التنفيذي للاستثمار — خبرة عالمية في أسواق المال تمتد لأكثر من 20 عاماً.",
+      "seoDescriptionEn": "The Othaim Global Investment Team led by Jamil Hallak, Chief Investment Officer — global capital-markets expertise across 20+ years.",
+      "seoImageAssetId": null,
+      "sections": [
+        {
+          "id": "2851fcfc-42b8-5e56-899e-924785e343cd",
+          "slug": "team-hero",
+          "titleAr": "فريق الاستثمار",
+          "titleEn": "Team hero",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الإدارة · فريق الاستثمار",
+                      "textEn": "Management · Investment Team"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h1",
+                      "textAr": "التنفيذ\nاليومي.",
+                      "textEn": "Day-to-day\nexecution."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "خبرة عالمية في أسواق المال على رأس عملياتنا في الأسواق العامة والخاصة.",
+                      "textEn": "Global capital-markets expertise at the helm of our public and private market operations."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 1,
+          "isActive": true
+        },
+        {
+          "id": "348026b3-c6b7-5d45-805f-49540e3f8c65",
+          "slug": "team-profile",
+          "titleAr": "جميل حلاق",
+          "titleEn": "Jamil Hallak profile",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "جميل حلاق",
+                      "textEn": "Jamil Hallak"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الرئيس التنفيذي للاستثمار",
+                      "textEn": "Chief Investment Officer"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "languages",
+                    "text": {
+                      "format": "p",
+                      "textAr": "AR العربية\nEN الإنجليزية\nFR الفرنسية",
+                      "textEn": "AR Arabic\nEN English\nFR French"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyPrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "جميل حلاق خبير في أسواق المال العالمية بخبرة تتجاوز 20 عاماً في كبرى المؤسسات في باريس ولندن — في الأسعار، الائتمان، العائد المرتفع، والأسواق الناشئة.",
+                      "textEn": "Jamil Hallak is a global capital-markets expert with over 20 years of experience in top-tier\n institutions across Paris and London — covering rates, credit, high yield, and emerging markets."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodySecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "في عام 2009 قاد عمليات تداول الشرق الأوسط وأفريقيا خلال توسّع أسواق الدين في المنطقة — بما في ذلك الربيع العربي وأزمة دبي وعدد من عمليات إعادة هيكلة الشركات.",
+                      "textEn": "In 2009, he managed Middle East and Africa trading operations during the MENA debt-capital-market\n expansion — including the Arab Spring, the Dubai crisis, and major corporate restructurings."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyTertiary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تمتد خبرته في سوسيتيه جنرال، BNP Paribas، ستاندرد تشارترد، دويتشه بنك، وكريدي سويس في باريس ولندن. ومنذ 2017 شغل منصب رئيس الاستثمارات في بنك الرياض في الرياض.",
+                      "textEn": "His professional background spans Société Générale, BNP Paribas, Standard Chartered, Deutsche\n Bank, and Credit Suisse in Paris and London. From 2017 he served as Head of Investments at Riyad\n Bank in Riyadh."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyQuaternary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "منذ 2020 يقود عمليات الاستثمار الدولية لشركة عائلة العثيم في الأسواق العامة والخاصة.",
+                      "textEn": "Since 2020, Jamil leads international investment operations for the Al Othaim Family Company\n across public and private markets."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "educationLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "التعليم",
+                      "textEn": "Education"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "education",
+                    "text": {
+                      "format": "p",
+                      "textAr": "ماجستير في الاقتصاد والتمويل من جامعة السوربون باريس\nماجستير إدارة الأعمال التنفيذي من Cass Business School لندن",
+                      "textEn": "Master's in Economics and Finance, Sorbonne University Paris\nExecutive MBA, Cass Business School London"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "portrait",
+                    "image": {
+                      "desktopAssetId": "2665d7be-47a8-51af-8a5a-793f5f3f42af",
+                      "altAr": "جميل حلاق",
+                      "altEn": "Jamil Hallak"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "1335891d-3b72-5c26-97aa-fd16a44ada8b",
+      "slug": "portfolio",
+      "category": "info",
+      "template": "default",
+      "titleAr": "المحفظة",
+      "titleEn": "Portfolio",
+      "isActive": true,
+      "isIndexable": true,
+      "navigationPlacement": "both",
+      "navigationOrder": 6,
+      "seoTitleAr": "المحفظة — العثيم جلوبال بالتفصيل",
+      "seoTitleEn": "Portfolio — Othaim Global In Depth",
+      "seoDescriptionAr": "محفظة متنوّعة طويلة الأمد مع كبار المديرين — شركاء البنية التحتية وشبكة التميّز العالمية في العثيم جلوبال.",
+      "seoDescriptionEn": "A diversified, long-term portfolio with top-tier managers — Othaim Global's infrastructure partners and global network of excellence.",
+      "seoImageAssetId": null,
+      "sections": [
+        {
+          "id": "85120c15-125f-5e54-ac44-bd9a5b9a1f3e",
+          "slug": "portfolio-hero",
+          "titleAr": "المحفظة",
+          "titleEn": "Portfolio hero",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "المحفظة · بالتفصيل",
+                      "textEn": "Portfolio · In Depth"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h1",
+                      "textAr": "نهجٌ متوازن،\nمبنيٌّ على المدى الطويل.",
+                      "textEn": "A balanced approach,\nbuilt for the long term."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "العثيم جلوبال مستثمر طويل الأمد ملتزم — يبني أساساً صلباً عبر تنويع واسع وشراكات مع كبار المديرين\n حول العالم.",
+                      "textEn": "Othaim Global is a dedicated long-term investor — building a solid foundation through broadly\n diversified exposure and partnerships with top-tier managers worldwide."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 1,
+          "isActive": true
+        },
+        {
+          "id": "cf159aaf-d36b-5704-a8d7-1020e7231cd8",
+          "slug": "portfolio-philosophy",
+          "titleAr": "فلسفة المحفظة",
+          "titleEn": "Portfolio philosophy",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الفلسفة",
+                      "textEn": "Philosophy"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "الاستثمار والمخاطر،\nفي توازن.",
+                      "textEn": "Investments and\nrisk, in balance."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodyPrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "هدفنا الأساسي هو خلق ثروة معقولة تُتيح الفرص للأجيال الحالية والقادمة مع الاهتمام بالمستقبل في عالم\n ديناميكي. أساس النجاح يكمن في العمل الجاد، الاكتفاء الذاتي، والانضباط.",
+                      "textEn": "Our primary objective is reasonable wealth creation that unlocks opportunities for current and\n future generations while caring for the future in a dynamic world. The foundation for success lies\n in hard work, self-sufficiency, and discipline."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "bodySecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "ندير المخاطر استباقياً لحماية الأصول ومصالح أصحاب المصلحة. كمستثمر حصيف، نلتزم بتحديد المخاطر والحدّ\n منها وفق معايير الصناعة وأفضل الممارسات الدولية.",
+                      "textEn": "We proactively manage risks to safeguard assets and protect stakeholders' interests. As a prudent\n investor, we are deeply committed to identifying and mitigating risks in line with industry\n standards and international best practices."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 2,
+          "isActive": true
+        },
+        {
+          "id": "f80e8a4f-a4ca-5fc1-a310-ab636995ea6b",
+          "slug": "portfolio-infrastructure",
+          "titleAr": "شركاء البنية التحتية",
+          "titleEn": "Infrastructure partners",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "شركاء البنية التحتية",
+                      "textEn": "Infrastructure Partners"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "المنصّة وراء\nالمحفظة.",
+                      "textEn": "The platform behind\nthe portfolio."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "NEPC",
+                      "textEn": "NEPC"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "sector",
+                    "text": {
+                      "format": "p",
+                      "textAr": "مستشار مالي",
+                      "textEn": "Financial Consultant"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "a703439f-d001-545b-ae25-996a1a800890",
+                      "altAr": "NEPC",
+                      "altEn": "NEPC"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Hourani",
+                      "textEn": "Hourani Partners"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "sector",
+                    "text": {
+                      "format": "p",
+                      "textAr": "شركة محاماة",
+                      "textEn": "Law Firm"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "44e6fd68-75be-5341-93a3-f22970f4409c",
+                      "altAr": "Hourani",
+                      "altEn": "Hourani Partners"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Northern Trust",
+                      "textEn": "Northern Trust"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "sector",
+                    "text": {
+                      "format": "p",
+                      "textAr": "حافظ عالمي",
+                      "textEn": "Global Custodian"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "62f9f64b-a4e8-5336-8a81-cbd8eddd749d",
+                      "altAr": "Northern Trust",
+                      "altEn": "Northern Trust"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Allen & Overy",
+                      "textEn": "Allen & Overy"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "sector",
+                    "text": {
+                      "format": "p",
+                      "textAr": "شركة محاماة",
+                      "textEn": "Law Firm"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "112c2f13-e16c-508f-a27f-1e81e7aea629",
+                      "altAr": "Allen & Overy",
+                      "altEn": "Allen & Overy"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "MSCI",
+                      "textEn": "MSCI"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "sector",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تحليل بيانات",
+                      "textEn": "Data Analysis"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "7431ae20-c304-59e8-81e4-dbcaf10f66d9",
+                      "altAr": "MSCI",
+                      "altEn": "MSCI"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Maples",
+                      "textEn": "Maples"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "sector",
+                    "text": {
+                      "format": "p",
+                      "textAr": "إدارة الصناديق",
+                      "textEn": "Fund Administrator"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "833667ee-1b4c-5efb-9ca9-51deaec1c2e2",
+                      "altAr": "Maples",
+                      "altEn": "Maples"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Preqin",
+                      "textEn": "Preqin"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "sector",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تحليل بيانات",
+                      "textEn": "Data Analysis"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "47bd48f2-3440-5914-8ec0-4ca2def671b5",
+                      "altAr": "Preqin",
+                      "altEn": "Preqin"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Bloomberg",
+                      "textEn": "Bloomberg"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "sector",
+                    "text": {
+                      "format": "p",
+                      "textAr": "منصة المعلومات",
+                      "textEn": "Information Platform"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "44377388-2212-53cf-a1b9-45b5f1f1069d",
+                      "altAr": "Bloomberg",
+                      "altEn": "Bloomberg"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "addepar",
+                      "textEn": "addepar"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "sector",
+                    "text": {
+                      "format": "p",
+                      "textAr": "منصة إعداد التقارير",
+                      "textEn": "Reporting Platform"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "f6394acb-4b7b-5e46-959d-0b3d5716d329",
+                      "altAr": "addepar",
+                      "altEn": "addepar"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "saffery",
+                      "textEn": "saffery"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "sector",
+                    "text": {
+                      "format": "p",
+                      "textAr": "خدمات الشركات",
+                      "textEn": "Corporate Administrator"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "c7180768-59c1-53e6-820d-8c2c51f439da",
+                      "altAr": "saffery",
+                      "altEn": "saffery"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 3,
+          "isActive": true
+        },
+        {
+          "id": "3fa5c37a-15dc-5c23-8719-165ccf984c1f",
+          "slug": "portfolio-partners",
+          "titleAr": "شبكة التميز",
+          "titleEn": "Portfolio partners",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "شبكة التميّز",
+                      "textEn": "Network of Excellence"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "شراكات في\nالأسواق الخاصة.",
+                      "textEn": "Partnerships across\nprivate markets."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "العلاقات ركن أساسي من نجاحنا. نتشارك مع شركات رائدة في الملكية الخاصة، الائتمان، الأصول الحقيقية،\n صناديق التحوّط، ورأس المال الجريء.",
+                      "textEn": "Relationships are a critical component of our success. We partner with leading firms across private\n equity, credit, real assets, hedge funds, and venture."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Accel-KKR",
+                      "textEn": "Accel-KKR"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "85fe0b25-d7f5-5c22-b9fc-5808db7e5ab4",
+                      "altAr": "Accel-KKR",
+                      "altEn": "Accel-KKR"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Ardian",
+                      "textEn": "Ardian"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "77547b22-5b78-5982-a83c-0ac5c7c1d95e",
+                      "altAr": "Ardian",
+                      "altEn": "Ardian"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Audax Group",
+                      "textEn": "Audax Group"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "d5f9fcd5-4c43-5d77-95a3-33a8a7dfeaa1",
+                      "altAr": "Audax Group",
+                      "altEn": "Audax Group"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Blackstone",
+                      "textEn": "Blackstone"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "fb87bf63-abfd-516b-b89b-8d44e4a757bc",
+                      "altAr": "Blackstone",
+                      "altEn": "Blackstone"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Carlyle",
+                      "textEn": "Carlyle"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "821322a0-aa71-5bd3-9578-b127a42b5bdd",
+                      "altAr": "Carlyle",
+                      "altEn": "Carlyle"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "CenterSquare",
+                      "textEn": "CenterSquare"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "fd918c21-f92d-58cb-ac92-2fed837bd394",
+                      "altAr": "CenterSquare",
+                      "altEn": "CenterSquare"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Clayton Dubilier & Rice",
+                      "textEn": "Clayton Dubilier & Rice"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "b2567f1c-8b20-5d68-a4ba-fa30ee4c500c",
+                      "altAr": "Clayton Dubilier & Rice",
+                      "altEn": "Clayton Dubilier & Rice"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "CRV",
+                      "textEn": "CRV"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "081d17a5-9d7e-5327-a559-f67e6f0bf5dc",
+                      "altAr": "CRV",
+                      "altEn": "CRV"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "CVC",
+                      "textEn": "CVC"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "cd297ec3-c183-5560-b70a-a3a9ca699ef6",
+                      "altAr": "CVC",
+                      "altEn": "CVC"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "EQT Exeter",
+                      "textEn": "EQT Exeter"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "0f403872-b85d-5568-a59b-2bab867cd6db",
+                      "altAr": "EQT Exeter",
+                      "altEn": "EQT Exeter"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "FirstMark",
+                      "textEn": "FirstMark"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "acb4df00-d0f8-502a-b79c-87ded1288447",
+                      "altAr": "FirstMark",
+                      "altEn": "FirstMark"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Genstar Capital",
+                      "textEn": "Genstar Capital"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "5474ebe5-6deb-5c7b-95d0-a87510464467",
+                      "altAr": "Genstar Capital",
+                      "altEn": "Genstar Capital"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Glendower",
+                      "textEn": "Glendower"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "2c9d65f7-458c-54de-83c5-3e5386a35cef",
+                      "altAr": "Glendower",
+                      "altEn": "Glendower"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Golub Capital",
+                      "textEn": "Golub Capital"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "b42818bf-d3cc-5a9c-b183-8bf530d84ff2",
+                      "altAr": "Golub Capital",
+                      "altEn": "Golub Capital"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "HarbourVest",
+                      "textEn": "HarbourVest"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "11d2662a-4610-5c03-9b2a-15be4c9f48f8",
+                      "altAr": "HarbourVest",
+                      "altEn": "HarbourVest"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "KKR",
+                      "textEn": "KKR"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "659bb8f2-3f96-551b-9e4e-63f09db409ab",
+                      "altAr": "KKR",
+                      "altEn": "KKR"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Landmark Partners",
+                      "textEn": "Landmark Partners"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "73d52f64-46cf-5a99-9e63-0f8884ee3af8",
+                      "altAr": "Landmark Partners",
+                      "altEn": "Landmark Partners"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Lexington Partners",
+                      "textEn": "Lexington Partners"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "609c0486-dac1-5f46-b979-1ca2c1bd745e",
+                      "altAr": "Lexington Partners",
+                      "altEn": "Lexington Partners"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Maverick Capital",
+                      "textEn": "Maverick Capital"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "5574ece5-c4be-55b5-aacb-997eae8d6cde",
+                      "altAr": "Maverick Capital",
+                      "altEn": "Maverick Capital"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "MGG",
+                      "textEn": "MGG Investment Group"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "076c9b58-f315-5841-886d-49a738c34cad",
+                      "altAr": "MGG",
+                      "altEn": "MGG Investment Group"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Monarch",
+                      "textEn": "Monarch"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "756142fc-20ea-5ce0-83d7-a3445735b649",
+                      "altAr": "Monarch",
+                      "altEn": "Monarch"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Oak Hill Advisors",
+                      "textEn": "Oak Hill Advisors"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "7ea18e38-ff24-5b87-aafd-a439986066da",
+                      "altAr": "Oak Hill Advisors",
+                      "altEn": "Oak Hill Advisors"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Orchard Global",
+                      "textEn": "Orchard Global"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "eae539d1-e8e4-5fb9-b46d-3f0d4219e884",
+                      "altAr": "Orchard Global",
+                      "altEn": "Orchard Global"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Patron Capital",
+                      "textEn": "Patron Capital"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "f8e3cbb5-943a-5d43-9050-7de411cc8564",
+                      "altAr": "Patron Capital",
+                      "altEn": "Patron Capital"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "PIMCO",
+                      "textEn": "PIMCO"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "9a388f54-f4c5-538f-a691-a33b763305e0",
+                      "altAr": "PIMCO",
+                      "altEn": "PIMCO"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "StepStone Group",
+                      "textEn": "StepStone Group"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "6281bad7-2f07-5c2a-a6e9-5d541596710a",
+                      "altAr": "StepStone Group",
+                      "altEn": "StepStone Group"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Thoma Bravo",
+                      "textEn": "Thoma Bravo"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "a2426e3d-55d1-5ba9-956d-a7c437e15aed",
+                      "altAr": "Thoma Bravo",
+                      "altEn": "Thoma Bravo"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Top Tier Capital",
+                      "textEn": "Top Tier Capital"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "9f880533-982a-545d-a6d7-30724492c257",
+                      "altAr": "Top Tier Capital",
+                      "altEn": "Top Tier Capital"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Vitruvian Partners",
+                      "textEn": "Vitruvian Partners"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "71d8c58d-5a2b-5db1-add0-a5a672d29939",
+                      "altAr": "Vitruvian Partners",
+                      "altEn": "Vitruvian Partners"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Willow",
+                      "textEn": "Willow Tree Credit Partners"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "6a76b91b-c873-53db-bbdf-f324e8f91baf",
+                      "altAr": "Willow",
+                      "altEn": "Willow Tree Credit Partners"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "Wiblue-owlllow",
+                      "textEn": "Wiblue-owlllow"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "b0b948a2-b45c-5e7f-a2ce-b54158f22240",
+                      "altAr": "Wiblue-owlllow",
+                      "altEn": "Wiblue-owlllow"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "windrose",
+                      "textEn": "windrose"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "23ee73f6-ea6c-5284-967b-ae389c3aee42",
+                      "altAr": "windrose",
+                      "altEn": "windrose"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "starwood",
+                      "textEn": "starwood"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "bdd760b4-d88a-5024-8c2c-0b492cc403af",
+                      "altAr": "starwood",
+                      "altEn": "starwood"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "digital-realty",
+                      "textEn": "digital-realty"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "b264ef54-9a54-5a51-b939-614fc659ad79",
+                      "altAr": "digital-realty",
+                      "altEn": "digital-realty"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "elliott",
+                      "textEn": "elliott"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "d4a85ae4-a8cf-5fbc-9249-0a7f15c78a05",
+                      "altAr": "elliott",
+                      "altEn": "elliott"
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "arbour-lane",
+                      "textEn": "arbour-lane"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "key": "logo",
+                    "image": {
+                      "desktopAssetId": "da4fd1f4-fced-589f-b73b-d002d9fdc5ec",
+                      "altAr": "arbour-lane",
+                      "altEn": "arbour-lane"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 4,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "92adb96a-a505-55e3-b89d-22b327c33eae",
+      "slug": "strategy",
+      "category": "info",
+      "template": "default",
+      "titleAr": "الاستراتيجية",
+      "titleEn": "Strategy",
+      "isActive": true,
+      "isIndexable": true,
+      "navigationPlacement": "both",
+      "navigationOrder": 7,
+      "seoTitleAr": "الاستراتيجية — فلسفة وحوكمة العثيم جلوبال",
+      "seoTitleEn": "Strategy — Othaim Global Philosophy & Governance",
+      "seoDescriptionAr": "نهجٌ شامل للنجاح المالي — خمسة محاور في فلسفة الاستثمار والحوكمة توجّه العثيم جلوبال.",
+      "seoDescriptionEn": "A holistic approach to financial success — five pillars of investment philosophy and governance that guide Othaim Global.",
+      "seoImageAssetId": null,
+      "sections": [
+        {
+          "id": "0dec4105-d9e1-559a-ad83-c5c83ca41883",
+          "slug": "strategy-hero",
+          "titleAr": "الاستراتيجية",
+          "titleEn": "Strategy hero",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الاستراتيجية · فلسفة وحوكمة",
+                      "textEn": "Strategy · Philosophy & Governance"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h1",
+                      "textAr": "نهجٌ شاملٌ\nللنجاح المالي.",
+                      "textEn": "A holistic approach\nto financial success."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "إدارة الثروة في العثيم جلوبال تجمع بين الاستثمار المنضبط، إدارة المخاطر الحصيفة، خلق القيمة\n الاستراتيجي، التميّز المؤسسي، والشراكات الدائمة.",
+                      "textEn": "Wealth management at Othaim Global combines disciplined investment, prudent risk management,\n strategic value creation, organizational excellence, and enduring partnerships."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 1,
+          "isActive": true
+        },
+        {
+          "id": "7b701ac1-3af9-5bfe-aebc-6c05276ade2d",
+          "slug": "strategy-pillars",
+          "titleAr": "محاور الاستراتيجية",
+          "titleEn": "Strategy pillars",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "المحاور الخمسة",
+                      "textEn": "Five Pillars"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "ما نؤمن به.",
+                      "textEn": "What we believe."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "01",
+                      "textEn": "01"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الحفاظ على الثروة وتعزيزها",
+                      "textEn": "Wealth Preservation & Growth"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تتمحور استراتيجيتنا حول الوصول إلى الإمكانات الهائلة للأسواق العالمية عبر استثمارات متنوّعة في فئات\n الأصول الفرعية، مع تنويع أساليب الاستثمار لتقديم عوائد متوازنة مع المخاطر.",
+                      "textEn": "Our strategy is built on accessing the vast potential of global markets through diversified\n investments across sub-asset classes and leveraging various investment styles to deliver superior\n risk-adjusted returns."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "02",
+                      "textEn": "02"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "إدارة المخاطر الرشيدة",
+                      "textEn": "Prudent Risk Management"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "إدارة المخاطر ليست مجرد إجراء دفاعي — إنها ضرورة استراتيجية. نحدّد المخاطر ونحدّ منها وفق معايير\n الصناعة وأفضل الممارسات الدولية لحماية الأصول ومصالح أصحاب المصلحة.",
+                      "textEn": "Risk management is not merely a defensive measure — it is a strategic imperative. We identify and\n mitigate risk per industry standards and international best practices to safeguard assets and\n protect stakeholders' interests."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "03",
+                      "textEn": "03"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "خلق القيمة من خلال الاستثمار الاستراتيجي",
+                      "textEn": "Value Creation Through Strategic Investment"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "نؤمن بالقوة التحوّلية للاستثمار الاستراتيجي. بعقلية مغايرة نُحدّد الفرص حيث يرى الآخرون العقبات —\n عبر عمليات استثمار محكمة ورؤية ثاقبة للاتجاهات الناشئة.",
+                      "textEn": "We believe in the transformative power of strategic investment. With a contrarian mindset, we\n identify opportunities where others perceive obstacles — through astute investment processes and a\n keen eye for emerging trends."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "04",
+                      "textEn": "04"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "بناء منظومة عالمية المستوى",
+                      "textEn": "Building a World-Class Organization"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "التحسين المستمر والالتزام بأفضل الممارسات يقودان كل ما نفعله — من التركيز على الابتكار، إلى استقطاب\n أفضل الكفاءات، وبناء هياكل حوكمة متينة قابلة للتوسّع.",
+                      "textEn": "Continuous improvement and a commitment to best practices drive everything we do — from a focus on\n innovation, to recruiting top-tier talent, to building robust governance structures that scale."
+                    }
+                  }
+                ]
+              },
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "number",
+                    "text": {
+                      "format": "p",
+                      "textAr": "05",
+                      "textEn": "05"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الشراكات طويلة الأمد",
+                      "textEn": "Long-term Partnerships"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "body",
+                    "text": {
+                      "format": "p",
+                      "textAr": "العلاقات الراسخة المبنيّة على الثقة والتعاون حجر الزاوية للنمو المستدام. نُغذّي شراكات تتجاوز حدود\n الصفقة — وتنمو معنا على مرّ العقود.",
+                      "textEn": "Enduring relationships built on trust and collaboration are the cornerstone of sustainable growth.\n We foster partnerships that extend beyond the transactional — and grow with us over decades."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 2,
+          "isActive": true
+        },
+        {
+          "id": "0c773fad-4f17-59cf-b4b8-148b3079423e",
+          "slug": "strategy-closing",
+          "titleAr": "الخاتمة",
+          "titleEn": "Strategy closing",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الخاتمة",
+                      "textEn": "Closing"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "حُرّاس\nرأس المال المؤتمَن.",
+                      "textEn": "Custodians of\nentrusted capital."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "العثيم جلوبال حارسٌ لرأس المال المؤتمَن عليه — ملتزمون بقيادة أصحاب المصلحة نحو الأمان المالي بعزيمة\n راسخة ونزاهة لا تتزحزح.",
+                      "textEn": "Othaim Global is the custodian of capital entrusted to it — committed to guiding stakeholders toward\n financial security with unwavering resolve and integrity."
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "link",
+                    "link": {
+                      "labelAr": "تحدّث إلى فريقنا",
+                      "labelEn": "Talk to our team",
+                      "href": "/contact",
+                      "style": "primary"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 3,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "id": "e0d1c517-e53a-5271-af43-4cc6acfe6c08",
+      "slug": "contact",
+      "category": "info",
+      "template": "default",
+      "titleAr": "تواصل",
+      "titleEn": "Contact",
+      "isActive": true,
+      "isIndexable": true,
+      "navigationPlacement": "both",
+      "navigationOrder": 8,
+      "seoTitleAr": "تواصل — العثيم جلوبال",
+      "seoTitleEn": "Contact — Othaim Global",
+      "seoDescriptionAr": "تواصل مع العثيم جلوبال — العنوان البريدي، نموذج التواصل، الهاتف، والبريد الإلكتروني.",
+      "seoDescriptionEn": "Get in touch with Othaim Global — postal address, contact form, phone, and email.",
+      "seoImageAssetId": null,
+      "sections": [
+        {
+          "id": "ba3bfdee-1a9d-5b5e-909d-662fb71e27dc",
+          "slug": "contact-hero",
+          "titleAr": "تواصل معنا",
+          "titleEn": "Contact hero",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تواصل معنا",
+                      "textEn": "Get in touch"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h1",
+                      "textAr": "لنبدأ\nالحوار.",
+                      "textEn": "Let's start\na conversation."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "summary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تحدّث إلينا حول الشراكات طويلة الأمد، الاستثمارات المشتركة، وعهدات المكاتب العائلية.",
+                      "textEn": "Talk to us about long-term partnerships, co-investments, and family-office mandates."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headerNavigationLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تواصل",
+                      "textEn": "Contacts"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "footerNavigationLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تواصل",
+                      "textEn": "Contact"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 1,
+          "isActive": true
+        },
+        {
+          "id": "41c8222f-15c7-5f8c-8fb5-4bc66e776a5d",
+          "slug": "contact-details",
+          "titleAr": "بيانات التواصل",
+          "titleEn": "Contact details",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "type": "text",
+                    "key": "eyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "بيانات التواصل",
+                      "textEn": "Contact Details"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "headline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "العنوان البريدي",
+                      "textEn": "Postal Address"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "addressLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "العنوان",
+                      "textEn": "Address"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "address",
+                    "text": {
+                      "format": "p",
+                      "textAr": "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS",
+                      "textEn": "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "phoneLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الهاتف",
+                      "textEn": "Phone"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "phonePrimary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "+966 11 4755 733",
+                      "textEn": "+966 11 4755 733"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "phoneSecondary",
+                    "text": {
+                      "format": "p",
+                      "textAr": "+966 55 226 9470",
+                      "textEn": "+966 55 226 9470"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "emailLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "البريد الإلكتروني",
+                      "textEn": "Email"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "email",
+                    "text": {
+                      "format": "p",
+                      "textAr": "info@othaimglobal.com",
+                      "textEn": "info@othaimglobal.com"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "formEyebrow",
+                    "text": {
+                      "format": "p",
+                      "textAr": "أرسل رسالة",
+                      "textEn": "Send a message"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "formHeadline",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "اكتب إلينا.",
+                      "textEn": "Write to us."
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "fullNameLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الاسم",
+                      "textEn": "Name"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "fullNamePlaceholder",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الاسم الكامل",
+                      "textEn": "Your full name"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "emailFieldLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "البريد الإلكتروني",
+                      "textEn": "Email"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "emailPlaceholder",
+                    "text": {
+                      "format": "p",
+                      "textAr": "you@example.com",
+                      "textEn": "you@example.com"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "messageLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الرسالة",
+                      "textEn": "Message"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "messagePlaceholder",
+                    "text": {
+                      "format": "p",
+                      "textAr": "كيف يمكننا مساعدتك؟",
+                      "textEn": "How can we help?"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "submitLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "إرسال",
+                      "textEn": "Send message"
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "emailLink",
+                    "link": {
+                      "labelAr": "info@othaimglobal.com",
+                      "labelEn": "info@othaimglobal.com",
+                      "href": "mailto:info@othaimglobal.com",
+                      "style": "text"
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "phonePrimaryLink",
+                    "link": {
+                      "labelAr": "+966 11 4755 733",
+                      "labelEn": "+966 11 4755 733",
+                      "href": "tel:+966114755733",
+                      "style": "text"
+                    }
+                  },
+                  {
+                    "type": "link",
+                    "key": "phoneSecondaryLink",
+                    "link": {
+                      "labelAr": "+966 55 226 9470",
+                      "labelEn": "+966 55 226 9470",
+                      "href": "tel:+966552269470",
+                      "style": "text"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 2,
+          "isActive": true
+        }
+      ]
+    }
+  ]
+}

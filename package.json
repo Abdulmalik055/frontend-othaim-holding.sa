@@ -7,10 +7,13 @@
     "dev": "next dev --port 3001",
     "dev:webpack": "next dev --webpack --port 3001",
     "build": "next build",
+    "build:e2e": "NEXT_PUBLIC_SITE_URL=http://127.0.0.1:3001 NEXT_PUBLIC_BACKEND_URL=http://127.0.0.1:3100 next build",
     "start": "next start --port 3001",
     "lint": "eslint",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:e2e": "pnpm build:e2e && pnpm test:e2e:run",
+    "test:e2e:run": "playwright test"
   },
   "dependencies": {
     "@dnd-kit/dom": "^0.5.0",
@@ -43,6 +46,8 @@
     "zustand": "^5.0.12"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.11.0",
+    "@playwright/test": "1.62.1",
     "@tailwindcss/postcss": "^4",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.3",

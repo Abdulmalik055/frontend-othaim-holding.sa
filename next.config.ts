@@ -14,6 +14,8 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL!;
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["127.0.0.1"],
+  devIndicators: false,
   images: {
     remotePatterns: [
       {
