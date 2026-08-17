@@ -117,12 +117,12 @@ export function ContactInquiryForm({
 
   const organizationField = (
     <FormFieldError id="organization-error" message={errors.organization?.message}>
-      <label htmlFor="home-organization" className="ogc-form-label">
+      <label htmlFor={`${source}-organization`} className="ogc-form-label">
         {labels.organization}
       </label>
       <input
         {...register("organization")}
-        id="home-organization"
+        id={`${source}-organization`}
         autoComplete="organization"
         placeholder={labels.placeholders?.organization}
         maxLength={160}
@@ -157,12 +157,12 @@ export function ContactInquiryForm({
 
   const topicField = (
     <FormFieldError id="topic-error" message={errors.topic?.message}>
-      <label htmlFor="home-topic" className="ogc-form-label">
+      <label htmlFor={`${source}-topic`} className="ogc-form-label">
         {labels.topic}
       </label>
       <select
         {...register("topic")}
-        id="home-topic"
+        id={`${source}-topic`}
         required
         aria-invalid={Boolean(errors.topic)}
         aria-describedby={errors.topic ? "topic-error" : undefined}
@@ -183,23 +183,14 @@ export function ContactInquiryForm({
 
   return (
     <form className="ogc-inquiry-form grid gap-6" onSubmit={handleSubmit(submit)} noValidate>
-      {source === "home" ? (
-        <>
-          <div className="ogc-form-row">
-            {fullNameField}
-            {organizationField}
-          </div>
-          <div className="ogc-form-row">
-            {emailField}
-            {topicField}
-          </div>
-        </>
-      ) : (
-        <>
-          {fullNameField}
-          {emailField}
-        </>
-      )}
+      <div className="ogc-form-row">
+        {fullNameField}
+        {organizationField}
+      </div>
+      <div className="ogc-form-row">
+        {emailField}
+        {topicField}
+      </div>
 
       <FormFieldError id="message-error" message={errors.message?.message}>
         <label htmlFor={`${source}-message`} className="ogc-form-label">
@@ -232,15 +223,11 @@ export function ContactInquiryForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className={`ogc-button ogc-button-primary min-h-12 justify-center disabled:cursor-wait disabled:opacity-60${
-          source === "home" ? " ogc-form-submit-wide" : ""
-        }`}
+        className="ogc-button ogc-button-primary ogc-form-submit-wide min-h-12 justify-center disabled:cursor-wait disabled:opacity-60"
       >
         {isSubmitting ? labels.submitting : labels.submit}
       </button>
-      {source === "home" && (
-        <p className="text-xs leading-6 opacity-60">{labels.confidentiality}</p>
-      )}
+      <p className="text-xs leading-6 opacity-60">{labels.confidentiality}</p>
 
       {submissionState === "success" && <p role="status">{labels.success}</p>}
       {(submissionState === "error" || submissionState === "rate-limited") && (

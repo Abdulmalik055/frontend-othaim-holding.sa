@@ -2099,8 +2099,8 @@
                     "key": "summary",
                     "text": {
                       "format": "p",
-                      "textAr": "سبع محطات صنعت الأساس الذي تقف عليه العثيم جلوبال اليوم.",
-                      "textEn": "Seven defining moments that built the foundation Othaim Global stands on today."
+                      "textAr": "ثماني محطات صنعت الأساس الذي تقف عليه العثيم جلوبال اليوم.",
+                      "textEn": "Eight defining moments that built the foundation Othaim Global stands on today."
                     }
                   }
                 ]
@@ -4358,8 +4358,8 @@
                     "key": "name",
                     "text": {
                       "format": "h3",
-                      "textAr": "Wiblue-owlllow",
-                      "textEn": "Wiblue-owlllow"
+                      "textAr": "Blue Owl Capital",
+                      "textEn": "Blue Owl Capital"
                     }
                   },
                   {
@@ -4367,8 +4367,8 @@
                     "key": "logo",
                     "image": {
                       "desktopAssetId": "b0b948a2-b45c-5e7f-a2ce-b54158f22240",
-                      "altAr": "Wiblue-owlllow",
-                      "altEn": "Wiblue-owlllow"
+                      "altAr": "Blue Owl Capital",
+                      "altEn": "Blue Owl Capital"
                     }
                   }
                 ]

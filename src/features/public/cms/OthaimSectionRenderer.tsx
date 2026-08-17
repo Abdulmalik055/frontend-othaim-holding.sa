@@ -536,7 +536,7 @@ function ContactDetails(props: SectionProps) {
           <ContactInquiryForm
             source="contact"
             locale={locale}
-            labels={contactFormLabels(intro, locale, labels)}
+            labels={contactFormLabels(intro, locale, labels, true)}
           />
         </div>
       </div>
@@ -638,8 +638,12 @@ function ContactEntry({
 function contactFormLabels(
   block: CmsSectionBlock | undefined,
   locale: AppLocale,
-  labels: CmsPageRendererLabels
+  labels: CmsPageRendererLabels,
+  useSharedFormCopy = false
 ): ContactInquiryFormLabels {
+  const sharedOrCmsText = (key: string, fallback: string) =>
+    useSharedFormCopy ? fallback : (getText(block, key, locale) ?? fallback);
+
   return {
     fullName: getText(block, "fullNameLabel", locale) ?? labels.formFullName,
     organization: getText(block, "organizationLabel", locale) ?? labels.formOrganization,
@@ -653,17 +657,20 @@ function contactFormLabels(
     rateLimited: labels.formRateLimited,
     confidentiality: getText(block, "confidentiality", locale) ?? labels.formConfidentiality,
     topics: {
-      partnership: getText(block, "topicPartnershipLabel", locale) ?? labels.topicPartnership,
-      co_investment: getText(block, "topicCoInvestmentLabel", locale) ?? labels.topicCoInvestment,
-      family_office: getText(block, "topicFamilyOfficeLabel", locale) ?? labels.topicFamilyOffice,
-      media: getText(block, "topicMediaLabel", locale) ?? labels.topicMedia,
-      other: getText(block, "topicOtherLabel", locale) ?? labels.topicOther,
+      partnership: sharedOrCmsText("topicPartnershipLabel", labels.topicPartnership),
+      co_investment: sharedOrCmsText("topicCoInvestmentLabel", labels.topicCoInvestment),
+      family_office: sharedOrCmsText("topicFamilyOfficeLabel", labels.topicFamilyOffice),
+      media: sharedOrCmsText("topicMediaLabel", labels.topicMedia),
+      other: sharedOrCmsText("topicOtherLabel", labels.topicOther),
     },
     placeholders: {
-      fullName: getText(block, "fullNamePlaceholder", locale),
-      organization: getText(block, "organizationPlaceholder", locale),
-      email: getText(block, "emailPlaceholder", locale),
-      message: getText(block, "messagePlaceholder", locale),
+      fullName: sharedOrCmsText("fullNamePlaceholder", labels.formFullNamePlaceholder),
+      organization: sharedOrCmsText(
+        "organizationPlaceholder",
+        labels.formOrganizationPlaceholder
+      ),
+      email: sharedOrCmsText("emailPlaceholder", labels.formEmailPlaceholder),
+      message: sharedOrCmsText("messagePlaceholder", labels.formMessagePlaceholder),
     },
     validation: {
       fullName: labels.validationFullName,

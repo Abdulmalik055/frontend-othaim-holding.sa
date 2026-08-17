@@ -19,6 +19,10 @@ export type CmsPageRendererLabels = {
   formEmail: string;
   formTopic: string;
   formMessage: string;
+  formFullNamePlaceholder: string;
+  formOrganizationPlaceholder: string;
+  formEmailPlaceholder: string;
+  formMessagePlaceholder: string;
   formSubmit: string;
   formSubmitting: string;
   formSuccess: string;

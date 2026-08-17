@@ -68,7 +68,9 @@ test("contact form focuses the first error and reports a successful submission",
   await expect(form.locator("input").first()).toBeFocused();
 
   await form.getByLabel(/name/i).fill("Browser Test");
+  await form.getByLabel(/organization/i).fill("Othaim Global");
   await form.getByLabel(/email/i).fill("browser@example.com");
+  await form.getByLabel(/topic/i).selectOption("partnership");
   await form.getByLabel(/message/i).fill("This is a valid browser acceptance inquiry.");
   await form.getByRole("button", { name: /send/i }).click();
   await expect(form.getByRole("status")).toBeVisible();

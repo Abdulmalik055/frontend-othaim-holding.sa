@@ -185,6 +185,25 @@ describe("Othaim source-fidelity section composition", () => {
     expect(html.indexOf("+966 11 4755 733")).toBeLessThan(html.indexOf("info@othaimglobal.com"));
   });
 
+  it("uses the shared Home options and placeholders on the Contact form", () => {
+    const html = renderSection("contact-details", [
+      block([
+        text("fullNamePlaceholder", "Contact-specific name"),
+        text("organizationPlaceholder", "Contact-specific organization"),
+        text("emailPlaceholder", "contact-specific@example.com"),
+        text("messagePlaceholder", "Contact-specific message"),
+        text("topicPartnershipLabel", "Contact-specific partnership"),
+      ]),
+    ]);
+
+    expect(html).toContain('placeholder="formFullNamePlaceholder"');
+    expect(html).toContain('placeholder="formOrganizationPlaceholder"');
+    expect(html).toContain('placeholder="formEmailPlaceholder"');
+    expect(html).toContain('placeholder="formMessagePlaceholder"');
+    expect(html).toContain(">topicPartnership<");
+    expect(html).not.toContain("Contact-specific");
+  });
+
   it("serves the CMS mobile image below the seeded breakpoint", () => {
     const html = renderSection("home-team", [
       block([

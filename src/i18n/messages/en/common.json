@@ -51,6 +51,12 @@
       "email": "Email",
       "topic": "Topic",
       "message": "Message",
+      "placeholders": {
+        "fullName": "Your name",
+        "organization": "Company / Family Office",
+        "email": "you@example.com",
+        "message": "Tell us briefly about your interest…"
+      },
       "submit": "Send message",
       "submitting": "Sending…",
       "success": "Thank you. Your inquiry was received.",

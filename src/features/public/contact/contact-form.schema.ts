@@ -41,7 +41,7 @@ export type ContactInquiryPayload = {
 };
 
 export function createContactFormSchema(
-  source: ContactInquirySource,
+  _source: ContactInquirySource,
   messages: ContactValidationMessages = {}
 ) {
   return z
@@ -54,7 +54,7 @@ export function createContactFormSchema(
       website: z.string(),
     })
     .superRefine((values, context) => {
-      if (source === "home" && !values.topic) {
+      if (!values.topic) {
         context.addIssue({
           code: "custom",
           path: ["topic"],
@@ -78,11 +78,9 @@ export function toContactInquiryPayload(
     website: values.website,
   };
 
-  if (source === "home") {
-    const organization = values.organization.trim();
-    if (organization) payload.organization = organization;
-    if (values.topic) payload.topic = values.topic;
-  }
+  const organization = values.organization.trim();
+  if (organization) payload.organization = organization;
+  if (values.topic) payload.topic = values.topic;
 
   return payload;
 }

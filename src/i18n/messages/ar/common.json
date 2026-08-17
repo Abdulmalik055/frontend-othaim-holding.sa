@@ -49,8 +49,14 @@
       "fullName": "الاسم الكامل",
       "organization": "الجهة",
       "email": "البريد الإلكتروني",
-      "topic": "موضوع التواصل",
+      "topic": "الموضوع",
       "message": "الرسالة",
+      "placeholders": {
+        "fullName": "اسمك",
+        "organization": "الشركة / المكتب العائلي",
+        "email": "you@example.com",
+        "message": "اشرح باختصار عن اهتمامك…"
+      },
       "submit": "إرسال الرسالة",
       "submitting": "جارٍ الإرسال…",
       "success": "شكراً لك. تم استلام رسالتك.",
@@ -60,7 +66,7 @@
       "topics": {
         "partnership": "شراكة",
         "coInvestment": "استثمار مشترك",
-        "familyOffice": "خدمات المكتب العائلي",
+        "familyOffice": "عهدة مكتب عائلي",
         "media": "استفسار إعلامي",
         "other": "أخرى"
       },

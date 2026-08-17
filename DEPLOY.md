@@ -38,9 +38,7 @@ supplied static site available for rollback during the initial cutover.
 
 ## Required client approvals before launch
 
-- Confirm the source's seven-versus-eight family-timeline wording and the preserved Blue Owl label.
-- Approve every published name, biography, position, address, phone number, investment claim, and
-  partner-logo usage.
+- Approve every published name, biography, position, address, phone number, investment claim, and partner-logo usage.
 - Supply approved Privacy, Cookie, and Terms copy before exposing those links.
 - Supply approved Open Graph artwork before configuring a CMS SEO image.
 - Approve contact-form data handling and confirm the notification recipient.

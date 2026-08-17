@@ -38,7 +38,11 @@ const labels = {
 
 function fillContactForm() {
   fireEvent.change(screen.getByLabelText("Full name"), { target: { value: "Sara Othaim" } });
+  fireEvent.change(screen.getByLabelText("Organization"), {
+    target: { value: "Othaim Global" },
+  });
   fireEvent.change(screen.getByLabelText("Email"), { target: { value: "sara@example.com" } });
+  fireEvent.change(screen.getByLabelText("Topic"), { target: { value: "partnership" } });
   fireEvent.change(screen.getByLabelText("Message"), {
     target: { value: "I would like to discuss an opportunity with your team." },
   });
@@ -64,11 +68,7 @@ describe("ContactInquiryForm", () => {
     );
     render(<ContactInquiryForm source="contact" locale="en" labels={labels} />);
 
-    fireEvent.change(screen.getByLabelText("Full name"), { target: { value: "Sara Othaim" } });
-    fireEvent.change(screen.getByLabelText("Email"), { target: { value: "sara@example.com" } });
-    fireEvent.change(screen.getByLabelText("Message"), {
-      target: { value: "I would like to discuss an opportunity with your team." },
-    });
+    fillContactForm();
     fireEvent.click(screen.getByRole("button", { name: "Send inquiry" }));
 
     await waitFor(() => expect(fetchMock).toHaveBeenCalledOnce());
@@ -78,7 +78,9 @@ describe("ContactInquiryForm", () => {
       source: "contact",
       locale: "en",
       fullName: "Sara Othaim",
+      organization: "Othaim Global",
       email: "sara@example.com",
+      topic: "partnership",
       message: "I would like to discuss an opportunity with your team.",
       website: "",
     });
@@ -203,7 +205,7 @@ describe("ContactInquiryForm", () => {
     expect((await screen.findByRole("alert")).textContent).toContain("could not send");
   });
 
-  it("uses the source two-row boxed layout at Home and an auto-width submit on Contact", () => {
+  it("uses the same two-row boxed layout and wide submit at Home and Contact", () => {
     const { container, rerender } = render(
       <ContactInquiryForm source="home" locale="en" labels={labels} />
     );
@@ -215,9 +217,11 @@ describe("ContactInquiryForm", () => {
     );
 
     rerender(<ContactInquiryForm source="contact" locale="en" labels={labels} />);
-    expect(container.querySelectorAll(".ogc-form-row")).toHaveLength(0);
-    expect(screen.getByRole("button", { name: "Send inquiry" }).className).not.toContain(
+    expect(container.querySelectorAll(".ogc-form-row")).toHaveLength(2);
+    expect(container.querySelectorAll(".ogc-form-field")).toHaveLength(5);
+    expect(screen.getByRole("button", { name: "Send inquiry" }).className).toContain(
       "ogc-form-submit-wide"
     );
+    expect(screen.getByText("Your message is handled confidentially.")).toBeTruthy();
   });
 });

@@ -5,18 +5,21 @@ import {
 } from "@/features/public/contact/contact-form.schema";
 
 describe("contact inquiry contract", () => {
-  it("requires a supported topic for the home inquiry", () => {
-    const result = createContactFormSchema("home").safeParse({
-      fullName: "Sara Othaim",
-      organization: "Othaim Global",
-      email: "sara@example.com",
-      topic: "",
-      message: "A sufficiently detailed inquiry.",
-      website: "",
-    });
+  it.each(["home", "contact"] as const)(
+    "requires a supported topic for the %s inquiry form",
+    (source) => {
+      const result = createContactFormSchema(source).safeParse({
+        fullName: "Sara Othaim",
+        organization: "Othaim Global",
+        email: "sara@example.com",
+        topic: "",
+        message: "A sufficiently detailed inquiry.",
+        website: "",
+      });
 
-    expect(result.success).toBe(false);
-  });
+      expect(result.success).toBe(false);
+    }
+  );
 
   it("creates the exact trimmed home payload with an empty honeypot", () => {
     const payload = toContactInquiryPayload(
@@ -46,15 +49,15 @@ describe("contact inquiry contract", () => {
     expect(payload).not.toHaveProperty("attachments");
   });
 
-  it("omits home-only fields from contact-page inquiries", () => {
+  it("includes the shared organization and topic fields in contact-page inquiries", () => {
     const payload = toContactInquiryPayload(
       "contact",
       "ar",
       createContactFormSchema("contact").parse({
         fullName: "أحمد العثيم",
-        organization: "",
+        organization: "  Othaim Global  ",
         email: "ahmed@example.com",
-        topic: "",
+        topic: "family_office",
         message: "هذه رسالة استفسار تحتوي على تفاصيل كافية.",
         website: "",
       })
@@ -64,7 +67,9 @@ describe("contact inquiry contract", () => {
       source: "contact",
       locale: "ar",
       fullName: "أحمد العثيم",
+      organization: "Othaim Global",
       email: "ahmed@example.com",
+      topic: "family_office",
       message: "هذه رسالة استفسار تحتوي على تفاصيل كافية.",
       website: "",
     });
