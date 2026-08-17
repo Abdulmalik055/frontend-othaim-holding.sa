@@ -35,6 +35,10 @@ const removedPresentationKeys = [
 ] as const;
 
 describe("CMS admin messages", () => {
+  it("uses the approved Arabic holding name in the public footer", () => {
+    expect(arCommonMessages.publicCms.navigation.holding).toBe("العثيم القابضة");
+  });
+
   it("labels the public root as the live site in both locales", () => {
     expect(enMessages.admin).toHaveProperty("viewLiveSite", "View live site");
     expect(arMessages.admin).toHaveProperty("viewLiveSite", "عرض الموقع المباشر");

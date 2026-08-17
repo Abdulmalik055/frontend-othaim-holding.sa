@@ -167,6 +167,26 @@ describe("Othaim source-fidelity section composition", () => {
     expect(html).toContain("ogc-button-ghost");
   });
 
+  it("marks only the NEPC infrastructure logo for its vertical alignment adjustment", () => {
+    const intro = block([text("headline", "Infrastructure Partners", "h2")]);
+    const nepc = block([
+      text("name", "NEPC", "h3"),
+      text("sector", "Financial Consultant"),
+      image("logo", "logo"),
+    ]);
+    const hourani = block([
+      text("name", "Hourani Partners", "h3"),
+      text("sector", "Law Firm"),
+      image("logo", "logo"),
+    ]);
+
+    const html = renderSection("portfolio-infrastructure", [intro, nepc, hourani]);
+
+    expect(html.match(/ogc-logo-cell-nepc/g)).toHaveLength(1);
+    expect(html).toContain("Financial Consultant");
+    expect(html).toContain("Law Firm");
+  });
+
   it("orders Contact details as address, phones, then email", () => {
     const html = renderSection("contact-details", [
       block([

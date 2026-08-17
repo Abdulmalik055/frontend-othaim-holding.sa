@@ -77,6 +77,22 @@ test("contact form focuses the first error and reports a successful submission",
   await expect(form.getByLabel(/name/i)).toHaveValue("");
 });
 
+test("NEPC infrastructure label remains readable below its logo", async ({ page }) => {
+  await page.goto("/ar/portfolio", { waitUntil: "networkidle" });
+
+  const card = page.locator(".ogc-logo-cell-nepc");
+  const logo = card.locator("img");
+  const sector = card.locator("p");
+
+  await expect(sector).toHaveText("مستشار مالي");
+  await expect(sector).toBeVisible();
+
+  const [logoBox, sectorBox] = await Promise.all([logo.boundingBox(), sector.boundingBox()]);
+  expect(logoBox).not.toBeNull();
+  expect(sectorBox).not.toBeNull();
+  expect(sectorBox!.y).toBeGreaterThanOrEqual(logoBox!.y + logoBox!.height);
+});
+
 test("reduced motion keeps the Home hero on its optimized poster", async ({ page }) => {
   await page.goto("/en");
   await expect(page.locator(".ogc-hero-media img").first()).toBeVisible();

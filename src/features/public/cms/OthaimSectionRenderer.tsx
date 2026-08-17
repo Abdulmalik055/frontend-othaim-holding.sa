@@ -302,8 +302,14 @@ function LogoGrid(props: SectionProps) {
         <div className="ogc-logo-grid">
           {repeated.map((block, index) => {
             const name = getText(block, "name", locale);
+            const isNepc =
+              section.slug === "portfolio-infrastructure" &&
+              name?.trim().toUpperCase() === "NEPC";
             return (
-              <article key={blockKey(block, index)} className="ogc-logo-cell ogc-reveal">
+              <article
+                key={blockKey(block, index)}
+                className={`ogc-logo-cell${isNepc ? " ogc-logo-cell-nepc" : ""} ogc-reveal`}
+              >
                 <CmsImage {...props} block={block} itemKey="logo" className="ogc-logo-image" />
                 <h3 className="sr-only">{name}</h3>
                 {getText(block, "sector", locale) && <p>{getText(block, "sector", locale)}</p>}

@@ -994,6 +994,10 @@
   object-fit: contain;
 }
 
+.ogc-logo-cell-nepc .ogc-logo-image {
+  translate: 0 -28px;
+}
+
 .ogc-logo-cell p {
   margin-block-start: 12px;
   color: var(--ogc-brand);
