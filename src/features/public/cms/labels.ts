@@ -1,9 +1,44 @@
 import type { CmsPageRendererLabels } from "@/features/public/cms/CmsPageRenderer";
 
-export function createCmsPageRendererLabels(t: (key: string) => string): CmsPageRendererLabels {
+type CmsPageTranslationKey =
+  | "legalCentre"
+  | "insidePlatform"
+  | "information"
+  | "empty"
+  | "form.fullName"
+  | "form.organization"
+  | "form.email"
+  | "form.topic"
+  | "form.message"
+  | "form.placeholders.fullName"
+  | "form.placeholders.organization"
+  | "form.placeholders.email"
+  | "form.placeholders.message"
+  | "form.submit"
+  | "form.submitting"
+  | "form.success"
+  | "form.error"
+  | "form.rateLimited"
+  | "form.confidentiality"
+  | "form.topics.partnership"
+  | "form.topics.coInvestment"
+  | "form.topics.familyOffice"
+  | "form.topics.media"
+  | "form.topics.other"
+  | "form.validation.fullName"
+  | "form.validation.organization"
+  | "form.validation.email"
+  | "form.validation.topic"
+  | "form.validation.message";
+
+type CmsPageTranslations = ((key: CmsPageTranslationKey) => string) & {
+  raw: (key: "lastUpdated") => unknown;
+};
+
+export function createCmsPageRendererLabels(t: CmsPageTranslations): CmsPageRendererLabels {
   return {
     legalCentre: t("legalCentre"),
-    lastUpdated: t("lastUpdated"),
+    lastUpdated: String(t.raw("lastUpdated")),
     insidePlatform: t("insidePlatform"),
     information: t("information"),
     empty: t("empty"),
