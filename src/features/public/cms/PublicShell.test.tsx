@@ -64,10 +64,24 @@ const contactSummary = {
   footerNavigationLabelEn: "Contact",
 };
 
+const legalSummaries = [
+  { id: "privacy", slug: "privacy", titleAr: "سياسة الخصوصية", titleEn: "Privacy Policy" },
+  { id: "terms", slug: "terms", titleAr: "الشروط والأحكام", titleEn: "Terms and Conditions" },
+  { id: "usage", slug: "usage", titleAr: "سياسة الاستخدام", titleEn: "Usage Policy" },
+].map((page, index) => ({
+  ...page,
+  category: "legal" as const,
+  template: "default" as const,
+  navigationPlacement: "none" as const,
+  navigationOrder: 9 + index,
+  isIndexable: true,
+  updatedAt: "2026-08-18T00:00:00.000Z",
+}));
+
 describe("PublicShell branding", () => {
   beforeEach(() => {
     process.env.NEXT_PUBLIC_SITE_URL = "https://othaimglobal.example";
-    apiMocks.getPublicCmsNavigation.mockResolvedValue([contactSummary]);
+    apiMocks.getPublicCmsNavigation.mockResolvedValue([contactSummary, ...legalSummaries]);
     apiMocks.getPublicPlatformSettings.mockResolvedValue({
       nameAr: "العثيم جلوبال",
       nameEn: "Client-owned Othaim",
@@ -88,11 +102,29 @@ describe("PublicShell branding", () => {
     expect(html).toContain(">Contact</a>");
     expect(html).not.toContain(">Contact title</a>");
     expect(html).toContain('href="https://holding.example/group"');
+    const termsIndex = html.indexOf('href="/legal/terms"');
+    const usageIndex = html.indexOf('href="/legal/usage"');
+    const privacyIndex = html.indexOf('href="/legal/privacy"');
+    expect(termsIndex).toBeGreaterThan(0);
+    expect(usageIndex).toBeGreaterThan(termsIndex);
+    expect(privacyIndex).toBeGreaterThan(usageIndex);
     expect(html).toContain(
       '"parentOrganization":{"@type":"Organization","name":"Al Othaim Holding","url":"https://holding.example/group"}'
     );
     expect(html).toContain('"alternateName":["العثيم جلوبال"]');
     expect(html).not.toContain('"sameAs":["https://holding.example/group"]');
+  });
+
+  it("hides the complete legal-link group when only some legal pages are active", async () => {
+    apiMocks.getPublicCmsNavigation.mockResolvedValue([contactSummary, legalSummaries[0]]);
+
+    const html = renderToStaticMarkup(
+      await PublicShell({ locale: "en", children: <main>Page</main> })
+    );
+
+    expect(html).not.toContain('/legal/privacy');
+    expect(html).not.toContain('/legal/terms');
+    expect(html).not.toContain('/legal/usage');
   });
 
   it("falls back to the trusted static logo when settings omit one", async () => {

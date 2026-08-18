@@ -64,7 +64,7 @@ describe("CmsSectionContentEditor text formats", () => {
     testState.upload.mockReset();
   });
 
-  it("offers headings and paragraph without bulleted or numbered lists", async () => {
+  it("offers headings, paragraphs, and semantic list formats", async () => {
     const user = userEvent.setup();
 
     renderEditor(paragraphContent);
@@ -76,6 +76,8 @@ describe("CmsSectionContentEditor text formats", () => {
       "formatH2",
       "formatH3",
       "formatP",
+      "formatUl",
+      "formatOl",
     ]);
   });
 

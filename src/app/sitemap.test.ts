@@ -28,6 +28,14 @@ describe("localized sitemap", () => {
         isIndexable: true,
         updatedAt: "2026-08-15T00:00:00.000Z",
       },
+      {
+        id: "privacy",
+        slug: "privacy",
+        category: "legal",
+        template: "default",
+        isIndexable: true,
+        updatedAt: "2026-08-18T00:00:00.000Z",
+      },
     ]);
   });
 
@@ -39,11 +47,23 @@ describe("localized sitemap", () => {
       "https://othaimglobal.com/en",
       "https://othaimglobal.com/ar/about",
       "https://othaimglobal.com/en/about",
+      "https://othaimglobal.com/ar/legal/privacy",
+      "https://othaimglobal.com/en/legal/privacy",
     ]);
     expect(entries[2].alternates?.languages).toEqual({
       ar: "https://othaimglobal.com/ar/about",
       en: "https://othaimglobal.com/en/about",
       "x-default": "https://othaimglobal.com/ar/about",
+    });
+    expect(entries[4]).toMatchObject({
+      priority: 0.4,
+      alternates: {
+        languages: {
+          ar: "https://othaimglobal.com/ar/legal/privacy",
+          en: "https://othaimglobal.com/en/legal/privacy",
+          "x-default": "https://othaimglobal.com/ar/legal/privacy",
+        },
+      },
     });
   });
 });

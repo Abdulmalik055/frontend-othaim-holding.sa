@@ -11,6 +11,7 @@ import { isOthaimPublicPageSlug } from "@/features/public/cms/public-routes";
 
 export type CmsPageRendererLabels = {
   legalCentre: string;
+  lastUpdated: string;
   insidePlatform: string;
   information: string;
   empty: string;
@@ -51,10 +52,17 @@ export type CmsPageTemplateKey = "home" | "about" | "legal" | "default";
 
 export function CmsPageRenderer({ page, locale, labels }: Props) {
   const visibleSections = page.sections.filter((section) => section.isActive !== false);
+  const legalHeroSection =
+    page.category === "legal"
+      ? visibleSections.find((section) => section.slug === `${page.slug}-hero`)
+      : undefined;
+  const contentSections = legalHeroSection
+    ? visibleSections.filter((section) => section.id !== legalHeroSection.id)
+    : visibleSections;
   const isOthaimPage = page.slug === "home" || isOthaimPublicPageSlug(page.slug);
   const Template = pageTemplateRegistry[getCmsPageTemplateKey(page)];
-  const sections = visibleSections.length ? (
-    visibleSections.map((section) =>
+  const sections = contentSections.length ? (
+    contentSections.map((section) =>
       isOthaimSectionForPage(page.slug, section.slug) ? (
         <OthaimSectionRenderer
           key={section.id}
@@ -80,7 +88,12 @@ export function CmsPageRenderer({ page, locale, labels }: Props) {
   }
 
   return (
-    <Template page={page} locale={locale} labels={labels}>
+    <Template
+      page={page}
+      locale={locale}
+      labels={labels}
+      heroSummary={getLegalHeroSummary(legalHeroSection, locale)}
+    >
       {sections}
     </Template>
   );
@@ -99,6 +112,7 @@ type PageTemplateProps = {
   locale: AppLocale;
   labels: CmsPageRendererLabels;
   children: ReactNode;
+  heroSummary?: string;
 };
 
 function PageTitle({ page, locale }: Pick<PageTemplateProps, "page" | "locale">) {
@@ -109,7 +123,13 @@ function PageHeader({
   eyebrow,
   page,
   locale,
-}: Pick<PageTemplateProps, "page" | "locale"> & { eyebrow: string }) {
+  description,
+  updatedLabel,
+}: Pick<PageTemplateProps, "page" | "locale"> & {
+  eyebrow: string;
+  description?: string;
+  updatedLabel?: string;
+}) {
   return (
     <header className="ogc-generic-header">
       <div className="ogc-container">
@@ -117,6 +137,8 @@ function PageHeader({
         <h1>
           <PageTitle page={page} locale={locale} />
         </h1>
+        {description && <p className="ogc-legal-header-copy">{description}</p>}
+        {updatedLabel && <p className="ogc-legal-updated">{updatedLabel}</p>}
       </div>
     </header>
   );
@@ -134,9 +156,15 @@ const pageTemplateRegistry: Record<CmsPageTemplateKey, (props: PageTemplateProps
       {children}
     </main>
   ),
-  legal: ({ page, locale, labels, children }) => (
-    <main id="main-content" className="ogc-page ogc-page-generic">
-      <PageHeader page={page} locale={locale} eyebrow={labels.legalCentre} />
+  legal: ({ page, locale, labels, heroSummary, children }) => (
+    <main id="main-content" className="ogc-page ogc-page-generic ogc-page-legal">
+      <PageHeader
+        page={page}
+        locale={locale}
+        eyebrow={labels.legalCentre}
+        description={heroSummary}
+        updatedLabel={formatLegalUpdatedLabel(page, locale, labels.lastUpdated)}
+      />
       {children}
     </main>
   ),
@@ -157,9 +185,19 @@ function CmsSectionRenderer({
   page: PublicCmsPage;
   locale: AppLocale;
 }) {
+  const isLegal = page.category === "legal";
   return (
-    <section id={section.slug} className="cms-section ogc-section ogc-section-light">
-      <div className="ogc-container ogc-generic-content">
+    <section
+      id={section.slug}
+      className={
+        isLegal ? "cms-section ogc-legal-section" : "cms-section ogc-section ogc-section-light"
+      }
+    >
+      <div
+        className={
+          isLegal ? "ogc-container ogc-generic-content ogc-legal-content" : "ogc-container ogc-generic-content"
+        }
+      >
         <div className="grid gap-8">
           {section.content.blocks.map((block, blockIndex) => (
             <div key={`${section.id}-${blockIndex}`} className="grid gap-5">
@@ -196,6 +234,17 @@ function CmsItemRenderer({
     }
     if (item.text.format === "p") {
       return <p className="ogc-generic-copy">{value}</p>;
+    }
+    if (item.text.format === "ul" || item.text.format === "ol") {
+      const items = splitCmsListItems(value);
+      const List = item.text.format;
+      return (
+        <List className="ogc-legal-list">
+          {items.map((entry, index) => (
+            <li key={`${item.key}-${index}`}>{entry}</li>
+          ))}
+        </List>
+      );
     }
     return null;
   }
@@ -339,4 +388,38 @@ export function getLocalizedCmsText(
   locale: AppLocale
 ) {
   return locale === "ar" ? item.text.textAr : item.text.textEn;
+}
+
+function splitCmsListItems(value: string) {
+  return value
+    .split(/\r?\n/)
+    .map((entry) => entry.trim())
+    .filter(Boolean);
+}
+
+function getLegalHeroSummary(section: PublicCmsSection | undefined, locale: AppLocale) {
+  if (!section) return undefined;
+  for (const block of section.content.blocks) {
+    const summary = block.items.find(
+      (item) => item.type === "text" && item.text.format === "p"
+    );
+    if (summary?.type === "text") return getLocalizedCmsText(summary, locale);
+  }
+  return undefined;
+}
+
+function formatLegalUpdatedLabel(
+  page: PublicCmsPage,
+  locale: AppLocale,
+  labelTemplate: string
+) {
+  const timestamp = page.latestUpdatedAt ?? page.updatedAt;
+  const date = new Date(timestamp);
+  if (Number.isNaN(date.getTime())) return undefined;
+  const formatted = date.toLocaleDateString(locale === "ar" ? "ar-SA-u-nu-latn" : "en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  return labelTemplate.replace("{date}", formatted);
 }

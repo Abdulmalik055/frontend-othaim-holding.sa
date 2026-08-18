@@ -11,6 +11,9 @@ const routes = [
   "/ar/portfolio",
   "/ar/strategy",
   "/ar/contact",
+  "/ar/legal/terms",
+  "/ar/legal/usage",
+  "/ar/legal/privacy",
   "/en",
   "/en/about",
   "/en/family",
@@ -20,6 +23,9 @@ const routes = [
   "/en/portfolio",
   "/en/strategy",
   "/en/contact",
+  "/en/legal/terms",
+  "/en/legal/usage",
+  "/en/legal/privacy",
 ] as const;
 
 for (const route of routes) {

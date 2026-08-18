@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { isSafeCmsHref } from "@/lib/cms-link";
 
-export const CMS_TEXT_FORMATS = ["h1", "h2", "h3", "p"] as const;
+export const CMS_TEXT_FORMATS = ["h1", "h2", "h3", "p", "ul", "ol"] as const;
 export const CMS_SECTION_ITEM_TYPES = ["text", "image", "video", "file", "link"] as const;
 
 const requiredTrimmedString = z.string().trim().min(1);
@@ -30,7 +30,29 @@ export const cmsSectionTextItemSchema = z
         textAr: requiredTrimmedString,
         textEn: requiredTrimmedString,
       })
-      .strict(),
+      .strict()
+      .superRefine((text, context) => {
+        if (text.format !== "ul" && text.format !== "ol") return;
+        const arabicItems = text.textAr.split(/\r?\n/);
+        const englishItems = text.textEn.split(/\r?\n/);
+        if (
+          arabicItems.some((item) => item.trim().length === 0) ||
+          englishItems.some((item) => item.trim().length === 0)
+        ) {
+          context.addIssue({
+            code: "custom",
+            message: "List items must use one non-empty item per line",
+            path: ["textAr"],
+          });
+        }
+        if (arabicItems.length !== englishItems.length) {
+          context.addIssue({
+            code: "custom",
+            message: "Arabic and English lists must contain the same number of items",
+            path: ["textEn"],
+          });
+        }
+      }),
   })
   .strict();
 

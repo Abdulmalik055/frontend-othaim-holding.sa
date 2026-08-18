@@ -11,6 +11,9 @@ const slugs = [
   "portfolio",
   "strategy",
   "contact",
+  "legal/terms",
+  "legal/usage",
+  "legal/privacy",
 ] as const;
 
 for (const locale of locales) {
@@ -39,6 +42,38 @@ for (const locale of locales) {
 
       await expect(page.locator("html")).toHaveAttribute("lang", locale);
       await expect(page.locator("html")).toHaveAttribute("dir", locale === "ar" ? "rtl" : "ltr");
+      if (slug.startsWith("legal/")) {
+        await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+          "href",
+          new RegExp(`${route.replaceAll("/", "\\/")}$`)
+        );
+        await expect(page.locator('link[rel="alternate"][hreflang="ar"]')).toHaveAttribute(
+          "href",
+          /\/ar\/legal\//
+        );
+        await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute(
+          "href",
+          /\/en\/legal\//
+        );
+        expect(await page.locator("main h2").count()).toBeGreaterThan(0);
+        expect(await page.locator("main li").count()).toBeGreaterThan(0);
+      }
+      if (slug === "legal/privacy") {
+        await expect(page.locator("#privacy-contact")).toContainText(
+          locale === "ar"
+            ? "لأي استفسار بشأن سياسة الخصوصية أو بياناتك الشخصية"
+            : "For any inquiry regarding the Privacy Policy or your personal data"
+        );
+        await expect(page.locator("#privacy-contact li")).toHaveCount(3);
+      }
+      if (slug === "legal/usage") {
+        await expect(page.locator("#usage-reporting")).toContainText(
+          locale === "ar"
+            ? "إذا لاحظت أي محتوى أو سلوك يخالف هذه السياسة"
+            : "If you notice any content or behavior that violates this policy"
+        );
+        expect(await page.locator("#usage-reporting p").count()).toBeGreaterThan(1);
+      }
       const overflow = await page.evaluate(
         () => document.documentElement.scrollWidth - document.documentElement.clientWidth
       );
@@ -70,7 +105,7 @@ for (const locale of locales) {
         type: "jpeg",
         quality: 82,
       });
-      expect(screenshot).toMatchSnapshot(`${locale}-${slug || "home"}.jpg`, {
+      expect(screenshot).toMatchSnapshot(`${locale}-${slug.replace("/", "-") || "home"}.jpg`, {
         maxDiffPixelRatio: 0.01,
       });
     });

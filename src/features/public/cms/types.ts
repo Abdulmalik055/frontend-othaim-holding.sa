@@ -35,6 +35,8 @@ export type PublicCmsPage = {
   sections: PublicCmsSection[];
   assetsById: CmsAssetsById;
   updatedAt: string;
+  latestUpdatedAt?: string;
+  latestUpdateSource?: "page" | "section";
 };
 
 export type PublicCmsPageSummary = Pick<

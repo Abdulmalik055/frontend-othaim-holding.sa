@@ -38,7 +38,8 @@ supplied static site available for rollback during the initial cutover.
 
 ## Required client approvals before launch
 
-- Supply approved Privacy, Cookie, and Terms copy before exposing those links.
+- Confirm the backend release legal audit passes and that Terms and Conditions, Usage Policy, and
+  Privacy Policy are active together before verifying their localized footer links.
 - Supply approved Open Graph artwork before configuring a CMS SEO image.
 - Approve contact-form data handling and confirm the notification recipient.
 

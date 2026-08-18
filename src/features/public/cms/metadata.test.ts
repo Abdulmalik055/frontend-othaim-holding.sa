@@ -78,6 +78,29 @@ describe("CMS metadata fallbacks", () => {
     expect(metadata.twitter).not.toHaveProperty("images");
   });
 
+  it("publishes localized legal canonicals and alternates", () => {
+    process.env.NEXT_PUBLIC_SITE_URL = "https://othaimglobal.com";
+    const metadata = createCmsMetadata(
+      page({
+        slug: "privacy",
+        category: "legal",
+        template: "default",
+        titleAr: "سياسة الخصوصية",
+        titleEn: "Privacy Policy",
+      }),
+      "ar"
+    );
+
+    expect(metadata.alternates).toEqual({
+      canonical: "https://othaimglobal.com/ar/legal/privacy",
+      languages: {
+        ar: "https://othaimglobal.com/ar/legal/privacy",
+        en: "https://othaimglobal.com/en/legal/privacy",
+        "x-default": "https://othaimglobal.com/ar/legal/privacy",
+      },
+    });
+  });
+
   it("emits a social image only when the configured asset resolves", () => {
     process.env.NEXT_PUBLIC_SITE_URL = "https://othaimglobal.com";
     const metadata = createCmsMetadata(

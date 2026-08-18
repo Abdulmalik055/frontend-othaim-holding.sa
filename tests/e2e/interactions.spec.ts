@@ -121,7 +121,11 @@ test("global crawler metadata routes are not localized", async ({ request }) => 
 
   const sitemap = await request.get("/sitemap.xml", { maxRedirects: 0 });
   expect(sitemap.status()).toBe(200);
-  expect(await sitemap.text()).toContain("<urlset");
+  const sitemapXml = await sitemap.text();
+  expect(sitemapXml).toContain("<urlset");
+  expect(sitemapXml).toContain("/ar/legal/terms");
+  expect(sitemapXml).toContain("/en/legal/usage");
+  expect(sitemapXml).toContain("/ar/legal/privacy");
 });
 
 test("CMS branding and placement-specific navigation labels reach the public shell", async ({
@@ -132,6 +136,14 @@ test("CMS branding and placement-specific navigation labels reach the public she
   const headerContactLabels = await page.locator('header a[href="/en/contact"]').allTextContents();
   expect(headerContactLabels).toContain("Contacts");
   await expect(page.locator('footer a[href="/en/contact"]')).toHaveText("Contact");
+  const legalHrefs = await page.locator("footer .ogc-footer-legal a").evaluateAll((links) =>
+    links.map((link) => link.getAttribute("href"))
+  );
+  expect(legalHrefs).toEqual([
+    "/en/legal/terms",
+    "/en/legal/usage",
+    "/en/legal/privacy",
+  ]);
 
   const headerLogo = page.locator("header img").first();
   expect(await headerLogo.getAttribute("src")).toContain("uploads");

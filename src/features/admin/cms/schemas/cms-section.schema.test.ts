@@ -127,7 +127,7 @@ describe("CMS section content", () => {
     expect(normalizeCmsSectionContent(content)).toEqual(content);
   });
 
-  it.each(["ul", "ol"] as const)("rejects removed %s list content", (format) => {
+  it.each(["ul", "ol"] as const)("accepts supported %s list content", (format) => {
     const content = {
       blocks: [
         {
@@ -142,7 +142,7 @@ describe("CMS section content", () => {
       ],
     };
 
-    expect(() => normalizeCmsSectionContent(content)).toThrow(/Unsupported CMS content/);
+    expect(normalizeCmsSectionContent(content)).toEqual(content);
   });
 
   it("accepts safe localized links and rejects javascript destinations", () => {

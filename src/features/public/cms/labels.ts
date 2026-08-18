@@ -3,6 +3,7 @@ import type { CmsPageRendererLabels } from "@/features/public/cms/CmsPageRendere
 export function createCmsPageRendererLabels(t: (key: string) => string): CmsPageRendererLabels {
   return {
     legalCentre: t("legalCentre"),
+    lastUpdated: t("lastUpdated"),
     insidePlatform: t("insidePlatform"),
     information: t("information"),
     empty: t("empty"),

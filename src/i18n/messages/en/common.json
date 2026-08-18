@@ -27,6 +27,12 @@
     "languageArabic": "Arabic",
     "languageEnglish": "English",
     "legalCentre": "Legal centre",
+    "lastUpdated": "Last updated: {date}",
+    "legal": {
+      "terms": "Terms and Conditions",
+      "usage": "Usage Policy",
+      "privacy": "Privacy Policy"
+    },
     "insidePlatform": "About the platform",
     "information": "Information",
     "empty": "No content is available yet.",

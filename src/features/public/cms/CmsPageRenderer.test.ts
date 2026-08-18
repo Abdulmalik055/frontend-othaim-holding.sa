@@ -14,6 +14,7 @@ import type { PublicCmsPage } from "@/features/public/cms/types";
 const rendererSource = readFileSync(new URL("./CmsPageRenderer.tsx", import.meta.url), "utf8");
 const rendererLabels = {
   legalCentre: "Legal",
+  lastUpdated: "Last updated: {date}",
   insidePlatform: "Inside",
   information: "Information",
   empty: "Empty",
@@ -76,12 +77,9 @@ describe("public CMS rendering registry", () => {
     expect(rendererSource).not.toContain("inactiveSection");
   });
 
-  it("has no renderer for removed list text formats", () => {
-    expect(rendererSource).not.toContain('item.text.format === "ul"');
-    expect(rendererSource).not.toContain('item.text.format === "ol"');
-    expect(rendererSource).not.toContain("list-disc");
-    expect(rendererSource).not.toContain("list-decimal");
-    expect(rendererSource).toContain('item.text.format === "p"');
+  it("renders typed list formats as semantic localized lists", () => {
+    expect(rendererSource).toContain('item.text.format === "ul"');
+    expect(rendererSource).toContain('item.text.format === "ol"');
   });
 
   it("renders every supported item from canonical unversioned content", () => {
@@ -170,7 +168,7 @@ describe("public CMS rendering registry", () => {
     expect(html).not.toContain('"version"');
   });
 
-  it.each(["ul", "ol"] as const)("does not render untyped legacy %s content", (format) => {
+  it.each(["ul", "ol"] as const)("renders typed %s content one line per list item", (format) => {
     const page = {
       id: "page-id",
       slug: "about",
@@ -198,8 +196,8 @@ describe("public CMS rendering registry", () => {
                     key: "legacy-list",
                     text: {
                       format,
-                      textAr: "محتوى قائمة قديم",
-                      textEn: "Legacy list content",
+                      textAr: "البند الأول\nالبند الثاني",
+                      textEn: "First <script>item</script>\nSecond item",
                     },
                   },
                 ],
@@ -208,7 +206,7 @@ describe("public CMS rendering registry", () => {
           },
         },
       ],
-    } as unknown as PublicCmsPage;
+    } as PublicCmsPage;
 
     const html = renderToStaticMarkup(
       createElement(CmsPageRenderer, {
@@ -218,8 +216,91 @@ describe("public CMS rendering registry", () => {
       })
     );
 
-    expect(html).not.toContain("Legacy list content");
-    expect(html).not.toContain(`<${format}`);
+    expect(html).toContain(`<${format}`);
+    expect(html).toContain("<li>First &lt;script&gt;item&lt;/script&gt;</li>");
+    expect(html).not.toContain("<script>");
+    expect(html).toContain("<li>Second item</li>");
+  });
+
+  it("renders a legal hero summary, localized update date, and complete body sections", () => {
+    const page = {
+      id: "privacy-page",
+      slug: "privacy",
+      titleAr: "سياسة الخصوصية",
+      titleEn: "Privacy Policy",
+      category: "legal",
+      template: "default",
+      navigationPlacement: "none",
+      navigationOrder: 11,
+      isIndexable: true,
+      updatedAt: "2026-08-17T00:00:00.000Z",
+      latestUpdatedAt: "2026-08-18T00:00:00.000Z",
+      latestUpdateSource: "section",
+      assetsById: {},
+      sections: [
+        {
+          id: "privacy-hero",
+          slug: "privacy-hero",
+          order: 1,
+          updatedAt: "2026-08-17T00:00:00.000Z",
+          content: {
+            blocks: [
+              {
+                items: [
+                  {
+                    key: "heroSummary",
+                    type: "text",
+                    text: {
+                      format: "p",
+                      textAr: "كيف نحمي بياناتك.",
+                      textEn: "How we protect your data.",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        {
+          id: "privacy-contact",
+          slug: "privacy-contact",
+          order: 2,
+          updatedAt: "2026-08-18T00:00:00.000Z",
+          content: {
+            blocks: [
+              {
+                items: [
+                  {
+                    key: "title",
+                    type: "text",
+                    text: { format: "h2", textAr: "تواصل معنا", textEn: "Contact us" },
+                  },
+                  {
+                    key: "body",
+                    type: "text",
+                    text: {
+                      format: "p",
+                      textAr: "النص الكامل للتواصل والبريد والهاتف.",
+                      textEn: "Complete contact, email, and phone wording.",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
+    } as PublicCmsPage;
+
+    const html = renderToStaticMarkup(
+      createElement(CmsPageRenderer, { page, locale: "en", labels: rendererLabels })
+    );
+
+    expect(html).toContain("How we protect your data.");
+    expect(html).toContain("Last updated: 18 August 2026");
+    expect(html).toContain("Complete contact, email, and phone wording.");
+    expect(html.match(/<h1/g)).toHaveLength(1);
+    expect(html).toContain("<h2");
   });
 
   it("selects only the requested localized text", () => {

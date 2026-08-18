@@ -72,8 +72,8 @@ describe("public CMS API content validation", () => {
     ).toThrow(/Unsupported CMS content/);
   });
 
-  it.each(["ul", "ol"] as const)("rejects removed %s list content", (format) => {
-    expect(() =>
+  it.each(["ul", "ol"] as const)("normalizes supported %s list content", (format) => {
+    expect(
       normalizePublicCmsPage(
         pageWithContent({
           blocks: [
@@ -89,6 +89,14 @@ describe("public CMS API content validation", () => {
           ],
         })
       )
-    ).toThrow(/Unsupported CMS content/);
+    ).toMatchObject({
+      sections: [
+        {
+          content: {
+            blocks: [{ items: [{ type: "text", text: { format } }] }],
+          },
+        },
+      ],
+    });
   });
 });

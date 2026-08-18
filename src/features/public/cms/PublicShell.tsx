@@ -27,6 +27,7 @@ export async function PublicShell({
   const t = await getTranslations({ locale, namespace: "publicCms" });
   const headerNavigation = buildOthaimNavigation(pages, locale, { placement: "header" });
   const footerNavigation = buildOthaimNavigation(pages, locale, { placement: "footer" });
+  const legalLinks = buildFooterLegalLinks(pages, t);
   const displayName = localizedSetting(settings.nameAr, settings.nameEn, locale) || "Othaim Global";
   const displayBio = resolvePublicFooterBio(
     localizedSetting(settings.bioAr, settings.bioEn, locale),
@@ -99,6 +100,15 @@ export async function PublicShell({
             <p>
               © {new Date().getFullYear()} {displayName}. {t("rights")}
             </p>
+            {legalLinks.length > 0 && (
+              <nav className="ogc-footer-legal" aria-label={t("legalCentre")}>
+                {legalLinks.map((item) => (
+                  <Link key={item.slug} href={`/legal/${item.slug}`} locale={locale}>
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            )}
           </div>
         </div>
       </footer>
@@ -111,6 +121,21 @@ export async function PublicShell({
       />
     </div>
   );
+}
+
+function buildFooterLegalLinks(
+  pages: PublicCmsPageSummary[],
+  t: (key: string) => string
+) {
+  const required = [
+    { slug: "terms", label: t("legal.terms") },
+    { slug: "usage", label: t("legal.usage") },
+    { slug: "privacy", label: t("legal.privacy") },
+  ] as const;
+  const available = new Set(
+    pages.filter((page) => page.category === "legal").map((page) => page.slug)
+  );
+  return required.every((item) => available.has(item.slug)) ? required : [];
 }
 
 function FooterGroup({

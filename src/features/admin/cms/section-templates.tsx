@@ -204,6 +204,8 @@ function formatLabel(translations: ReturnType<typeof useTranslations>, format: C
   if (format === "h1") return translations("formatH1");
   if (format === "h2") return translations("formatH2");
   if (format === "h3") return translations("formatH3");
+  if (format === "ul") return translations("formatUl");
+  if (format === "ol") return translations("formatOl");
   return translations("formatP");
 }
 
@@ -872,6 +874,11 @@ export function CmsSectionContentEditor({
                   </div>
                   <div>
                     <label className={labelClass}>{sectionDialogTranslations("textAr")}</label>
+                    {(activeItem.text.format === "ul" || activeItem.text.format === "ol") && (
+                      <p className="mb-2 text-xs text-slate-500">
+                        {sectionDialogTranslations("listLineHint")}
+                      </p>
+                    )}
                     <AdminTextArea
                       dir="rtl"
                       rows={2}
