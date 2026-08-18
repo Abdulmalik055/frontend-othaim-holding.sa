@@ -169,7 +169,7 @@ export function LoginForm({ locale, onForgot, onMustChange }: Props) {
         <PlatformIdentity
           locale={locale}
           className="flex flex-col items-center gap-2"
-          logoContainerClassName="flex h-[102px] w-[102px] items-center justify-center overflow-hidden rounded-[16px] border border-gray-100 bg-white shadow-[0_10px_24px_rgba(52,89,165,0.18)]"
+          logoContainerClassName="flex h-[102px] w-[102px] items-center justify-center overflow-hidden rounded-[16px] border border-gray-100 bg-admin-primary shadow-[0_10px_24px_rgba(52,89,165,0.18)]"
           logoClassName="h-full w-full object-contain p-3"
           nameClassName="max-w-[280px] text-center text-[15px] font-bold text-gray-700"
         />

@@ -162,7 +162,7 @@ export function AdminSidebar({
         <PlatformIdentity
           locale={locale}
           className="flex min-w-0 flex-1 items-center gap-3"
-          logoContainerClassName="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-[10px] border border-gray-200 bg-white"
+          logoContainerClassName="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-[10px] border border-gray-200 bg-admin-primary"
           logoClassName="h-full w-full object-contain p-1"
           nameClassName={`truncate text-[20px] font-black tracking-tight text-admin-primary ${
             locale === "ar" ? "leading-[1.4]" : "leading-none"
