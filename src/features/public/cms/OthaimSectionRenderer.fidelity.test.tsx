@@ -82,7 +82,11 @@ function block(items: CmsSectionItem[]): CmsSectionBlock {
   return { items };
 }
 
-function renderSection(slug: string, blocks: CmsSectionBlock[]) {
+function renderSection(
+  slug: string,
+  blocks: CmsSectionBlock[],
+  locale: "ar" | "en" = "en"
+) {
   const section: PublicCmsSection = {
     id: slug,
     slug,
@@ -91,7 +95,7 @@ function renderSection(slug: string, blocks: CmsSectionBlock[]) {
     content: { blocks },
   };
   return renderToStaticMarkup(
-    createElement(OthaimSectionRenderer, { section, page, locale: "en", labels })
+    createElement(OthaimSectionRenderer, { section, page, locale, labels })
   );
 }
 
@@ -204,6 +208,62 @@ describe("Othaim source-fidelity section composition", () => {
     expect(html.indexOf("Guernsey")).toBeLessThan(html.indexOf("+966 11 4755 733"));
     expect(html.indexOf("+966 11 4755 733")).toBeLessThan(html.indexOf("info@othaimglobal.com"));
   });
+
+  it.each(["home-contact", "contact-details"])(
+    "preserves the seeded address line break in %s",
+    (slug) => {
+      const html = renderSection(slug, [
+        block([
+          text("addressLabel", "Postal address"),
+          text("address", "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS"),
+        ]),
+      ]);
+
+      expect(html).toContain("Les Banques,<br/>St Sampson");
+    }
+  );
+
+  it("renders the original line icon set for landing contact details", () => {
+    const html = renderSection("home-contact", [
+      block([
+        text("email", "info@othaimglobal.com"),
+        text("phone", "+966 11 4755 733"),
+        text(
+          "address",
+          "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS"
+        ),
+      ]),
+    ]);
+
+    expect(html).toContain('data-contact-icon="email"');
+    expect(html).toContain('data-contact-icon="phone"');
+    expect(html).toContain('data-contact-icon="address"');
+    expect(html).not.toContain("✉");
+    expect(html).not.toContain("☎");
+    expect(html).not.toContain("⌖");
+  });
+
+  it.each(["home-contact", "contact-details"])(
+    "keeps the Latin address LTR in the Arabic %s section",
+    (slug) => {
+      const html = renderSection(
+        slug,
+        [
+          block([
+            text(
+              "address",
+              "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS"
+            ),
+          ]),
+        ],
+        "ar"
+      );
+
+      expect(html).toContain(
+        '<p class="ogc-contact-address" dir="ltr">La Tonnelle House, Les Banques,<br/>St Sampson, Guernsey GY1 3HS</p>'
+      );
+    }
+  );
 
   it("uses the shared Home options and placeholders on the Contact form", () => {
     const html = renderSection("contact-details", [

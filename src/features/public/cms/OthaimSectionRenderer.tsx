@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import type { AppLocale } from "@/i18n/config";
 import type { ContactInquiryFormLabels } from "@/features/public/contact/ContactInquiryForm";
 import { ContactInquiryForm } from "@/features/public/contact/ContactInquiryForm";
@@ -603,7 +603,14 @@ function ContactInformation({
         icon={variant === "home" ? "address" : undefined}
         label={addressLabel}
       >
-        <p>{address}</p>
+        <p className="ogc-contact-address" dir="ltr">
+          {address.split("\n").map((line, index) => (
+            <Fragment key={`${index}-${line}`}>
+              {index > 0 && <br />}
+              {line}
+            </Fragment>
+          ))}
+        </p>
       </ContactEntry>
     ) : null,
   };
@@ -630,7 +637,7 @@ function ContactEntry({
     <div className="ogc-contact-entry">
       {icon && (
         <span className="ogc-contact-icon" aria-hidden>
-          {icon === "email" ? "✉" : icon === "phone" ? "☎" : "⌖"}
+          <ContactIcon icon={icon} />
         </span>
       )}
       <div>
@@ -638,6 +645,50 @@ function ContactEntry({
         {children}
       </div>
     </div>
+  );
+}
+
+function ContactIcon({ icon }: { icon: "email" | "phone" | "address" }) {
+  return (
+    <svg
+      data-contact-icon={icon}
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      focusable="false"
+    >
+      {icon === "email" && (
+        <path
+          d="M2 4h12v8H2zM2 4l6 4 6-4"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      )}
+      {icon === "phone" && (
+        <path
+          d="M3 3l2 0 1 3-1.5 1c.6 1.4 1.7 2.5 3.1 3.1L9 8.5l3 1v2c0 .8-.7 1.5-1.5 1.5C5.8 13 3 10.2 3 4.5 3 3.7 3.7 3 3 3z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      )}
+      {icon === "address" && (
+        <>
+          <path
+            d="M8 2a4 4 0 014 4c0 3-4 8-4 8s-4-5-4-8a4 4 0 014-4z"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <circle cx="8" cy="6" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+        </>
+      )}
+    </svg>
   );
 }
 

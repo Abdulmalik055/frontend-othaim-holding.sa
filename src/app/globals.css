@@ -1217,6 +1217,15 @@
   color: rgb(255 255 255 / 0.82);
   line-height: 1.7;
 }
+
+.ogc-contact-address {
+  direction: ltr;
+}
+
+[dir="rtl"] .ogc-contact-address {
+  text-align: right;
+}
+
 .ogc-contact-list a:hover {
   color: var(--ogc-accent);
 }
