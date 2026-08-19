@@ -82,11 +82,7 @@ function block(items: CmsSectionItem[]): CmsSectionBlock {
   return { items };
 }
 
-function renderSection(
-  slug: string,
-  blocks: CmsSectionBlock[],
-  locale: "ar" | "en" = "en"
-) {
+function renderSection(slug: string, blocks: CmsSectionBlock[], locale: "ar" | "en" = "en") {
   const section: PublicCmsSection = {
     id: slug,
     slug,
@@ -228,10 +224,7 @@ describe("Othaim source-fidelity section composition", () => {
       block([
         text("email", "info@othaimglobal.com"),
         text("phone", "+966 11 4755 733"),
-        text(
-          "address",
-          "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS"
-        ),
+        text("address", "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS"),
       ]),
     ]);
 
@@ -248,14 +241,7 @@ describe("Othaim source-fidelity section composition", () => {
     (slug) => {
       const html = renderSection(
         slug,
-        [
-          block([
-            text(
-              "address",
-              "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS"
-            ),
-          ]),
-        ],
+        [block([text("address", "La Tonnelle House, Les Banques,\nSt Sampson, Guernsey GY1 3HS")])],
         "ar"
       );
 
@@ -265,7 +251,7 @@ describe("Othaim source-fidelity section composition", () => {
     }
   );
 
-  it("uses the shared Home options and placeholders on the Contact form", () => {
+  it("uses editable Contact CMS options, placeholders, and confidentiality copy", () => {
     const html = renderSection("contact-details", [
       block([
         text("fullNamePlaceholder", "Contact-specific name"),
@@ -273,15 +259,16 @@ describe("Othaim source-fidelity section composition", () => {
         text("emailPlaceholder", "contact-specific@example.com"),
         text("messagePlaceholder", "Contact-specific message"),
         text("topicPartnershipLabel", "Contact-specific partnership"),
+        text("confidentiality", "Contact-specific confidentiality"),
       ]),
     ]);
 
-    expect(html).toContain('placeholder="formFullNamePlaceholder"');
-    expect(html).toContain('placeholder="formOrganizationPlaceholder"');
-    expect(html).toContain('placeholder="formEmailPlaceholder"');
-    expect(html).toContain('placeholder="formMessagePlaceholder"');
-    expect(html).toContain(">topicPartnership<");
-    expect(html).not.toContain("Contact-specific");
+    expect(html).toContain('placeholder="Contact-specific name"');
+    expect(html).toContain('placeholder="Contact-specific organization"');
+    expect(html).toContain('placeholder="contact-specific@example.com"');
+    expect(html).toContain('placeholder="Contact-specific message"');
+    expect(html).toContain(">Contact-specific partnership<");
+    expect(html).toContain("Contact-specific confidentiality");
   });
 
   it("serves the CMS mobile image below the seeded breakpoint", () => {

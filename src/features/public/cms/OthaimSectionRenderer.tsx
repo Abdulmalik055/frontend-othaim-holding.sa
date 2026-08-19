@@ -303,8 +303,7 @@ function LogoGrid(props: SectionProps) {
           {repeated.map((block, index) => {
             const name = getText(block, "name", locale);
             const isNepc =
-              section.slug === "portfolio-infrastructure" &&
-              name?.trim().toUpperCase() === "NEPC";
+              section.slug === "portfolio-infrastructure" && name?.trim().toUpperCase() === "NEPC";
             return (
               <article
                 key={blockKey(block, index)}
@@ -542,7 +541,7 @@ function ContactDetails(props: SectionProps) {
           <ContactInquiryForm
             source="contact"
             locale={locale}
-            labels={contactFormLabels(intro, locale, labels, true)}
+            labels={contactFormLabels(intro, locale, labels)}
           />
         </div>
       </div>
@@ -695,11 +694,9 @@ function ContactIcon({ icon }: { icon: "email" | "phone" | "address" }) {
 function contactFormLabels(
   block: CmsSectionBlock | undefined,
   locale: AppLocale,
-  labels: CmsPageRendererLabels,
-  useSharedFormCopy = false
+  labels: CmsPageRendererLabels
 ): ContactInquiryFormLabels {
-  const sharedOrCmsText = (key: string, fallback: string) =>
-    useSharedFormCopy ? fallback : (getText(block, key, locale) ?? fallback);
+  const cmsText = (key: string, fallback: string) => getText(block, key, locale) ?? fallback;
 
   return {
     fullName: getText(block, "fullNameLabel", locale) ?? labels.formFullName,
@@ -714,20 +711,17 @@ function contactFormLabels(
     rateLimited: labels.formRateLimited,
     confidentiality: getText(block, "confidentiality", locale) ?? labels.formConfidentiality,
     topics: {
-      partnership: sharedOrCmsText("topicPartnershipLabel", labels.topicPartnership),
-      co_investment: sharedOrCmsText("topicCoInvestmentLabel", labels.topicCoInvestment),
-      family_office: sharedOrCmsText("topicFamilyOfficeLabel", labels.topicFamilyOffice),
-      media: sharedOrCmsText("topicMediaLabel", labels.topicMedia),
-      other: sharedOrCmsText("topicOtherLabel", labels.topicOther),
+      partnership: cmsText("topicPartnershipLabel", labels.topicPartnership),
+      co_investment: cmsText("topicCoInvestmentLabel", labels.topicCoInvestment),
+      family_office: cmsText("topicFamilyOfficeLabel", labels.topicFamilyOffice),
+      media: cmsText("topicMediaLabel", labels.topicMedia),
+      other: cmsText("topicOtherLabel", labels.topicOther),
     },
     placeholders: {
-      fullName: sharedOrCmsText("fullNamePlaceholder", labels.formFullNamePlaceholder),
-      organization: sharedOrCmsText(
-        "organizationPlaceholder",
-        labels.formOrganizationPlaceholder
-      ),
-      email: sharedOrCmsText("emailPlaceholder", labels.formEmailPlaceholder),
-      message: sharedOrCmsText("messagePlaceholder", labels.formMessagePlaceholder),
+      fullName: cmsText("fullNamePlaceholder", labels.formFullNamePlaceholder),
+      organization: cmsText("organizationPlaceholder", labels.formOrganizationPlaceholder),
+      email: cmsText("emailPlaceholder", labels.formEmailPlaceholder),
+      message: cmsText("messagePlaceholder", labels.formMessagePlaceholder),
     },
     validation: {
       fullName: labels.validationFullName,

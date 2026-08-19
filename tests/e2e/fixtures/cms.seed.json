@@ -4994,8 +4994,26 @@
                     "key": "fullNamePlaceholder",
                     "text": {
                       "format": "p",
-                      "textAr": "الاسم الكامل",
-                      "textEn": "Your full name"
+                      "textAr": "اسمك",
+                      "textEn": "Your name"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "organizationLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الجهة",
+                      "textEn": "Organization"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "organizationPlaceholder",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الشركة / المكتب العائلي",
+                      "textEn": "Company / Family Office"
                     }
                   },
                   {
@@ -5018,6 +5036,60 @@
                   },
                   {
                     "type": "text",
+                    "key": "topicLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "الموضوع",
+                      "textEn": "Topic"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicPartnershipLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "شراكة",
+                      "textEn": "Partnership"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicCoInvestmentLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "استثمار مشترك",
+                      "textEn": "Co-investment"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicFamilyOfficeLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عهدة مكتب عائلي",
+                      "textEn": "Family-office mandate"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicMediaLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "استفسار إعلامي",
+                      "textEn": "Media inquiry"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "topicOtherLabel",
+                    "text": {
+                      "format": "p",
+                      "textAr": "أخرى",
+                      "textEn": "Other"
+                    }
+                  },
+                  {
+                    "type": "text",
                     "key": "messageLabel",
                     "text": {
                       "format": "p",
@@ -5030,8 +5102,8 @@
                     "key": "messagePlaceholder",
                     "text": {
                       "format": "p",
-                      "textAr": "كيف يمكننا مساعدتك؟",
-                      "textEn": "How can we help?"
+                      "textAr": "اشرح باختصار عن اهتمامك…",
+                      "textEn": "Tell us briefly about your interest…"
                     }
                   },
                   {
@@ -5041,6 +5113,15 @@
                       "format": "p",
                       "textAr": "إرسال",
                       "textEn": "Send message"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "confidentiality",
+                    "text": {
+                      "format": "p",
+                      "textAr": "معلوماتك تبقى سرّية. بإرسالك للنموذج تقبل بأن تتواصل معك العثيم جلوبال بخصوص طلبك.",
+                      "textEn": "Your information stays confidential. By submitting you agree to be contacted by Othaim Global regarding your request."
                     }
                   },
                   {
