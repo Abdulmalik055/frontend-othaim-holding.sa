@@ -106,6 +106,10 @@ export async function proxy(request: NextRequest) {
     return NextResponse.redirect(redirectUrl);
   }
 
+  if (isDocumentRequest && isAuthenticated && /^\/admin\/hr\/?$/.test(path)) {
+    return NextResponse.redirect(new URL(`/${locale}/admin/dashboard`, request.url));
+  }
+
   if (protectedRoutes.some((route) => path.startsWith(route)) && !isAuthenticated) {
     return NextResponse.redirect(new URL(`/${locale}/auth/login`, request.url));
   }

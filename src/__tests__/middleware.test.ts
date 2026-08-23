@@ -76,6 +76,16 @@ describe("middleware — protected routes", () => {
     expect(res?.status).toBe(200);
     expect(res?.headers.get("location")).toBeNull();
   });
+
+  it.each([
+    ["/ar/admin/hr", "/ar/admin/dashboard"],
+    ["/en/admin/hr", "/en/admin/dashboard"],
+  ])("redirects authenticated HR navigation from %s to %s", async (from, to) => {
+    const res = await proxy(makeRequest(from, SESSION_COOKIE, DOCUMENT_HEADERS));
+
+    expect(res?.status).toBe(307);
+    expect(res?.headers.get("location")).toBe(`http://localhost:3000${to}`);
+  });
 });
 
 describe("middleware — auth login route", () => {

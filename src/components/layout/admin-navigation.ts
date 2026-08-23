@@ -13,7 +13,6 @@ export type AdminNavItem = {
 export const ADMIN_NAV_ITEMS: AdminNavItem[] = [
   { permission: 'dashboard:view', labelKey: 'dashboard', path: 'dashboard' },
   { permission: 'cms:view',       labelKey: 'content',   path: 'cms' },
-  { permission: 'hr:view',        labelKey: 'hr',        path: 'hr' },
   { permission: 'support:view',   labelKey: 'support',   path: 'support' },
   { permission: 'users:view',     labelKey: 'users',     path: 'users' },
   { permission: 'settings:view',  labelKey: 'settings',  path: 'settings' },

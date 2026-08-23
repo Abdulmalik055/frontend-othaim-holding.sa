@@ -59,4 +59,20 @@ describe("AdminSidebar", () => {
     expect(platformName.className).toContain("leading-none");
     expect(platformName.className).not.toContain("leading-[1.4]");
   });
+
+  it("hides Hiring even when the administrator has HR permission", () => {
+    const queryClient = new QueryClient();
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <AdminSidebar
+          activePath="dashboard"
+          locale="en"
+          permissions={["dashboard:view", "hr:view"]}
+        />
+      </QueryClientProvider>
+    );
+
+    expect(screen.queryByText("hr")).toBeNull();
+  });
 });
