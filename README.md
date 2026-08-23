@@ -14,7 +14,7 @@ deployment workflow.
 The supplied static Othaim website is a visual and content reference only. Runtime public content
 comes from the Othaim Global backend CMS.
 
-Privacy Policy, Usage Policy, and Terms and Conditions use localized `/[locale]/legal/[slug]`
+Privacy Policy, Cookie Policy, and Terms of Use use localized `/[locale]/legal/[slug]`
 routes. The footer exposes the complete legal-link group only after all three CMS pages are active.
 
 ## Requirements

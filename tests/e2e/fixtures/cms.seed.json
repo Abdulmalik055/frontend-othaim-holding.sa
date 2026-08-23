@@ -219,6 +219,24 @@
                       "href": "/founder",
                       "style": "secondary"
                     }
+                  },
+                  {
+                    "type": "text",
+                    "key": "name",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عبدالله صالح العثيم",
+                      "textEn": "Abdullah Saleh Al Othaim"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "key": "role",
+                    "text": {
+                      "format": "p",
+                      "textAr": "المؤسس",
+                      "textEn": "Founder"
+                    }
                   }
                 ]
               }
@@ -5168,23 +5186,23 @@
       "slug": "terms",
       "category": "legal",
       "template": "default",
-      "titleAr": "الشروط والأحكام",
-      "titleEn": "Terms and Conditions",
+      "titleAr": "شروط الاستخدام",
+      "titleEn": "Terms of Use",
       "isActive": true,
       "isIndexable": true,
       "navigationPlacement": "none",
       "navigationOrder": 9,
-      "seoTitleAr": "الشروط والأحكام — العثيم جلوبال",
-      "seoTitleEn": "Terms and Conditions — Othaim Global",
-      "seoDescriptionAr": "الشروط والأحكام التي تنظّم استخدام موقع العثيم جلوبال ومحتواه وخدمات التواصل المتاحة من خلاله.",
-      "seoDescriptionEn": "Terms governing access to the Othaim Global website, its content, and its available inquiry services.",
+      "seoTitleAr": "شروط الاستخدام — العثيم جلوبال",
+      "seoTitleEn": "Terms of Use — Othaim Global",
+      "seoDescriptionAr": "شروط الاستخدام التي تنظّم الوصول إلى موقع العثيم جلوبال واستخدامه، وحقوق الملكية، والاستخدام الآمن، والقانون المعمول به.",
+      "seoDescriptionEn": "Terms governing access to and use of the Othaim Global website, secure usage, intellectual property, and applicable law.",
       "seoImageAssetId": "39415980-151b-50f4-ac4d-ddb3b8fb020f",
       "sections": [
         {
           "id": "a1100000-0000-4000-8000-000000000001",
           "slug": "terms-hero",
-          "titleAr": "الشروط والأحكام",
-          "titleEn": "Terms and Conditions",
+          "titleAr": "شروط الاستخدام",
+          "titleEn": "Terms of Use",
           "content": {
             "blocks": [
               {
@@ -5194,8 +5212,8 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "الشروط والأحكام التي تحكم استخدامك لمنصة العثيم جلوبال.",
-                      "textEn": "The terms and conditions governing your use of Othaim Global."
+                      "textAr": "شروط الاستخدام التي تنظّم وصولك إلى موقع العثيم جلوبال واستخدامه.",
+                      "textEn": "The terms governing your access to and use of the Othaim Global website."
                     }
                   }
                 ]
@@ -5207,9 +5225,9 @@
         },
         {
           "id": "a1100000-0000-4000-8000-000000000002",
-          "slug": "terms-acceptance",
-          "titleAr": "القبول والموافقة",
-          "titleEn": "Acceptance",
+          "slug": "terms-introduction",
+          "titleAr": "مقدمة",
+          "titleEn": "Introduction",
           "content": {
             "blocks": [
               {
@@ -5219,17 +5237,8 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "القبول والموافقة",
-                      "textEn": "Acceptance"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "استخدام المنصة يعني الموافقة على الشروط والسياسات.",
-                      "textEn": "Using the platform means accepting these terms and related policies."
+                      "textAr": "مقدمة",
+                      "textEn": "Introduction"
                     }
                   },
                   {
@@ -5237,17 +5246,8 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "باستخدامك لمنصة العثيم جلوبال أو التسجيل فيها، فإنك تؤكد موافقتك الكاملة على هذه الشروط والأحكام وعلى جميع السياسات ذات الصلة. إن كنت لا توافق على هذه الشروط، فيرجى عدم استخدام المنصة.",
-                      "textEn": "By using or registering on Othaim Global, you confirm your full acceptance of these Terms and Conditions and all related policies. If you do not agree, please do not use the platform."
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "تحتفظ منصة العثيم جلوبال بحق تعديل هذه الشروط في أي وقت، مع إشعار المستخدمين المسجلين بأي تغييرات جوهرية.",
-                      "textEn": "Othaim Global reserves the right to amend these terms at any time, with registered users notified of any material changes."
+                      "textAr": "وصولك واستخدامك لموقع العثيم جلوبال الإلكتروني (\"الموقع\") يخضع لشروط الاستخدام الخاصة بمنصة العثيم جلوبال (\"الشروط\")، بالإضافة إلى سياسة الخصوصية وإخلاء المسؤولية، والقوانين السارية في المملكة العربية السعودية. يُعتبر قبولك وموافقتك على هذه الشروط فعّالًا عند استخدامك للموقع لأول مرة. تحتفظ العثيم جلوبال بالحق في تعديل هذه الشروط وفقًا لتقديرها الخاص، مع اعتبار موافقتك وقبولك لهذه التعديلات من خلال استمرارك في استخدام الموقع.",
+                      "textEn": "Your access to and use of the Othaim Global website (\"Website\") is subject to these terms of use (\"Terms\"), Othaim Global's Privacy Policy and Disclaimer, and the laws of the Kingdom of Saudi Arabia. Your consent and approval to these Terms is deemed effective upon your first use of this Website. Othaim Global reserves the right, at its sole discretion, to amend these Terms with immediate effect, and your continued use of the Website constitutes your consent and agreement to such amendments."
                     }
                   }
                 ]
@@ -5259,9 +5259,9 @@
         },
         {
           "id": "a1100000-0000-4000-8000-000000000003",
-          "slug": "terms-user-account",
-          "titleAr": "حساب المستخدم",
-          "titleEn": "User Account",
+          "slug": "terms-use-of-website",
+          "titleAr": "استخدام الموقع",
+          "titleEn": "Use of the Website",
           "content": {
             "blocks": [
               {
@@ -5271,17 +5271,8 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "حساب المستخدم",
-                      "textEn": "User Account"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "المستخدم مسؤول عن دقة البيانات وأمن حسابه.",
-                      "textEn": "Users are responsible for accurate data and account security."
+                      "textAr": "استخدام الموقع",
+                      "textEn": "Use of the Website"
                     }
                   },
                   {
@@ -5289,17 +5280,35 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "عند إنشاء حساب في المنصة، تلتزم بما يلي:",
-                      "textEn": "When creating an account on the platform, you agree to:"
+                      "textAr": "تتوفر محتويات الموقع لأغراض معلوماتية عامة فقط، ولا تضمن العثيم جلوبال دقة أو موثوقية المعلومات المقدمة.",
+                      "textEn": "The contents of this Website are available for general information only and Othaim Global does not represent nor warrant the accuracy, reliability, or completeness of the information provided."
                     }
                   },
                   {
                     "key": "body-2",
                     "type": "text",
                     "text": {
+                      "format": "p",
+                      "textAr": "من خلال استخدام الموقع، توافق على عدم:",
+                      "textEn": "By using this Website, you agree and undertake not to:"
+                    }
+                  },
+                  {
+                    "key": "prohibited-items",
+                    "type": "text",
+                    "text": {
                       "format": "ul",
-                      "textAr": "تقديم بيانات صحيحة ودقيقة وكاملة\nالحفاظ على سرية بيانات الدخول وعدم مشاركتها\nإخطارنا فورًا في حال الاشتباه بأي اختراق للحساب\nأنت مسؤول عن جميع الأنشطة التي تتم عبر حسابك",
-                      "textEn": "Provide true, accurate, and complete information\nKeep your login credentials confidential and not share them\nNotify us immediately if you suspect any account breach\nRemain responsible for all activities performed through your account"
+                      "textAr": "استخدام الموقع لإرسال رسائل بريد إلكتروني مزعجة أو احتيالية أو غير مرغوب فيها؛\nالادعاء بتقديم خدمات استثمارية أو مصرفية أو مالية أو غيرها، أو طلب الودائع المالية أو المعلومات الشخصية بطريقة احتيالية؛\nاستخدام الموقع بطريقة مسيئة أو غير لائقة؛\nتحميل ملفات تحتوي على فيروسات أو بيانات تالفة، أو مهاجمة الموقع بأي شكل من الأشكال؛\nأي انتهاك لهذه الشروط، أو استخدام غير مصرح به للموقع، قد يؤدي إلى المساءلة القانونية وفقًا للقوانين السارية في المملكة العربية السعودية؛\nمحاولة الوصول غير المصرح به إلى الموقع، أو الخوادم، أو أي بيانات متصلة؛\nإنشاء روابط توحي بارتباط أو موافقة العثيم جلوبال.",
+                      "textEn": "Utilize the Website to send spam, phishing, or unsolicited emails;\nEngage in activities claiming to offer investment, banking, financial services, or any other services, or solicit monetary deposits or financial/personal information through the Website, or engage in any fraudulent activity;\nUtilize the Website in a manner that is defamatory, obscene, infringing, or disparaging;\nUpload files containing viruses or corrupt data, or attempt to attack the Website using malicious or harmful technology, or software that interferes with its proper operation;\nMisuse the Website to engage in activities that are illegal or unlawful in the Kingdom of Saudi Arabia;\nAttempt to gain unauthorized access to the Website, its servers, connected databases, portals, or devices;\nCreate a link to this Website in a manner that suggests or claims Othaim Global's association, endorsement, or approval."
+                    }
+                  },
+                  {
+                    "key": "closing",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "أي انتهاك لهذه الشروط، استخدام مسيء، أو إساءة استخدام أي محتوى أو مواد على الموقع، أو الوصول غير المصرح به إلى الموقع يحظر صراحة وقد يؤدي إلى اتخاذ إجراءات قانونية و/أو جنائية وفقًا للقوانين والتنظيمات السارية في المملكة العربية السعودية.",
+                      "textEn": "Any violation of these Terms, misuse or abuse of any content or material on the Website, or unauthorized access to the Website is strictly prohibited and may result in legal action and/or criminal offenses as per the applicable laws and regulations in the Kingdom of Saudi Arabia."
                     }
                   }
                 ]
@@ -5311,9 +5320,9 @@
         },
         {
           "id": "a1100000-0000-4000-8000-000000000004",
-          "slug": "terms-usage-rules",
-          "titleAr": "قواعد الاستخدام",
-          "titleEn": "Usage Rules",
+          "slug": "terms-secure-usage-policy",
+          "titleAr": "سياسة الاستخدام الآمن",
+          "titleEn": "Secure Usage Policy",
           "content": {
             "blocks": [
               {
@@ -5323,17 +5332,8 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "قواعد الاستخدام",
-                      "textEn": "Usage Rules"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "يحظر أي استخدام مخالف للأنظمة أو مسيء للمنصة.",
-                      "textEn": "Any unlawful or abusive use of the platform is prohibited."
+                      "textAr": "سياسة الاستخدام الآمن",
+                      "textEn": "Secure Usage Policy"
                     }
                   },
                   {
@@ -5341,17 +5341,17 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "يُحظر على المستخدمين القيام بأي مما يلي:",
-                      "textEn": "Users are prohibited from doing any of the following:"
+                      "textAr": "باستخدام تطبيقات الويب الخاصة بمنصة العثيم جلوبال، أؤكد أنني قرأت وفهمت وأوافق على البيانات التالية:",
+                      "textEn": "By using the Othaim Global web applications, I acknowledge that I have read, understood, and agree to comply with the following statements, and I shall adhere to them while using or accessing the Othaim Global web applications:"
                     }
                   },
                   {
-                    "key": "body-2",
+                    "key": "items",
                     "type": "text",
                     "text": {
                       "format": "ul",
-                      "textAr": "انتهاك أي قوانين أو أنظمة سارية بموجب القانون المعتمد للاختبار\nنشر معلومات مضللة أو مزيفة عن المنشآت أو المنتجات\nإرسال محتوى مسيء أو تشهيري أو مخالف للآداب العامة\nمحاولة اختراق المنصة أو التلاعب بأنظمتها التقنية\nانتهاك حقوق الملكية الفكرية للآخرين\nإنشاء حسابات وهمية أو متعددة لغرض التلاعب",
-                      "textEn": "Violating any laws or regulations applicable under Approved test governing law\nPublishing misleading or false information about businesses or products\nSending abusive, defamatory, or inappropriate content\nAttempting to hack or manipulate the platform’s technical systems\nInfringing others’ intellectual property rights\nCreating fake or multiple accounts for manipulation purposes"
+                      "textAr": "جميع البيانات والاتصالات عبر تطبيقات الويب تعتبر ملكية لمنصة العثيم جلوبال.\nلن أقوم بنسخ أو توزيع أو إساءة استخدام أي معلومات من تطبيقات الويب بدون موافقة.\nسألتزم بسياسات الأمان والقوانين السارية.\nلن أحاول الوصول غير المصرح به إلى البيانات أو التدخل في التطبيقات.\nلن أقوم بنسخ أو تنزيل أي مواد محمية بحقوق الطبع والنشر.",
+                      "textEn": "I understand that all data stored on or transmitted through Othaim Global web applications is considered the property of Othaim Global.\nI will not copy, distribute, misuse, disclose, or modify any information related to Othaim Global without prior approval.\nI will comply with Othaim Global's cybersecurity policies and procedures, as well as the laws of the Kingdom of Saudi Arabia and any related regulations.\nI will not attempt unauthorized access to, interference with, or disruption of any software, data, documents, or systems available through Othaim Global web applications.\nI will not copy or download any material protected by copyright without proper authorization from the copyright owner."
                     }
                   }
                 ]
@@ -5363,9 +5363,9 @@
         },
         {
           "id": "a1100000-0000-4000-8000-000000000005",
-          "slug": "terms-published-content",
-          "titleAr": "المحتوى المنشور",
-          "titleEn": "Published Content",
+          "slug": "terms-property-rights",
+          "titleAr": "حقوق الملكية",
+          "titleEn": "Property Rights",
           "content": {
             "blocks": [
               {
@@ -5375,17 +5375,8 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "المحتوى المنشور",
-                      "textEn": "Published Content"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "المستخدم مسؤول عن محتواه، والعثيم جلوبال تملك حق حذفه عند المخالفة.",
-                      "textEn": "Users are responsible for their content; Othaim Global may remove violating content."
+                      "textAr": "حقوق الملكية",
+                      "textEn": "Property Rights"
                     }
                   },
                   {
@@ -5393,17 +5384,8 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "أنت مسؤول مسؤولية كاملة عن المحتوى الذي تنشره على المنصة، بما في ذلك بيانات شركتك ومنتجاتك وخدماتك. تمنح العثيم جلوبال ترخيصًا غير حصري لعرض هذا المحتوى ضمن إطار الخدمة.",
-                      "textEn": "You are fully responsible for content you publish on the platform, including your company, products, and services information. You grant Othaim Global a non-exclusive license to display this content within the service."
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "تحتفظ العثيم جلوبال بحق حذف أي محتوى يخالف هذه الشروط أو السياسات العامة للمنصة دون إشعار مسبق.",
-                      "textEn": "Othaim Global reserves the right to remove any content that violates these terms or platform policies without prior notice."
+                      "textAr": "تمتلك العثيم جلوبال جميع حقوق الملكية الفكرية لمحتوى الموقع، ولا يُسمح باستخدامه دون موافقة خطية.",
+                      "textEn": "All intellectual property, including but not limited to copyright, trademarks, logos, trade names, design, layout, overall appearance, graphics, and other proprietary information provided on or via this Website (whether in text, images, or other materials), are owned by Othaim Global or have been licensed to, or authorized for use by Othaim Global, and may not be used without Othaim Global's prior written approval."
                     }
                   }
                 ]
@@ -5415,165 +5397,9 @@
         },
         {
           "id": "a1100000-0000-4000-8000-000000000006",
-          "slug": "terms-intellectual-property",
-          "titleAr": "الملكية الفكرية",
-          "titleEn": "Intellectual Property",
-          "content": {
-            "blocks": [
-              {
-                "items": [
-                  {
-                    "key": "title",
-                    "type": "text",
-                    "text": {
-                      "format": "h2",
-                      "textAr": "الملكية الفكرية",
-                      "textEn": "Intellectual Property"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "جميع عناصر المنصة مملوكة للعثيم جلوبال ومحميّة قانونيًا.",
-                      "textEn": "All platform assets are owned by Othaim Global and legally protected."
-                    }
-                  },
-                  {
-                    "key": "body-1",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "جميع عناصر منصة العثيم جلوبال، بما فيها الشعار والتصميم والكود البرمجي والمحتوى، هي ملك لشركة العثيم جلوبال التجريبية ومحمية بموجب قوانين الملكية الفكرية المعمول بها.",
-                      "textEn": "All elements of the Othaim Global platform, including logo, design, source code, and content, are owned by Othaim Global Test Company and protected by applicable intellectual property laws."
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "يُحظر نسخ أو استخدام أي محتوى أو عناصر المنصة لأغراض تجارية دون إذن كتابي مسبق من العثيم جلوبال.",
-                      "textEn": "Copying or using any platform content or assets for commercial purposes without prior written permission from Othaim Global is prohibited."
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "order": 6,
-          "isActive": true
-        },
-        {
-          "id": "a1100000-0000-4000-8000-000000000007",
-          "slug": "terms-liability",
-          "titleAr": "حدود المسؤولية",
-          "titleEn": "Limitation of Liability",
-          "content": {
-            "blocks": [
-              {
-                "items": [
-                  {
-                    "key": "title",
-                    "type": "text",
-                    "text": {
-                      "format": "h2",
-                      "textAr": "حدود المسؤولية",
-                      "textEn": "Limitation of Liability"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "العثيم جلوبال منصة وسيطة ولا تتحمل تبعات الصفقات بين الأطراف.",
-                      "textEn": "Othaim Global is an intermediary platform and is not liable for transactions between parties."
-                    }
-                  },
-                  {
-                    "key": "body-1",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "العثيم جلوبال منصة وسيطة تسهّل التواصل بين المنشآت التجارية وليست طرفًا في أي صفقة تجارية. لا تتحمل العثيم جلوبال مسؤولية عن:",
-                      "textEn": "Othaim Global is an intermediary platform that facilitates communication between businesses and is not a party to any commercial transaction. Othaim Global is not responsible for:"
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "ul",
-                      "textAr": "جودة المنتجات أو الخدمات المعروضة على المنصة\nأي خسائر ناجمة عن المعاملات بين المنشآت\nدقة المعلومات المقدمة من قِبل المستخدمين\nانقطاعات الخدمة الناجمة عن ظروف خارجة عن إرادتنا",
-                      "textEn": "The quality of products or services listed on the platform\nAny losses resulting from transactions between businesses\nThe accuracy of information provided by users\nService interruptions caused by circumstances beyond our control"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "order": 7,
-          "isActive": true
-        },
-        {
-          "id": "a1100000-0000-4000-8000-000000000008",
-          "slug": "terms-termination",
-          "titleAr": "إنهاء الخدمة",
-          "titleEn": "Service Termination",
-          "content": {
-            "blocks": [
-              {
-                "items": [
-                  {
-                    "key": "title",
-                    "type": "text",
-                    "text": {
-                      "format": "h2",
-                      "textAr": "إنهاء الخدمة",
-                      "textEn": "Service Termination"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "يمكن تعليق أو إنهاء الحسابات المخالفة وفق السياسات.",
-                      "textEn": "Accounts violating policies may be suspended or terminated."
-                    }
-                  },
-                  {
-                    "key": "body-1",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "تحتفظ العثيم جلوبال بحق تعليق أو إنهاء أي حساب يخالف هذه الشروط، أو في حالة وجود شكاوى موثقة ضد مستخدم، وذلك دون الحاجة إلى إشعار مسبق في الحالات الجسيمة.",
-                      "textEn": "Othaim Global reserves the right to suspend or terminate any account that violates these terms, or where documented complaints exist against a user, without prior notice in serious cases."
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "يحق للمستخدم طلب حذف حسابه في أي وقت عبر التواصل مع فريق الدعم.",
-                      "textEn": "Users may request account deletion at any time by contacting support."
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "order": 8,
-          "isActive": true
-        },
-        {
-          "id": "a1100000-0000-4000-8000-000000000009",
-          "slug": "terms-governing-law",
+          "slug": "terms-applicable-law",
           "titleAr": "القانون المعمول به",
-          "titleEn": "Governing Law",
+          "titleEn": "Applicable Law",
           "content": {
             "blocks": [
               {
@@ -5584,16 +5410,7 @@
                     "text": {
                       "format": "h2",
                       "textAr": "القانون المعمول به",
-                      "textEn": "Governing Law"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "تخضع الشروط لـالقانون المعتمد للاختبار، وتختص جهة الاختصاص المعتمدة للاختبار بالنزاعات.",
-                      "textEn": "These terms are governed by Approved test governing law, with disputes subject to Approved test dispute venue."
+                      "textEn": "Applicable Law"
                     }
                   },
                   {
@@ -5601,93 +5418,41 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "تخضع هذه الشروط والأحكام لـالقانون المعتمد للاختبار. ويُحال أي نزاع ينشأ عن استخدام المنصة إلى جهة الاختصاص المعتمدة للاختبار.",
-                      "textEn": "These Terms and Conditions are governed by the Approved test governing law. Any dispute arising from the use of the platform shall be referred to the Approved test dispute venue."
+                      "textAr": "تخضع هذه الشروط، بما في ذلك سياسة الخصوصية وإخلاء المسؤولية، واستخدامك لهذا الموقع، لقوانين المملكة العربية السعودية. تخضع أي نزاع أو مطالبة، سواء كانت تعاقدية أم غير تعاقدية، للقضاء الحصري في المملكة العربية السعودية.",
+                      "textEn": "These Terms, including the Privacy Policy and the Disclaimer, and your use of this Website, are governed by the laws of the Kingdom of Saudi Arabia. Any dispute or claim, whether contractual or non-contractual, is subject to the exclusive jurisdiction of the courts in the Kingdom of Saudi Arabia."
                     }
                   }
                 ]
               }
             ]
           },
-          "order": 9,
-          "isActive": true
-        },
-        {
-          "id": "a1100000-0000-4000-8000-000000000010",
-          "slug": "terms-othaim-addendum",
-          "titleAr": "ملحق شروط موقع العثيم جلوبال",
-          "titleEn": "Othaim Global Website Terms Addendum",
-          "content": {
-            "blocks": [
-              {
-                "items": [
-                  {
-                    "key": "title",
-                    "type": "text",
-                    "text": {
-                      "format": "h2",
-                      "textAr": "ملحق شروط موقع العثيم جلوبال",
-                      "textEn": "Othaim Global Website Terms Addendum"
-                    }
-                  },
-                  {
-                    "key": "intro",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "الموقع تعريفي فقط، ولا يشكل أي محتوى فيه عرضاً أو توصية أو مشورة استثمارية أو قانونية أو ضريبية.",
-                      "textEn": "This website is informational only. Nothing on it constitutes an offer, recommendation, or investment, legal, or tax advice."
-                    }
-                  },
-                  {
-                    "key": "list",
-                    "type": "text",
-                    "text": {
-                      "format": "ul",
-                      "textAr": "يتحمل المستخدم مسؤولية تقييم المعلومات والحصول على المشورة المهنية المستقلة\nقد تقود الروابط الخارجية إلى مواقع لا تديرها العثيم جلوبال ولا تتحكم في محتواها\nتبقى حقوق الموقع وعلاماته ومحتواه مملوكة لأصحابها ولا يجوز إعادة استخدامها دون إذن\nإرسال نموذج التواصل يسمح للعثيم جلوبال بالرد على الطلب ولا ينشئ علاقة استثمارية أو تعاقدية",
-                      "textEn": "Users are responsible for evaluating information and obtaining independent professional advice\nExternal links may lead to websites that Othaim Global does not operate or control\nWebsite rights, marks, and content remain the property of their respective owners and may not be reused without permission\nSubmitting an inquiry permits Othaim Global to respond but does not create an investment or contractual relationship"
-                    }
-                  },
-                  {
-                    "key": "entity",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "تُبرم هذه الشروط مع شركة العثيم جلوبال التجريبية وعنوانها المسجل العنوان المسجل المعتمد للاختبار.",
-                      "textEn": "These terms are entered into with Othaim Global Test Company, whose registered address is Approved test registered address."
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "order": 10,
+          "order": 6,
           "isActive": true
         }
       ]
     },
     {
       "id": "a1000000-0000-4000-8000-000000000002",
-      "slug": "usage",
+      "slug": "cookies",
       "category": "legal",
       "template": "default",
-      "titleAr": "سياسة الاستخدام",
-      "titleEn": "Usage Policy",
+      "titleAr": "سياسة ملفات تعريف الارتباط",
+      "titleEn": "Cookie Policy",
       "isActive": true,
       "isIndexable": true,
       "navigationPlacement": "none",
       "navigationOrder": 10,
-      "seoTitleAr": "سياسة الاستخدام — العثيم جلوبال",
-      "seoTitleEn": "Usage Policy — Othaim Global",
-      "seoDescriptionAr": "سياسة الاستخدام المقبول والضوابط التي تنظّم الوصول إلى موقع العثيم جلوبال واستخدام نماذجه ومحتواه.",
-      "seoDescriptionEn": "Acceptable-use rules governing access to the Othaim Global website, forms, systems, and content.",
+      "seoTitleAr": "سياسة ملفات تعريف الارتباط — العثيم جلوبال",
+      "seoTitleEn": "Cookie Policy — Othaim Global",
+      "seoDescriptionAr": "كيفية استخدام العثيم جلوبال لملفات تعريف الارتباط، وأنواعها، وإدارة تفضيلات الموافقة.",
+      "seoDescriptionEn": "How Othaim Global uses cookies, the cookie categories in use, and how consent preferences can be managed.",
       "seoImageAssetId": "39415980-151b-50f4-ac4d-ddb3b8fb020f",
       "sections": [
         {
           "id": "a1200000-0000-4000-8000-000000000001",
-          "slug": "usage-hero",
-          "titleAr": "سياسة الاستخدام",
-          "titleEn": "Usage Policy",
+          "slug": "cookies-hero",
+          "titleAr": "سياسة ملفات تعريف الارتباط",
+          "titleEn": "Cookie Policy",
           "content": {
             "blocks": [
               {
@@ -5697,8 +5462,8 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "الإرشادات والضوابط التي تنظّم طريقة استخدام منصة العثيم جلوبال.",
-                      "textEn": "Guidelines and controls that govern how the Othaim Global platform is used."
+                      "textAr": "كيف نستخدم ملفات تعريف الارتباط، وأنواعها، وطريقة إدارة تفضيلات الموافقة.",
+                      "textEn": "How we use cookies, the types we use, and how to manage consent preferences."
                     }
                   }
                 ]
@@ -5710,9 +5475,9 @@
         },
         {
           "id": "a1200000-0000-4000-8000-000000000002",
-          "slug": "usage-scope",
-          "titleAr": "نطاق السياسة",
-          "titleEn": "Policy Scope",
+          "slug": "cookies-what-are-cookies",
+          "titleAr": "ما هي ملفات تعريف الارتباط؟",
+          "titleEn": "What are cookies?",
           "content": {
             "blocks": [
               {
@@ -5722,17 +5487,8 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "نطاق السياسة",
-                      "textEn": "Policy Scope"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "توضح السياسة نطاق الاستخدام المقبول لجميع مستخدمي المنصة.",
-                      "textEn": "This policy defines acceptable use for all platform users."
+                      "textAr": "ما هي ملفات تعريف الارتباط؟",
+                      "textEn": "What are cookies?"
                     }
                   },
                   {
@@ -5740,8 +5496,8 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "تُحدد سياسة الاستخدام المقبول الطريقة الصحيحة للتفاعل مع منصة العثيم جلوبال، سواء من خلال التسجيل وإنشاء الحسابات، أو إدراج المنشآت والمنتجات والخدمات، أو التواصل مع الشركاء التجاريين.",
-                      "textEn": "The Acceptable Use Policy defines the proper way to interact with Othaim Global, whether through registration and account creation, listing businesses, products and services, or communicating with business partners."
+                      "textAr": "تشرح سياسة ملفات تعريف الارتباط هذه ما هي ملفات تعريف الارتباط وكيف نستخدمها، وأنواع ملفات تعريف الارتباط التي نستخدمها أي المعلومات التي نجمعها باستخدام ملفات تعريف الارتباط وكيف يتم استخدام تلك المعلومات، وكيفية إدارة إعدادات ملفات تعريف الارتباط.",
+                      "textEn": "This Cookie Policy explains what cookies are and how we use them, the types of cookies we use i.e, the information we collect using cookies and how that information is used, and how to manage the cookie settings."
                     }
                   },
                   {
@@ -5749,8 +5505,8 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "تنطبق هذه السياسة على جميع المستخدمين المسجلين والزوار العاديين للمنصة.",
-                      "textEn": "This policy applies to all registered users and general visitors of the platform."
+                      "textAr": "ملفات تعريف الارتباط هي ملفات نصية صغيرة يتم استخدامها لتخزين قطع صغيرة من المعلومات. يتم تخزينها على جهازك عند تحميل الموقع على متصفحك. تساعدنا ملفات تعريف الارتباط هذه في جعل الموقع يعمل بشكل صحيح، وجعله أكثر أمانًا، وتوفير تجربة مستخدم أفضل، وفهم كيفية أداء الموقع وتحليل ما يعمل وأين يحتاج إلى تحسين.",
+                      "textEn": "Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser. These cookies help us make the website function properly, make it more secure, provide better user experience, and understand how the website performs and to analyze what works and where it needs improvement."
                     }
                   }
                 ]
@@ -5762,9 +5518,9 @@
         },
         {
           "id": "a1200000-0000-4000-8000-000000000003",
-          "slug": "usage-permitted-use",
-          "titleAr": "الاستخدام المسموح به",
-          "titleEn": "Permitted Use",
+          "slug": "cookies-how-we-use-cookies",
+          "titleAr": "كيف نستخدم ملفات تعريف الارتباط؟",
+          "titleEn": "How do we use cookies?",
           "content": {
             "blocks": [
               {
@@ -5774,17 +5530,8 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "الاستخدام المسموح به",
-                      "textEn": "Permitted Use"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "الاستخدام التجاري المشروع مع بيانات دقيقة ومحدثة.",
-                      "textEn": "Legitimate business use with accurate and updated information."
+                      "textAr": "كيف نستخدم ملفات تعريف الارتباط؟",
+                      "textEn": "How do we use cookies?"
                     }
                   },
                   {
@@ -5792,17 +5539,17 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "يُسمح باستخدام المنصة للأغراض التالية:",
-                      "textEn": "The platform may be used for the following purposes:"
+                      "textAr": "كما هو الحال مع معظم الخدمات عبر الإنترنت، يستخدم موقعنا ملفات تعريف الارتباط الخاصة بالطرف الأول والطرف الثالث لأغراض متعددة. ملفات تعريف الارتباط الخاصة بالطرف الأول ضرورية في الغالب لكي يعمل الموقع بالطريقة الصحيحة، ولا تجمع أيًا من بياناتك الشخصية.",
+                      "textEn": "As most of the online services, our website uses first-party and third-party cookies for several purposes. First-party cookies are mostly necessary for the website to function the right way, and they do not collect any of your personally identifiable data."
                     }
                   },
                   {
                     "key": "body-2",
                     "type": "text",
                     "text": {
-                      "format": "ul",
-                      "textAr": "عرض المنشآت التجارية ومنتجاتها وخدماتها بشكل صادق ودقيق\nالبحث عن شركاء تجاريين وموردين وعملاء محتملين\nالتواصل مع المنشآت الأخرى لأغراض تجارية مشروعة\nتحديث بيانات المنشأة والمنتجات بصورة منتظمة ودقيقة\nاستخدام أدوات البحث والتصفية للوصول إلى معلومات ذات صلة",
-                      "textEn": "Displaying businesses, products, and services accurately and truthfully\nSearching for business partners, suppliers, and potential clients\nCommunicating with other businesses for legitimate commercial purposes\nUpdating business and product data regularly and accurately\nUsing search and filtering tools to access relevant information"
+                      "format": "p",
+                      "textAr": "تستخدم ملفات تعريف الارتباط الخاصة بالطرف الثالث على موقعنا بشكل أساسي لفهم كيفية أداء الموقع، وكيفية تفاعلك مع موقعنا، والحفاظ على أمان خدماتنا، وتقديم الإعلانات ذات الصلة بك، وتوفير تجربة مستخدم أفضل ومحسنة بشكل عام، والمساعدة في تسريع تفاعلاتك المستقبلية مع موقعنا.",
+                      "textEn": "The third-party cookies used on our website are mainly for understanding how the website performs, how you interact with our website, keeping our services secure, providing advertisements that are relevant to you, and all in all providing you with a better and improved user experience and help speed up your future interactions with our website."
                     }
                   }
                 ]
@@ -5814,9 +5561,9 @@
         },
         {
           "id": "a1200000-0000-4000-8000-000000000004",
-          "slug": "usage-prohibited-use",
-          "titleAr": "الاستخدام المحظور",
-          "titleEn": "Prohibited Use",
+          "slug": "cookies-types",
+          "titleAr": "أنواع ملفات تعريف الارتباط التي نستخدمها",
+          "titleEn": "Types of Cookies we use",
           "content": {
             "blocks": [
               {
@@ -5826,35 +5573,8 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "الاستخدام المحظور",
-                      "textEn": "Prohibited Use"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "منع إساءة الاستخدام، التضليل، واختراق الأنظمة أو استنزاف الموارد.",
-                      "textEn": "Prevents abuse, misinformation, system attacks, and resource overuse."
-                    }
-                  },
-                  {
-                    "key": "body-1",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "يُحظر صراحةً استخدام المنصة للأغراض التالية:",
-                      "textEn": "Use of the platform is expressly prohibited for the following:"
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "ul",
-                      "textAr": "إرسال رسائل تسويقية غير مرغوب بها (SPAM) للمستخدمين\nاستخراج بيانات المنصة بأدوات آلية (Scraping) دون إذن\nنشر معلومات كاذبة أو مضللة عن منشآت أو منتجات منافسة\nإنشاء حسابات مزيفة أو انتحال هوية منشآت حقيقية\nاستخدام المنصة لأغراض غير تجارية أو شخصية\nتحميل محتوى يحتوي على برمجيات خبيثة أو روابط ضارة\nأي نشاط يُرهق خوادم المنصة أو يُعيق أداءها",
-                      "textEn": "Sending unsolicited marketing messages (SPAM) to users\nExtracting platform data through automated tools (scraping) without permission\nPublishing false or misleading information about competing businesses or products\nCreating fake accounts or impersonating real businesses\nUsing the platform for non-commercial or purely personal purposes\nUploading content containing malware or harmful links\nAny activity that overloads platform servers or disrupts performance"
+                      "textAr": "أنواع ملفات تعريف الارتباط التي نستخدمها",
+                      "textEn": "Types of Cookies we use"
                     }
                   }
                 ]
@@ -5866,9 +5586,9 @@
         },
         {
           "id": "a1200000-0000-4000-8000-000000000005",
-          "slug": "usage-listings",
-          "titleAr": "ضوابط الإدراج",
-          "titleEn": "Listing Rules",
+          "slug": "cookies-manage-preferences",
+          "titleAr": "إدارة تفضيلات ملفات تعريف الارتباط",
+          "titleEn": "Manage cookie preferences",
           "content": {
             "blocks": [
               {
@@ -5878,17 +5598,17 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "ضوابط الإدراج",
-                      "textEn": "Listing Rules"
+                      "textAr": "إدارة تفضيلات ملفات تعريف الارتباط",
+                      "textEn": "Manage cookie preferences"
                     }
                   },
                   {
-                    "key": "summary",
+                    "key": "settingsLabel",
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "إدراجات موثوقة ببيانات قابلة للتحقق ومحتوى قانوني.",
-                      "textEn": "Reliable listings with verifiable data and lawful content."
+                      "textAr": "إعدادات ملفات تعريف الارتباط",
+                      "textEn": "Cookie Settings"
                     }
                   },
                   {
@@ -5896,17 +5616,70 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "عند إدراج منشأتك أو منتجاتك وخدماتك على المنصة، يجب الالتزام بما يلي:",
-                      "textEn": "When listing your business, products, or services on the platform, you must:"
+                      "textAr": "يمكنك تغيير تفضيلات ملفات تعريف الارتباط الخاصة بك في أي وقت بالنقر فوق الزر أعلاه. سيسمح لك ذلك بإعادة زيارة لافتة موافقة ملفات تعريف الارتباط وتغيير تفضيلاتك أو سحب موافقتك على الفور.",
+                      "textEn": "You can change your cookie preferences any time by clicking the above button. This will let you revisit the cookie consent banner and change your preferences or withdraw your consent right away."
                     }
                   },
                   {
                     "key": "body-2",
                     "type": "text",
                     "text": {
-                      "format": "ul",
-                      "textAr": "تقديم معلومات صادقة ودقيقة وقابلة للتحقق\nامتلاك السجل التجاري الساري المفعول للمنشأة\nعدم ادّعاء تقديم خدمات أو منتجات لا تُقدمها فعليًا\nاستخدام صور ومحتوى تمتلك حق استخدامه قانونيًا\nتحديث المعلومات فور تغيّرها للحفاظ على دقة البيانات",
-                      "textEn": "Provide truthful, accurate, and verifiable information\nHave a valid commercial registration for the business\nNot claim to offer products or services you do not actually provide\nUse images and content you are legally entitled to use\nUpdate information promptly whenever changes occur"
+                      "format": "p",
+                      "textAr": "بالإضافة إلى ذلك، توفر المتصفحات المختلفة طرقًا مختلفة لحظر وحذف ملفات تعريف الارتباط المستخدمة بواسطة المواقع. يمكنك تغيير إعدادات متصفحك لحظر/حذف ملفات تعريف الارتباط. فيما يلي روابط لوثائق الدعم حول كيفية إدارة وحذف ملفات تعريف الارتباط من المتصفحات الرئيسية.",
+                      "textEn": "In addition to this, different browsers provide different methods to block and delete cookies used by websites. You can change the settings of your browser to block/delete the cookies. Listed below are the links to the support documents on how to manage and delete cookies from the major web browsers."
+                    }
+                  },
+                  {
+                    "key": "browser-chrome",
+                    "type": "link",
+                    "link": {
+                      "labelAr": "كروم",
+                      "labelEn": "Chrome",
+                      "href": "https://support.google.com/accounts/answer/32050",
+                      "style": "text",
+                      "openInNewTab": true
+                    }
+                  },
+                  {
+                    "key": "browser-safari",
+                    "type": "link",
+                    "link": {
+                      "labelAr": "سفاري",
+                      "labelEn": "Safari",
+                      "href": "https://support.apple.com/en-in/guide/safari/sfri11471/mac",
+                      "style": "text",
+                      "openInNewTab": true
+                    }
+                  },
+                  {
+                    "key": "browser-firefox",
+                    "type": "link",
+                    "link": {
+                      "labelAr": "فايرفوكس",
+                      "labelEn": "Firefox",
+                      "href": "https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer#w_cookie-settings",
+                      "style": "text",
+                      "openInNewTab": true
+                    }
+                  },
+                  {
+                    "key": "browser-internet-explorer",
+                    "type": "link",
+                    "link": {
+                      "labelAr": "إنترنت إكسبلورر",
+                      "labelEn": "Internet Explorer",
+                      "href": "https://support.microsoft.com/en-us/topic/how-to-delete-cookie-files-in-internet-explorer-bca9446f-d873-78de-77ba-d42645fa52fc",
+                      "style": "text",
+                      "openInNewTab": true
+                    }
+                  },
+                  {
+                    "key": "closing",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "إذا كنت تستخدم أي متصفح ويب آخر، يرجى زيارة وثائق الدعم الرسمية لمتصفحك.",
+                      "textEn": "If you are using any other web browser, please visit your browser's official support documents."
                     }
                   }
                 ]
@@ -5918,9 +5691,9 @@
         },
         {
           "id": "a1200000-0000-4000-8000-000000000006",
-          "slug": "usage-reporting",
-          "titleAr": "الإبلاغ عن المخالفات",
-          "titleEn": "Reporting Violations",
+          "slug": "cookies-consent-preferences",
+          "titleAr": "تخصيص تفضيلات الموافقة",
+          "titleEn": "Customise Consent Preferences",
           "content": {
             "blocks": [
               {
@@ -5930,44 +5703,161 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "الإبلاغ عن المخالفات",
-                      "textEn": "Reporting Violations"
+                      "textAr": "تخصيص تفضيلات الموافقة",
+                      "textEn": "Customise Consent Preferences"
                     }
                   },
                   {
-                    "key": "summary",
+                    "key": "intro-1",
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "يمكن الإبلاغ عبر زر الإبلاغ أو البريد أو نموذج الدعم.",
-                      "textEn": "Violations can be reported via report button, email, or support form."
+                      "textAr": "نستخدم ملفات تعريف الارتباط لمساعدتك على التنقل بكفاءة وتنفيذ وظائف معينة. ستجد معلومات تفصيلية عن جميع ملفات تعريف الارتباط ضمن كل فئة موافقة أدناه.",
+                      "textEn": "We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below."
                     }
                   },
                   {
-                    "key": "body-1",
+                    "key": "intro-2",
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "إذا لاحظت أي محتوى أو سلوك يخالف سياسة الاستخدام، يرجى الإبلاغ عنه عبر:",
-                      "textEn": "If you notice any content or behavior that violates this policy, please report it through:"
+                      "textAr": "تُخزَّن ملفات تعريف الارتباط المصنفة ضمن \"الضرورية\" في متصفحك لأنها أساسية لتمكين الوظائف الأساسية للموقع.",
+                      "textEn": "The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site."
                     }
                   },
                   {
-                    "key": "body-2",
+                    "key": "intro-3",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "نستخدم أيضًا ملفات تعريف ارتباط تابعة لأطراف ثالثة تساعدنا في تحليل كيفية استخدامك لهذا الموقع، وتخزين تفضيلاتك، وتقديم المحتوى والإعلانات ذات الصلة بك. ولن تُخزَّن هذه الملفات في متصفحك إلا بعد الحصول على موافقتك المسبقة.",
+                      "textEn": "We also use third-party cookies that help us analyse how you use this website, store your preferences, and provide the content and advertisements that are relevant to you. These cookies will only be stored in your browser with your prior consent."
+                    }
+                  },
+                  {
+                    "key": "intro-4",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "يمكنك اختيار تمكين بعض أو كل ملفات تعريف الارتباط أو تعطيلها، إلا أن تعطيل بعضها قد يؤثر في تجربة التصفح.",
+                      "textEn": "You can choose to enable or disable some or all of these cookies but disabling some of them may affect your browsing experience."
+                    }
+                  },
+                  {
+                    "key": "collapseLabel",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "عرض أقل",
+                      "textEn": "Show less"
+                    }
+                  },
+                  {
+                    "key": "necessary-title",
+                    "type": "text",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "ضرورية",
+                      "textEn": "Necessary"
+                    }
+                  },
+                  {
+                    "key": "necessary-status",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "نشطة دائمًا",
+                      "textEn": "Always Active"
+                    }
+                  },
+                  {
+                    "key": "necessary-description",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "ملفات تعريف الارتباط الضرورية مطلوبة لتمكين الميزات الأساسية لهذا الموقع، مثل توفير تسجيل دخول آمن أو ضبط تفضيلات الموافقة. ولا تخزن هذه الملفات أي بيانات تعريف شخصية.",
+                      "textEn": "Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data."
+                    }
+                  },
+                  {
+                    "key": "functional-title",
+                    "type": "text",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "وظيفية",
+                      "textEn": "Functional"
+                    }
+                  },
+                  {
+                    "key": "functional-description",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تساعد ملفات تعريف الارتباط الوظيفية في تنفيذ وظائف معينة مثل مشاركة محتوى الموقع على منصات التواصل الاجتماعي، وجمع الملاحظات، وميزات الأطراف الثالثة الأخرى.",
+                      "textEn": "Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features."
+                    }
+                  },
+                  {
+                    "key": "analytics-title",
+                    "type": "text",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "تحليلية",
+                      "textEn": "Analytics"
+                    }
+                  },
+                  {
+                    "key": "analytics-description",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تُستخدم ملفات تعريف الارتباط التحليلية لفهم كيفية تفاعل الزوار مع الموقع. وتساعد هذه الملفات في توفير معلومات عن مؤشرات مثل عدد الزوار، ومعدل الارتداد، ومصدر الزيارات، وغير ذلك.",
+                      "textEn": "Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc."
+                    }
+                  },
+                  {
+                    "key": "performance-title",
+                    "type": "text",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الأداء",
+                      "textEn": "Performance"
+                    }
+                  },
+                  {
+                    "key": "performance-description",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تُستخدم ملفات تعريف ارتباط الأداء لفهم وتحليل مؤشرات الأداء الرئيسية للموقع، مما يساعد في تقديم تجربة مستخدم أفضل للزوار.",
+                      "textEn": "Performance cookies are used to understand and analyse the key performance indexes of the website which helps in delivering a better user experience for the visitors."
+                    }
+                  },
+                  {
+                    "key": "advertisement-title",
+                    "type": "text",
+                    "text": {
+                      "format": "h3",
+                      "textAr": "الإعلانات",
+                      "textEn": "Advertisement"
+                    }
+                  },
+                  {
+                    "key": "advertisement-description",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "تُستخدم ملفات تعريف ارتباط الإعلانات لتقديم إعلانات مخصصة للزوار بناءً على الصفحات التي زاروها سابقًا، ولتحليل فعالية الحملات الإعلانية.",
+                      "textEn": "Advertisement cookies are used to provide visitors with customised advertisements based on the pages you visited previously and to analyse the effectiveness of the ad campaigns."
+                    }
+                  },
+                  {
+                    "key": "actions",
                     "type": "text",
                     "text": {
                       "format": "ul",
-                      "textAr": "زر \"إبلاغ\" المتاح على صفحات المنشآت والمنتجات\nالبريد الإلكتروني: report@othaimglobal.example\nنموذج التواصل في صفحة الدعم",
-                      "textEn": "The \"Report\" button available on business and product pages\nEmail: report@othaimglobal.example\nThe contact form on the support page"
-                    }
-                  },
-                  {
-                    "key": "body-3",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "سيتم مراجعة البلاغات خلال 3 أيام عمل والتصرف وفق السياسات المعتمدة.",
-                      "textEn": "Reports are reviewed within 3 business days and handled according to approved policies."
+                      "textAr": "رفض الكل\nحفظ تفضيلاتي\nقبول الكل",
+                      "textEn": "Reject All\nSave My Preferences\nAccept All"
                     }
                   }
                 ]
@@ -5975,153 +5865,6 @@
             ]
           },
           "order": 6,
-          "isActive": true
-        },
-        {
-          "id": "a1200000-0000-4000-8000-000000000007",
-          "slug": "usage-enforcement",
-          "titleAr": "التطبيق والعقوبات",
-          "titleEn": "Enforcement and Penalties",
-          "content": {
-            "blocks": [
-              {
-                "items": [
-                  {
-                    "key": "title",
-                    "type": "text",
-                    "text": {
-                      "format": "h2",
-                      "textAr": "التطبيق والعقوبات",
-                      "textEn": "Enforcement and Penalties"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "إجراءات تصاعدية تبدأ بالتحذير وقد تصل للإنهاء الدائم.",
-                      "textEn": "Graduated actions from warning up to permanent termination."
-                    }
-                  },
-                  {
-                    "key": "body-1",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "في حالة مخالفة سياسة الاستخدام، تحتفظ العثيم جلوبال بحق اتخاذ الإجراءات التالية تبعًا لجسامة المخالفة:",
-                      "textEn": "If this policy is violated, Othaim Global reserves the right to take the following actions depending on severity:"
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "ul",
-                      "textAr": "إرسال تحذير رسمي للمستخدم\nتعليق الحساب مؤقتًا لحين تصحيح المخالفة\nحذف المحتوى المخالف\nالإنهاء الدائم للحساب في حالات الانتهاك الجسيم\nاتخاذ الإجراءات القانونية اللازمة عند الضرورة",
-                      "textEn": "Issue an official warning to the user\nTemporarily suspend the account until correction\nRemove violating content\nPermanently terminate the account in serious violations\nTake necessary legal action when required"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "order": 7,
-          "isActive": true
-        },
-        {
-          "id": "a1200000-0000-4000-8000-000000000008",
-          "slug": "usage-updates",
-          "titleAr": "تحديثات السياسة",
-          "titleEn": "Policy Updates",
-          "content": {
-            "blocks": [
-              {
-                "items": [
-                  {
-                    "key": "title",
-                    "type": "text",
-                    "text": {
-                      "format": "h2",
-                      "textAr": "تحديثات السياسة",
-                      "textEn": "Policy Updates"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "تحديثات دورية مع إشعار المستخدمين بالتغييرات الجوهرية.",
-                      "textEn": "Regular updates with user notice for material changes."
-                    }
-                  },
-                  {
-                    "key": "body-1",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "تراجع العثيم جلوبال سياسة الاستخدام بصفة دورية لتواكب تطور المنصة والمتطلبات التنظيمية. سيتم إشعار المستخدمين المسجلين بأي تغييرات جوهرية عبر البريد الإلكتروني أو الإشعارات داخل المنصة.",
-                      "textEn": "Othaim Global reviews this Usage Policy periodically to keep pace with platform evolution and regulatory requirements. Registered users will be notified of any material changes via email or in-platform notifications."
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "استمرارك في استخدام المنصة بعد نشر أي تحديثات يُعدّ موافقة ضمنية على السياسة الجديدة.",
-                      "textEn": "Your continued use of the platform after updates are published constitutes implied acceptance of the updated policy."
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "order": 8,
-          "isActive": true
-        },
-        {
-          "id": "a1200000-0000-4000-8000-000000000009",
-          "slug": "usage-othaim-addendum",
-          "titleAr": "ملحق الاستخدام المقبول لموقع العثيم جلوبال",
-          "titleEn": "Othaim Global Website Acceptable Use Addendum",
-          "content": {
-            "blocks": [
-              {
-                "items": [
-                  {
-                    "key": "title",
-                    "type": "text",
-                    "text": {
-                      "format": "h2",
-                      "textAr": "ملحق الاستخدام المقبول لموقع العثيم جلوبال",
-                      "textEn": "Othaim Global Website Acceptable Use Addendum"
-                    }
-                  },
-                  {
-                    "key": "intro",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "يجب استخدام الموقع ونماذجه بطريقة قانونية لا تضر بالموقع أو مستخدميه أو سمعته.",
-                      "textEn": "The website and its forms must be used lawfully and without harming the website, its users, or its reputation."
-                    }
-                  },
-                  {
-                    "key": "list",
-                    "type": "text",
-                    "text": {
-                      "format": "ul",
-                      "textAr": "يُحظر جمع المحتوى آلياً أو كشطه بكثافة دون إذن كتابي\nيُحظر إرسال الرسائل المزعجة أو البيانات المضللة أو انتحال صفة الغير\nيُحظر اختبار الثغرات أو تجاوز الحماية أو تعطيل الموقع أو استنزاف موارده\nيُحظر تحميل برمجيات ضارة أو محاولة الوصول غير المصرح به إلى الأنظمة أو البيانات\nيمكن الإبلاغ عن المخالفات عبر report@othaimglobal.example",
-                      "textEn": "High-volume automated collection or scraping without written permission is prohibited\nSpam, misleading submissions, and impersonation are prohibited\nVulnerability probing, protection bypass, disruption, and resource exhaustion are prohibited\nMalware uploads and unauthorized access attempts against systems or data are prohibited\nViolations may be reported through report@othaimglobal.example"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "order": 9,
           "isActive": true
         }
       ]
@@ -6139,8 +5882,8 @@
       "navigationOrder": 11,
       "seoTitleAr": "سياسة الخصوصية — العثيم جلوبال",
       "seoTitleEn": "Privacy Policy — Othaim Global",
-      "seoDescriptionAr": "كيفية جمع العثيم جلوبال للبيانات الشخصية واستخدامها وحمايتها وحقوق أصحاب البيانات وطرق التواصل.",
-      "seoDescriptionEn": "How Othaim Global collects, uses, protects, and retains personal data and how individuals can exercise their rights.",
+      "seoDescriptionAr": "سياسة العثيم جلوبال بشأن جمع المعلومات واستخدامها ومشاركتها وحمايتها وحقوق أصحاب البيانات.",
+      "seoDescriptionEn": "Othaim Global's policy on collecting, using, sharing, and protecting information and the rights of data subjects.",
       "seoImageAssetId": "39415980-151b-50f4-ac4d-ddb3b8fb020f",
       "sections": [
         {
@@ -6157,8 +5900,8 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "كيف نجمع بياناتك ونحميها ونستخدمها في منصة العثيم جلوبال.",
-                      "textEn": "How we collect, protect, and use your data on Othaim Global."
+                      "textAr": "كيفية جمع العثيم جلوبال لمعلوماتك واستخدامها ومشاركتها وحمايتها، والحقوق المتاحة لك.",
+                      "textEn": "How Othaim Global collects, uses, shares, and protects your information, and the rights available to you."
                     }
                   }
                 ]
@@ -6187,21 +5930,12 @@
                     }
                   },
                   {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "التزامنا بحماية خصوصية المستخدمين وبيانات المنشآت.",
-                      "textEn": "Our commitment to protecting user privacy and business data."
-                    }
-                  },
-                  {
                     "key": "body-1",
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "تلتزم منصة العثيم جلوبال بحماية خصوصية مستخدميها ومنشآتهم التجارية. توضّح هذه السياسة كيفية جمع المعلومات الشخصية والتجارية واستخدامها وحمايتها عند استخدامك لمنصتنا.",
-                      "textEn": "Othaim Global is committed to protecting the privacy of its users and their businesses. This policy explains how we collect, use, and protect personal and business information when you use our platform."
+                      "textAr": "تصف سياسة الخصوصية هذه سياسات العثيم جلوبال، La Tonnelle House, Les Banques, St Sampson, Guernsey GY1 3HS، البريد الإلكتروني: info@othaimglobal.com، الهاتف: +966114755733 بشأن جمع واستخدام والكشف عن معلوماتك التي نجمعها عند استخدامك لموقعنا الإلكتروني (\"الخدمة\"). من خلال الوصول إلى الخدمة أو استخدامها، فإنك توافق على جمع واستخدام والكشف عن معلوماتك وفقًا لسياسة الخصوصية هذه. إذا كنت لا توافق على ذلك، يرجى عدم الوصول إلى الخدمة أو استخدامها.",
+                      "textEn": "This Privacy Policy describes the policies of Othaim Global, La Tonnelle House, Les Banques, St Sampson, Guernsey GY1 3HS, email: info@othaimglobal.com, phone: +966114755733, on the collection, use and disclosure of your information that we collect when you use our website (the \"Service\"). By accessing or using the Service, you are consenting to the collection, use and disclosure of your information in accordance with this Privacy Policy. If you do not consent to the same, please do not access or use the Service."
                     }
                   },
                   {
@@ -6209,8 +5943,8 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "باستخدامك لمنصة العثيم جلوبال، فإنك توافق على الشروط الواردة في هذه السياسة. نرجو قراءتها بعناية قبل البدء باستخدام خدماتنا.",
-                      "textEn": "By using Othaim Global, you agree to the terms outlined in this policy. Please read it carefully before using our services."
+                      "textAr": "قد نقوم بتعديل سياسة الخصوصية هذه في أي وقت دون إشعار مسبق لك وسنقوم بنشر سياسة الخصوصية المعدلة على الخدمة. ستكون السياسة المعدلة سارية المفعول بعد 180 يومًا من نشر السياسة المعدلة في الخدمة وسيشكل استمرار وصولك أو استخدامك للخدمة بعد هذا الوقت قبولك لسياسة الخصوصية المعدلة. لذلك نوصي بمراجعة هذه الصفحة بشكل دوري.",
+                      "textEn": "We may modify this Privacy Policy at any time without any prior notice to you and will post the revised Privacy Policy on the Service. The revised Policy will be effective 180 days from when the revised Policy is posted in the Service and your continued access or use of the Service after such time will constitute your acceptance of the revised Privacy Policy. We therefore recommend that you periodically review this page."
                     }
                   }
                 ]
@@ -6222,9 +5956,9 @@
         },
         {
           "id": "a1300000-0000-4000-8000-000000000003",
-          "slug": "privacy-data-collected",
-          "titleAr": "البيانات التي نجمعها",
-          "titleEn": "Data We Collect",
+          "slug": "privacy-how-we-use-information",
+          "titleAr": "كيف نستخدم معلوماتك",
+          "titleEn": "How We Use Your Information",
           "content": {
             "blocks": [
               {
@@ -6234,17 +5968,26 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "البيانات التي نجمعها",
-                      "textEn": "Data We Collect"
+                      "textAr": "كيف نستخدم معلوماتك",
+                      "textEn": "How We Use Your Information"
                     }
                   },
                   {
-                    "key": "summary",
+                    "key": "intro",
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "أنواع البيانات الشخصية والتجارية والتقنية التي نجمعها.",
-                      "textEn": "The personal, business, and technical data we collect."
+                      "textAr": "سنستخدم المعلومات التي نجمعها عنك للأغراض التالية:",
+                      "textEn": "We will use the information that we collect about you for the following purposes:"
+                    }
+                  },
+                  {
+                    "key": "items",
+                    "type": "text",
+                    "text": {
+                      "format": "ul",
+                      "textAr": "التسويق / الترويج\nفرض الشروط والأحكام\nالدعم\nمعلومات الإدارة\nحماية الموقع",
+                      "textEn": "Marketing/ Promotional\nEnforce T&C\nSupport\nAdministration info\nSite protection"
                     }
                   },
                   {
@@ -6252,17 +5995,8 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "نجمع البيانات التالية عند تسجيلك أو استخدامك للمنصة:",
-                      "textEn": "We collect the following data when you register or use the platform:"
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "ul",
-                      "textAr": "بيانات الهوية: الاسم الكامل، بريد إلكتروني، رقم هاتف\nبيانات المنشأة: الاسم التجاري، رقم السجل التجاري، القطاع، الموقع\nبيانات الاستخدام: صفحات الزيارة، مدة الجلسة، نقرات المستخدم\nالبيانات التقنية: عنوان IP، نوع المتصفح، نظام التشغيل\nبيانات التواصل: الرسائل المُرسلة عبر نماذج التواصل",
-                      "textEn": "Identity data: full name, email address, phone number\nBusiness data: trade name, commercial registration number, sector, location\nUsage data: visited pages, session duration, user clicks\nTechnical data: IP address, browser type, operating system\nCommunication data: messages sent through contact forms"
+                      "textAr": "إذا أردنا استخدام معلوماتك لأي غرض آخر، سنطلب منك الموافقة وسنستخدم معلوماتك فقط عند تلقي موافقتك وبعد ذلك، فقط للأغراض التي تمنح الموافقة عليها ما لم نكن ملزمين بخلاف ذلك بموجب القانون.",
+                      "textEn": "If we want to use your information for any other purpose, we will ask you for consent and will use your information only on receiving your consent and then, only for the purpose(s) for which grant consent unless we are required to do otherwise by law."
                     }
                   }
                 ]
@@ -6274,9 +6008,9 @@
         },
         {
           "id": "a1300000-0000-4000-8000-000000000004",
-          "slug": "privacy-data-use",
-          "titleAr": "كيف نستخدم البيانات",
-          "titleEn": "How We Use Data",
+          "slug": "privacy-how-we-share-information",
+          "titleAr": "كيف نشارك معلوماتك",
+          "titleEn": "How We Share Your Information",
           "content": {
             "blocks": [
               {
@@ -6286,17 +6020,26 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "كيف نستخدم البيانات",
-                      "textEn": "How We Use Data"
+                      "textAr": "كيف نشارك معلوماتك",
+                      "textEn": "How We Share Your Information"
                     }
                   },
                   {
-                    "key": "summary",
+                    "key": "intro",
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "نستخدم البيانات لتشغيل المنصة وتحسين الخدمة والامتثال النظامي.",
-                      "textEn": "We use data to operate the platform, improve services, and meet legal obligations."
+                      "textAr": "لن نقوم بنقل معلوماتك الشخصية إلى أي طرف ثالث دون طلب موافقتك، باستثناء في ظروف محدودة كما هو موضح أدناه:",
+                      "textEn": "We will not transfer your personal information to any third party without seeking your consent, except in limited circumstances as described below:"
+                    }
+                  },
+                  {
+                    "key": "items",
+                    "type": "text",
+                    "text": {
+                      "format": "ul",
+                      "textAr": "وكالات التسويق\nالتحليلات\nجمع البيانات ومعالجتها",
+                      "textEn": "Marketing agencies\nAnalytics\nData collection & process"
                     }
                   },
                   {
@@ -6304,17 +6047,17 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "نستخدم البيانات المجمّعة للأغراض التالية:",
-                      "textEn": "We use collected data for the following purposes:"
+                      "textAr": "نطلب من هذه الأطراف الثالثة استخدام المعلومات الشخصية التي ننقلها إليهم فقط للغرض الذي تم نقلها من أجله وعدم الاحتفاظ بها لفترة أطول مما هو مطلوب لتحقيق الغرض المذكور.",
+                      "textEn": "We require such third party's to use the personal information we transfer to them only for the purpose for which it was transferred and not to retain it for longer than is required for fulfilling the said purpose."
                     }
                   },
                   {
                     "key": "body-2",
                     "type": "text",
                     "text": {
-                      "format": "ul",
-                      "textAr": "تشغيل المنصة وتقديم خدماتها الأساسية\nتحسين تجربة المستخدم وتطوير المنصة\nإرسال إشعارات تتعلق بالحساب أو الخدمة\nالرد على استفسارات ومشكلات المستخدمين\nتحليل بيانات الاستخدام لتطوير الخدمة\nالامتثال للمتطلبات القانونية بموجب القانون المعتمد للاختبار",
-                      "textEn": "Operating the platform and delivering core services\nImproving user experience and developing the platform\nSending account- or service-related notifications\nResponding to user inquiries and issues\nAnalyzing usage data to improve the service\nComplying with legal requirements under Approved test governing law"
+                      "format": "p",
+                      "textAr": "قد نكشف أيضًا عن معلوماتك الشخصية للأسباب التالية: (1) الامتثال للقانون المعمول به أو اللوائح أو أمر المحكمة أو أي عملية قانونية أخرى؛ (2) فرض اتفاقياتك معنا، بما في ذلك سياسة الخصوصية هذه؛ أو (3) الرد على الادعاءات بأن استخدامك للخدمة ينتهك حقوق أي طرف ثالث. إذا تم دمج الخدمة أو شركتنا مع شركة أخرى أو تم الاستحواذ عليها، فستكون معلوماتك واحدة من الأصول التي يتم نقلها إلى المالك الجديد.",
+                      "textEn": "We may also disclose your personal information for the following: (1) to comply with applicable law, regulation, court order or other legal process; (2) to enforce your agreements with us, including this Privacy Policy; or (3) to respond to claims that your use of the Service violates any third-party rights. If the Service or our company is merged or acquired with another company, your information will be one of the assets that is transferred to the new owner."
                     }
                   }
                 ]
@@ -6326,120 +6069,7 @@
         },
         {
           "id": "a1300000-0000-4000-8000-000000000005",
-          "slug": "privacy-data-sharing",
-          "titleAr": "مشاركة البيانات",
-          "titleEn": "Data Sharing",
-          "content": {
-            "blocks": [
-              {
-                "items": [
-                  {
-                    "key": "title",
-                    "type": "text",
-                    "text": {
-                      "format": "h2",
-                      "textAr": "مشاركة البيانات",
-                      "textEn": "Data Sharing"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "لا نبيع بياناتك، ونشاركها فقط في حالات محددة ومشروعة.",
-                      "textEn": "We do not sell your data, and only share it in specific legitimate cases."
-                    }
-                  },
-                  {
-                    "key": "body-1",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "لا نبيع بياناتك الشخصية لأي طرف ثالث. قد نشارك البيانات في الحالات التالية:",
-                      "textEn": "We do not sell your personal data to any third party. We may share data only in the following cases:"
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "ul",
-                      "textAr": "مع مزودي الخدمات التقنية الضروريين لتشغيل المنصة (كخوادم الاستضافة)\nعند الطلب من جهة حماية البيانات المعتمدة للاختبار أو جهة حكومية أو قضائية مختصة\nبموافقتك الصريحة على مشاركة بيانات محددة",
-                      "textEn": "With technical service providers necessary to operate the platform (such as hosting providers)\nUpon request by the approved test data-protection authority or another competent governmental or judicial authority\nWith your explicit consent to share specific data"
-                    }
-                  },
-                  {
-                    "key": "body-3",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "يلتزم جميع شركائنا وموفري الخدمات بمعايير حماية البيانات المعمول بها.",
-                      "textEn": "All partners and service providers are required to follow applicable data protection standards."
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "order": 5,
-          "isActive": true
-        },
-        {
-          "id": "a1300000-0000-4000-8000-000000000006",
-          "slug": "privacy-data-security",
-          "titleAr": "حماية البيانات",
-          "titleEn": "Data Security",
-          "content": {
-            "blocks": [
-              {
-                "items": [
-                  {
-                    "key": "title",
-                    "type": "text",
-                    "text": {
-                      "format": "h2",
-                      "textAr": "حماية البيانات",
-                      "textEn": "Data Security"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "إجراءات تقنية وتنظيمية صارمة لحماية بياناتك.",
-                      "textEn": "Strict technical and organizational measures to protect your data."
-                    }
-                  },
-                  {
-                    "key": "body-1",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "نتخذ إجراءات تقنية وتنظيمية صارمة لحماية بياناتك، تشمل:",
-                      "textEn": "We apply strict technical and organizational measures to protect your data, including:"
-                    }
-                  },
-                  {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "ul",
-                      "textAr": "تشفير البيانات أثناء النقل باستخدام بروتوكول SSL/TLS\nتشفير كلمات المرور بخوارزميات التجزئة الآمنة\nتقييد الوصول الداخلي وفق مبدأ الحد الأدنى من الصلاحيات\nمراجعات دورية للبنية التحتية الأمنية",
-                      "textEn": "Encryption of data in transit using SSL/TLS\nSecure password hashing\nRestricted internal access based on least-privilege principles\nRegular security infrastructure reviews"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "order": 6,
-          "isActive": true
-        },
-        {
-          "id": "a1300000-0000-4000-8000-000000000007",
-          "slug": "privacy-rights",
+          "slug": "privacy-your-rights",
           "titleAr": "حقوقك",
           "titleEn": "Your Rights",
           "content": {
@@ -6456,12 +6086,46 @@
                     }
                   },
                   {
-                    "key": "summary",
+                    "key": "body-1",
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "يمكنك الوصول لبياناتك وتصحيحها وطلب حذفها ضمن الأنظمة.",
-                      "textEn": "You can access, correct, and request deletion of your data in line with regulations."
+                      "textAr": "اعتمادًا على القانون الذي ينطبق، قد يكون لديك الحق في الوصول إلى بياناتك الشخصية وتصحيحها أو محوها أو تلقي نسخة من بياناتك الشخصية، أو تقييد أو الاعتراض على المعالجة النشطة لبياناتك، أو طلب منا مشاركة (نقل) معلوماتك الشخصية إلى كيان آخر، أو سحب أي موافقة قدمتها لنا لمعالجة بياناتك، أو الحق في تقديم شكوى إلى سلطة قانونية وأي حقوق أخرى قد تكون ذات صلة بموجب القوانين المعمول بها. لممارسة هذه الحقوق، يمكنك الكتابة إلينا على info@othaimglobal.com. سنرد على طلبك وفقًا للقانون المعمول به.",
+                      "textEn": "Depending on the law that applies, you may have a right to access and rectify or erase your personal data or receive a copy of your personal data, restrict or object to the active processing of your data, ask us to share (port) your personal information to another entity, withdraw any consent you provided to us to process your data, a right to lodge a complaint with a statutory authority and such other rights as may be relevant under applicable laws. To exercise these rights, you can write to us at info@othaimglobal.com. We will respond to your request in accordance with applicable law."
+                    }
+                  },
+                  {
+                    "key": "body-2",
+                    "type": "text",
+                    "text": {
+                      "format": "p",
+                      "textAr": "يرجى ملاحظة أنه إذا لم تسمح لنا بجمع أو معالجة المعلومات الشخصية المطلوبة أو سحب الموافقة على معالجة نفس المعلومات للأغراض المطلوبة، فقد لا تتمكن من الوصول إلى الخدمات أو استخدامها التي تم طلب معلوماتك من أجلها.",
+                      "textEn": "Do note that if you do not allow us to collect or process the required personal information or withdraw the consent to process the same for the required purposes, you may not be able to access or use the services for which your information was sought."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 5,
+          "isActive": true
+        },
+        {
+          "id": "a1300000-0000-4000-8000-000000000006",
+          "slug": "privacy-cookies",
+          "titleAr": "ملفات تعريف الارتباط وما إلى ذلك",
+          "titleEn": "Cookies Etc.",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "key": "title",
+                    "type": "text",
+                    "text": {
+                      "format": "h2",
+                      "textAr": "ملفات تعريف الارتباط وما إلى ذلك",
+                      "textEn": "Cookies Etc."
                     }
                   },
                   {
@@ -6469,26 +6133,52 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "لديك الحق في:",
-                      "textEn": "You have the right to:"
+                      "textAr": "لمعرفة المزيد حول كيفية استخدامنا لهذه التقنيات وخياراتك فيما يتعلق بهذه التقنيات التتبعية يرجى الرجوع إلى سياسة ملفات تعريف الارتباط.",
+                      "textEn": "To learn more about how we use these and your choices in relation to these tracking technologies, please refer to our Cookie Policy."
                     }
                   },
                   {
-                    "key": "body-2",
+                    "key": "cookie-policy-link",
+                    "type": "link",
+                    "link": {
+                      "labelAr": "سياسة ملفات تعريف الارتباط",
+                      "labelEn": "Cookie Policy",
+                      "href": "/legal/cookies",
+                      "style": "text"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "order": 6,
+          "isActive": true
+        },
+        {
+          "id": "a1300000-0000-4000-8000-000000000007",
+          "slug": "privacy-security",
+          "titleAr": "الأمان",
+          "titleEn": "Security",
+          "content": {
+            "blocks": [
+              {
+                "items": [
+                  {
+                    "key": "title",
                     "type": "text",
                     "text": {
-                      "format": "ul",
-                      "textAr": "الاطلاع على بياناتك الشخصية المحفوظة لدينا\nتصحيح أي بيانات غير دقيقة\nطلب حذف بياناتك وفق الإجراءات المعمول بها\nالاعتراض على معالجة بياناتك في حالات معينة",
-                      "textEn": "Access your personal data stored with us\nCorrect inaccurate data\nRequest deletion of your data according to applicable procedures\nObject to data processing in certain situations"
+                      "format": "h2",
+                      "textAr": "الأمان",
+                      "textEn": "Security"
                     }
                   },
                   {
-                    "key": "body-3",
+                    "key": "body-1",
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "لممارسة أي من هذه الحقوق، يرجى التواصل معنا عبر صفحة التواصل أو البريد الإلكتروني: privacy@othaimglobal.example",
-                      "textEn": "To exercise any of these rights, please contact us through the contact page or via email: privacy@othaimglobal.example"
+                      "textAr": "أمان معلوماتك مهم بالنسبة لنا وسنستخدم تدابير أمان معقولة لمنع فقدان أو إساءة استخدام أو تعديل غير مصرح به لمعلوماتك تحت سيطرتنا. ومع ذلك، نظرًا للمخاطر المتأصلة، لا يمكننا ضمان الأمان المطلق وبالتالي، لا يمكننا ضمان أو ضمان أمان أي معلومات ترسلها إلينا وتقوم بذلك على مسؤوليتك الخاصة.",
+                      "textEn": "The security of your information is important to us and we will use reasonable security measures to prevent the loss, misuse or unauthorized alteration of your information under our control. However, given the inherent risks, we cannot guarantee absolute security and consequently, we cannot ensure or warrant the security of any information you transmit to us and you do so at your own risk."
                     }
                   }
                 ]
@@ -6500,9 +6190,9 @@
         },
         {
           "id": "a1300000-0000-4000-8000-000000000008",
-          "slug": "privacy-cookies",
-          "titleAr": "ملفات تعريف الارتباط",
-          "titleEn": "Cookies",
+          "slug": "privacy-third-party-links",
+          "titleAr": "روابط الطرف الثالث واستخدام معلوماتك",
+          "titleEn": "Third Party Links & Use Of Your Information",
           "content": {
             "blocks": [
               {
@@ -6512,17 +6202,8 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "ملفات تعريف الارتباط",
-                      "textEn": "Cookies"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "نستخدم الكوكيز لتحسين التجربة وتحليل الزيارات.",
-                      "textEn": "We use cookies to improve experience and analyze traffic."
+                      "textAr": "روابط الطرف الثالث واستخدام معلوماتك",
+                      "textEn": "Third Party Links & Use Of Your Information"
                     }
                   },
                   {
@@ -6530,8 +6211,8 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "نستخدم ملفات تعريف الارتباط (Cookies) لتحسين تجربة الاستخدام وتحليل الزيارات. يمكنك التحكم في هذه الملفات من إعدادات متصفحك، غير أن تعطيلها قد يؤثر على بعض وظائف المنصة.",
-                      "textEn": "We use cookies to improve user experience and analyze visits. You can control cookies through your browser settings, but disabling them may affect some platform features."
+                      "textAr": "قد تحتوي خدمتنا على روابط لمواقع ويب أخرى لا يتم تشغيلها بواسطتنا. لا تتناول سياسة الخصوصية هذه سياسة الخصوصية والممارسات الأخرى لأي أطراف ثالثة، بما في ذلك أي طرف ثالث يقوم بتشغيل أي موقع ويب أو خدمة قد تكون متاحة عبر رابط على الخدمة. ننصحك بشدة بمراجعة سياسة الخصوصية لكل موقع تزوره. ليس لدينا أي سيطرة ولا نتحمل أي مسؤولية عن محتوى أو سياسات الخصوصية أو ممارسات أي مواقع أو خدمات تابعة لأطراف ثالثة.",
+                      "textEn": "Our Service may contain links to other websites that are not operated by us. This Privacy Policy does not address the privacy policy and other practices of any third parties, including any third party operating any website or service that may be accessible via a link on the Service. We strongly advise you to review the privacy policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services."
                     }
                   }
                 ]
@@ -6543,9 +6224,9 @@
         },
         {
           "id": "a1300000-0000-4000-8000-000000000009",
-          "slug": "privacy-contact",
-          "titleAr": "التواصل معنا",
-          "titleEn": "Contact Us",
+          "slug": "privacy-grievance-officer",
+          "titleAr": "مسؤول الشكاوى / حماية البيانات",
+          "titleEn": "Grievance / Data Protection Officer",
           "content": {
             "blocks": [
               {
@@ -6555,17 +6236,8 @@
                     "type": "text",
                     "text": {
                       "format": "h2",
-                      "textAr": "التواصل معنا",
-                      "textEn": "Contact Us"
-                    }
-                  },
-                  {
-                    "key": "summary",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "قنوات التواصل بخصوص الخصوصية والبيانات الشخصية.",
-                      "textEn": "Contact channels for privacy and personal data inquiries."
+                      "textAr": "مسؤول الشكاوى / حماية البيانات",
+                      "textEn": "Grievance / Data Protection Officer"
                     }
                   },
                   {
@@ -6573,17 +6245,18 @@
                     "type": "text",
                     "text": {
                       "format": "p",
-                      "textAr": "لأي استفسار بشأن سياسة الخصوصية أو بياناتك الشخصية، يرجى التواصل معنا:",
-                      "textEn": "For any inquiry regarding the Privacy Policy or your personal data, please contact us:"
+                      "textAr": "إذا كانت لديك أي استفسارات أو مخاوف بشأن معالجة معلوماتك المتاحة لدينا، يمكنك إرسال بريد إلكتروني إلى مسؤول الشكاوى لدينا في العثيم جلوبال، La Tonnelle House, Les Banques, St Sampson, Guernsey GY1 3HS، البريد الإلكتروني: info@othaimglobal.com. سنقوم بمعالجة مخاوفك وفقًا للقانون المعمول به.",
+                      "textEn": "If you have any queries or concerns about the processing of your information that is available with us, you may email our Grievance Officer at Othaim Global, La Tonnelle House, Les Banques, St Sampson, Guernsey GY1 3HS, email: info@othaimglobal.com. We will address your concerns in accordance with applicable law."
                     }
                   },
                   {
-                    "key": "body-2",
-                    "type": "text",
-                    "text": {
-                      "format": "ul",
-                      "textAr": "البريد الإلكتروني: privacy@othaimglobal.example\nالهاتف: +966110000000\nالعنوان: العنوان المسجل المعتمد للاختبار",
-                      "textEn": "Email: privacy@othaimglobal.example\nPhone: +966110000000\nAddress: Approved test registered address"
+                    "key": "privacy-email",
+                    "type": "link",
+                    "link": {
+                      "labelAr": "info@othaimglobal.com",
+                      "labelEn": "info@othaimglobal.com",
+                      "href": "mailto:info@othaimglobal.com",
+                      "style": "text"
                     }
                   }
                 ]
@@ -6591,76 +6264,6 @@
             ]
           },
           "order": 9,
-          "isActive": true
-        },
-        {
-          "id": "a1300000-0000-4000-8000-000000000010",
-          "slug": "privacy-othaim-addendum",
-          "titleAr": "ملحق العثيم جلوبال لمعالجة البيانات",
-          "titleEn": "Othaim Global Data Processing Addendum",
-          "content": {
-            "blocks": [
-              {
-                "items": [
-                  {
-                    "key": "title",
-                    "type": "text",
-                    "text": {
-                      "format": "h2",
-                      "textAr": "ملحق العثيم جلوبال لمعالجة البيانات",
-                      "textEn": "Othaim Global Data Processing Addendum"
-                    }
-                  },
-                  {
-                    "key": "intro",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "يوضح هذا الملحق ممارسات الموقع الحالية ويكمل سياسة الخصوصية أعلاه. عند وجود تعارض، يجب اعتماد الصياغة التي يقرّها المستشار القانوني قبل النشر.",
-                      "textEn": "This addendum describes the website’s current practices and supplements the Privacy Policy above. If any wording conflicts, counsel-approved wording must be adopted before publication."
-                    }
-                  },
-                  {
-                    "key": "data-title",
-                    "type": "text",
-                    "text": {
-                      "format": "h3",
-                      "textAr": "بيانات التصفح والتواصل والتوظيف",
-                      "textEn": "Browsing, inquiry, and careers data"
-                    }
-                  },
-                  {
-                    "key": "data-list",
-                    "type": "text",
-                    "text": {
-                      "format": "ul",
-                      "textAr": "بيانات الطلب التقنية الأساسية التي تنشأ عند تصفح الصفحات، مثل عنوان IP وبيانات المتصفح أو الجهاز وسجلات الأمان\nتفضيل اللغة المخزن في ملف تعريف ارتباط ضروري\nالاسم والجهة والبريد الإلكتروني والموضوع ونص الرسالة عند إرسال نموذج التواصل\nتُحفظ رسائل التواصل كتذاكر دعم وتُرسل نسخة إشعار عبر مزود البريد الإلكتروني المضبوط\nبيانات طلبات التوظيف والمرفقات إذا تم تفعيل مسار التوظيف العام",
-                      "textEn": "Basic technical request data generated when pages are browsed, such as IP address, browser or device metadata, and security logs\nLanguage preference stored in a necessary cookie\nName, organization, email address, topic, and message submitted through a contact form\nContact inquiries are stored as support tickets and a notification copy is sent through the configured email provider\nCareers application data and attachments if the public careers flow is enabled"
-                    }
-                  },
-                  {
-                    "key": "retention",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "تُحفظ البيانات وفق معايير الاحتفاظ المعتمدة للاختبار، وقد يعالجها مزودو الاستضافة وقاعدة البيانات والبريد الإلكتروني بالقدر اللازم لتشغيل الموقع.",
-                      "textEn": "Data is retained according to approved test retention criteria, and may be processed by hosting, database, and email providers as necessary to operate the website."
-                    }
-                  },
-                  {
-                    "key": "rights",
-                    "type": "text",
-                    "text": {
-                      "format": "p",
-                      "textAr": "لممارسة حقوق الخصوصية تواصل عبر privacy@othaimglobal.example. ويمكن تقديم شكوى إلى جهة حماية البيانات المعتمدة للاختبار.",
-                      "textEn": "To exercise privacy rights, contact privacy@othaimglobal.example. Complaints may be submitted to the approved test data-protection authority."
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "order": 10,
           "isActive": true
         }
       ]

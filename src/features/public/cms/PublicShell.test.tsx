@@ -66,8 +66,8 @@ const contactSummary = {
 
 const legalSummaries = [
   { id: "privacy", slug: "privacy", titleAr: "سياسة الخصوصية", titleEn: "Privacy Policy" },
-  { id: "terms", slug: "terms", titleAr: "الشروط والأحكام", titleEn: "Terms and Conditions" },
-  { id: "usage", slug: "usage", titleAr: "سياسة الاستخدام", titleEn: "Usage Policy" },
+  { id: "terms", slug: "terms", titleAr: "شروط الاستخدام", titleEn: "Terms of Use" },
+  { id: "cookies", slug: "cookies", titleAr: "سياسة ملفات تعريف الارتباط", titleEn: "Cookie Policy" },
 ].map((page, index) => ({
   ...page,
   category: "legal" as const,
@@ -103,11 +103,11 @@ describe("PublicShell branding", () => {
     expect(html).not.toContain(">Contact title</a>");
     expect(html).toContain('href="https://holding.example/group"');
     const termsIndex = html.indexOf('href="/legal/terms"');
-    const usageIndex = html.indexOf('href="/legal/usage"');
+    const cookiesIndex = html.indexOf('href="/legal/cookies"');
     const privacyIndex = html.indexOf('href="/legal/privacy"');
     expect(termsIndex).toBeGreaterThan(0);
-    expect(usageIndex).toBeGreaterThan(termsIndex);
-    expect(privacyIndex).toBeGreaterThan(usageIndex);
+    expect(cookiesIndex).toBeGreaterThan(termsIndex);
+    expect(privacyIndex).toBeGreaterThan(cookiesIndex);
     expect(html).toContain(
       '"parentOrganization":{"@type":"Organization","name":"Al Othaim Holding","url":"https://holding.example/group"}'
     );
@@ -124,7 +124,7 @@ describe("PublicShell branding", () => {
 
     expect(html).not.toContain('/legal/privacy');
     expect(html).not.toContain('/legal/terms');
-    expect(html).not.toContain('/legal/usage');
+    expect(html).not.toContain('/legal/cookies');
   });
 
   it("falls back to the trusted static logo when settings omit one", async () => {

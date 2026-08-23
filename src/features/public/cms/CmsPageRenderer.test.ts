@@ -303,6 +303,79 @@ describe("public CMS rendering registry", () => {
     expect(html).toContain("<h2");
   });
 
+  it("turns the Cookie Settings CMS item into a dialog trigger without duplicating modal content", () => {
+    const page = {
+      id: "cookies-page",
+      slug: "cookies",
+      titleAr: "سياسة ملفات تعريف الارتباط",
+      titleEn: "Cookie Policy",
+      category: "legal",
+      template: "default",
+      navigationPlacement: "none",
+      navigationOrder: 10,
+      isIndexable: true,
+      updatedAt: "2026-08-20T00:00:00.000Z",
+      assetsById: {},
+      sections: [
+        {
+          id: "cookies-manage-preferences",
+          slug: "cookies-manage-preferences",
+          order: 5,
+          updatedAt: "2026-08-20T00:00:00.000Z",
+          content: {
+            blocks: [
+              {
+                items: [
+                  {
+                    key: "settingsLabel",
+                    type: "text",
+                    text: {
+                      format: "p",
+                      textAr: "إعدادات ملفات تعريف الارتباط",
+                      textEn: "Cookie Settings",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        {
+          id: "cookies-consent-preferences",
+          slug: "cookies-consent-preferences",
+          order: 6,
+          updatedAt: "2026-08-20T00:00:00.000Z",
+          content: {
+            blocks: [
+              {
+                items: [
+                  {
+                    key: "title",
+                    type: "text",
+                    text: {
+                      format: "h2",
+                      textAr: "تخصيص تفضيلات الموافقة",
+                      textEn: "Customise Consent Preferences",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
+    } as PublicCmsPage;
+
+    const html = renderToStaticMarkup(
+      createElement(CmsPageRenderer, { page, locale: "en", labels: rendererLabels })
+    );
+
+    expect(html).toContain('aria-haspopup="dialog"');
+    expect(html).toContain(">Cookie Settings</button>");
+    expect(html).not.toContain("Customise Consent Preferences");
+    expect(html).not.toContain('id="cookies-consent-preferences"');
+  });
+
   it("selects only the requested localized text", () => {
     const item = {
       type: "text" as const,

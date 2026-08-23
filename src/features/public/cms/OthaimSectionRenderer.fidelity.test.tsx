@@ -148,6 +148,10 @@ describe("Othaim source-fidelity section composition", () => {
     expect(committee).toContain("ogc-home-committee");
     expect(committee.match(/ogc-person-card/g)).toHaveLength(4);
     expect(team).toContain("ogc-home-team-inner");
+    expect(team).toContain("ogc-home-team-heading");
+    expect(team.indexOf("ogc-home-team-heading")).toBeLessThan(
+      team.indexOf("ogc-home-team-inner")
+    );
     expect(team).toContain("ogc-pattern");
     expect(inspiration).toContain("ogc-home-inspiration");
     expect(philosophies).toContain("ogc-home-philosophies");
@@ -165,6 +169,108 @@ describe("Othaim source-fidelity section composition", () => {
     ]);
 
     expect(html).toContain("ogc-button-ghost");
+  });
+
+  it("renders the founder attribution in the Home founder copy", () => {
+    const html = renderSection("home-founder", [
+      block([
+        text("eyebrow", "Management · Founder"),
+        text("headline", "A legacy of vision", "h2"),
+        text("summary", "Founder biography"),
+        text("name", "Abdullah Saleh Al Othaim"),
+        text("role", "Founder"),
+        image("portrait", "portrait"),
+        link("link", "secondary"),
+      ]),
+    ]);
+
+    expect(html).toContain('<p class="ogc-person-name">Abdullah Saleh Al Othaim</p>');
+    expect(html).toContain('<p class="ogc-person-role">Founder</p>');
+    expect(html.indexOf("Founder biography")).toBeLessThan(
+      html.indexOf("Abdullah Saleh Al Othaim")
+    );
+  });
+
+  it("renders the founder name and role inside the portrait caption", () => {
+    const html = renderSection("founder-hero", [
+      block([
+        text("eyebrow", "Management · Founder"),
+        text("headline", "Abdullah Saleh Al Othaim", "h2"),
+        text("summary", "Founder biography"),
+        text("name", "Abdullah Saleh Al Othaim"),
+        text("role", "Founder"),
+        image("portrait", "portrait"),
+        link("link", "secondary"),
+      ]),
+    ]);
+
+    expect(html).toContain("ogc-founder-portrait");
+    expect(html).toContain("ogc-founder-caption");
+    expect(html).toContain("ogc-founder-copy");
+    expect(html.indexOf("ogc-founder-copy")).toBeLessThan(html.indexOf("ogc-founder-portrait"));
+    expect(html).toMatch(
+      /<div class="ogc-founder-portrait">.*<div class="ogc-founder-caption">.*Founder.*Abdullah Saleh Al Othaim.*<\/div><\/div>/
+    );
+    expect(html).toMatch(/<a class="ogc-button ogc-button-ghost"[^>]*>Contact<\/a>/);
+  });
+
+  it("renders the founder positions with the approved arrow markers", () => {
+    const html = renderSection("founder-profile", [
+      block([
+        text("eyebrow", "Biography"),
+        text("headline", "Three decades of leadership", "h2"),
+        text("bodyPrimary", "Biography one"),
+        text("bodySecondary", "Biography two"),
+        text("positions", "Position one\nPosition two"),
+      ]),
+    ]);
+
+    expect(html.match(/ogc-position-arrow/g)).toHaveLength(2);
+    expect(html.match(/aria-hidden="true">→<\/span>/g)).toHaveLength(2);
+    expect(html).toContain(
+      '<div class="ogc-container"><div class="ogc-prose-grid ogc-reveal">'
+    );
+  });
+
+  it("keeps the Family timeline heading above the sticky summary grid", () => {
+    const html = renderSection("family-timeline", [
+      block([
+        text("eyebrow", "Timeline"),
+        text("headline", "Milestones", "h2"),
+        text("range", "1956 → today"),
+        text("summary", "Eight defining moments"),
+      ]),
+      block([
+        text("year", "1956"),
+        text("name", "Founding", "h3"),
+        text("body", "The story begins"),
+      ]),
+    ]);
+
+    expect(html).toContain("ogc-timeline-heading");
+    expect(html).toContain("ogc-timeline-summary");
+    expect(html.indexOf("ogc-timeline-heading")).toBeLessThan(
+      html.indexOf("ogc-timeline-layout")
+    );
+    expect(html.indexOf("Eight defining moments")).toBeGreaterThan(
+      html.indexOf("ogc-timeline-summary")
+    );
+  });
+
+  it("keeps the Investment Team card inside the reference container", () => {
+    const html = renderSection("team-profile", [
+      block([
+        text("name", "Jamil Hallak"),
+        text("role", "Chief Investment Officer"),
+        text("bodyPrimary", "Biography"),
+        text("languages", "AR Arabic\nEN English\nFR French"),
+        image("portrait", "portrait"),
+      ]),
+    ]);
+
+    expect(html).toContain(
+      '<div class="ogc-container"><div class="ogc-team-profile ogc-reveal">'
+    );
   });
 
   it("marks only the NEPC infrastructure logo for its vertical alignment adjustment", () => {
@@ -304,6 +410,28 @@ describe("Othaim source-fidelity section composition", () => {
     expect(html).toContain("Board responsibilities");
   });
 
+  it("renders investment-team languages as the reference coded pills beside the portrait", () => {
+    const html = renderSection("team-profile", [
+      block([
+        image("portrait", "portrait"),
+        text("role", "Chief Investment Officer"),
+        text("name", "Jamil Hallak", "h2"),
+        text("languages", "AR Arabic\nEN English\nFR French"),
+        text("bodyPrimary", "Biography"),
+      ]),
+    ]);
+
+    expect(html).toContain("ogc-language-list");
+    expect(html.match(/ogc-dna-pill/g)).toHaveLength(3);
+    expect(html.indexOf("Arabic")).toBeLessThan(html.indexOf("Biography"));
+    expect(html).toContain(">AR<");
+    expect(html).toContain(">EN<");
+    expect(html).toContain(">FR<");
+    expect(html).not.toContain("AR Arabic</span>");
+    expect(html).not.toContain("EN English</span>");
+    expect(html).not.toContain("FR French</span>");
+  });
+
   it("centers the About mission independently of the Home inspiration section", () => {
     const html = renderSection("about-mission", [
       block([text("eyebrow", "Mission"), text("quote", "Our investment mission")]),
@@ -311,5 +439,22 @@ describe("Othaim source-fidelity section composition", () => {
 
     expect(html).toContain("ogc-about-mission");
     expect(html).not.toContain("ogc-home-inspiration");
+  });
+
+  it("keeps the Strategy closing copy on the locale start edge without an invented arrow", () => {
+    const html = renderSection("strategy-closing", [
+      block([
+        text("eyebrow", "Start a conversation"),
+        text("headline", "Partner with us", "h2"),
+        text("summary", "Long-term partnerships"),
+        link("link", "primary"),
+      ]),
+    ]);
+
+    expect(html).toContain(
+      '<div class="ogc-container"><div class="ogc-closing-copy ogc-reveal">',
+    );
+    expect(html).toMatch(/<a class="ogc-button"[^>]*>Contact<\/a>/);
+    expect(html).not.toContain("aria-hidden");
   });
 });

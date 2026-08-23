@@ -21,7 +21,7 @@ export function LocaleSwitch({ locale }: { locale: AppLocale }) {
       type="button"
       onClick={switchLocale}
       lang={nextLocale}
-      className="text-xs font-bold uppercase tracking-[0.18em] transition-opacity hover:opacity-60"
+      className="ogc-language-toggle"
       aria-label={nextLocale === "ar" ? t("languageArabic") : t("languageEnglish")}
     >
       {nextLocale === "ar" ? "عربي" : "EN"}

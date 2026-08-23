@@ -15,7 +15,9 @@ export function normalizeCmsPageCategory(value: string | undefined, slug: string
   if (value === "legal" || value === "info") return value;
 
   // Migration fallback for old pages that don't have category yet.
-  if (slug === "terms" || slug === "privacy" || slug === "usage") return "legal";
+  if (slug === "terms" || slug === "privacy" || slug === "cookies") {
+    return "legal";
+  }
 
   return "info";
 }

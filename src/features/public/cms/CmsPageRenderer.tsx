@@ -6,6 +6,10 @@ import { isSafeCmsHref } from "@/lib/cms-link";
 import type { CmsSectionItem } from "@/features/cms/content-contract";
 import type { PublicCmsPage, PublicCmsSection } from "@/features/public/cms/types";
 import { OthaimSectionRenderer } from "@/features/public/cms/OthaimSectionRenderer";
+import {
+  CookieConsentManager,
+  CookieSettingsTrigger,
+} from "@/features/public/cms/CookieConsentManager";
 import { isOthaimSectionForPage } from "@/features/public/cms/othaim-section-registry";
 import { isOthaimPublicPageSlug } from "@/features/public/cms/public-routes";
 
@@ -56,9 +60,13 @@ export function CmsPageRenderer({ page, locale, labels }: Props) {
     page.category === "legal"
       ? visibleSections.find((section) => section.slug === `${page.slug}-hero`)
       : undefined;
-  const contentSections = legalHeroSection
-    ? visibleSections.filter((section) => section.id !== legalHeroSection.id)
-    : visibleSections;
+  const cookieConsentSection =
+    page.category === "legal" && page.slug === "cookies"
+      ? visibleSections.find((section) => section.slug === "cookies-consent-preferences")
+      : undefined;
+  const contentSections = visibleSections.filter(
+    (section) => section.id !== legalHeroSection?.id && section.id !== cookieConsentSection?.id
+  );
   const isOthaimPage = page.slug === "home" || isOthaimPublicPageSlug(page.slug);
   const Template = pageTemplateRegistry[getCmsPageTemplateKey(page)];
   const sections = contentSections.length ? (
@@ -87,7 +95,7 @@ export function CmsPageRenderer({ page, locale, labels }: Props) {
     );
   }
 
-  return (
+  const renderedPage = (
     <Template
       page={page}
       locale={locale}
@@ -96,6 +104,13 @@ export function CmsPageRenderer({ page, locale, labels }: Props) {
     >
       {sections}
     </Template>
+  );
+  return cookieConsentSection ? (
+    <CookieConsentManager locale={locale} section={cookieConsentSection}>
+      {renderedPage}
+    </CookieConsentManager>
+  ) : (
+    renderedPage
   );
 }
 
@@ -223,6 +238,9 @@ function CmsItemRenderer({
 }) {
   if (item.type === "text") {
     const value = getLocalizedCmsText(item, locale);
+    if (page.slug === "cookies" && item.key === "settingsLabel") {
+      return <CookieSettingsTrigger label={value} />;
+    }
     if (item.text.format === "h1") {
       return <h1 className="max-w-5xl text-5xl font-black leading-[1.08] sm:text-7xl">{value}</h1>;
     }

@@ -29,8 +29,8 @@
     "legalCentre": "Legal centre",
     "lastUpdated": "Last updated: {date}",
     "legal": {
-      "terms": "Terms and Conditions",
-      "usage": "Usage Policy",
+      "terms": "Terms of Use",
+      "cookies": "Cookie Policy",
       "privacy": "Privacy Policy"
     },
     "insidePlatform": "About the platform",

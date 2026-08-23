@@ -11,10 +11,12 @@ import "@/app/globals.css";
 
 const inter = localFont({
   src: [
-    { path: "../../assets/fonts/Inter-Regular.ttf", weight: "400", style: "normal" },
-    { path: "../../assets/fonts/Inter-Medium.ttf", weight: "500", style: "normal" },
-    { path: "../../assets/fonts/Inter-SemiBold.ttf", weight: "600", style: "normal" },
-    { path: "../../assets/fonts/Inter-Bold.ttf", weight: "700", style: "normal" },
+    { path: "../../assets/fonts/Inter-Variable.woff2", weight: "300" },
+    { path: "../../assets/fonts/Inter-Variable.woff2", weight: "400" },
+    { path: "../../assets/fonts/Inter-Variable.woff2", weight: "500" },
+    { path: "../../assets/fonts/Inter-Variable.woff2", weight: "600" },
+    { path: "../../assets/fonts/Inter-Variable.woff2", weight: "700" },
+    { path: "../../assets/fonts/Inter-Variable.woff2", weight: "800" },
   ],
   variable: "--font-inter",
   display: "swap",

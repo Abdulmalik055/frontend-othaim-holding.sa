@@ -16,9 +16,10 @@ type Props = {
 
 async function resolveParams(params: Props["params"]) {
   const value = await params;
-  if (!routing.locales.includes(value.locale as AppLocale) || value.slug === "home") {
+  if (!routing.locales.includes(value.locale as AppLocale)) {
     notFound();
   }
+  if (value.slug === "home") notFound();
   return value as { locale: AppLocale; slug: string };
 }
 

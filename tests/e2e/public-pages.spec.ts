@@ -12,7 +12,7 @@ const slugs = [
   "strategy",
   "contact",
   "legal/terms",
-  "legal/usage",
+  "legal/cookies",
   "legal/privacy",
 ] as const;
 
@@ -56,23 +56,35 @@ for (const locale of locales) {
           /\/en\/legal\//
         );
         expect(await page.locator("main h2").count()).toBeGreaterThan(0);
-        expect(await page.locator("main li").count()).toBeGreaterThan(0);
+        if (slug === "legal/terms") {
+          expect(await page.locator("main li").count()).toBeGreaterThan(0);
+        }
       }
       if (slug === "legal/privacy") {
-        await expect(page.locator("#privacy-contact")).toContainText(
+        await expect(
+          page.locator(".ogc-page-privacy .ogc-legal-section p").filter({
+            hasText: /^(01|02|03|04|05|06|07)$/,
+          })
+        ).toHaveCount(0);
+        await expect(page.locator("#privacy-grievance-officer")).toContainText(
           locale === "ar"
-            ? "لأي استفسار بشأن سياسة الخصوصية أو بياناتك الشخصية"
-            : "For any inquiry regarding the Privacy Policy or your personal data"
+            ? "إذا كانت لديك أي استفسارات أو مخاوف بشأن معالجة معلوماتك"
+            : "If you have any queries or concerns about the processing of your information"
         );
-        await expect(page.locator("#privacy-contact li")).toHaveCount(3);
+        await expect(
+          page.locator('#privacy-grievance-officer a[href="mailto:info@othaimglobal.com"]')
+        ).toBeVisible();
       }
-      if (slug === "legal/usage") {
-        await expect(page.locator("#usage-reporting")).toContainText(
-          locale === "ar"
-            ? "إذا لاحظت أي محتوى أو سلوك يخالف هذه السياسة"
-            : "If you notice any content or behavior that violates this policy"
+      if (slug === "legal/cookies") {
+        await expect(page.locator("#cookies-manage-preferences")).toContainText(
+          locale === "ar" ? "إدارة تفضيلات ملفات تعريف الارتباط" : "Manage cookie preferences"
         );
-        expect(await page.locator("#usage-reporting p").count()).toBeGreaterThan(1);
+        await expect(
+          page.getByRole("button", {
+            name: locale === "ar" ? "إعدادات ملفات تعريف الارتباط" : "Cookie Settings",
+          })
+        ).toBeVisible();
+        await expect(page.locator("#cookies-consent-preferences")).toHaveCount(0);
       }
       const overflow = await page.evaluate(
         () => document.documentElement.scrollWidth - document.documentElement.clientWidth
@@ -102,10 +114,9 @@ for (const locale of locales) {
 
       const screenshot = await page.screenshot({
         fullPage: true,
-        type: "jpeg",
-        quality: 82,
+        type: "png",
       });
-      expect(screenshot).toMatchSnapshot(`${locale}-${slug.replace("/", "-") || "home"}.jpg`, {
+      expect(screenshot).toMatchSnapshot(`${locale}-${slug.replace("/", "-") || "home"}.png`, {
         maxDiffPixelRatio: 0.01,
       });
     });
@@ -118,8 +129,20 @@ async function settlePage(page: Page) {
     const step = Math.max(300, Math.floor(window.innerHeight * 0.75));
     for (let top = 0; top < document.documentElement.scrollHeight; top += step) {
       window.scrollTo(0, top);
-      await new Promise((resolve) => setTimeout(resolve, 20));
+      await new Promise((resolve) => setTimeout(resolve, 40));
     }
+    for (const image of Array.from(document.images)) {
+      if (image.complete) continue;
+      image.scrollIntoView({ block: "center" });
+      await Promise.race([
+        new Promise<void>((resolve) => {
+          image.addEventListener("load", () => resolve(), { once: true });
+          image.addEventListener("error", () => resolve(), { once: true });
+        }),
+        new Promise<void>((resolve) => setTimeout(resolve, 2_000)),
+      ]);
+    }
+    document.querySelectorAll("video").forEach((video) => video.pause());
     window.scrollTo(0, 0);
   });
   await page.waitForLoadState("networkidle");

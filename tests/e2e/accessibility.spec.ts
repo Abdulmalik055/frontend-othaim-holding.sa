@@ -12,7 +12,7 @@ const routes = [
   "/ar/strategy",
   "/ar/contact",
   "/ar/legal/terms",
-  "/ar/legal/usage",
+  "/ar/legal/cookies",
   "/ar/legal/privacy",
   "/en",
   "/en/about",
@@ -24,7 +24,7 @@ const routes = [
   "/en/strategy",
   "/en/contact",
   "/en/legal/terms",
-  "/en/legal/usage",
+  "/en/legal/cookies",
   "/en/legal/privacy",
 ] as const;
 
@@ -48,3 +48,28 @@ for (const route of routes) {
     ).toEqual([]);
   });
 }
+
+test("the Cookie Settings dialog has no automated WCAG A/AA violations", async ({
+  page,
+}, testInfo) => {
+  test.skip(testInfo.project.name === "mobile", "The dialog audit runs once at desktop size");
+  await page.goto("/en/legal/cookies", { waitUntil: "networkidle" });
+  await page.getByRole("button", { name: "Cookie Settings" }).click();
+  await expect(
+    page.getByRole("dialog", { name: "Customise Consent Preferences" })
+  ).toBeVisible();
+
+  const results = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
+    .analyze();
+  expect(
+    results.violations.map((violation) => ({
+      id: violation.id,
+      impact: violation.impact,
+      nodes: violation.nodes.map((node) => ({
+        target: node.target,
+        summary: node.failureSummary,
+      })),
+    }))
+  ).toEqual([]);
+});

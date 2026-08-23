@@ -129,7 +129,7 @@ function buildFooterLegalLinks(
 ) {
   const required = [
     { slug: "terms", label: t("legal.terms") },
-    { slug: "usage", label: t("legal.usage") },
+    { slug: "cookies", label: t("legal.cookies") },
     { slug: "privacy", label: t("legal.privacy") },
   ] as const;
   const available = new Set(

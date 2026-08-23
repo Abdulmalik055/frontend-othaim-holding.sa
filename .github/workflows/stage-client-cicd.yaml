@@ -1,0 +1,37 @@
+name: Deploy FE (stage)
+
+on:
+  push:
+    branches: [stage]
+
+jobs:
+  build:
+    runs-on: stage-fe.othaimglobal.com
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node + pnpm
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install pnpm
+        run: npm install -g pnpm@10.30.3
+
+      - name: Deploy source to server path
+        run: |
+          sudo cp -r * /www/wwwroot/staging.othaimglobal.com/
+
+      - name: Install dependencies
+        working-directory: /www/wwwroot/staging.othaimglobal.com
+        run: |
+          sudo pnpm install --frozen-lockfile --force
+
+      - name: Build Next.js app
+        working-directory: /www/wwwroot/staging.othaimglobal.com
+        run: sudo pnpm build
+
+      - name: restart pm2 service
+        run: cd /www/wwwroot/staging.othaimglobal.com && sudo pm2 reload othaimglobal-frontend-stage --update-env

@@ -57,6 +57,84 @@ test("legacy routes redirect permanently to clean localized paths", async ({ req
   });
   expect(infoResponse.status()).toBe(308);
   expect(infoResponse.headers().location).toMatch(/\/ar$/);
+
+});
+
+test("removed Usage Policy routes return 404 in both locales", async ({ request }) => {
+  for (const locale of ["ar", "en"]) {
+    const response = await request.get(`/${locale}/legal/usage`, {
+      headers: { accept: "text/html" },
+      maxRedirects: 0,
+    });
+    expect(response.status()).toBe(404);
+    expect(response.headers().location).toBeUndefined();
+  }
+});
+
+test("cookie preferences are accessible, persistent, and discard unsaved changes", async ({
+  page,
+}) => {
+  const nonLocalRequests: string[] = [];
+  page.on("request", (request) => {
+    const url = new URL(request.url());
+    if (url.hostname !== "127.0.0.1" && url.hostname !== "localhost") {
+      nonLocalRequests.push(request.url());
+    }
+  });
+  await page.goto("/en/legal/cookies", { waitUntil: "networkidle" });
+
+  const trigger = page.getByRole("button", { name: "Cookie Settings" });
+  await trigger.click();
+  const dialog = page.getByRole("dialog", { name: "Customise Consent Preferences" });
+  await expect(dialog).toBeVisible();
+  await expect(page.getByRole("checkbox", { name: "Necessary" })).toBeChecked();
+  await expect(page.getByRole("checkbox", { name: "Necessary" })).toBeDisabled();
+  await expect(page.getByRole("checkbox", { name: "Analytics" })).not.toBeChecked();
+
+  await page.getByRole("checkbox", { name: "Analytics" }).check();
+  await page.getByRole("button", { name: "Save My Preferences" }).click();
+  await expect(dialog).toBeHidden();
+  await expect(trigger).toBeFocused();
+
+  const stored = (await page.context().cookies()).find(
+    (cookie) => cookie.name === "othaim-global.cookie-consent"
+  );
+  expect(stored?.path).toBe("/");
+  expect(stored?.sameSite).toBe("Lax");
+  expect(JSON.parse(decodeURIComponent(stored?.value ?? "{}"))).toMatchObject({
+    version: 1,
+    necessary: true,
+    functional: false,
+    analytics: true,
+    performance: false,
+    advertisement: false,
+  });
+
+  await trigger.click();
+  await expect(page.getByRole("checkbox", { name: "Analytics" })).toBeChecked();
+  await page.getByRole("checkbox", { name: "Performance" }).check();
+  await page.keyboard.press("Escape");
+  await expect(trigger).toBeFocused();
+  await trigger.click();
+  await expect(page.getByRole("checkbox", { name: "Performance" })).not.toBeChecked();
+  await page.getByRole("button", { name: "Accept All" }).click();
+
+  await trigger.click();
+  await expect(page.getByRole("checkbox", { name: "Functional" })).toBeChecked();
+  await expect(page.getByRole("checkbox", { name: "Advertisement" })).toBeChecked();
+  await page.getByRole("button", { name: "Reject All" }).click();
+  await trigger.click();
+  await expect(page.getByRole("checkbox", { name: "Analytics" })).not.toBeChecked();
+  await expect(page.getByRole("checkbox", { name: "Advertisement" })).not.toBeChecked();
+  expect(nonLocalRequests).toEqual([]);
+});
+
+test("Arabic cookie preferences use the CMS translation and RTL dialog", async ({ page }) => {
+  await page.goto("/ar/legal/cookies", { waitUntil: "networkidle" });
+  await page.getByRole("button", { name: "إعدادات ملفات تعريف الارتباط" }).click();
+  const dialog = page.getByRole("dialog", { name: "تخصيص تفضيلات الموافقة" });
+  await expect(dialog).toHaveAttribute("dir", "rtl");
+  await expect(dialog.getByText("رفض الكل", { exact: true })).toBeVisible();
 });
 
 test("contact form focuses the first error and reports a successful submission", async ({
@@ -124,7 +202,7 @@ test("global crawler metadata routes are not localized", async ({ request }) => 
   const sitemapXml = await sitemap.text();
   expect(sitemapXml).toContain("<urlset");
   expect(sitemapXml).toContain("/ar/legal/terms");
-  expect(sitemapXml).toContain("/en/legal/usage");
+  expect(sitemapXml).toContain("/en/legal/cookies");
   expect(sitemapXml).toContain("/ar/legal/privacy");
 });
 
@@ -141,7 +219,7 @@ test("CMS branding and placement-specific navigation labels reach the public she
   );
   expect(legalHrefs).toEqual([
     "/en/legal/terms",
-    "/en/legal/usage",
+    "/en/legal/cookies",
     "/en/legal/privacy",
   ]);
 

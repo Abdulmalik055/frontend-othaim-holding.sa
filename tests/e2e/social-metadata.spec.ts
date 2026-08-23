@@ -12,7 +12,7 @@ const slugs = [
   "strategy",
   "contact",
   "legal/terms",
-  "legal/usage",
+  "legal/cookies",
   "legal/privacy",
 ] as const;
 const sharedSocialImage = /\/uploads\/media\/images\/othaim-global\/othaim-global-logo\.png$/;

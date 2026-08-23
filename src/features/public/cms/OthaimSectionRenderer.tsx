@@ -114,14 +114,18 @@ function FounderHero(props: SectionProps) {
   return (
     <section id={section.slug} className="ogc-page-hero ogc-profile-hero">
       <div className="ogc-container ogc-split ogc-reveal">
-        <CmsImage {...props} block={intro} itemKey="portrait" className="ogc-portrait" priority />
-        <div>
+        <div className="ogc-founder-copy">
           <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
           <h1>{getText(intro, "headline", locale)}</h1>
           <Lead>{getText(intro, "summary", locale)}</Lead>
-          <p className="ogc-person-name">{getText(intro, "name", locale)}</p>
-          <p className="ogc-person-role">{getText(intro, "role", locale)}</p>
-          <CmsLink {...props} block={intro} itemKey="link" />
+          <CmsLink {...props} block={intro} itemKey="link" showArrow={false} />
+        </div>
+        <div className="ogc-founder-portrait">
+          <CmsImage {...props} block={intro} itemKey="portrait" className="ogc-portrait" priority />
+          <div className="ogc-founder-caption">
+            <p className="ogc-founder-caption-role">{getText(intro, "role", locale)}</p>
+            <p className="ogc-founder-caption-name">{getText(intro, "name", locale)}</p>
+          </div>
         </div>
       </div>
     </section>
@@ -155,14 +159,18 @@ function ProfilePromo(props: SectionProps) {
   if (section.slug === "home-team") {
     return (
       <section id={section.slug} className="ogc-section ogc-section-dark ogc-pattern ogc-home-team">
-        <div className="ogc-container ogc-home-team-inner ogc-reveal">
-          <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
-          <h2>{getText(intro, "headline", locale)}</h2>
-          <CmsImage {...props} block={intro} itemKey="portrait" className="ogc-portrait" />
-          <p className="ogc-person-name">{getText(intro, "name", locale)}</p>
-          <p className="ogc-person-role">{getText(intro, "role", locale)}</p>
-          <Lead>{getText(intro, "summary", locale)}</Lead>
-          <CmsLink {...props} block={intro} itemKey="link" />
+        <div className="ogc-container">
+          <div className="ogc-home-team-heading ogc-reveal">
+            <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
+            <h2>{getText(intro, "headline", locale)}</h2>
+          </div>
+          <div className="ogc-home-team-inner ogc-reveal">
+            <CmsImage {...props} block={intro} itemKey="portrait" className="ogc-portrait" />
+            <p className="ogc-person-name">{getText(intro, "name", locale)}</p>
+            <p className="ogc-person-role">{getText(intro, "role", locale)}</p>
+            <Lead>{getText(intro, "summary", locale)}</Lead>
+            <CmsLink {...props} block={intro} itemKey="link" />
+          </div>
         </div>
       </section>
     );
@@ -351,19 +359,25 @@ function TimelineSection({ section, locale }: SectionProps) {
       id={section.slug}
       className={`ogc-section ogc-section-dark ogc-section-${section.slug}`}
     >
-      <div className="ogc-container ogc-timeline-layout">
-        <div className="ogc-reveal">
-          <SectionHeading block={intro} locale={locale} />
-          <p className="ogc-range">{getText(intro, "range", locale)}</p>
+      <div className="ogc-container">
+        <div className="ogc-timeline-heading ogc-reveal">
+          <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
+          <h2>{getText(intro, "headline", locale)}</h2>
         </div>
-        <div>
-          {repeated.map((block, index) => (
-            <article key={blockKey(block, index)} className="ogc-timeline-item ogc-reveal">
-              <p className="ogc-timeline-year">{getText(block, "year", locale)}</p>
-              <h3>{getText(block, "name", locale)}</h3>
-              <Lead>{getText(block, "body", locale)}</Lead>
-            </article>
-          ))}
+        <div className="ogc-timeline-layout">
+          <div className="ogc-timeline-summary ogc-reveal">
+            <p className="ogc-range">{getText(intro, "range", locale)}</p>
+            <Lead>{getText(intro, "summary", locale)}</Lead>
+          </div>
+          <div>
+            {repeated.map((block, index) => (
+              <article key={blockKey(block, index)} className="ogc-timeline-item ogc-reveal">
+                <p className="ogc-timeline-year">{getText(block, "year", locale)}</p>
+                <h3>{getText(block, "name", locale)}</h3>
+                <Lead>{getText(block, "body", locale)}</Lead>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -378,21 +392,28 @@ function ProfileBody({ section, locale }: SectionProps) {
       id={section.slug}
       className={`ogc-section ogc-section-dark ogc-section-${section.slug}`}
     >
-      <div className="ogc-container ogc-prose-grid ogc-reveal">
-        <div>
-          <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
-          <h2>{getText(intro, "headline", locale)}</h2>
-        </div>
-        <div>
-          <Lead>{getText(intro, "bodyPrimary", locale)}</Lead>
-          <Lead>{getText(intro, "bodySecondary", locale)}</Lead>
-          {positions.length > 0 && (
-            <ul className="ogc-position-list">
-              {positions.map((position, index) => (
-                <li key={`${index}-${position}`}>{position}</li>
-              ))}
-            </ul>
-          )}
+      <div className="ogc-container">
+        <div className="ogc-prose-grid ogc-reveal">
+          <div>
+            <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
+            <h2>{getText(intro, "headline", locale)}</h2>
+          </div>
+          <div>
+            <Lead>{getText(intro, "bodyPrimary", locale)}</Lead>
+            <Lead>{getText(intro, "bodySecondary", locale)}</Lead>
+            {positions.length > 0 && (
+              <ul className="ogc-position-list">
+                {positions.map((position, index) => (
+                  <li key={`${index}-${position}`}>
+                    <span className="ogc-position-arrow" aria-hidden="true">
+                      →
+                    </span>
+                    {position}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
       </div>
     </section>
@@ -453,32 +474,48 @@ function TeamProfile(props: SectionProps) {
   const { section, locale } = props;
   const { intro } = getBlocks(section.content);
   const bodyKeys = ["bodyPrimary", "bodySecondary", "bodyTertiary", "bodyQuaternary"];
+  const languages = (getText(intro, "languages", locale) ?? "")
+    .split("\n")
+    .map((language) => language.trim())
+    .filter(Boolean);
+  const languageCodes = ["AR", "EN", "FR"];
   return (
     <section
       id={section.slug}
       className={`ogc-section ogc-section-dark ogc-section-${section.slug}`}
     >
-      <div className="ogc-container ogc-team-profile ogc-reveal">
-        <div>
-          <CmsImage {...props} block={intro} itemKey="portrait" className="ogc-portrait" />
-          <p className="ogc-person-role">{getText(intro, "role", locale)}</p>
-          <h2>{getText(intro, "name", locale)}</h2>
-        </div>
-        <div>
-          {bodyKeys.map((key) => (
-            <Lead key={key}>{getText(intro, key, locale)}</Lead>
-          ))}
-          {getText(intro, "languages", locale) && (
-            <div className="ogc-profile-detail">
-              <TextList value={getText(intro, "languages", locale)} />
-            </div>
-          )}
-          {getText(intro, "education", locale) && (
-            <div className="ogc-education">
-              <strong>{getText(intro, "educationLabel", locale)}</strong>
-              <TextList value={getText(intro, "education", locale)} />
-            </div>
-          )}
+      <div className="ogc-container">
+        <div className="ogc-team-profile ogc-reveal">
+          <div>
+            <CmsImage {...props} block={intro} itemKey="portrait" className="ogc-portrait" />
+            <p className="ogc-person-role">{getText(intro, "role", locale)}</p>
+            <h2>{getText(intro, "name", locale)}</h2>
+            {languages.length > 0 && (
+              <div className="ogc-language-list">
+                {languages.map((language, index) => {
+                  const code = languageCodes[index] ?? String(index + 1).padStart(2, "0");
+                  const label = language.replace(new RegExp(`^${code}\\s+`, "i"), "");
+                  return (
+                    <span className="ogc-dna-pill" key={`${language}-${index}`}>
+                      <span>{code}</span>
+                      {label}
+                    </span>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+          <div>
+            {bodyKeys.map((key) => (
+              <Lead key={key}>{getText(intro, key, locale)}</Lead>
+            ))}
+            {getText(intro, "education", locale) && (
+              <div className="ogc-education">
+                <strong>{getText(intro, "educationLabel", locale)}</strong>
+                <TextList value={getText(intro, "education", locale)} />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
@@ -490,11 +527,13 @@ function ClosingCta(props: SectionProps) {
   const { intro } = getBlocks(section.content);
   return (
     <section id={section.slug} className="ogc-section ogc-closing-cta">
-      <div className="ogc-container ogc-reveal">
-        <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
-        <h2>{getText(intro, "headline", locale)}</h2>
-        <Lead>{getText(intro, "summary", locale)}</Lead>
-        <CmsLink {...props} block={intro} itemKey="link" />
+      <div className="ogc-container">
+        <div className="ogc-closing-copy ogc-reveal">
+          <Eyebrow>{getText(intro, "eyebrow", locale)}</Eyebrow>
+          <h2>{getText(intro, "headline", locale)}</h2>
+          <Lead>{getText(intro, "summary", locale)}</Lead>
+          <CmsLink {...props} block={intro} itemKey="link" showArrow={false} />
+        </div>
       </div>
     </section>
   );
@@ -813,7 +852,8 @@ function CmsLink({
   block,
   itemKey,
   locale,
-}: SectionProps & { block?: CmsSectionBlock; itemKey: string }) {
+  showArrow = true,
+}: SectionProps & { block?: CmsSectionBlock; itemKey: string; showArrow?: boolean }) {
   const item = getLink(block, itemKey);
   if (!item || !isSafeCmsHref(item.link.href)) return null;
   const label = locale === "ar" ? item.link.labelAr : item.link.labelEn;
@@ -834,14 +874,14 @@ function CmsLink({
         rel={item.link.openInNewTab ? "noopener noreferrer" : undefined}
       >
         {label}
-        <span aria-hidden>↗</span>
+        {showArrow ? <span aria-hidden>↗</span> : null}
       </a>
     );
   }
   return (
     <Link href={href} className={className}>
       {label}
-      <span aria-hidden>→</span>
+      {showArrow ? <span aria-hidden>→</span> : null}
     </Link>
   );
 }
