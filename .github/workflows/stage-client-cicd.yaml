@@ -22,16 +22,16 @@ jobs:
 
       - name: Deploy source to server path
         run: |
-          sudo cp -r * /www/wwwroot/stage.othaimglobal.dnetdemo.com
+          sudo cp -r * /www/wwwroot/stage.othaimglobal.dnetdemo.com/web
 
       - name: Install dependencies
-        working-directory: /www/wwwroot/stage.othaimglobal.dnetdemo.com
+        working-directory: /www/wwwroot/stage.othaimglobal.dnetdemo.com/web
         run: |
           sudo pnpm install --frozen-lockfile --force
 
       - name: Build Next.js app
-        working-directory: /www/wwwroot/stage.othaimglobal.dnetdemo.com
+        working-directory: /www/wwwroot/stage.othaimglobal.dnetdemo.com/web
         run: sudo pnpm build
 
       - name: restart pm2 service
-        run: cd /www/wwwroot/stage.othaimglobal.dnetdemo.com && sudo pm2 reload othaimglobal-frontend-stage --update-env
+        run: cd /www/wwwroot/stage.othaimglobal.dnetdemo.co/web && sudo pm2 reload othaimglobal-frontend-stage --update-env
