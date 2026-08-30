@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: stage-fe.othaimglobal.com
+    runs-on: stage.othaimglobal.dnetdemo.com
 
     steps:
       - name: Checkout repository
@@ -22,16 +22,16 @@ jobs:
 
       - name: Deploy source to server path
         run: |
-          sudo cp -r * /www/wwwroot/staging.othaimglobal.com/
+          sudo cp -r * /www/wwwroot/stage.othaimglobal.dnetdemo.com/web/
 
       - name: Install dependencies
-        working-directory: /www/wwwroot/staging.othaimglobal.com
+        working-directory: /www/wwwroot/stage.othaimglobal.dnetdemo.com/web/
         run: |
           sudo pnpm install --frozen-lockfile --force
 
       - name: Build Next.js app
-        working-directory: /www/wwwroot/staging.othaimglobal.com
+        working-directory: /www/wwwroot/stage.othaimglobal.dnetdemo.com/web/
         run: sudo pnpm build
 
       - name: restart pm2 service
-        run: cd /www/wwwroot/staging.othaimglobal.com && sudo pm2 reload othaimglobal-frontend-stage --update-env
+        run: cd /www/wwwroot/stage.othaimglobal.dnetdemo.com/web/ && sudo pm2 reload othaimglobal-frontend-stage --update-env
