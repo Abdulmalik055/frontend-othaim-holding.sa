@@ -4,11 +4,11 @@
   "private": true,
   "packageManager": "pnpm@10.30.3",
   "scripts": {
-    "dev": "next dev --port 3001",
+    "dev": "node --env-file=.env node_modules/next/dist/bin/next dev",
     "dev:webpack": "next dev --webpack --port 3001",
     "build": "next build",
     "build:e2e": "NEXT_PUBLIC_SITE_URL=http://127.0.0.1:3001 NEXT_PUBLIC_BACKEND_URL=http://127.0.0.1:3100 next build",
-    "start": "next start --port 3001",
+    "start": "node --env-file=.env node_modules/next/dist/bin/next start",
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
